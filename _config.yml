@@ -3,9 +3,9 @@
 # ----------------------- #
 
 url: http://holsee.github.io
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+title: holsee
+subtitle: code and stuff
+author: holsee
 simple_search: https://www.google.com/search
 description:
 
@@ -27,7 +27,7 @@ email:
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
 root: /
-permalink: /blog/:year/:month/:day/:title/
+permalink: /:title/
 source: source
 destination: public
 plugins: plugins
