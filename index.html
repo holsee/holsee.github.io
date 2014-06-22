@@ -9,8 +9,7 @@
 
 <meta name="author" content="holsee"> 
 
-<meta name="description" content=" Blog Archives
-"> <meta name="keywords" content="">
+<meta name="description" content="Let ni be the number of items in the sequence to be sorted. N is number of integers that each key element can take. Let nk be the number of keys in &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -98,6 +97,133 @@ $(document).ready(
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/merge-sort/">
+		
+			Merge Sort</a>
+	</h2>
+	<div class="entry-content">
+		<p>Let n<sub>i</sub> be the number of items in the sequence to be sorted. N is number of integers that each key element can take. Let n<sub>k</sub> be the number of keys in each item.</p>
+
+
+
+
+<figure class='code'><figcaption><span>JS Merge Sort</span><a href='http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort'>Source Article</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">mergesort</span><span class="p">(</span><span class="nx">list</span><span class="p">){</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">list</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">left</span>  <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">mid</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">right</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">mid</span><span class="p">,</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">mergesort</span><span class="p">(</span><span class="nx">left</span><span class="p">),</span> <span class="nx">mergesort</span><span class="p">(</span><span class="nx">right</span><span class="p">))</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">){</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="p">[];</span>
+</span><span class='line'>  <span class="k">while</span> <span class="p">(</span><span class="nx">left</span> <span class="o">&amp;&amp;</span> <span class="nx">left</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">right</span> <span class="o">&amp;&amp;</span> <span class="nx">right</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">right</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'>    <span class="nx">sorted</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">b</span><span class="o">?</span> <span class="nx">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">:</span> <span class="nx">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span><span class='line'>    <span class="c1">// remove the element which was added to the sorted array</span>
+</span><span class='line'>    <span class="nx">b</span><span class="o">?</span> <span class="nx">left</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">:</span> <span class="nx">right</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">sorted</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Ruby Merge Sort</span><a href='http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort'>Source Article</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">mergesort</span><span class="p">(</span><span class="n">list</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">list</span> <span class="k">if</span> <span class="n">list</span><span class="o">.</span><span class="n">size</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+</span><span class='line'>  <span class="n">mid</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="n">size</span> <span class="o">/</span> <span class="mi">2</span>
+</span><span class='line'>  <span class="n">left</span>  <span class="o">=</span> <span class="n">list</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">mid</span><span class="o">]</span>
+</span><span class='line'>  <span class="n">right</span> <span class="o">=</span> <span class="n">list</span><span class="o">[</span><span class="n">mid</span><span class="p">,</span> <span class="n">list</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="n">mid</span><span class="o">]</span>
+</span><span class='line'>  <span class="n">merge</span><span class="p">(</span><span class="n">mergesort</span><span class="p">(</span><span class="n">left</span><span class="p">),</span> <span class="n">mergesort</span><span class="p">(</span><span class="n">right</span><span class="p">))</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">sorted</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>  <span class="k">until</span> <span class="n">left</span><span class="o">.</span><span class="n">empty?</span> <span class="ow">or</span> <span class="n">right</span><span class="o">.</span><span class="n">empty?</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">left</span><span class="o">.</span><span class="n">first</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="o">.</span><span class="n">first</span>
+</span><span class='line'>    <span class="n">sorted</span> <span class="o">&lt;&lt;</span> <span class="n">left</span><span class="o">.</span><span class="n">shift</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>    <span class="n">sorted</span> <span class="o">&lt;&lt;</span> <span class="n">right</span><span class="o">.</span><span class="n">shift</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="n">sorted</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">left</span><span class="p">)</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-23T00:37:19+01:00" pubdate data-updated="true">Jun 23<sup>rd</sup>, 2014</time></div>
+	
+
+
+	
+</div></article>
 
 <nav id="pagenavi">
     
