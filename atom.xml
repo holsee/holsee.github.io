@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-06-23T00:50:06+01:00</updated>
+  <updated>2014-06-25T01:27:15+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -14,16 +14,229 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Quick Sort]]></title>
+    <link href="http://holsee.github.io/quick-sort/"/>
+    <updated>2014-06-25T00:24:40+01:00</updated>
+    <id>http://holsee.github.io/quick-sort</id>
+    <content type="html"><![CDATA[<p>Quicksort, also known as <i>partition-exchange sort</i>, uses these steps.</p>
+
+
+
+
+<ol>
+<li> Choose any element of the array to be the pivot.</li>
+<li> Divide all other elements (except the pivot) into two partitions.
+<br/>- All elements less than the pivot must be in the first partition.
+<br/>- All elements greater than the pivot must be in the second partition.
+</li>
+<li> Use recursion to sort both partitions.</li>
+<li> Join the first sorted partition, the pivot, and the second sorted partition.</li>
+</ol>
+
+
+
+
+<figure class='code'><figcaption><span>C Quick Sort</span><a href='http://en.wikibooks.org/wiki/Transwiki:Quicksort#C'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">t</span><span class="o">=*</span><span class="n">a</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">*</span><span class="n">a</span><span class="o">=*</span><span class="n">b</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">*</span><span class="n">b</span><span class="o">=</span><span class="n">t</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">sort</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">beg</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="n">end</span> <span class="o">&gt;</span> <span class="n">beg</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">piv</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">beg</span><span class="p">],</span> <span class="n">l</span> <span class="o">=</span> <span class="n">beg</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">end</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">piv</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">l</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">else</span>
+</span><span class='line'>        <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="o">--</span><span class="n">r</span><span class="p">]);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="c1">// swapping elements within the array </span>
+</span><span class='line'>    <span class="c1">// to avoid the memory allocation of more arrays.</span>
+</span><span class='line'>    <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="o">--</span><span class="n">l</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">beg</span><span class="p">]);</span>
+</span><span class='line'>    <span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">beg</span><span class="p">,</span> <span class="n">l</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>JS Quick Sort</span><a href='http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#JavaScript'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">sort</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">less</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">function</span> <span class="nx">swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">t</span><span class="o">=</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+</span><span class='line'>    <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">=</span><span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+</span><span class='line'>    <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span><span class="o">=</span><span class="nx">t</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">function</span> <span class="nx">quicksort</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">left</span> <span class="o">&lt;</span> <span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[(</span><span class="nx">left</span> <span class="o">+</span> <span class="nx">right</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">left_new</span> <span class="o">=</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">right_new</span> <span class="o">=</span> <span class="nx">right</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">do</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">while</span> <span class="p">(</span><span class="nx">less</span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">left_new</span><span class="p">],</span> <span class="nx">pivot</span><span class="p">)</span>
+</span><span class='line'>          <span class="nx">left_new</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">while</span> <span class="p">(</span><span class="nx">less</span><span class="p">(</span><span class="nx">pivot</span><span class="p">,</span> <span class="nx">array</span><span class="p">[</span><span class="nx">right_new</span><span class="p">])</span>
+</span><span class='line'>          <span class="nx">right_new</span><span class="o">--</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="nx">left_new</span>  <span class="o">&lt;=</span> <span class="nx">right_new</span><span class="p">)</span>
+</span><span class='line'>          <span class="nx">swap</span><span class="p">(</span><span class="nx">left_new</span><span class="o">++</span><span class="p">,</span> <span class="nx">right_new</span><span class="o">--</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">left_new</span>  <span class="o">&lt;=</span> <span class="nx">right_new</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">quicksort</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right_new</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">quicksort</span><span class="p">(</span><span class="nx">left_new</span><span class="p">,</span> <span class="nx">right</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">quicksort</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">array</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>JS (Functional) Quick Sort</span><a href='http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#JavaScript'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">quick_sort</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="k">this</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)];</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span> <span class="o">&lt;</span>  <span class="nx">pivot</span> <span class="p">}).</span><span class="nx">quick_sort</span><span class="p">().</span><span class="nx">concat</span><span class="p">(</span>
+</span><span class='line'>           <span class="k">this</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span> <span class="o">==</span> <span class="nx">pivot</span> <span class="p">})).</span><span class="nx">concat</span><span class="p">(</span>
+</span><span class='line'>           <span class="k">this</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span> <span class="o">&gt;</span>  <span class="nx">pivot</span> <span class="p">}).</span><span class="nx">quick_sort</span><span class="p">());</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Ruby Quick Sort</span><a href='http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#Ruby'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Array</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">quick_sort</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nb">self</span> <span class="k">if</span> <span class="n">length</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="n">pivot</span> <span class="o">=</span> <span class="n">sample</span>
+</span><span class='line'>    <span class="n">group</span> <span class="o">=</span> <span class="n">group_by</span><span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span> <span class="o">&lt;=&gt;</span> <span class="n">pivot</span> <span class="p">}</span>
+</span><span class='line'>    <span class="n">group</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>    <span class="n">group</span><span class="o">[-</span><span class="mi">1</span><span class="o">].</span><span class="n">quick_sort</span> <span class="o">+</span> <span class="n">group</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="n">group</span><span class="o">[</span><span class="mi">1</span><span class="o">].</span><span class="n">quick_sort</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Ruby (Functional) Quick Sort</span><a href='http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#Ruby'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Array</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">quick_sort</span>
+</span><span class='line'>    <span class="n">h</span><span class="p">,</span> <span class="o">*</span><span class="n">t</span> <span class="o">=</span> <span class="nb">self</span>
+</span><span class='line'>    <span class="n">h</span> <span class="p">?</span> <span class="n">t</span><span class="o">.</span><span class="n">partition</span> <span class="p">{</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="n">h</span> <span class="p">}</span><span class="o">.</span><span class="n">inject</span> <span class="p">{</span> <span class="o">|</span><span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="o">|</span> <span class="n">l</span><span class="o">.</span><span class="n">quick_sort</span> <span class="o">+</span> <span class="o">[</span><span class="n">h</span><span class="o">]</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">quick_sort</span> <span class="p">}</span> <span class="p">:</span> <span class="o">[]</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Merge Sort]]></title>
     <link href="http://holsee.github.io/merge-sort/"/>
     <updated>2014-06-23T00:37:19+01:00</updated>
     <id>http://holsee.github.io/merge-sort</id>
-    <content type="html"><![CDATA[<p>Let n<sub>i</sub> be the number of items in the sequence to be sorted. N is number of integers that each key element can take. Let n<sub>k</sub> be the number of keys in each item.</p>
+    <content type="html"><![CDATA[<p>You start with an unordered sequence.
+You create N empty queues.
+You loop over every item to be sorted.
+On each loop iteration, you look at the last element in the key.
+You move that item into the end of the queue which corresponds to that element.
+When you are finished looping you concatenate all the queues together into another sequence.
+You then reapply the procedure described but look at the second last element in the key.
+You keep doing this until you have looped over every key.
+When you complete this process the resulting sequence will be sorted as described above.</p>
+
+<p>Let n<sub>i</sub> be the number of items in the sequence to be sorted. N is number of integers that each key element can take. Let n<sub>k</sub> be the number of keys in each item.</p>
+
+
+<p>The total time to sort the sequence is thus O(n<sub>k</sub>(n<sub>i</sub> + N)).</p>
 
 
 
 
-<figure class='code'><figcaption><span>JS Merge Sort</span><a href='http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort'>Source Article</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>JS Merge Sort</span><a href='http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -70,7 +283,7 @@
 
 
 
-<figure class='code'><figcaption><span>Ruby Merge Sort</span><a href='http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort'>Source Article</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>Ruby Merge Sort</span><a href='http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -100,11 +313,11 @@
 </span><span class='line'><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
 </span><span class='line'>  <span class="n">sorted</span> <span class="o">=</span> <span class="o">[]</span>
 </span><span class='line'>  <span class="k">until</span> <span class="n">left</span><span class="o">.</span><span class="n">empty?</span> <span class="ow">or</span> <span class="n">right</span><span class="o">.</span><span class="n">empty?</span>
-</span><span class='line'>  <span class="k">if</span> <span class="n">left</span><span class="o">.</span><span class="n">first</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="o">.</span><span class="n">first</span>
-</span><span class='line'>    <span class="n">sorted</span> <span class="o">&lt;&lt;</span> <span class="n">left</span><span class="o">.</span><span class="n">shift</span>
-</span><span class='line'>  <span class="k">else</span>
-</span><span class='line'>    <span class="n">sorted</span> <span class="o">&lt;&lt;</span> <span class="n">right</span><span class="o">.</span><span class="n">shift</span>
-</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">left</span><span class="o">.</span><span class="n">first</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="o">.</span><span class="n">first</span>
+</span><span class='line'>      <span class="n">sorted</span> <span class="o">&lt;&lt;</span> <span class="n">left</span><span class="o">.</span><span class="n">shift</span>
+</span><span class='line'>    <span class="k">else</span>
+</span><span class='line'>      <span class="n">sorted</span> <span class="o">&lt;&lt;</span> <span class="n">right</span><span class="o">.</span><span class="n">shift</span>
+</span><span class='line'>    <span class="k">end</span>
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'>  <span class="n">sorted</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">left</span><span class="p">)</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
 </span><span class='line'><span class="k">end</span>
