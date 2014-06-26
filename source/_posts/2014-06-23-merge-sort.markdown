@@ -6,9 +6,20 @@ comments: true
 categories: 
 ---
 
-<p>Let n<sub>i</sub> be the number of items in the sequence to be sorted. N is number of integers that each key element can take. Let n<sub>k</sub> be the number of keys in each item.</p>
+You start with an unordered sequence. 
+You create N empty queues. 
+You loop over every item to be sorted. 
+On each loop iteration, you look at the last element in the key. 
+You move that item into the end of the queue which corresponds to that element. 
+When you are finished looping you concatenate all the queues together into another sequence. 
+You then reapply the procedure described but look at the second last element in the key. 
+You keep doing this until you have looped over every key. 
+When you complete this process the resulting sequence will be sorted as described above.
 
-``` javascript JS Merge Sort http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort Source Article
+<p>Let n<sub>i</sub> be the number of items in the sequence to be sorted. N is number of integers that each key element can take. Let n<sub>k</sub> be the number of keys in each item.</p>
+<p>The total time to sort the sequence is thus O(n<sub>k</sub>(n<sub>i</sub> + N)).</p>
+
+``` javascript JS Merge Sort http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort Source
 function mergesort(list){
   if (list.length <= 1)
     return list;
@@ -32,7 +43,7 @@ function merge(left, right){
 }
 ```
 
-``` ruby Ruby Merge Sort http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort Source Article
+``` ruby Ruby Merge Sort http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort Source
 def mergesort(list)
   return list if list.size <= 1
   mid = list.size / 2
@@ -44,11 +55,11 @@ end
 def merge(left, right)
   sorted = []
   until left.empty? or right.empty?
-  if left.first <= right.first
-    sorted << left.shift
-  else
-    sorted << right.shift
-  end
+    if left.first <= right.first
+      sorted << left.shift
+    else
+      sorted << right.shift
+    end
   end
   sorted.concat(left).concat(right)
 end
