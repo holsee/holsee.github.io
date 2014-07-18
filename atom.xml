@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-07-18T18:20:07+01:00</updated>
+  <updated>2014-07-18T18:32:04+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Algorithms: Design and Analysis Videos]]></title>
+    <link href="http://holsee.github.io/algorithms-design-and-analysis-videos/"/>
+    <updated>2014-07-18T18:30:22+01:00</updated>
+    <id>http://holsee.github.io/algorithms-design-and-analysis-videos</id>
+    <content type="html"><![CDATA[<p>List of resources related to Algorithm Design and Analysis:</p>
+
+<ul>
+<li><p><a href="https://class.coursera.org/algo-004/lecture/preview">Algorithms: Design and Analysis, Part 1</a></p></li>
+<li><p><a href="https://class.coursera.org/algo2-2012-001/lecture/preview">Algorithms: Design and Analysis, Part 2</a></p></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Introsort]]></title>
