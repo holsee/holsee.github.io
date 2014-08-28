@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: algorithms | holsee]]></title>
+  <link href="http://holsee.github.io/blog/categories/algorithms/atom.xml" rel="self"/>
+  <link href="http://holsee.github.io/"/>
+  <updated>2014-08-28T21:31:42+01:00</updated>
+  <id>http://holsee.github.io/</id>
+  <author>
+    <name><![CDATA[holsee]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Algorithms: Design and Analysis Videos]]></title>
+    <link href="http://holsee.github.io/algorithms-design-and-analysis-videos/"/>
+    <updated>2014-07-18T18:30:22+01:00</updated>
+    <id>http://holsee.github.io/algorithms-design-and-analysis-videos</id>
+    <content type="html"><![CDATA[<p>List of resources related to Algorithm Design and Analysis:</p>
+
+<ul>
+<li><a href="https://class.coursera.org/algo-004/lecture/preview">Algorithms: Design and Analysis, Part 1</a></li>
+<li><a href="https://class.coursera.org/algo2-2012-001/lecture/preview">Algorithms: Design and Analysis, Part 2</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Introsort]]></title>
+    <link href="http://holsee.github.io/introsort/"/>
+    <updated>2014-06-25T01:10:44+01:00</updated>
+    <id>http://holsee.github.io/introsort</id>
+    <content type="html"><![CDATA[<p><em>Some notes on IntroSort&hellip;</em></p>
+
+<blockquote><p>Introsort or introspective sort is a hybrid sorting algorithm that provides both fast average performance and (asymptotically) optimal worst-case performance. It begins with quicksort and switches to heapsort when the recursion depth exceeds a level based on (the logarithm of) the number of elements being sorted. This combines the good parts of both algorithms, with practical performance comparable to quicksort on typical data sets and worst-case O(n log n) runtime due to the heap sort. Since both algorithms it uses are comparison sorts, it too is a comparison sort.</p>
+
+<p>Introsort was invented by David Musser in Musser (1997), in which he also introduced introselect, a hybrid selection algorithm based on quickselect (a variant of quicksort), which falls back to median of medians and thus provides worst-case linear complexity, which is optimal. Both algorithms were introduced with the purpose of providing generic algorithms for the C++ Standard Library which had both fast average performance and optimal worst-case performance, thus allowing the performance requirements to be tightened.</p></blockquote>
+
+<p><a href="http://en.wikipedia.org/wiki/Introsort">Source: Wikipedia</a> | <a href="http://www.cs.rpi.edu/~musser/gp/algorithms.html">David Musser Paper &lsquo;Musser (1997)&rsquo;</a></p>
+
+<h3>.NET 4.5 introduces Introsort in place of Quicksort</h3>
+
+<p>In the Microsoft .NET Framework 4.5, an Introsort implementation is used instead of simple QuickSort.</p>
+
+<p>If the sort is not successfully completed, the results are undefined.
+This method uses the introspective sort (introsort) algorithm as follows:</p>
+
+<ul>
+    <li>
+        If the partition size is fewer than 16 elements, it uses an <a href="http://en.wikipedia.org/wiki/Insertion_sort">insertion sort</a> algorithm.
+    </li>
+    <li>
+        If the number of partitions exceeds 2 * Log<sub>N</sub>, where N is the range of the input array, it uses a <a href="http://en.wikipedia.org/wiki/Heapsort">Heapsort</a> algorithm.
+    </li>
+``` csharp .NET 4.5 IntroSort Implementation http://referencesource.microsoft.com/#mscorlib/system/array.cs#2a2126edd9ca7eb4#references Source
+IntroSort(left, length + left - 1, 2 * IntrospectiveSortUtilities.FloorLog2(keys.Length));
+```
+    <li>
+        Otherwise, it uses a <a href="http://en.wikipedia.org/wiki/Quicksort">Quicksort</a> algorithm.
+    </li>
+</ul>
+
+
+<p>This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.</p>
+
+<p>For arrays that are sorted by using the Heapsort and Quicksort algorithms, in the worst case, this method is an O(<sub>n</sub> log <sub>n</sub>) operation, where <sub>n</sub> is the Length of array.</p>
+
+<p>You can view the full source for .NET 4.5 sorting implementation here: <a href="http://referencesource.microsoft.com/#mscorlib/system/array.cs#60647f6f99d677f1#references">.NET 4.5.1 QuickSort</a></p>
+
+<p>``` csharp .NET 4.5 IntroSort Implementation <a href="http://referencesource.microsoft.com/#mscorlib/system/array.cs#2a2126edd9ca7eb4#references">http://referencesource.microsoft.com/#mscorlib/system/array.cs#2a2126edd9ca7eb4#references</a> Source</p>
+
+<p>private void IntroSort(int lo, int hi, int depthLimit)
+{</p>
+
+<pre><code>while (hi &gt; lo)
+{
+    int partitionSize = hi - lo + 1;
+    if (partitionSize &lt;= IntrospectiveSortUtilities.IntrosortSizeThreshold /* 32 */)
+    {
+        if (partitionSize == 1)
+        {
+            return;
+        }
+        if (partitionSize == 2)
+        {
+            SwapIfGreaterWithItems(lo, hi);
+            return;
+        }
+        if (partitionSize == 3)
+        {
+            SwapIfGreaterWithItems(lo, hi-1);
+            SwapIfGreaterWithItems(lo, hi);
+            SwapIfGreaterWithItems(hi-1, hi);
+            return;
+        }
+
+        InsertionSort(lo, hi);
+        return;
+    }
+
+    if (depthLimit == 0)
+    {
+        Heapsort(lo, hi);
+        return;
+    }
+    depthLimit--;
+
+    int p = PickPivotAndPartition(lo, hi);
+    IntroSort(p + 1, hi, depthLimit);
+    hi = p - 1;
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>You can view the latest (MIT licensed) Mono implemention on Github: <a href="https://github.com/mono/mono/blob/master/mcs/class/Mono.C5/C5/Sorting.cs">Mono.C5 Sorting.cs</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Quick Sort]]></title>
+    <link href="http://holsee.github.io/quick-sort/"/>
+    <updated>2014-06-25T00:24:40+01:00</updated>
+    <id>http://holsee.github.io/quick-sort</id>
+    <content type="html"><![CDATA[<p>Quicksort, also known as <i>partition-exchange sort</i>, uses these steps.</p>
+
+
+
+
+<ol>
+<li> Choose any element of the array to be the pivot.</li>
+<li> Divide all other elements (except the pivot) into two partitions.
+<br/>- All elements less than the pivot must be in the first partition.
+<br/>- All elements greater than the pivot must be in the second partition.
+</li>
+<li> Use recursion to sort both partitions.</li>
+<li> Join the first sorted partition, the pivot, and the second sorted partition.</li>
+</ol>
+
+
+<p>``` c C Quick Sort <a href="http://en.wikibooks.org/wiki/Transwiki:Quicksort#C">http://en.wikibooks.org/wiki/Transwiki:Quicksort#C</a> Source
+void swap(int <em>a, int </em>b) {
+  int t=<em>a;
+  </em>a=<em>b;
+  </em>b=t;
+}</p>
+
+<p>void sort(int arr[], int beg, int end) {
+  if (end > beg + 1) {</p>
+
+<pre><code>int piv = arr[beg], l = beg + 1, r = end;
+while (l &lt; r) {
+  if (arr[l] &lt;= piv) 
+    l++;
+  else 
+    swap(&amp;arr[l], &amp;arr[--r]);
+}
+// swapping elements within the array 
+// to avoid the memory allocation of more arrays.
+swap(&amp;arr[--l], &amp;arr[beg]);
+sort(arr, beg, l);
+sort(arr, r, end);
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p>``` js JS Quick Sort <a href="http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#JavaScript">http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#JavaScript</a> Source
+function sort(array, less) {</p>
+
+<p>  function swap(i, j) {</p>
+
+<pre><code>var t=array[i]; 
+array[i]=array[j]; 
+array[j]=t 
+</code></pre>
+
+<p>  }</p>
+
+<p>  function quicksort(left, right) {</p>
+
+<pre><code>if (left &lt; right) {
+  var pivot = array[(left + right) &gt;&gt; 1];
+  var left_new = left, right_new = right;
+  do {
+    while (less(array[left_new], pivot)
+      left_new++;
+    while (less(pivot, array[right_new])
+      right_new--;
+    if (left_new  &lt;= right_new)
+      swap(left_new++, right_new--);
+  } while (left_new  &lt;= right_new);
+  quicksort(left, right_new);
+  quicksort(left_new, right);
+}
+</code></pre>
+
+<p>  }</p>
+
+<p>  quicksort(0, array.length-1);
+  return array;
+}
+```</p>
+
+<p>``` js JS (Functional) Quick Sort <a href="http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#JavaScript">http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#JavaScript</a> Source
+Array.prototype.quick_sort = function ()
+{</p>
+
+<pre><code>if (this.length &lt;= 1)
+  return this;
+
+var pivot = this[Math.round(this.length / 2)];
+
+return this.filter(function (x) { return x &lt;  pivot }).quick_sort().concat(
+       this.filter(function (x) { return x == pivot })).concat(
+       this.filter(function (x) { return x &gt;  pivot }).quick_sort());
+</code></pre>
+
+<p>}
+```</p>
+
+<p>``` ruby Ruby Quick Sort <a href="http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#Ruby">http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#Ruby</a> Source
+class Array
+  def quick_sort</p>
+
+<pre><code>return self if length &lt;= 1
+pivot = sample
+group = group_by{ |x| x &lt;=&gt; pivot }
+group.default = []
+group[-1].quick_sort + group[0] + group[1].quick_sort
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>``` ruby Ruby (Functional) Quick Sort <a href="http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#Ruby">http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#Ruby</a> Source
+class Array
+  def quick_sort</p>
+
+<pre><code>h, *t = self
+h ? t.partition { |e| e &lt; h }.inject { |l, r| l.quick_sort + [h] + r.quick_sort } : []
+</code></pre>
+
+<p>  end
+end
+```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Merge Sort]]></title>
+    <link href="http://holsee.github.io/merge-sort/"/>
+    <updated>2014-06-23T00:37:19+01:00</updated>
+    <id>http://holsee.github.io/merge-sort</id>
+    <content type="html"><![CDATA[<p>You start with an unordered sequence.
+You create N empty queues.
+You loop over every item to be sorted.
+On each loop iteration, you look at the last element in the key.
+You move that item into the end of the queue which corresponds to that element.
+When you are finished looping you concatenate all the queues together into another sequence.
+You then reapply the procedure described but look at the second last element in the key.
+You keep doing this until you have looped over every key.
+When you complete this process the resulting sequence will be sorted as described above.</p>
+
+<p>Let n<sub>i</sub> be the number of items in the sequence to be sorted. N is number of integers that each key element can take. Let n<sub>k</sub> be the number of keys in each item.</p>
+
+
+<p>The total time to sort the sequence is thus O(n<sub>k</sub>(n<sub>i</sub> + N)).</p>
+
+
+<p>``` javascript JS Merge Sort <a href="http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort">http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort</a> Source
+function mergesort(list){
+  if (list.length &lt;= 1)</p>
+
+<pre><code>return list;
+</code></pre>
+
+<p>  var mid = Math.floor(list.length / 2),</p>
+
+<pre><code>left  = list.slice(0, mid),
+right = list.slice(mid, list.length);
+</code></pre>
+
+<p>  return merge(mergesort(left), mergesort(right))
+}</p>
+
+<p>function merge(left, right){
+  var sorted = [];
+  while (left &amp;&amp; left.length > 0 &amp;&amp; right &amp;&amp; right.length > 0){</p>
+
+<pre><code>var b = left[0] &lt;= right[0];
+sorted.push(b? left[0]: right[0]);
+// remove the element which was added to the sorted array
+b? left.splice(0, 1): right.splice(0, 1);
+</code></pre>
+
+<p>  }
+  return sorted.concat(left, right);
+}
+```</p>
+
+<p>``` ruby Ruby Merge Sort <a href="http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort">http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort</a> Source
+def mergesort(list)
+  return list if list.size &lt;= 1
+  mid = list.size / 2
+  left  = list[0, mid]
+  right = list[mid, list.size-mid]
+  merge(mergesort(left), mergesort(right))
+end</p>
+
+<p>def merge(left, right)
+  sorted = []
+  until left.empty? or right.empty?</p>
+
+<pre><code>if left.first &lt;= right.first
+  sorted &lt;&lt; left.shift
+else
+  sorted &lt;&lt; right.shift
+end
+</code></pre>
+
+<p>  end
+  sorted.concat(left).concat(right)
+end
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-07-18T18:32:04+01:00</updated>
+  <updated>2014-08-28T21:31:42+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -14,6 +14,22 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Debug Podcast: The Ganatra Trilogy]]></title>
+    <link href="http://holsee.github.io/debug-podcast-the-ganatra-trilogy/"/>
+    <updated>2014-08-28T21:17:23+01:00</updated>
+    <id>http://holsee.github.io/debug-podcast-the-ganatra-trilogy</id>
+    <content type="html"><![CDATA[<p>A wonderful series of <a href="http://www.imore.com/debug">Debug Podcasts</a> where the guest <a href="https://twitter.com/nitinganatra">@NitinGanatra</a>, former iOS Apps Director at Apple, speaks about the evolution of the products over the years from a technical insiders perspective. Very enjoyable and eye openning 6 hours of Apple geek goodness&hellip;</p>
+
+<ul>
+<li><a href="http://www.imore.com/debug-39-nitin-ganatra-episode-i-system-7-carbon">Nitin Ganatra episode I: System 7 to Carbon</a></li>
+<li><a href="http://www.imore.com/debug-40-nitin-ganatra-episode-ii-os-x-ios">Nitin Ganatra episode II: OS X to iOS</a></li>
+<li><a href="http://www.imore.com/debug-41-nitin-ganatra-episode-iii-iphone-ipad%E2%80%93%E2%80%93">Nitin Ganatra episode III: iPhone to iPad</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Algorithms: Design and Analysis Videos]]></title>
     <link href="http://holsee.github.io/algorithms-design-and-analysis-videos/"/>
     <updated>2014-07-18T18:30:22+01:00</updated>
@@ -21,8 +37,8 @@
     <content type="html"><![CDATA[<p>List of resources related to Algorithm Design and Analysis:</p>
 
 <ul>
-<li><p><a href="https://class.coursera.org/algo-004/lecture/preview">Algorithms: Design and Analysis, Part 1</a></p></li>
-<li><p><a href="https://class.coursera.org/algo2-2012-001/lecture/preview">Algorithms: Design and Analysis, Part 2</a></p></li>
+<li><a href="https://class.coursera.org/algo-004/lecture/preview">Algorithms: Design and Analysis, Part 1</a></li>
+<li><a href="https://class.coursera.org/algo2-2012-001/lecture/preview">Algorithms: Design and Analysis, Part 2</a></li>
 </ul>
 
 ]]></content>
