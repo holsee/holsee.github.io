@@ -3,7 +3,7 @@ layout: post
 title: "Merge Sort"
 date: 2014-06-23 00:37:19 +0100
 comments: true
-categories: 
+categories: Algorithms
 ---
 
 You start with an unordered sequence. 
