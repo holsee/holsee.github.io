@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-09-15T22:52:47+01:00</updated>
+  <updated>2014-09-21T21:19:11+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Rise of The Phoenix - Elixir Web Framework by Chris McCord]]></title>
+    <link href="http://holsee.github.io/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord/"/>
+    <updated>2014-08-28T23:46:51+01:00</updated>
+    <id>http://holsee.github.io/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord</id>
+    <content type="html"><![CDATA[<div class='embed-video-container'><iframe src='http://www.youtube.com/embed/3jMbzGv_6tA' frameborder='0' allowfullscreen></iframe></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Elixir Conf 2014 - Keynote: Think Different by Dave Thomas]]></title>
+    <link href="http://holsee.github.io/elixir-conf-2014-keynote-think-different-by-dave-thomas/"/>
+    <updated>2014-08-28T23:32:08+01:00</updated>
+    <id>http://holsee.github.io/elixir-conf-2014-keynote-think-different-by-dave-thomas</id>
+    <content type="html"><![CDATA[<div class='embed-video-container'><iframe src='http://www.youtube.com/embed/5hDVftaPQwY' frameborder='0' allowfullscreen></iframe></div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Debug Podcast: The Ganatra Trilogy]]></title>

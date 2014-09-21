@@ -3,6 +3,18 @@
   
   
   <url>
+    <loc>http://holsee.github.io/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord/</loc>
+    <lastmod>2014-08-28T23:46:51+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://holsee.github.io/elixir-conf-2014-keynote-think-different-by-dave-thomas/</loc>
+    <lastmod>2014-08-28T23:32:08+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://holsee.github.io/debug-podcast-the-ganatra-trilogy/</loc>
     <lastmod>2014-08-28T21:17:23+01:00</lastmod>
     <priority>0.8</priority>
@@ -35,35 +47,35 @@
   
   <url>
     <loc>http://holsee.github.io/blog/</loc>
-    <lastmod>2014-09-15T22:52:47+01:00</lastmod>
+    <lastmod>2014-09-21T21:19:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://holsee.github.io/archives/</loc>
-    <lastmod>2014-09-15T22:52:47+01:00</lastmod>
+    <lastmod>2014-09-21T21:19:11+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://holsee.github.io/blog/archives/</loc>
+    <lastmod>2014-09-21T21:19:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://holsee.github.io/</loc>
-    <lastmod>2014-09-15T22:52:47+01:00</lastmod>
+    <lastmod>2014-09-21T21:19:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
-    <loc>http://holsee.github.io/blog/archives/</loc>
-    <lastmod>2014-09-15T22:52:47+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
     <loc>http://holsee.github.io/about/</loc>
-    <lastmod>2014-09-15T22:52:47+01:00</lastmod>
+    <lastmod>2014-09-21T21:19:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
