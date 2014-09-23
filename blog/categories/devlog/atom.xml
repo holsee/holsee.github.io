@@ -4,7 +4,7 @@
   <title><![CDATA[Category: devlog | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/devlog/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-09-24T00:34:55+01:00</updated>
+  <updated>2014-09-24T00:38:06+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Devlog: What I've Been Up To]]></title>
-    <link href="http://holsee.github.io/devlog-what-ive-been-up-to/"/>
-    <updated>2014-09-22T00:03:18+01:00</updated>
-    <id>http://holsee.github.io/devlog-what-ive-been-up-to</id>
+    <title type="html"><![CDATA[Devlog: What I've Been Learning]]></title>
+    <link href="http://holsee.github.io/devlog-what-ive-been-learning/"/>
+    <updated>2014-09-24T00:00:00+01:00</updated>
+    <id>http://holsee.github.io/devlog-what-ive-been-learning</id>
     <content type="html"><![CDATA[<p>These last few months I have been learning more than usual and in this post I talk a little about some of the things that have caught my interest.  All of this is outside of work as my day job is working on a Trading platform written in C#.</p>
 
 <p>Another goal of this post is to kick start my blogging again which I have completely got out of the way of doing over the last 2 or so years.</p>
