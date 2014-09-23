@@ -4,7 +4,7 @@
   <title><![CDATA[Category: devlog | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/devlog/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-09-24T00:12:34+01:00</updated>
+  <updated>2014-09-24T00:13:40+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -42,7 +42,7 @@
 
 <p>I have been slowly but surely learning Ruby for the past 4 years and I find it lots of fun.  I used to subscribe and watch the <a href="http://www.rubytapas.com">Ruby Tapas</a> episodes which are brilliant, but because I wasn&rsquo;t using it in my day job for anything more than Chef scripts I never really got to go deep.</p>
 
-<p><a href="http://www.codewars.com/about">Codewars.com</a> stole quite a few of my evenings, a great way to learn or get better using a language by solving a katas (with tests) then seeing how other solved the same problems in a potentially more idiomatic way.  Each solution is rated by the community by &lsquo;how smart&rsquo; and &lsquo;is best practice&rsquo; which is a nice touch.</p>
+<p><a href="http://www.codewars.com/about">Codewars.com</a> stole quite a few of my evenings, a great way to learn or get better using a language by solving a katas (with tests) then seeing how others solved the same problems in a potentially more idiomatic way.  Each solution is rated by the community on &lsquo;how smart&rsquo; and &lsquo;best practice&rsquo; which is a nice touch.</p>
 
 <p>I plan to dig into the latest version of Rails for Zombies on Code School and keep going to the <a href="http://belfastruby.com">Belfast Ruby</a> meet-ups.</p>
 

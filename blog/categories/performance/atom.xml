@@ -4,7 +4,7 @@
   <title><![CDATA[Category: performance | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/performance/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-09-24T00:11:43+01:00</updated>
+  <updated>2014-09-24T00:13:40+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -33,7 +33,7 @@
 </ol>
 
 
-<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/4dfk3ucthN8' frameborder='0' allowfullscreen></iframe></div></p>
+<p>{% youtube 4dfk3ucthN8 %}</p>
 
 <p>You can find the full conference playlist on youtube <a href="http://www.youtube.com/watch?v=ZLBH4l7dCFA&amp;list=PLSD48HvrE7-Z1stQ1vIIBumB0wK0s8llY">here</a>&hellip;</p>
 
