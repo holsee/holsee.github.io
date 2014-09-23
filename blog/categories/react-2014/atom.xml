@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: react-2014 | holsee]]></title>
+  <link href="http://holsee.github.io/blog/categories/react-2014/atom.xml" rel="self"/>
+  <link href="http://holsee.github.io/"/>
+  <updated>2014-09-23T20:19:21+01:00</updated>
+  <id>http://holsee.github.io/</id>
+  <author>
+    <name><![CDATA[holsee]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Responding in a Timely Manner]]></title>
+    <link href="http://holsee.github.io/responding-in-a-timely-manner/"/>
+    <updated>2014-09-23T20:11:00+01:00</updated>
+    <id>http://holsee.github.io/responding-in-a-timely-manner</id>
+    <content type="html"><![CDATA[<p>Excellent talk from REACTCONF 2014 by <a href="http://mechanical-sympathy.blogspot.co.uk">Martin Thompson</a> in London (which I was lucky enough to attend earlier this year).</p>
+
+<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/4dfk3ucthN8' frameborder='0' allowfullscreen></iframe></div></p>
+]]></content>
+  </entry>
+  
+</feed>
