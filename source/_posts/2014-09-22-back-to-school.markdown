@@ -15,7 +15,7 @@ Another goal of this post is to kick start my blogging again which I have comple
 
 Partially inspired by my functional programming binge and a chat I had with [Joe Armstrong](http://joearms.github.io) at [ReactConf](http://reactconf.com); I have been getting stuck into Erlang, [Elixir](http://elixir-lang.org) and the [Phoenix web framework](https://github.com/phoenixframework/phoenix).  
 
-I feel these will be a big part of my future.  The BEAM VM is fascinating and the powerful distributed programming model via the OTP libraries is something different and interesting.  I look forward to writing more about these more.  
+I feel these will be a big part of my future.  The BEAM VM is fascinating and the powerful distributed programming model via the OTP libraries is something different and interesting.  I look forward to writing about this more.  
 
 I am working on an 'anonymous' location broadcast server to use these technologies in anger and I have found this has helped me achieve those A-HA moments that are so important when it comes to learning something and making it stick.
 
