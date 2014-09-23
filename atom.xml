@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-09-23T23:46:24+01:00</updated>
+  <updated>2014-09-24T00:07:15+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -80,31 +80,39 @@
 
 <h3>Ruby and Rails</h3>
 
-<p>I completed a MOOC course on Coursera on <a href="https://www.coursera.org/course/webapplications">Web Application Architectures</a> which used Ruby &amp; Rails recently.  Was very much entry level stuff, got through it in about 2 days.</p>
+<p>I completed a MOOC course on Coursera on <a href="https://www.coursera.org/course/webapplications">Web Application Architectures</a> which used Ruby &amp; Rails recently.  Was very much entry level stuff, got through it in about 2 days and I think anybody with significant web dev experiences would find the same thing.  I guess it showed me that I knew more than I thought about Ruby and Rails and needed to focus on more advanced and newer topics.</p>
 
 <p>I have been slowly but surely learning Ruby for the past 4 years and I find it lots of fun.  I used to subscribe and watch the <a href="http://www.rubytapas.com">Ruby Tapas</a> episodes which are brilliant, but because I wasn&rsquo;t using it in my day job for anything more than Chef scripts I never really got to go deep.</p>
+
+<p><a href="http://www.codewars.com/about">Codewars.com</a> stole quite a few of my evenings, a great way to learn or get better using a language by solving a katas (with tests) then seeing how other solved the same problems in a potentially more idiomatic way.  Each solution is rated by the community by &lsquo;how smart&rsquo; and &lsquo;is best practice&rsquo; which is a nice touch.</p>
 
 <p>I plan to dig into the latest version of Rails for Zombies on Code School and keep going to the <a href="http://belfastruby.com">Belfast Ruby</a> meet-ups.</p>
 
 <h3>Objective-C</h3>
 
-<p>I worked as a &ldquo;mobile developer&rdquo; and have built a few apps over the last few years in various technologies/</p>
+<p>I worked as a &ldquo;mobile developer&rdquo; and have built a few apps over the last number of years in various technologies such as Obj-C, Java (Android), C# Xamarin (targeting both iOS and Android) and some PoCs using Phonegap.</p>
 
-<p>My employer sent me on an Objective-C course which was nice of them since I don&rsquo;t even use it for my day job now.</p>
+<p>But I never felt I got to use Objective-C to the extent I wanted to, as the performance, the sexy runtime dispatch and the CocoaTouch libs intrigued.  A friend of mine who now works at Apple once told me the Cocoa libraries were examples of some of the nicest Object Oriented programming he had ever seen.  This has always made me want to know more.</p>
 
-<p>It is a language which has always interested me and I have read 2 books and completed numerous little projects with over the years.  Right now I am working through the iOS Code School path, just for funsies.</p>
+<p>My employer sent me on an Objective-C course few months back which was nice of them since I don&rsquo;t even use it in my current day job.</p>
+
+<p>As I said, apple dev has always interested me so I have read a couple of books and completed numerous little projects.</p>
+
+<p>Right now I am working through the iOS Code School path and building and iOS client for the location broadcast server I spoke about in the Elixir section above.</p>
 
 <p>I wouldn&rsquo;t mind working on iOS again&hellip; which leads me into&hellip;</p>
 
 <h3>Swift 1.0</h3>
 
-<p>XCode 6.0.1 has been dropped and now I have Swift to play with :D</p>
+<p>XCode 6.0.1 has been dropped and now I have Swift to play with :D. I didn&rsquo;t have my own Apple dev license so I had to wait.  I did pretty much read the iBook cover to cover in the interim.</p>
+
+<p>If I am to ever transition into this area, I would like to do so where I can hit the ground running so I might start to port the Objective-C location client to swift (or maybe just parts of it to get used to the interop).</p>
 
 <h3>Data Structure &amp; Algorithms</h3>
 
 <p>I always try to keep a balance but I do have a desire to spend more time reading up on Data Structures and Algorithms and their application to big problems.</p>
 
-<p>I was fortunate enough to do a Lock Free Algorithms course by <a href="http://mechanical-sympathy.blogspot.co.uk">Martin Thompson</a> and I got to hear him speak a couple of weeks ago at the End of Summer Bash event&hellip; if you haven&rsquo;t watched one of his talks please take the time to do so (now).</p>
+<p>I was fortunate enough to do the <a href="http://instil.co/courses/writing-concurrent-code-with-lock-free-algorithms/">&lsquo;Writing Concurrent Code with Lock-Free Algorithms&rsquo; course</a> by <a href="http://mechanical-sympathy.blogspot.co.uk">Martin Thompson</a> and I got to hear him speak a couple of weeks ago at the End of Summer Bash event&hellip; if you haven&rsquo;t watched one of his talks please take the time to do so (now).</p>
 
 <p>The big take away for me is the fastest, most elegant and performant solutions, come from  using the most appropriate, hand crafted, intelligently selected data structures and algorithms to solve the problem over picking up general purpose tools.</p>
 
