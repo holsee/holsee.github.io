@@ -6,7 +6,7 @@ comments: true
 categories: wants
 ---
 
-I want one of these... beautiful!  Shipping end of 2014 and taking pre-orders now.
+Came across this on kickstarter [(here)](https://www.kickstarter.com/projects/1205042237/the-ridge-stand-a-new-edge-in-smart-design). I want one of these... so slick!  Shipping end of 2014 and taking pre-orders now.
 
 {% img /images/wants/ridge.jpg %}
 
