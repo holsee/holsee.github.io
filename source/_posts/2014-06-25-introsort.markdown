@@ -3,7 +3,7 @@ layout: post
 title: "Introsort"
 date: 2014-06-25 01:10:44 +0100
 comments: true
-categories: Algorithms
+categories: algorithms
 published: true
 ---
 

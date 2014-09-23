@@ -3,7 +3,7 @@ layout: post
 title: "Algorithms: Design and Analysis Videos"
 date: 2014-07-18 18:30:22 +0100
 comments: true
-categories: Algorithms
+categories: algorithms
 ---
 
 List of resources related to Algorithm Design and Analysis:

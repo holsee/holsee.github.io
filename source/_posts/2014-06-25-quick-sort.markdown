@@ -3,7 +3,7 @@ layout: post
 title: "Quick Sort"
 date: 2014-06-25 00:24:40 +0100
 comments: true
-categories: Algorithms
+categories: algorithms
 ---
 
 <p>Quicksort, also known as <i>partition-exchange sort</i>, uses these steps.</p>
