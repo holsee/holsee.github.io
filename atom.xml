@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-09-21T22:03:53+01:00</updated>
+  <updated>2014-09-23T14:44:29+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Ridge Stand]]></title>
+    <link href="http://holsee.github.io/ridge-stand/"/>
+    <updated>2014-09-23T14:16:33+01:00</updated>
+    <id>http://holsee.github.io/ridge-stand</id>
+    <content type="html"><![CDATA[<p>I want one of these&hellip; beautiful!  Shipping end of 2014 and taking pre-orders now.</p>
+
+<p><img src="http://holsee.github.io/images/wants/ridge.jpg"></p>
+
+<p><a href="http://www.theridgestand.com">The Ridge Stand by NewBee Design</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Rise of The Phoenix - Elixir Web Framework by Chris McCord]]></title>
