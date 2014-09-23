@@ -4,7 +4,7 @@
   <title><![CDATA[Category: devlog | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/devlog/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-09-23T23:45:08+01:00</updated>
+  <updated>2014-09-23T23:46:24+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -34,7 +34,7 @@
 
 <p>I&rsquo;ve been working away on a personal project (which will be launched at outloud.io some time in the future) using node.js, express.js, postgreSQL, passport.js, mocha, chai, chai-as-promised, Q, db-migrate, node-env&hellip;</p>
 
-<p>I have had this idea for a while, and I got pretty excited about building it.  At the time I was looking for a good excuse to get stuck into a substantial project which was built on node.js.  Even though I have used JS for years I have learned a great deal, building stuff tis the best way to learn it is no secret.</p>
+<p>I have had this idea for a while, and I got pretty excited about building it.  At the time I was looking for a good excuse to get stuck into a substantial project which was built on node.js.  Even though I have used JS for years I have learned a great deal about the node way, building stuff tis the best way to learn it is no secret.</p>
 
 <h3>Ruby and Rails</h3>
 
