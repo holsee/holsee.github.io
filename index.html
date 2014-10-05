@@ -354,6 +354,99 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/back-to-school/">
+		
+			Back to School</a>
+	</h2>
+	<div class="entry-content">
+		<p>These last few months I have been doing more learning than usual this is a post which details what I have been looking at and to kick start my blogging (which I have completely got out of the way of doing over the last 2 or so years).</p>
+
+<p>This has been sparked by a buddy of mine who is learning to program and I told him a blog was a great way to reaffirm him learing.  I am following my own advice.</p>
+
+<h3>Erlang &amp; Elixir</h3>
+
+<p>I have been getting stuck into Erlang, Elixir and the Phoenix web framework.  I feel this will be a big part of my future.  The BEAM vm is fasinating and the powerful distributed programming model is lots of fun.  I look forward to writing more about this.</p>
+
+<p>I have a side project I am working on to get to use these technologies in anger and I have found this has helped me achieve the
+aha moments that are so important when it comes to learning something and making it stick.</p>
+
+<h3>Node.js</h3>
+
+<p>I have been continuing to work on a personal project which will be launched at outloud.io some time in the future. I am building using node.js, express.js, postgres, passport.js, mocha, chai, Q, db-migrate, node-env&hellip;</p>
+
+<p>My knowledge of node application design has deepened quite a big, expecially when it comes to working with a SQL database with migrations from a node-js project and writing specs at various layers to verify the http api and the model layers.</p>
+
+<h3>Ruby and Rails</h3>
+
+<p>I compeleted the MOOC course on Coursera on Web Application Architecture which used Ruby &amp; Rails.  I have been slowly learning Ruby for the past 4 years and I find it lots of fun.  I used to subscribe and watch the Ruby tapas episodes which are brilliant, but because I wasn&rsquo;t using it in my day job for anything more than Chef scripts I never really got to go deep.</p>
+
+<p>I plan to dig into the latest version of Rails for Zombies.</p>
+
+<h3>Objective-C</h3>
+
+<p>My employeer sent me on an Objective-C course. It is a language which has always interested me and I have read 2 books and completed numerous little projects with over the years.  Right now I am working throught the iOS Code School path, just for funsies.</p>
+
+<h3>Swift 1.0</h3>
+
+<p>XCode 6.1 has been dropped and now I have Swift to play with.</p>
+
+<h3>Data Structure &amp; Algorithms</h3>
+
+<p>I have a desire to get back to basics, spend time study Data Structures and Algorithms.  I was fortunate enough to do a Lock Free Algoirthms course by Martin Thompson (of Mechanic Sympathy) and I got to hear him speak a couple of weeks ago at the End of Summer Bash event&hellip; the big take away for me is the best (fastest, most elegant) solutions are not patching together libraries and frameworks but are generally hand crafted, itelligently selected data strcutures and algorithms to solve the problem.</p>
+
+<h3>Functional &amp; Reactive Programming</h3>
+
+<p>I completed the Funtional Programming in Scala, a MOOC on Coursera.  Before that I completed the Reactive Programming course.  These were very good, humbling, challenging and rewarding.  I have been using RX in .NET for years which helped a lot.  Both these courses used Scala and I enjoyed getting to learn it a bit deeper.  I liked how the reactive programming course built up concepts in layers, starting with getting the students to build a proirity queue and finishing with reactive system using akka and its actor model.</p>
+
+<h3>Remotes, Rework &amp; Lean Start-up</h3>
+
+<p>In the last 6 months I have read these books each twice, wonderful books which resinated with me.  They are informative practical guides and very inspiring.</p>
+
+<h3>Teaching</h3>
+
+<p>He has a dergee and a load of music related qualifications and we discussed what would be the best way to start a carear in software development.  I have a degree in Computer Science, and I found it very useful, but not nessessarilly nessessary&hellip;</p>
+
+<p>He could go back a do a Masters degree, but is the cost worth it? Maybe&hellip; but to get the most out of the year (or 2) having some programming experience would be required.</p>
+
+<p>So, I got to thinking about what are good resources for becoming a programmer and basically ended up recommending the same resources that I use:</p>
+
+<ul>
+<li>Coursera &amp; MOOCs</li>
+<li>Code School</li>
+<li>Books</li>
+<li>Podcasts</li>
+</ul>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-22T00:03:18+01:00" pubdate data-updated="true">Sep 22<sup>nd</sup>, 2014</time></div>
+	
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord/">
 		
 			Rise of the Phoenix - Elixir Web Framework by Chris McCord</a>
@@ -928,154 +1021,10 @@ This method uses the introspective sort (introsort) algorithm as follows:</p>
 	
 </div></article>
 
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/merge-sort/">
-		
-			Merge Sort</a>
-	</h2>
-	<div class="entry-content">
-		<p>You start with an unordered sequence.
-You create N empty queues.
-You loop over every item to be sorted.
-On each loop iteration, you look at the last element in the key.
-You move that item into the end of the queue which corresponds to that element.
-When you are finished looping you concatenate all the queues together into another sequence.
-You then reapply the procedure described but look at the second last element in the key.
-You keep doing this until you have looped over every key.
-When you complete this process the resulting sequence will be sorted as described above.</p>
-
-<p>Let n<sub>i</sub> be the number of items in the sequence to be sorted. N is number of integers that each key element can take. Let n<sub>k</sub> be the number of keys in each item.</p>
-
-
-<p>The total time to sort the sequence is thus O(n<sub>k</sub>(n<sub>i</sub> + N)).</p>
-
-
-
-
-<figure class='code'><figcaption><span>JS Merge Sort</span><a href='http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">mergesort</span><span class="p">(</span><span class="nx">list</span><span class="p">){</span>
-</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">return</span> <span class="nx">list</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span>
-</span><span class='line'>    <span class="nx">left</span>  <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">mid</span><span class="p">),</span>
-</span><span class='line'>    <span class="nx">right</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">mid</span><span class="p">,</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">mergesort</span><span class="p">(</span><span class="nx">left</span><span class="p">),</span> <span class="nx">mergesort</span><span class="p">(</span><span class="nx">right</span><span class="p">))</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">function</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">){</span>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="p">[];</span>
-</span><span class='line'>  <span class="k">while</span> <span class="p">(</span><span class="nx">left</span> <span class="o">&amp;&amp;</span> <span class="nx">left</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">right</span> <span class="o">&amp;&amp;</span> <span class="nx">right</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">right</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-</span><span class='line'>    <span class="nx">sorted</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">b</span><span class="o">?</span> <span class="nx">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">:</span> <span class="nx">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-</span><span class='line'>    <span class="c1">// remove the element which was added to the sorted array</span>
-</span><span class='line'>    <span class="nx">b</span><span class="o">?</span> <span class="nx">left</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">:</span> <span class="nx">right</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">sorted</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>Ruby Merge Sort</span><a href='http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">mergesort</span><span class="p">(</span><span class="n">list</span><span class="p">)</span>
-</span><span class='line'>  <span class="k">return</span> <span class="n">list</span> <span class="k">if</span> <span class="n">list</span><span class="o">.</span><span class="n">size</span> <span class="o">&lt;=</span> <span class="mi">1</span>
-</span><span class='line'>  <span class="n">mid</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="n">size</span> <span class="o">/</span> <span class="mi">2</span>
-</span><span class='line'>  <span class="n">left</span>  <span class="o">=</span> <span class="n">list</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">mid</span><span class="o">]</span>
-</span><span class='line'>  <span class="n">right</span> <span class="o">=</span> <span class="n">list</span><span class="o">[</span><span class="n">mid</span><span class="p">,</span> <span class="n">list</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="n">mid</span><span class="o">]</span>
-</span><span class='line'>  <span class="n">merge</span><span class="p">(</span><span class="n">mergesort</span><span class="p">(</span><span class="n">left</span><span class="p">),</span> <span class="n">mergesort</span><span class="p">(</span><span class="n">right</span><span class="p">))</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">sorted</span> <span class="o">=</span> <span class="o">[]</span>
-</span><span class='line'>  <span class="k">until</span> <span class="n">left</span><span class="o">.</span><span class="n">empty?</span> <span class="ow">or</span> <span class="n">right</span><span class="o">.</span><span class="n">empty?</span>
-</span><span class='line'>    <span class="k">if</span> <span class="n">left</span><span class="o">.</span><span class="n">first</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="o">.</span><span class="n">first</span>
-</span><span class='line'>      <span class="n">sorted</span> <span class="o">&lt;&lt;</span> <span class="n">left</span><span class="o">.</span><span class="n">shift</span>
-</span><span class='line'>    <span class="k">else</span>
-</span><span class='line'>      <span class="n">sorted</span> <span class="o">&lt;&lt;</span> <span class="n">right</span><span class="o">.</span><span class="n">shift</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>  <span class="n">sorted</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">left</span><span class="p">)</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-23T00:37:19+01:00" pubdate data-updated="true">Jun 23<sup>rd</sup>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/algorithms/'>algorithms</a>
-
-</div>
-
-
-	
-</div></article>
-
 <nav id="pagenavi">
     
+    
+        <a href="2" class="next">Next</a>
     
     <div class="center"><a href="/archives">Blog Archives</a></div>
 </nav></div>
@@ -1095,11 +1044,25 @@ Powered by Octopress.
 </script> <!-- Delete or comment this line to disable Fancybox -->
 
 
+<script type="text/javascript">
+      var disqus_shortname = 'holsee';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
 
 
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-55106937-1']);
+		_gaq.push(['_setDomainName','github.io']);
 		_gaq.push(['_trackPageview']);
 
 		(function() {
