@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-10-06T22:41:11+01:00</updated>
+  <updated>2014-10-06T23:18:25+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -18,7 +18,11 @@
     <link href="http://holsee.github.io/refactoring-ruby-with-monads/"/>
     <updated>2014-10-06T22:33:30+01:00</updated>
     <id>http://holsee.github.io/refactoring-ruby-with-monads</id>
-    <content type="html"><![CDATA[<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/uTR__8RvgvM' frameborder='0' allowfullscreen></iframe></div></p>
+    <content type="html"><![CDATA[<p>A plain &amp; simple, practical and <em>short</em> introduction to monads and how they can be put to add some elegance to your code!</p>
+
+<p>Do yourself a favour and take 30 mins to add some very slick refactoring tricks into your toolbelt.</p>
+
+<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/uTR__8RvgvM' frameborder='0' allowfullscreen></iframe></div></p>
 ]]></content>
   </entry>
   

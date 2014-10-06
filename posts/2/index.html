@@ -9,10 +9,7 @@
 
 <meta name="author" content="holsee"> 
 
-<meta name="description" content="You start with an unordered sequence.
-You create N empty queues.
-You loop over every item to be sorted.
-On each loop iteration, you look at the last &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Quicksort, also known as partition-exchange sort, uses these steps. Choose any element of the array to be the pivot. Divide all other elements ( &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -100,6 +97,239 @@ $(document).ready(
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/quick-sort/">
+		
+			Quick Sort</a>
+	</h2>
+	<div class="entry-content">
+		<p>Quicksort, also known as <i>partition-exchange sort</i>, uses these steps.</p>
+
+
+
+
+<ol>
+<li> Choose any element of the array to be the pivot.</li>
+<li> Divide all other elements (except the pivot) into two partitions.
+<br/>- All elements less than the pivot must be in the first partition.
+<br/>- All elements greater than the pivot must be in the second partition.
+</li>
+<li> Use recursion to sort both partitions.</li>
+<li> Join the first sorted partition, the pivot, and the second sorted partition.</li>
+</ol>
+
+
+
+
+<figure class='code'><figcaption><span>C Quick Sort</span><a href='http://en.wikibooks.org/wiki/Transwiki:Quicksort#C'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">t</span><span class="o">=*</span><span class="n">a</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">*</span><span class="n">a</span><span class="o">=*</span><span class="n">b</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">*</span><span class="n">b</span><span class="o">=</span><span class="n">t</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">sort</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">beg</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="n">end</span> <span class="o">&gt;</span> <span class="n">beg</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">piv</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">beg</span><span class="p">],</span> <span class="n">l</span> <span class="o">=</span> <span class="n">beg</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">end</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">piv</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">l</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">else</span>
+</span><span class='line'>        <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="o">--</span><span class="n">r</span><span class="p">]);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="c1">// swapping elements within the array </span>
+</span><span class='line'>    <span class="c1">// to avoid the memory allocation of more arrays.</span>
+</span><span class='line'>    <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="o">--</span><span class="n">l</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">beg</span><span class="p">]);</span>
+</span><span class='line'>    <span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">beg</span><span class="p">,</span> <span class="n">l</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>JS Quick Sort</span><a href='http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#JavaScript'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">sort</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">less</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">function</span> <span class="nx">swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">t</span><span class="o">=</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+</span><span class='line'>    <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">=</span><span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+</span><span class='line'>    <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span><span class="o">=</span><span class="nx">t</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">function</span> <span class="nx">quicksort</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">left</span> <span class="o">&lt;</span> <span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[(</span><span class="nx">left</span> <span class="o">+</span> <span class="nx">right</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">left_new</span> <span class="o">=</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">right_new</span> <span class="o">=</span> <span class="nx">right</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">do</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">while</span> <span class="p">(</span><span class="nx">less</span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">left_new</span><span class="p">],</span> <span class="nx">pivot</span><span class="p">)</span>
+</span><span class='line'>          <span class="nx">left_new</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">while</span> <span class="p">(</span><span class="nx">less</span><span class="p">(</span><span class="nx">pivot</span><span class="p">,</span> <span class="nx">array</span><span class="p">[</span><span class="nx">right_new</span><span class="p">])</span>
+</span><span class='line'>          <span class="nx">right_new</span><span class="o">--</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="nx">left_new</span>  <span class="o">&lt;=</span> <span class="nx">right_new</span><span class="p">)</span>
+</span><span class='line'>          <span class="nx">swap</span><span class="p">(</span><span class="nx">left_new</span><span class="o">++</span><span class="p">,</span> <span class="nx">right_new</span><span class="o">--</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">left_new</span>  <span class="o">&lt;=</span> <span class="nx">right_new</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">quicksort</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right_new</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">quicksort</span><span class="p">(</span><span class="nx">left_new</span><span class="p">,</span> <span class="nx">right</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">quicksort</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">array</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>JS (Functional) Quick Sort</span><a href='http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#JavaScript'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">quick_sort</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="k">this</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)];</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span> <span class="o">&lt;</span>  <span class="nx">pivot</span> <span class="p">}).</span><span class="nx">quick_sort</span><span class="p">().</span><span class="nx">concat</span><span class="p">(</span>
+</span><span class='line'>           <span class="k">this</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span> <span class="o">==</span> <span class="nx">pivot</span> <span class="p">})).</span><span class="nx">concat</span><span class="p">(</span>
+</span><span class='line'>           <span class="k">this</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span> <span class="o">&gt;</span>  <span class="nx">pivot</span> <span class="p">}).</span><span class="nx">quick_sort</span><span class="p">());</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Ruby Quick Sort</span><a href='http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#Ruby'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Array</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">quick_sort</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nb">self</span> <span class="k">if</span> <span class="n">length</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="n">pivot</span> <span class="o">=</span> <span class="n">sample</span>
+</span><span class='line'>    <span class="n">group</span> <span class="o">=</span> <span class="n">group_by</span><span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span> <span class="o">&lt;=&gt;</span> <span class="n">pivot</span> <span class="p">}</span>
+</span><span class='line'>    <span class="n">group</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>    <span class="n">group</span><span class="o">[-</span><span class="mi">1</span><span class="o">].</span><span class="n">quick_sort</span> <span class="o">+</span> <span class="n">group</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="n">group</span><span class="o">[</span><span class="mi">1</span><span class="o">].</span><span class="n">quick_sort</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Ruby (Functional) Quick Sort</span><a href='http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#Ruby'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Array</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">quick_sort</span>
+</span><span class='line'>    <span class="n">h</span><span class="p">,</span> <span class="o">*</span><span class="n">t</span> <span class="o">=</span> <span class="nb">self</span>
+</span><span class='line'>    <span class="n">h</span> <span class="p">?</span> <span class="n">t</span><span class="o">.</span><span class="n">partition</span> <span class="p">{</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="n">h</span> <span class="p">}</span><span class="o">.</span><span class="n">inject</span> <span class="p">{</span> <span class="o">|</span><span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="o">|</span> <span class="n">l</span><span class="o">.</span><span class="n">quick_sort</span> <span class="o">+</span> <span class="o">[</span><span class="n">h</span><span class="o">]</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">quick_sort</span> <span class="p">}</span> <span class="p">:</span> <span class="o">[]</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-25T00:24:40+01:00" pubdate data-updated="true">Jun 25<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/algorithms/'>algorithms</a>
+
+</div>
+
+
+	
+</div></article>
 
 
     <article class="post">
@@ -240,6 +470,60 @@ When you complete this process the resulting sequence will be sorted as describe
 <div class="tags">
 
 	<a class='category' href='/blog/categories/algorithms/'>algorithms</a>
+
+</div>
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/devlog-principles-of-reactive-programming/">
+		
+			Devlog: Principles of Reactive Programming</a>
+	</h2>
+	<div class="entry-content">
+		<p><img src="/images/certs/coursera_prp.png"></p>
+
+<p><a href="https://www.coursera.org/course/progfun">Coursera &ndash; Functional Programming Principles in Scala</a></p>
+
+<h3>About the Course</h3>
+
+<p>This is a follow-on for the Coursera class “Principles of Functional Programming in Scala”, which so far had more than 100’000 inscriptions over two iterations of the course, with some of the highest completion rates of any massive open online course worldwide.</p>
+
+<p>The aim of the second course is to teach the principles of reactive programming. Reactive programming is an emerging discipline which combines concurrency and event-based and asynchronous systems. It is essential for writing any kind of web-service or distributed system and is also at the core of many high-performance concurrent systems. Reactive programming can be seen as a natural extension of higher-order functional programming to concurrent systems that deal with distributed state by coordinating and orchestrating asynchronous data streams exchanged by actors.</p>
+
+<p>In this course you will discover key elements for writing reactive programs in a composable way. You will find out how to apply these building blocks in the construction of event-driven systems that are scalable and resilient.</p>
+
+<p>The course is hands on; most units introduce short programs that serve as illustrations of important concepts and invite you to play with them, modifying and improving them. The course is complemented by a series of assignments, which are also programming projects.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-21T09:45:00+00:00" pubdate data-updated="true">Jan 21<sup>st</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/devlog/'>devlog</a>, <a class='category' href='/blog/categories/mooc/'>mooc</a>
 
 </div>
 
