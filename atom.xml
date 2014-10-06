@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-10-06T23:18:25+01:00</updated>
+  <updated>2014-10-06T23:41:42+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Devlog: A Sip of CoffeeScript]]></title>
+    <link href="http://holsee.github.io/devlog-a-sip-of-coffeescript/"/>
+    <updated>2014-10-06T23:21:12+01:00</updated>
+    <id>http://holsee.github.io/devlog-a-sip-of-coffeescript</id>
+    <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/coffeescript">Coffeescript course on CodeSchool</a>.</p>
+
+<p><img class="center" src="http://holsee.github.io/images/badges/coffeescript_badge.png"></p>
+
+<p>I love these list comprehensions&hellip; I don&rsquo;t think I will be writing straight JS for a while.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="c1"># Eat lunch.</span>
+</span><span class='line'><span class="nx">eat</span> <span class="nx">food</span> <span class="k">for</span> <span class="nx">food</span> <span class="k">in</span> <span class="p">[</span><span class="s">&#39;toast&#39;</span><span class="p">,</span> <span class="s">&#39;cheese&#39;</span><span class="p">,</span> <span class="s">&#39;wine&#39;</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Fine five course dining.</span>
+</span><span class='line'><span class="nv">courses = </span><span class="p">[</span><span class="s">&#39;greens&#39;</span><span class="p">,</span> <span class="s">&#39;caviar&#39;</span><span class="p">,</span> <span class="s">&#39;truffles&#39;</span><span class="p">,</span> <span class="s">&#39;roast&#39;</span><span class="p">,</span> <span class="s">&#39;cake&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="nx">menu</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">dish</span> <span class="k">for</span> <span class="nx">dish</span><span class="p">,</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">courses</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Health conscious meal.</span>
+</span><span class='line'><span class="nv">foods = </span><span class="p">[</span><span class="s">&#39;broccoli&#39;</span><span class="p">,</span> <span class="s">&#39;spinach&#39;</span><span class="p">,</span> <span class="s">&#39;chocolate&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="nx">eat</span> <span class="nx">food</span> <span class="k">for</span> <span class="nx">food</span> <span class="k">in</span> <span class="nx">foods</span> <span class="k">when</span> <span class="nx">food</span> <span class="o">isnt</span> <span class="s">&#39;chocolate&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Refactoring Ruby with Monads]]></title>
