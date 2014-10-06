@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://holsee.github.io/refactoring-ruby-with-monads/</loc>
+    <lastmod>2014-10-06T22:33:30+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://holsee.github.io/devlog-what-ive-been-learning/</loc>
     <lastmod>2014-09-24T00:00:00+01:00</lastmod>
     <priority>0.8</priority>
@@ -17,12 +23,6 @@
   <url>
     <loc>http://holsee.github.io/ridge-stand/</loc>
     <lastmod>2014-09-23T14:16:33+01:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://holsee.github.io/back-to-school/</loc>
-    <lastmod>2014-09-22T00:03:18+01:00</lastmod>
     <priority>0.8</priority>
   </url>
   
@@ -71,35 +71,35 @@
   
   <url>
     <loc>http://holsee.github.io/archives/</loc>
-    <lastmod>2014-10-05T11:07:28+01:00</lastmod>
+    <lastmod>2014-10-06T22:38:42+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://holsee.github.io/blog/</loc>
-    <lastmod>2014-10-05T11:07:28+01:00</lastmod>
+    <lastmod>2014-10-06T22:38:42+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://holsee.github.io/blog/archives/</loc>
-    <lastmod>2014-10-05T11:07:28+01:00</lastmod>
+    <lastmod>2014-10-06T22:38:42+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://holsee.github.io/</loc>
-    <lastmod>2014-10-05T11:07:28+01:00</lastmod>
+    <lastmod>2014-10-06T22:38:42+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://holsee.github.io/about/</loc>
-    <lastmod>2014-10-05T11:07:28+01:00</lastmod>
+    <lastmod>2014-10-06T22:38:42+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
