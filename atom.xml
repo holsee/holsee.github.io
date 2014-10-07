@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-10-06T23:53:18+01:00</updated>
+  <updated>2014-10-07T22:35:36+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Devlog: Real Time Web with Node.js]]></title>
+    <link href="http://holsee.github.io/devlog-real-time-web-with-node-dot-js/"/>
+    <updated>2014-10-07T22:00:58+01:00</updated>
+    <id>http://holsee.github.io/devlog-real-time-web-with-node-dot-js</id>
+    <content type="html"><![CDATA[<p>Completed the <a href="">Real Time Web with Node.js course on CodeSchool</a></p>
+
+<p><img src="http://holsee.github.io/images/badges/rtnode_badge.png"></p>
+
+<p>Another impeccable course, produced to the usual  high standards which I have come to expect with each and every CodeSchool module. Go give these guys money and do a few courses, worth every penny.</p>
+
+<p>I have completed a couple of node.js projects to date and am currently working on a biggin&#8217;, so I didn&rsquo;t find this course very challenging, but I did find it fun, another great jingle and lots of great content.</p>
+
+<p>The examples go a long way to show how much you can do with so little code, walking students through using <a href="http://socket.io">socket.io</a> and <a href="http://redis.io">redis</a> to build a chat client and a Q&amp;A system.</p>
+
+<p>Something I learned was how to use redis effectively, the course got me started and provided useful tips such as limiting size of a list to 10 items for example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">redis</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;redis&quot;</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">client</span> <span class="o">=</span> <span class="nx">redis</span><span class="p">.</span><span class="nx">createClient</span><span class="p">();</span>
+</span><span class='line'><span class="c1">//... on last meeting submitted ...</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">meeting</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">lastMeeting</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Use LPUSH &amp; LTRIM in tandem</span>
+</span><span class='line'><span class="nx">client</span><span class="p">.</span><span class="nx">lpush</span><span class="p">(</span><span class="s1">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">reply</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">client</span><span class="p">.</span><span class="nx">ltrim</span><span class="p">(</span><span class="s1">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="c1">// 10 Items Max</span>
+</span><span class='line'><span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and for good measure, using my new CoffeeScript skills, the same thing:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nv">redis = </span><span class="nx">require</span><span class="p">(</span><span class="s">&quot;redis&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="nv">client = </span><span class="nx">redis</span><span class="p">.</span><span class="nx">createClient</span><span class="p">()</span>
+</span><span class='line'><span class="c1">#... on last meeting submitted ...</span>
+</span><span class='line'><span class="nv">meeting = </span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span> <span class="nx">lastMeeting</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">client</span><span class="p">.</span><span class="nx">lpush</span> <span class="s">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="nx">meeting</span><span class="p">,</span> <span class="nf">(err, reply) -&gt;</span>
+</span><span class='line'>  <span class="nx">client</span><span class="p">.</span><span class="nx">ltrim</span><span class="p">(</span><span class="s">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="c1"># 10 Items Max</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>P.S. This cracks me up no end&hellip;</p>
+
+<p><img class="center" src="http://courseware.codeschool.com/images/blog/node-mind-blown.gif" width="800" height="800"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Devlog: A Sip of CoffeeScript]]></title>

@@ -9,7 +9,7 @@
 
 <meta name="author" content="holsee"> 
 
-<meta name="description" content="Completed the CoffeeScript course on CodeSchool. I love these list comprehensions&hellip; I don&rsquo;t think I will be writing straight JS for a &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Completed the Real Time Web with Node.js course on CodeSchool Another impeccable course, produced to the usual high standards which I have come to &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -97,6 +97,96 @@ $(document).ready(
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/devlog-real-time-web-with-node-dot-js/">
+		
+			Devlog: Real Time Web With Node.js</a>
+	</h2>
+	<div class="entry-content">
+		<p>Completed the <a href="">Real Time Web with Node.js course on CodeSchool</a></p>
+
+<p><img src="/images/badges/rtnode_badge.png"></p>
+
+<p>Another impeccable course, produced to the usual  high standards which I have come to expect with each and every CodeSchool module. Go give these guys money and do a few courses, worth every penny.</p>
+
+<p>I have completed a couple of node.js projects to date and am currently working on a biggin&#8217;, so I didn&rsquo;t find this course very challenging, but I did find it fun, another great jingle and lots of great content.</p>
+
+<p>The examples go a long way to show how much you can do with so little code, walking students through using <a href="http://socket.io">socket.io</a> and <a href="http://redis.io">redis</a> to build a chat client and a Q&amp;A system.</p>
+
+<p>Something I learned was how to use redis effectively, the course got me started and provided useful tips such as limiting size of a list to 10 items for example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">redis</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;redis&quot;</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">client</span> <span class="o">=</span> <span class="nx">redis</span><span class="p">.</span><span class="nx">createClient</span><span class="p">();</span>
+</span><span class='line'><span class="c1">//... on last meeting submitted ...</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">meeting</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">lastMeeting</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Use LPUSH &amp; LTRIM in tandem</span>
+</span><span class='line'><span class="nx">client</span><span class="p">.</span><span class="nx">lpush</span><span class="p">(</span><span class="s1">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">reply</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">client</span><span class="p">.</span><span class="nx">ltrim</span><span class="p">(</span><span class="s1">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="c1">// 10 Items Max</span>
+</span><span class='line'><span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and for good measure, using my new CoffeeScript skills, the same thing:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nv">redis = </span><span class="nx">require</span><span class="p">(</span><span class="s">&quot;redis&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="nv">client = </span><span class="nx">redis</span><span class="p">.</span><span class="nx">createClient</span><span class="p">()</span>
+</span><span class='line'><span class="c1">#... on last meeting submitted ...</span>
+</span><span class='line'><span class="nv">meeting = </span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span> <span class="nx">lastMeeting</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">client</span><span class="p">.</span><span class="nx">lpush</span> <span class="s">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="nx">meeting</span><span class="p">,</span> <span class="nf">(err, reply) -&gt;</span>
+</span><span class='line'>  <span class="nx">client</span><span class="p">.</span><span class="nx">ltrim</span><span class="p">(</span><span class="s">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="c1"># 10 Items Max</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>P.S. This cracks me up no end&hellip;</p>
+
+<p><img class="center" src="http://courseware.codeschool.com/images/blog/node-mind-blown.gif" width="800" height="800"></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-07T22:00:58+01:00" pubdate data-updated="true">Oct 7<sup>th</sup>, 2014</time></div>
+	
+
+
+	
+</div></article>
 
 
     <article class="post">
@@ -644,60 +734,6 @@ $(document).ready(
 <div class="tags">
 
 	<a class='category' href='/blog/categories/algorithms/'>algorithms</a>
-
-</div>
-
-
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/devlog-functional-programming-principles-in-scala/">
-		
-			Devlog: Functional Programming Principles in Scala</a>
-	</h2>
-	<div class="entry-content">
-		<p><img src="/images/certs/coursera_progfun.png"></p>
-
-<p><a href="https://www.coursera.org/course/reactive">Coursera &ndash; Principles of Reactive Programming</a></p>
-
-<h3>About the Course</h3>
-
-<p>This course introduces the cornerstones of functional programming using the Scala programming language. Functional programming has become more and more popular in recent years because it promotes code that’s safe, concise, and elegant. Furthermore, functional programming makes it easier to write parallel code for today’s and tomorrow’s multiprocessors by replacing mutable variables and loops with powerful ways to define and compose functions.</p>
-
-<p>Scala is a language that fuses functional and object-oriented programming in a practical package. It interoperates seamlessly with Java and its tools. Scala is now used in a rapidly increasing number of open source projects and companies. It provides the core infrastructure for sites such as Twitter, LinkedIn, Foursquare, Tumblr, and Klout.</p>
-
-<p>In this course you will discover the elements of the functional programming style and learn how to apply them usefully in your daily programming tasks. You will also develop a solid foundation for reasoning about functional programs, by touching upon proofs of invariants and the tracing of execution symbolically.</p>
-
-<p>The course is hands on; most units introduce short programs that serve as illustrations of important concepts and invite you to play with them, modifying and improving them. The course is complemented by a series of assignments, most of which are also programming projects.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-16T10:45:00+01:00" pubdate data-updated="true">Jul 16<sup>th</sup>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/devlog/'>devlog</a>, <a class='category' href='/blog/categories/mooc/'>mooc</a>
 
 </div>
 
