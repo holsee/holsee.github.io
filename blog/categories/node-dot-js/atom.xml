@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: codeschool | holsee]]></title>
-  <link href="http://holsee.github.io/blog/categories/codeschool/atom.xml" rel="self"/>
+  <title><![CDATA[Category: node.js | holsee]]></title>
+  <link href="http://holsee.github.io/blog/categories/node-dot-js/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
   <updated>2014-10-07T22:45:23+01:00</updated>
   <id>http://holsee.github.io/</id>
@@ -63,36 +63,6 @@ client = redis.createClient()</p>
 <p>P.S. This gif of Eric Allam &amp; Gregg Pollack cracks me up no end&hellip;</p>
 
 <p>{% img center <a href="http://courseware.codeschool.com/images/blog/node-mind-blown.gif">http://courseware.codeschool.com/images/blog/node-mind-blown.gif</a> 800 800 %}</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Devlog: A Sip of CoffeeScript]]></title>
-    <link href="http://holsee.github.io/devlog-a-sip-of-coffeescript/"/>
-    <updated>2014-10-06T23:21:12+01:00</updated>
-    <id>http://holsee.github.io/devlog-a-sip-of-coffeescript</id>
-    <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/coffeescript">CoffeeScript course on CodeSchool</a>.</p>
-
-<p>{% img center /images/badges/coffeescript_badge.png %}</p>
-
-<p>I love these list comprehensions&hellip; I don&rsquo;t think I will be writing straight JS for a while.</p>
-
-<p>``` coffeescript</p>
-
-<h1>Eat lunch.</h1>
-
-<p>eat food for food in [&lsquo;toast&rsquo;, &lsquo;cheese&rsquo;, &lsquo;wine&rsquo;]</p>
-
-<h1>Fine five course dining.</h1>
-
-<p>courses = [&lsquo;greens&rsquo;, &lsquo;caviar&rsquo;, &lsquo;truffles&rsquo;, &lsquo;roast&rsquo;, &lsquo;cake&rsquo;]
-menu i + 1, dish for dish, i in courses</p>
-
-<h1>Health conscious meal.</h1>
-
-<p>foods = [&lsquo;broccoli&rsquo;, &lsquo;spinach&rsquo;, &lsquo;chocolate&rsquo;]
-eat food for food in foods when food isnt &lsquo;chocolate&rsquo;
-```</p>
 ]]></content>
   </entry>
   

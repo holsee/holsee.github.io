@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mooc | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/mooc/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-10-07T22:37:29+01:00</updated>
+  <updated>2014-10-07T22:45:23+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -18,7 +18,7 @@
     <link href="http://holsee.github.io/devlog-functional-programming-principles-in-scala/"/>
     <updated>2014-07-16T10:45:00+01:00</updated>
     <id>http://holsee.github.io/devlog-functional-programming-principles-in-scala</id>
-    <content type="html"><![CDATA[<p><img src="/images/certs/coursera_progfun.png"></p>
+    <content type="html"><![CDATA[<p>{% img /images/certs/coursera_progfun.png %}</p>
 
 <p><a href="https://www.coursera.org/course/reactive">Coursera &ndash; Principles of Reactive Programming</a></p>
 
@@ -39,7 +39,7 @@
     <link href="http://holsee.github.io/devlog-principles-of-reactive-programming/"/>
     <updated>2014-01-21T09:45:00+00:00</updated>
     <id>http://holsee.github.io/devlog-principles-of-reactive-programming</id>
-    <content type="html"><![CDATA[<p><img src="/images/certs/coursera_prp.png"></p>
+    <content type="html"><![CDATA[<p>{% img /images/certs/coursera_prp.png %}</p>
 
 <p><a href="https://www.coursera.org/course/progfun">Coursera &ndash; Functional Programming Principles in Scala</a></p>
 

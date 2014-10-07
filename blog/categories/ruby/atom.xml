@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-10-07T22:37:29+01:00</updated>
+  <updated>2014-10-07T22:45:23+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -22,7 +22,7 @@
 
 <p>Do yourself a favour and take 30 mins to add some very slick refactoring tricks into your toolbelt.</p>
 
-<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/uTR__8RvgvM' frameborder='0' allowfullscreen></iframe></div></p>
+<p>{% youtube uTR__8RvgvM %}</p>
 ]]></content>
   </entry>
   

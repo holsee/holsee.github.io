@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coffeescript | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/coffeescript/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-10-07T22:37:29+01:00</updated>
+  <updated>2014-10-07T22:45:23+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -20,7 +20,7 @@
     <id>http://holsee.github.io/devlog-a-sip-of-coffeescript</id>
     <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/coffeescript">CoffeeScript course on CodeSchool</a>.</p>
 
-<p><img class="center" src="/images/badges/coffeescript_badge.png"></p>
+<p>{% img center /images/badges/coffeescript_badge.png %}</p>
 
 <p>I love these list comprehensions&hellip; I don&rsquo;t think I will be writing straight JS for a while.</p>
 

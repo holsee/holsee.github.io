@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-10-07T22:37:29+01:00</updated>
+  <updated>2014-10-07T22:41:03+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -51,7 +51,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>and for good measure, using my new CoffeeScript skills, the same thing:</p>
+<p>and for good measure, <a href="http://holsee.github.io/devlog-a-sip-of-coffeescript/">using my new CoffeeScript skills</a>, the same thing:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
