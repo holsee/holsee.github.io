@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-10-18T22:44:26+01:00</updated>
+  <updated>2014-10-18T23:03:01+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,18 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[HTTP Status Code Decision Diagram]]></title>
+    <link href="http://holsee.github.io/http-status-code-decision-diagram/"/>
+    <updated>2014-10-18T22:57:56+01:00</updated>
+    <id>http://holsee.github.io/http-status-code-decision-diagram</id>
+    <content type="html"><![CDATA[<p>The best HTTP Status Code decision diagram I have seen to date.
+Source: <a href="https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.png">https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.png</a></p>
+
+<p><a href="https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.png"><img class="center" src="https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.png"></a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Devlog: Ruby Bits 1 &amp; 2]]></title>
