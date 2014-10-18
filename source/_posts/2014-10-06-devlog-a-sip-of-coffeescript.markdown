@@ -3,10 +3,10 @@ layout: post
 title: "Devlog: A Sip of CoffeeScript"
 date: 2014-10-06 23:21:12 +0100
 comments: true
-categories: coffeescript codeschool 
+categories: coffeescript codeschool devlog
 ---
 
-Completed the [Coffeescript course on CodeSchool](https://www.codeschool.com/courses/coffeescript). 
+Completed the [CoffeeScript course on CodeSchool](https://www.codeschool.com/courses/coffeescript). 
 
 {% img center /images/badges/coffeescript_badge.png %}
 
