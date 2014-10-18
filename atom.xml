@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-10-18T23:17:02+01:00</updated>
+  <updated>2014-10-18T23:37:24+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -18,7 +18,9 @@
     <link href="http://holsee.github.io/integrated-tests-are-a-scam/"/>
     <updated>2014-10-18T23:04:51+01:00</updated>
     <id>http://holsee.github.io/integrated-tests-are-a-scam</id>
-    <content type="html"><![CDATA[<p>Found this gem in a tweet from <a href="https://twitter.com/david_whitney">@david_whitney</a>, and as he says the title is trolly but none the less is an excellent talk on automated testing&hellip;</p>
+    <content type="html"><![CDATA[<p>Found this gem in a tweet from <a href="https://twitter.com/david_whitney">@david_whitney</a>, and as he says the title is trolly but none the less is an excellent talk on automated testing.</p>
+
+<p>An interesting point is made (and I am paraphrasing) that the more integration tests we have the less design feedback we get, leading to sloppy design as we don&rsquo;t feel the same pressure&hellip;</p>
 
 <div class="embed-video-container"><iframe src="http://player.vimeo.com/video/80533536 "></iframe></div>
 
