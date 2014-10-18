@@ -4,7 +4,7 @@
   <title><![CDATA[Category: devlog | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/devlog/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-10-18T22:41:50+01:00</updated>
+  <updated>2014-10-18T22:42:15+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Devlog: Ruby Bits 1 &amp; 2]]></title>
+    <link href="http://holsee.github.io/devlog-ruby-bits-1-and-2/"/>
+    <updated>2014-10-18T22:22:10+01:00</updated>
+    <id>http://holsee.github.io/devlog-ruby-bits-1-and-2</id>
+    <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/ruby-bits">RUBY BITS</a> courses on <a href="http://mbsy.co/8TZ9N">CodeSchool</a>. Again&hellip; I was impressed with the content, as a casual rubyist I got plenty out of doing this.</p>
+
+<p>I really enjoyed this course, I took away a lot of useless idioms which I will put to good use.</p>
+
+<p><img class="center" src="/images/badges/ruby-bits_badge.png" width="538" height="178"></p>
+
+<p>The meta-programming a DSL creation in <a href="https://www.codeschool.com/courses/ruby-bits-part-2">RUBY BITS part 2</a> were great&hellip; adding methods to classes dynamically is pretty bad-ass for drying up code.</p>
+
+<p><em>I always wanted default method implementation on interfaces in C#, dunno why I brought this up other than in Ruby that would never ever be an issue with the features you have at your disposal&hellip; very few languages lead to as much developer happiness.</em></p>
+
+<p><img class="center" src="/images/badges/ruby-bits-2_badge.png" width="538" height="178"></p>
+
+<p>Just one of those languages I would love to write everyday if I could.
+Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombies">Rails Testing <em>for zombies</em></a> course next&hellip;</p>
+
+<p>&hellip;that said <a href="http://elixir-lang.org">Elixir has hit v1.x</a> and the Dave Thomas <a href="https://pragprog.com/book/elixir/programming-elixir">&ldquo;Programming Elixir&rdquo;</a> book has been released, so that will most likely eat up the next month or two of my life.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Devlog: Real Time Web with Node.js]]></title>
@@ -225,27 +249,6 @@ eat food for food in foods when food isnt &lsquo;chocolate&rsquo;
 <p>In this course you will discover the elements of the functional programming style and learn how to apply them usefully in your daily programming tasks. You will also develop a solid foundation for reasoning about functional programs, by touching upon proofs of invariants and the tracing of execution symbolically.</p>
 
 <p>The course is hands on; most units introduce short programs that serve as illustrations of important concepts and invite you to play with them, modifying and improving them. The course is complemented by a series of assignments, most of which are also programming projects.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Devlog: Principles of Reactive Programming]]></title>
-    <link href="http://holsee.github.io/devlog-principles-of-reactive-programming/"/>
-    <updated>2014-01-21T09:45:00+00:00</updated>
-    <id>http://holsee.github.io/devlog-principles-of-reactive-programming</id>
-    <content type="html"><![CDATA[<p><img src="/images/certs/coursera_prp.png"></p>
-
-<p><a href="https://www.coursera.org/course/progfun">Coursera &ndash; Functional Programming Principles in Scala</a></p>
-
-<h3>About the Course</h3>
-
-<p>This is a follow-on for the Coursera class “Principles of Functional Programming in Scala”, which so far had more than 100’000 inscriptions over two iterations of the course, with some of the highest completion rates of any massive open online course worldwide.</p>
-
-<p>The aim of the second course is to teach the principles of reactive programming. Reactive programming is an emerging discipline which combines concurrency and event-based and asynchronous systems. It is essential for writing any kind of web-service or distributed system and is also at the core of many high-performance concurrent systems. Reactive programming can be seen as a natural extension of higher-order functional programming to concurrent systems that deal with distributed state by coordinating and orchestrating asynchronous data streams exchanged by actors.</p>
-
-<p>In this course you will discover key elements for writing reactive programs in a composable way. You will find out how to apply these building blocks in the construction of event-driven systems that are scalable and resilient.</p>
-
-<p>The course is hands on; most units introduce short programs that serve as illustrations of important concepts and invite you to play with them, modifying and improving them. The course is complemented by a series of assignments, which are also programming projects.</p>
 ]]></content>
   </entry>
   

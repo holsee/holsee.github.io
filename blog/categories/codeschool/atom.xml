@@ -4,7 +4,7 @@
   <title><![CDATA[Category: codeschool | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/codeschool/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-10-18T22:41:50+01:00</updated>
+  <updated>2014-10-18T22:42:15+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Devlog: Ruby Bits 1 &amp; 2]]></title>
+    <link href="http://holsee.github.io/devlog-ruby-bits-1-and-2/"/>
+    <updated>2014-10-18T22:22:10+01:00</updated>
+    <id>http://holsee.github.io/devlog-ruby-bits-1-and-2</id>
+    <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/ruby-bits">RUBY BITS</a> courses on <a href="http://mbsy.co/8TZ9N">CodeSchool</a>. Again&hellip; I was impressed with the content, as a casual rubyist I got plenty out of doing this.</p>
+
+<p>I really enjoyed this course, I took away a lot of useless idioms which I will put to good use.</p>
+
+<p><img class="center" src="/images/badges/ruby-bits_badge.png" width="538" height="178"></p>
+
+<p>The meta-programming a DSL creation in <a href="https://www.codeschool.com/courses/ruby-bits-part-2">RUBY BITS part 2</a> were great&hellip; adding methods to classes dynamically is pretty bad-ass for drying up code.</p>
+
+<p><em>I always wanted default method implementation on interfaces in C#, dunno why I brought this up other than in Ruby that would never ever be an issue with the features you have at your disposal&hellip; very few languages lead to as much developer happiness.</em></p>
+
+<p><img class="center" src="/images/badges/ruby-bits-2_badge.png" width="538" height="178"></p>
+
+<p>Just one of those languages I would love to write everyday if I could.
+Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombies">Rails Testing <em>for zombies</em></a> course next&hellip;</p>
+
+<p>&hellip;that said <a href="http://elixir-lang.org">Elixir has hit v1.x</a> and the Dave Thomas <a href="https://pragprog.com/book/elixir/programming-elixir">&ldquo;Programming Elixir&rdquo;</a> book has been released, so that will most likely eat up the next month or two of my life.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Devlog: Real Time Web with Node.js]]></title>
