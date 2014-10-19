@@ -4,7 +4,7 @@
   <title><![CDATA[Category: testing | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/testing/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-10-19T15:02:25+01:00</updated>
+  <updated>2014-10-19T15:03:22+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -131,6 +131,8 @@
 &mdash; Isolation can be achieved through the use of Test Doubles or Mocks, to ensure each interaction with other components follow the contract under each of the specified scenarios.</p></li>
 </ul>
 
+
+<p><em>The video above goes into much more details and is crammed with practical advice&hellip; GO WATCH and make the world a better place.</em></p>
 ]]></content>
   </entry>
   
