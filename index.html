@@ -9,7 +9,7 @@
 
 <meta name="author" content="holsee"> 
 
-<meta name="description" content="Found this gem in a tweet from @david_whitney, and as he says the title is trolly but none the less is an excellent talk on automated testing. An &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Found this gem in a tweet from @david_whitney, and as he says the title is trolly but none the less is an excellent talk on automated testing. This &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -107,11 +107,119 @@ $(document).ready(
 			Integrated Tests Are a Scam</a>
 	</h2>
 	<div class="entry-content">
-		<p>Found this gem in a tweet from <a href="https://twitter.com/david_whitney">@david_whitney</a>, and as he says the title is trolly but none the less is an excellent talk on automated testing.</p>
-
-<p>An interesting point is made (and I am paraphrasing) that the more integration tests we have the less design feedback we get, leading to sloppy design as we don&rsquo;t feel the same pressure&hellip;</p>
+		<p>Found this gem in a tweet from <a href="https://twitter.com/david_whitney">@david_whitney</a>, and as he says the title is trolly but none the less is an excellent talk on automated testing.  This resonates with me for reasons I&rsquo;m not going to go into right now.</p>
 
 <div class="embed-video-container"><iframe src="http://player.vimeo.com/video/80533536 "></iframe></div>
+
+
+<h3>Integrations Tests Lead to Bad Design</h3>
+
+<ul>
+<li>An interesting point is made (and I am paraphrasing) that the more integration tests we have the less design feedback we get, leading to sloppy design as we don&rsquo;t feel the same feedback &amp; design pressure&hellip;</li>
+</ul>
+
+
+<h3>What Failed and Where?</h3>
+
+<ul>
+<li>Integration tests may highlight failures, and the name of the test may go a long way to saying what failed, but pin pointing the actual location and reason for the failure is often lost in the generalization of the test itself.</li>
+</ul>
+
+
+<h3>The Systemic Growth of Integration Tests</h3>
+
+<ul>
+<li>Given 3 components which each interact with each other, how many tests would we need to cover all code paths?</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th> Component  </th>
+<th> # Paths  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>     A      </td>
+<td>     3    </td>
+</tr>
+<tr>
+<td></td>
+<td>     B      </td>
+<td>     5    </td>
+</tr>
+<tr>
+<td></td>
+<td>     C      </td>
+<td>     7    </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>3 x 5 x 7 = 105 Integration Tests*</p>
+
+<ul>
+<li>Add a 4th subsystem, as a result of a refactoring, with 2 paths removed from C moved into Component D:</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th> Component  </th>
+<th> # Paths  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>     A      </td>
+<td>     3    </td>
+</tr>
+<tr>
+<td></td>
+<td>     B      </td>
+<td>     5    </td>
+</tr>
+<tr>
+<td></td>
+<td>     C      </td>
+<td>     5    </td>
+</tr>
+<tr>
+<td></td>
+<td>     D      </td>
+<td>     2    </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>3 x 5 x 5 x 2 = 150 Integration Tests*</p>
+
+<p>*At Least as to cover all code paths.</p>
+
+<ul>
+<li>This is an example of <em>negative design pressure</em>, specifically in this instance to refactoring, which itself is important to obtaining good design.</li>
+<li>Resulting in another 45 tests being created and a on going cost of the time it will take to execute these tests.</li>
+<li>Not to mention the time it takes to run these tests hardly lends itself to a rapid Red Green Refactor cycle that would be possible with more isolated tests.</li>
+</ul>
+
+
+<h3>The Solution</h3>
+
+<ul>
+<li><p>Design to Contracts
+&mdash; If each Component operates against a contract, and the interactions between each component are clearly identified through design then come implementation we will be able isolate and ensure each component behaves correctly given the contract is upheld on both ends.</p></li>
+<li><p>Tests Subsystems in isolation
+&mdash; Isolation can be achieved through the use of Test Doubles or Mocks, to ensure each interaction with other components follow the contract under each of the specified scenarios.</p></li>
+</ul>
 
 
 		
