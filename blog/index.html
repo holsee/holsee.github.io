@@ -63,8 +63,8 @@ $(document).ready(
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">holsee</a></h1>
-<h4>code and stuff</h4>
+	<header id="header" class="inner"><h1><a href="/">holsee</span></a></h1>
+<h4><span class="head-cursor">λ code and stuff<span class="blink_me">_</span></h4>
 <nav id="main-nav"><ul>
 	<li><a href="/">Blog</a></li>
 	<li><a href="/about">About</a></li>
@@ -93,6 +93,55 @@ $(document).ready(
 		</div>
 	</div>
 </nav>
+
+<script type="text/javascript">
+$(function(){ 
+   $('#head-cursor')
+   	.css({ color:'' })
+   	.addClass('blink');
+});
+</script>
+
+<style ="text/css">
+.head-cursor {
+	color:#10a0e3;
+}
+
+.blink_me {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+</style>
 
 
 </header>
