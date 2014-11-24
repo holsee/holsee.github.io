@@ -4,7 +4,7 @@
   <title><![CDATA[Category: devlog | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/devlog/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-11-24T01:10:52+00:00</updated>
+  <updated>2014-11-24T01:14:25+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Devlog: Rails Testsing for Zombies]]></title>
+    <title type="html"><![CDATA[Devlog: Rails Testing]]></title>
     <link href="http://holsee.github.io/devlog-rails-testing-for-zombies/"/>
     <updated>2014-11-24T00:21:45+00:00</updated>
     <id>http://holsee.github.io/devlog-rails-testing-for-zombies</id>
