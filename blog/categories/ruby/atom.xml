@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-11-24T01:08:49+00:00</updated>
+  <updated>2014-11-24T01:10:52+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Devlog: Rails Testsing for Zombies]]></title>
-    <link href="http://holsee.github.io/devlog-rails-testsing-for-zombies/"/>
+    <link href="http://holsee.github.io/devlog-rails-testing-for-zombies/"/>
     <updated>2014-11-24T00:21:45+00:00</updated>
-    <id>http://holsee.github.io/devlog-rails-testsing-for-zombies</id>
+    <id>http://holsee.github.io/devlog-rails-testing-for-zombies</id>
     <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/rails-testing-for-zombies">Rails Testing <em>for zombies</em></a> courses on <a href="http://mbsy.co/8TZ9N">CodeSchool</a> tonight.</p>
 
 <p>I liked it, I always found starting a new rails app always triggered my testing OCD and it was nice to get an insight into the strategies one can take to test a rails app without overdoing it.</p>
