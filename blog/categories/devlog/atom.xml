@@ -4,7 +4,7 @@
   <title><![CDATA[Category: devlog | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/devlog/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-11-24T01:14:25+00:00</updated>
+  <updated>2014-11-24T01:22:58+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -24,7 +24,7 @@
 
 <p><img src="/images/badges/rtfz_badge.png"></p>
 
-<p>The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier.</p>
+<p>The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier such as Shoulda](<a href="https://github.com/thoughtbot/shoulda">https://github.com/thoughtbot/shoulda</a>), <a href="https://github.com/jnicklas/capybara">Capybara</a> and FactoryGirl](<a href="https://github.com/thoughtbot/factory_girl">https://github.com/thoughtbot/factory_girl</a>).  I will touch on each of there briefly to give you a taste of what they are all about&hellip;</p>
 
 <p>During the Unit Testing section you are introduced to <a href="https://github.com/thoughtbot/shoulda">Shoulda</a> gem which is described as an alternative syntax that is easy on the fingers and the eyes.</p>
 
@@ -36,6 +36,9 @@ end
 </code></p>
 
 <p>As the course starts to dig into integration testing you are also introduced to <a href="https://github.com/jnicklas/capybara">Capybara</a> which provides a interaction based DSL for defining your integration tests that supports <a href="http://www.rubydoc.info/github/jnicklas/capybara#Drivers">multiple drivers</a> and that acts like a headless browser of sorts giving you more control over the interactions with your site / api, following redirects more naturally as an example.</p>
+
+<!-- more -->
+
 
 <p>``` ruby
  describe &ldquo;the signin process&rdquo;, :type => :feature do
@@ -171,6 +174,9 @@ client.lpush(&lsquo;recent_meetings&rsquo;, meeting, function(err, reply) {
 })
 ```</p>
 
+<!-- more -->
+
+
 <p>and for good measure,
 <a href="devlog-a-sip-of-coffeescript">using my new CoffeeScript skills</a>, the same thing:
 ```coffeescript
@@ -242,6 +248,9 @@ eat food for food in foods when food isnt &lsquo;chocolate&rsquo;
 <h3>Node.js</h3>
 
 <p>I&rsquo;ve been working away on a personal project (which will be launched at outloud.io some time in the future) using node.js, express.js, postgreSQL, passport.js, mocha, chai, chai-as-promised, Q, db-migrate, node-env&hellip;</p>
+
+<!-- more -->
+
 
 <p>I have had this idea for a while, and I got pretty excited about building it.  At the time I was looking for a good excuse to get stuck into a substantial project which was built on node.js.  Even though I have used JS for years I have learned a great deal about the node way, building stuff tis the best way to learn it is no secret.</p>
 

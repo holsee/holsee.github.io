@@ -4,7 +4,7 @@
   <title><![CDATA[Category: testing | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/testing/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-11-24T01:14:25+00:00</updated>
+  <updated>2014-11-24T01:22:58+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -34,6 +34,9 @@
 <ul>
 <li>Integration tests may highlight failures, and the name of the test may go a long way to saying what failed, but pin pointing the actual location and reason for the failure is often lost in the generalization of the test itself.</li>
 </ul>
+
+
+<!-- more -->
 
 
 <h3>The Systemic Growth of Integration Tests</h3>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: nodejs | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/nodejs/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-11-24T01:14:25+00:00</updated>
+  <updated>2014-11-24T01:22:58+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -44,6 +44,9 @@ client.lpush(&lsquo;recent_meetings&rsquo;, meeting, function(err, reply) {
   client.ltrim(&lsquo;recent_meetings&rsquo;, 0, 9) // 10 Items Max
 })
 ```</p>
+
+<!-- more -->
+
 
 <p>and for good measure,
 <a href="devlog-a-sip-of-coffeescript">using my new CoffeeScript skills</a>, the same thing:

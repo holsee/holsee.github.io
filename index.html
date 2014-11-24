@@ -162,7 +162,7 @@ $(function(){
 
 <p><img src="/images/badges/rtfz_badge.png"></p>
 
-<p>The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier.</p>
+<p>The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier such as Shoulda](<a href="https://github.com/thoughtbot/shoulda">https://github.com/thoughtbot/shoulda</a>), <a href="https://github.com/jnicklas/capybara">Capybara</a> and FactoryGirl](<a href="https://github.com/thoughtbot/factory_girl">https://github.com/thoughtbot/factory_girl</a>).  I will touch on each of there briefly to give you a taste of what they are all about&hellip;</p>
 
 <p>During the Unit Testing section you are introduced to <a href="https://github.com/thoughtbot/shoulda">Shoulda</a> gem which is described as an alternative syntax that is easy on the fingers and the eyes.</p>
 
@@ -179,114 +179,9 @@ $(function(){
 
 <p>As the course starts to dig into integration testing you are also introduced to <a href="https://github.com/jnicklas/capybara">Capybara</a> which provides a interaction based DSL for defining your integration tests that supports <a href="http://www.rubydoc.info/github/jnicklas/capybara#Drivers">multiple drivers</a> and that acts like a headless browser of sorts giving you more control over the interactions with your site / api, following redirects more naturally as an example.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">describe</span> <span class="s2">&quot;the signin process&quot;</span><span class="p">,</span> <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="ss">:feature</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">before</span> <span class="ss">:each</span> <span class="k">do</span>
-</span><span class='line'>    <span class="no">User</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="ss">:email</span> <span class="o">=&gt;</span> <span class="s1">&#39;user@example.com&#39;</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">it</span> <span class="s2">&quot;signs me in&quot;</span> <span class="k">do</span>
-</span><span class='line'>    <span class="n">visit</span> <span class="s1">&#39;/sessions/new&#39;</span>
-</span><span class='line'>    <span class="n">within</span><span class="p">(</span><span class="s2">&quot;#session&quot;</span><span class="p">)</span> <span class="k">do</span>
-</span><span class='line'>      <span class="n">fill_in</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="ss">:with</span> <span class="o">=&gt;</span> <span class="s1">&#39;user@example.com&#39;</span>
-</span><span class='line'>      <span class="n">fill_in</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span> <span class="ss">:with</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>    <span class="n">click_button</span> <span class="s1">&#39;Sign in&#39;</span>
-</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">have_content</span> <span class="s1">&#39;Success&#39;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Lastly you are introduced to <a href="https://github.com/thoughtbot/factory_girl">FactoryGirl</a>, which is an alternative to using the built in test fixtures provided by rails out of the box.</p>
-
-<p>There are numerous advantages to using a factories and specifically FactoryGirl instead of the built in rails fixture for your test data. You are provided with granular control over how the test data built and initialized not to mention the ability to create test data dynamically rather than maintaining a complex hand crafted static data set defined in yaml with magic ids providing the only basis for associations.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># This will guess the User class</span>
-</span><span class='line'><span class="no">FactoryGirl</span><span class="o">.</span><span class="n">define</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">factory</span> <span class="ss">:user</span> <span class="k">do</span>
-</span><span class='line'>    <span class="n">first_name</span> <span class="s2">&quot;John&quot;</span>
-</span><span class='line'>    <span class="n">last_name</span>  <span class="s2">&quot;Doe&quot;</span>
-</span><span class='line'>    <span class="n">age</span> <span class="mi">27</span>
-</span><span class='line'>    <span class="n">admin</span> <span class="kp">false</span>
-</span><span class='line'>    <span class="n">association</span> <span class="ss">:roles</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1"># This will use the User class</span>
-</span><span class='line'>    <span class="n">factory</span> <span class="ss">:admin</span> <span class="k">do</span>
-</span><span class='line'>      <span class="n">first_name</span> <span class="s2">&quot;Admin&quot;</span>
-</span><span class='line'>      <span class="n">last_name</span>  <span class="s2">&quot;User&quot;</span>
-</span><span class='line'>      <span class="n">admin</span>      <span class="kp">true</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Using the <code>Factory</code> method directly will create an instance of an admin and insert it into the DB.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">test</span> <span class="s1">&#39;something to do with an admin&#39;</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">user</span> <span class="o">=</span> <span class="no">Factory</span><span class="p">(</span><span class="ss">:admin</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">assert</span> <span class="n">user</span><span class="o">.</span><span class="n">admin</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Beyond this basic example you are able to create new instances without inserting them into the database using the <code>build</code> method on the Factory as well as defining associations between entities as simple as adding <code>association :roles</code>.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">test</span> <span class="s1">&#39;something to do with an admin&#39;</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">user</span> <span class="o">=</span> <span class="no">Factory</span><span class="p">(</span><span class="ss">:admin</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">assert</span> <span class="n">user</span><span class="o">.</span><span class="n">admin</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Insights into a good test strategy that I took away was to unit test the model and have a full suite of integration tests for everything else, which regards to the rails portion of your application anyway, keep your controllers and views logic free.</p>
-
-<p>This is the approach that I had taken with a node.js app I have been writing, although I have been hand crafting the test data code I think I will look for something like FactoryGirl maybe <a href="https://www.npmjs.org/package/factory-girl">this javcascript port</a>.</p>
-
-<p>So thats another course completed, and was well worth the time, not a bad way to spend some of your Sunday afternoon. I think I might do the <a href="https://www.codeschool.com/courses/try-r">Try R</a> course next or some <a href="https://www.codeschool.com/courses/warming-up-with-ember-js">Ember.js</a> which I can put to use in the near future as I am design a website for my wife to kick start a new business idea we have.</p>
 
 		
-		
+		<a href="/devlog-rails-testing-for-zombies/" class="more-link">Read on &rarr;</a>
 	</div>
 
 
@@ -344,108 +239,9 @@ $(function(){
 </ul>
 
 
-<h3>The Systemic Growth of Integration Tests</h3>
-
-<p>&ldquo;&hellip;[they&rsquo;re] like taking aspirin that make your headache worse&hellip;&rdquo;</p>
-
-<ul>
-<li>Given 3 components which each interact with each other, how many tests would we need to cover all code paths?</li>
-</ul>
-
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th> Component  </th>
-<th> # Paths  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td>     A      </td>
-<td>     3    </td>
-</tr>
-<tr>
-<td></td>
-<td>     B      </td>
-<td>     5    </td>
-</tr>
-<tr>
-<td></td>
-<td>     C      </td>
-<td>     7    </td>
-</tr>
-</tbody>
-</table>
-
-
-<p>3 x 5 x 7 = 105 Integration Tests*</p>
-
-<ul>
-<li>Add a 4th subsystem, as a result of a refactoring, with 2 paths removed from C moved into Component D:</li>
-</ul>
-
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th> Component  </th>
-<th> # Paths  </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td>     A      </td>
-<td>     3    </td>
-</tr>
-<tr>
-<td></td>
-<td>     B      </td>
-<td>     5    </td>
-</tr>
-<tr>
-<td></td>
-<td>     C      </td>
-<td>     5    </td>
-</tr>
-<tr>
-<td></td>
-<td>     D      </td>
-<td>     2    </td>
-</tr>
-</tbody>
-</table>
-
-
-<p>3 x 5 x 5 x 2 = 150 Integration Tests*</p>
-
-<p>*At Least as to cover all code paths.</p>
-
-<ul>
-<li>This is an example of <em>negative design pressure</em>, specifically in this instance to refactoring, which itself is important to obtaining good design.</li>
-<li>Resulting in another 45 tests being created and a on going cost of the time it will take to execute these tests.</li>
-<li>Not to mention the time it takes to run these tests hardly lends itself to a rapid Red Green Refactor cycle that would be possible with more isolated tests.</li>
-</ul>
-
-
-<h3>The Solution</h3>
-
-<ul>
-<li><p>Design to Contracts
-&mdash; If each Component operates against a contract, and the interactions between each component are clearly identified through design then come implementation we will be able isolate and ensure each component behaves correctly given the contract is upheld on both ends.</p></li>
-<li><p>Tests Subsystems in isolation
-&mdash; Isolation can be achieved through the use of Test Doubles or Mocks, to ensure each interaction with other components follow the contract under each of the specified scenarios.</p></li>
-</ul>
-
-
-<p><em>The talk goes into much more detail and is crammed with practical advice&hellip; GO WATCH and make the world a better place.</em></p>
 
 		
-		
+		<a href="/integrated-tests-are-a-scam/" class="more-link">Read on &rarr;</a>
 	</div>
 
 
@@ -707,32 +503,11 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>and for good measure,
-<a href="devlog-a-sip-of-coffeescript">using my new CoffeeScript skills</a>, the same thing:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nv">redis = </span><span class="nx">require</span><span class="p">(</span><span class="s">&quot;redis&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="nv">client = </span><span class="nx">redis</span><span class="p">.</span><span class="nx">createClient</span><span class="p">()</span>
-</span><span class='line'><span class="c1">#... on last meeting submitted ...</span>
-</span><span class='line'><span class="nv">meeting = </span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span> <span class="nx">lastMeeting</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">client</span><span class="p">.</span><span class="nx">lpush</span> <span class="s">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="nx">meeting</span><span class="p">,</span> <span class="nf">(err, reply) -&gt;</span>
-</span><span class='line'>  <span class="nx">client</span><span class="p">.</span><span class="nx">ltrim</span><span class="p">(</span><span class="s">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="c1"># 10 Items Max</span>
-</span></code></pre></td></tr></table></div></figure>
 
 
-<p>P.S. This gif of Eric Allam &amp; Gregg Pollack cracks me up no end&hellip;</p>
-
-<p><img class="center" src="http://courseware.codeschool.com/images/blog/node-mind-blown.gif" width="800" height="800"></p>
 
 		
-		
+		<a href="/devlog-real-time-web-with-node-dot-js/" class="more-link">Read on &rarr;</a>
 	</div>
 
 
@@ -905,96 +680,9 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
 
 <p>I&rsquo;ve been working away on a personal project (which will be launched at outloud.io some time in the future) using node.js, express.js, postgreSQL, passport.js, mocha, chai, chai-as-promised, Q, db-migrate, node-env&hellip;</p>
 
-<p>I have had this idea for a while, and I got pretty excited about building it.  At the time I was looking for a good excuse to get stuck into a substantial project which was built on node.js.  Even though I have used JS for years I have learned a great deal about the node way, building stuff tis the best way to learn it is no secret.</p>
-
-<h3>Ruby and Rails</h3>
-
-<p>I completed a MOOC course on Coursera on <a href="https://www.coursera.org/course/webapplications">Web Application Architectures</a> which used Ruby &amp; Rails recently.  Was very much entry level stuff, got through it in about 2 days and I think anybody with significant web dev experiences would find the same thing.  I guess it showed me that I knew more than I thought about Ruby and Rails and needed to focus on more advanced and newer topics.</p>
-
-<p>I have been slowly but surely learning Ruby for the past 4 years and I find it lots of fun.  I used to subscribe and watch the <a href="http://www.rubytapas.com">Ruby Tapas</a> episodes which are brilliant, but because I wasn&rsquo;t using it in my day job for anything more than Chef scripts I never really got to go deep.</p>
-
-<p><a href="http://www.codewars.com/about">Codewars.com</a> stole quite a few of my evenings, a great way to learn or get better using a language by solving a katas (with tests) then seeing how others solved the same problems in a potentially more idiomatic way.  Each solution is rated by the community on &lsquo;how smart&rsquo; and &lsquo;best practice&rsquo; which is a nice touch.</p>
-
-<p>I plan to dig into the latest version of Rails for Zombies on Code School and keep going to the <a href="http://belfastruby.com">Belfast Ruby</a> meet-ups.</p>
-
-<h3>Objective-C</h3>
-
-<p>I worked as a &ldquo;mobile developer&rdquo; and have built a few apps over the last number of years in various technologies such as Obj-C, Java (Android), C# Xamarin (targeting both iOS and Android) and some PoCs using Phonegap.</p>
-
-<p>But I never felt I got to use Objective-C to the extent I wanted to, as the performance, the sexy runtime dispatch and the CocoaTouch libs intrigued.  A friend of mine who now works at Apple once told me the Cocoa libraries were examples of some of the nicest Object Oriented programming he had ever seen.  This has always made me want to know more.</p>
-
-<p>My employer sent me on an Objective-C course few months back which was nice of them since I don&rsquo;t even use it in my current day job.</p>
-
-<p>As I said, apple dev has always interested me so I have read a couple of books and completed numerous little projects.</p>
-
-<p>Right now I am working through the iOS Code School path and building and iOS client for the location broadcast server I spoke about in the Elixir section above.</p>
-
-<p>I wouldn&rsquo;t mind working on iOS again&hellip; which leads me into&hellip;</p>
-
-<h3>Swift 1.0</h3>
-
-<p>XCode 6.0.1 has been dropped and now I have Swift to play with :D. I didn&rsquo;t have my own Apple dev license so I had to wait.  I did pretty much read the iBook cover to cover in the interim.</p>
-
-<p>If I am to ever transition into this area, I would like to do so where I can hit the ground running so I might start to port the Objective-C location client to swift (or maybe just parts of it to get used to the interop).</p>
-
-<h3>Data Structure &amp; Algorithms</h3>
-
-<p>I always try to keep a balance of new technologies/language and CS theory.   Right now I do have a desire to spend more time reading up on Data Structures and Algorithms and their application to big problems.  This is the stuff that you learn and is timeless, and there is plenty of it to get stuck into!</p>
-
-<p>I was fortunate enough to do the <a href="http://instil.co/courses/writing-concurrent-code-with-lock-free-algorithms/">&lsquo;Writing Concurrent Code with Lock-Free Algorithms&rsquo; course</a> by <a href="http://mechanical-sympathy.blogspot.co.uk">Martin Thompson</a> and I got to hear him speak a couple of weeks ago at the End of Summer Bash event&hellip; if you haven&rsquo;t watched one of his talks please take the time to do so <a href="http://www.infoq.com/author/Martin-Thompson">(now)</a>.</p>
-
-<p>The big take away for me is the fastest, most elegant and performant solutions, come from  using the most appropriate, hand crafted, intelligently selected data structures and algorithms to solve the problem over picking up general purpose tools.</p>
-
-<p>There is so much more in this area that I want to talk about but not in this post&hellip; but definitely add <a href="http://mechanical-sympathy.blogspot.co.uk">Mechanical Sympathy</a> to your blog reader.</p>
-
-<h3>Functional &amp; Reactive Programming</h3>
-
-<p>I completed the <a href="https://www.coursera.org/course/progfun">Functional Programming Principles in Scala</a>, a MOOC on Coursera.  Before that I completed the <a href="https://www.coursera.org/course/reactive">Reactive Programming</a> course.  These were very good, humbling, challenging and rewarding.</p>
-
-<p>I have been using RX in .NET for years which helped a lot but I still found the Reactive course very worth while.  Both these courses use Scala and I enjoyed getting to learn it a bit better.  I liked how the reactive programming course built up concepts in layers, starting with getting the students to build a priority queue and finishing with reactive system using the <a href="http://akka.io">Akka</a> actor model.</p>
-
-<h3>Some Books: Remote, Rework &amp; Lean Start-up</h3>
-
-<p>In the last 6 months I have read these books each twice (well I used audible so they were read to me twice). Wonderful books which resonated with me on so many levels.  They are informative and practical guides which are also quite inspiring.</p>
-
-<p>I think I really got inspired to start developing outloud.io through my desire to just start something of my own from reading <a href="http://theleanstartup.com">The Lean Startup</a>.</p>
-
-<h3>Teaching</h3>
-
-<p>As a senior engineer I teach as part of my job, but recently I have been helping my buddy who is learning to program.</p>
-
-<p>This is a different challenge altogether, starting from the basics and helping to set the mindset and guide the conceptual thinking required.</p>
-
-<p>He has a degree and a load of music related qualifications and we discussed what would be the best way to start a career in software development.</p>
-
-<p>I have a degree in Computer Science, and I found it very useful, but not necessarily necessary&hellip; well depending on the desired job and in a sense that all that theory is accessible elsewhere.</p>
-
-<p>He could go back a do a Masters degree in CS, but is the cost worth it? Maybe&hellip; but to get the most out of the year (or 2) having some programming experience would be required before hand and thats where I am helping out.</p>
-
-<p>So, I got to thinking about what are good resources for becoming a programmer and basically ended up recommending the same resources that I use:</p>
-
-<ul>
-<li>Coursera &amp; MOOCs</li>
-<li>Code School</li>
-<li>Books</li>
-<li>Podcasts</li>
-</ul>
-
-
-<p>He has also found some other reasons handy, so I will be sure to link them and his new blog when he gets round to setting it up!</p>
-
-<h3>Meteor and DDP</h3>
-
-<p>I must say <a href="https://www.meteor.com">meteor.js</a> and <a href="https://www.meteor.com/blog/2012/03/21/introducing-ddp">Distributed Data Protocol</a> look very interesting indeed.</p>
-
-<p>Have watched a few <a href="https://www.meteor.com/screencast">screencasts</a>, something that is well and truly on the radar now.</p>
-
-<h3>Whats next?</h3>
-
-<p>I really need to prioritize thats for sure. This is quite a lot I have going on.  It blew my mind when I put it all into Trello&hellip; just too much interesting stuff and not enough hours in the day.</p>
 
 		
-		
+		<a href="/devlog-what-ive-been-learning/" class="more-link">Read on &rarr;</a>
 	</div>
 
 
@@ -1017,6 +705,892 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
 <div class="tags">
 
 	<a class='category' href='/blog/categories/devlog/'>devlog</a>
+
+</div>
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/responding-in-a-timely-manner/">
+		
+			Responding in a Timely Manner</a>
+	</h2>
+	<div class="entry-content">
+		<p>Earlier this year I was fortunate enough to attend <a href="http://reactconf.com">ReactConf</a> in London, this was one of the sessions. In an earlier post I spoke of how you should should check out <a href="http://mechanical-sympathy.blogspot.co.uk">Martin Thompson</a>&rsquo;s videos as they are the proverbial a gold mine of knowledge on building fast and scalable systems.</p>
+
+<p>In this talk Martin defines different levels of &ldquo;Real Time&rdquo;, touching on the importance of being responsive and practical tools and advice to achieve that in the real world.</p>
+
+<p>The talk is broken into the following sections:</p>
+
+<ol>
+<li>How to Test and Measure</li>
+<li>A little bit of Theory</li>
+<li>A little bit of Practice</li>
+<li>Common Pitfalls</li>
+<li>Useful Algorithms and Techniques</li>
+</ol>
+
+
+<div class='embed-video-container'><iframe src='http://www.youtube.com/embed/4dfk3ucthN8' frameborder='0' allowfullscreen></iframe></div>
+
+
+<p>You can find the full conference playlist on youtube <a href="http://www.youtube.com/watch?v=ZLBH4l7dCFA&amp;list=PLSD48HvrE7-Z1stQ1vIIBumB0wK0s8llY">here</a>&hellip;</p>
+
+<p>Enjoy!</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-23T20:11:00+01:00" pubdate data-updated="true">Sep 23<sup>rd</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/performance/'>performance</a>, <a class='category' href='/blog/categories/react-2014/'>react-2014</a>
+
+</div>
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/ridge-stand/">
+		
+			The Ridge Stand</a>
+	</h2>
+	<div class="entry-content">
+		<p>Came across this on kickstarter <a href="https://www.kickstarter.com/projects/1205042237/the-ridge-stand-a-new-edge-in-smart-design">(here)</a>. I want one of these&hellip; so slick!  Shipping end of 2014 and taking pre-orders now.</p>
+
+<p><img src="/images/wants/ridge.jpg"></p>
+
+<p><a href="http://www.theridgestand.com">The Ridge Stand by NewBee Design</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-23T14:16:33+01:00" pubdate data-updated="true">Sep 23<sup>rd</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/wants/'>wants</a>
+
+</div>
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord/">
+		
+			Rise of the Phoenix - Elixir Web Framework by Chris McCord</a>
+	</h2>
+	<div class="entry-content">
+		<div class='embed-video-container'><iframe src='http://www.youtube.com/embed/3jMbzGv_6tA' frameborder='0' allowfullscreen></iframe></div>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-28T23:46:51+01:00" pubdate data-updated="true">Aug 28<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/elixir/'>elixir</a>, <a class='category' href='/blog/categories/elixir-conf/'>elixir-conf</a>
+
+</div>
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/elixir-conf-2014-keynote-think-different-by-dave-thomas/">
+		
+			Elixir Conf 2014 - Keynote: Think Different by Dave Thomas</a>
+	</h2>
+	<div class="entry-content">
+		<div class='embed-video-container'><iframe src='http://www.youtube.com/embed/5hDVftaPQwY' frameborder='0' allowfullscreen></iframe></div>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-28T23:32:08+01:00" pubdate data-updated="true">Aug 28<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/elixir/'>elixir</a>, <a class='category' href='/blog/categories/elixir-conf/'>elixir-conf</a>
+
+</div>
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/debug-podcast-the-ganatra-trilogy/">
+		
+			Debug Podcast: The Ganatra Trilogy</a>
+	</h2>
+	<div class="entry-content">
+		<p>A wonderful series of <a href="http://www.imore.com/debug">Debug Podcasts</a> where the guest <a href="https://twitter.com/nitinganatra">@NitinGanatra</a>, former iOS Apps Director at Apple, speaks about the evolution of the products over the years from a technical insiders perspective. Very enjoyable and eye openning 6 hours of Apple geek goodness&hellip;</p>
+
+<ul>
+<li><a href="http://www.imore.com/debug-39-nitin-ganatra-episode-i-system-7-carbon">Nitin Ganatra episode I: System 7 to Carbon</a></li>
+<li><a href="http://www.imore.com/debug-40-nitin-ganatra-episode-ii-os-x-ios">Nitin Ganatra episode II: OS X to iOS</a></li>
+<li><a href="http://www.imore.com/debug-41-nitin-ganatra-episode-iii-iphone-ipad%E2%80%93%E2%80%93">Nitin Ganatra episode III: iPhone to iPad</a></li>
+</ul>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-28T21:17:23+01:00" pubdate data-updated="true">Aug 28<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/apple/'>apple</a>, <a class='category' href='/blog/categories/podcast/'>podcast</a>
+
+</div>
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/algorithms-design-and-analysis-videos/">
+		
+			Algorithms: Design and Analysis Videos</a>
+	</h2>
+	<div class="entry-content">
+		<p>List of resources related to Algorithm Design and Analysis:</p>
+
+<ul>
+<li><a href="https://class.coursera.org/algo-004/lecture/preview">Algorithms: Design and Analysis, Part 1</a></li>
+<li><a href="https://class.coursera.org/algo2-2012-001/lecture/preview">Algorithms: Design and Analysis, Part 2</a></li>
+</ul>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-18T18:30:22+01:00" pubdate data-updated="true">Jul 18<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/algorithms/'>algorithms</a>
+
+</div>
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/devlog-functional-programming-principles-in-scala/">
+		
+			Devlog: Functional Programming Principles in Scala</a>
+	</h2>
+	<div class="entry-content">
+		<p><img src="/images/certs/coursera_progfun.png"></p>
+
+<p><a href="https://www.coursera.org/course/reactive">Coursera &ndash; Principles of Reactive Programming</a></p>
+
+<h3>About the Course</h3>
+
+<p>This course introduces the cornerstones of functional programming using the Scala programming language. Functional programming has become more and more popular in recent years because it promotes code that’s safe, concise, and elegant. Furthermore, functional programming makes it easier to write parallel code for today’s and tomorrow’s multiprocessors by replacing mutable variables and loops with powerful ways to define and compose functions.</p>
+
+<p>Scala is a language that fuses functional and object-oriented programming in a practical package. It interoperates seamlessly with Java and its tools. Scala is now used in a rapidly increasing number of open source projects and companies. It provides the core infrastructure for sites such as Twitter, LinkedIn, Foursquare, Tumblr, and Klout.</p>
+
+<p>In this course you will discover the elements of the functional programming style and learn how to apply them usefully in your daily programming tasks. You will also develop a solid foundation for reasoning about functional programs, by touching upon proofs of invariants and the tracing of execution symbolically.</p>
+
+<p>The course is hands on; most units introduce short programs that serve as illustrations of important concepts and invite you to play with them, modifying and improving them. The course is complemented by a series of assignments, most of which are also programming projects.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-16T10:45:00+01:00" pubdate data-updated="true">Jul 16<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/devlog/'>devlog</a>, <a class='category' href='/blog/categories/mooc/'>mooc</a>
+
+</div>
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/introsort/">
+		
+			Introsort</a>
+	</h2>
+	<div class="entry-content">
+		<p><em>Some notes on IntroSort&hellip;</em></p>
+
+<blockquote><p>Introsort or introspective sort is a hybrid sorting algorithm that provides both fast average performance and (asymptotically) optimal worst-case performance. It begins with quicksort and switches to heapsort when the recursion depth exceeds a level based on (the logarithm of) the number of elements being sorted. This combines the good parts of both algorithms, with practical performance comparable to quicksort on typical data sets and worst-case O(n log n) runtime due to the heap sort. Since both algorithms it uses are comparison sorts, it too is a comparison sort.</p>
+
+<p>Introsort was invented by David Musser in Musser (1997), in which he also introduced introselect, a hybrid selection algorithm based on quickselect (a variant of quicksort), which falls back to median of medians and thus provides worst-case linear complexity, which is optimal. Both algorithms were introduced with the purpose of providing generic algorithms for the C++ Standard Library which had both fast average performance and optimal worst-case performance, thus allowing the performance requirements to be tightened.</p></blockquote>
+
+<p><a href="http://en.wikipedia.org/wiki/Introsort">Source: Wikipedia</a> | <a href="http://www.cs.rpi.edu/~musser/gp/algorithms.html">David Musser Paper &lsquo;Musser (1997)&rsquo;</a></p>
+
+<h3>.NET 4.5 introduces Introsort in place of Quicksort</h3>
+
+<p>In the Microsoft .NET Framework 4.5, an Introsort implementation is used instead of simple QuickSort.</p>
+
+<p>If the sort is not successfully completed, the results are undefined.
+This method uses the introspective sort (introsort) algorithm as follows:</p>
+
+<ul>
+    <li>
+        If the partition size is fewer than 16 elements, it uses an <a href="http://en.wikipedia.org/wiki/Insertion_sort">insertion sort</a> algorithm.
+    </li>
+    <li>
+        If the number of partitions exceeds 2 * Log<sub>N</sub>, where N is the range of the input array, it uses a <a href="http://en.wikipedia.org/wiki/Heapsort">Heapsort</a> algorithm.
+    </li>
+<figure class='code'><figcaption><span>.NET 4.5 IntroSort Implementation</span><a href='http://referencesource.microsoft.com/#mscorlib/system/array.cs#2a2126edd9ca7eb4#references'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">IntroSort</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">length</span> <span class="p">+</span> <span class="n">left</span> <span class="p">-</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span> <span class="p">*</span> <span class="n">IntrospectiveSortUtilities</span><span class="p">.</span><span class="n">FloorLog2</span><span class="p">(</span><span class="n">keys</span><span class="p">.</span><span class="n">Length</span><span class="p">));</span>
+</span></code></pre></td></tr></table></div></figure>
+    <li>
+        Otherwise, it uses a <a href="http://en.wikipedia.org/wiki/Quicksort">Quicksort</a> algorithm.
+    </li>
+</ul>
+
+
+<p>This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.</p>
+
+<p>For arrays that are sorted by using the Heapsort and Quicksort algorithms, in the worst case, this method is an O(<sub>n</sub> log <sub>n</sub>) operation, where <sub>n</sub> is the Length of array.</p>
+
+<p>You can view the full source for .NET 4.5 sorting implementation here: <a href="http://referencesource.microsoft.com/#mscorlib/system/array.cs#60647f6f99d677f1#references">.NET 4.5.1 QuickSort</a></p>
+
+<figure class='code'><figcaption><span>.NET 4.5 IntroSort Implementation</span><a href='http://referencesource.microsoft.com/#mscorlib/system/array.cs#2a2126edd9ca7eb4#references'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">private</span> <span class="k">void</span> <span class="nf">IntroSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">lo</span><span class="p">,</span> <span class="kt">int</span> <span class="n">hi</span><span class="p">,</span> <span class="kt">int</span> <span class="n">depthLimit</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">while</span> <span class="p">(</span><span class="n">hi</span> <span class="p">&gt;</span> <span class="n">lo</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="kt">int</span> <span class="n">partitionSize</span> <span class="p">=</span> <span class="n">hi</span> <span class="p">-</span> <span class="n">lo</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">partitionSize</span> <span class="p">&lt;=</span> <span class="n">IntrospectiveSortUtilities</span><span class="p">.</span><span class="n">IntrosortSizeThreshold</span> <span class="cm">/* 32 */</span><span class="p">)</span>
+</span><span class='line'>        <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="n">partitionSize</span> <span class="p">==</span> <span class="m">1</span><span class="p">)</span>
+</span><span class='line'>            <span class="p">{</span>
+</span><span class='line'>                <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="n">partitionSize</span> <span class="p">==</span> <span class="m">2</span><span class="p">)</span>
+</span><span class='line'>            <span class="p">{</span>
+</span><span class='line'>                <span class="n">SwapIfGreaterWithItems</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>                <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="n">partitionSize</span> <span class="p">==</span> <span class="m">3</span><span class="p">)</span>
+</span><span class='line'>            <span class="p">{</span>
+</span><span class='line'>                <span class="n">SwapIfGreaterWithItems</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">-</span><span class="m">1</span><span class="p">);</span>
+</span><span class='line'>                <span class="n">SwapIfGreaterWithItems</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>                <span class="n">SwapIfGreaterWithItems</span><span class="p">(</span><span class="n">hi</span><span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>                <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="n">InsertionSort</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>            <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">depthLimit</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span><span class='line'>        <span class="p">{</span>
+</span><span class='line'>            <span class="n">Heapsort</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>            <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="n">depthLimit</span><span class="p">--;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="kt">int</span> <span class="n">p</span> <span class="p">=</span> <span class="n">PickPivotAndPartition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">IntroSort</span><span class="p">(</span><span class="n">p</span> <span class="p">+</span> <span class="m">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">depthLimit</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">hi</span> <span class="p">=</span> <span class="n">p</span> <span class="p">-</span> <span class="m">1</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can view the latest (MIT licensed) Mono implemention on Github: <a href="https://github.com/mono/mono/blob/master/mcs/class/Mono.C5/C5/Sorting.cs">Mono.C5 Sorting.cs</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-25T01:10:44+01:00" pubdate data-updated="true">Jun 25<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/algorithms/'>algorithms</a>
+
+</div>
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/quick-sort/">
+		
+			Quick Sort</a>
+	</h2>
+	<div class="entry-content">
+		<p>Quicksort, also known as <i>partition-exchange sort</i>, uses these steps.</p>
+
+
+
+
+<ol>
+<li> Choose any element of the array to be the pivot.</li>
+<li> Divide all other elements (except the pivot) into two partitions.
+<br/>- All elements less than the pivot must be in the first partition.
+<br/>- All elements greater than the pivot must be in the second partition.
+</li>
+<li> Use recursion to sort both partitions.</li>
+<li> Join the first sorted partition, the pivot, and the second sorted partition.</li>
+</ol>
+
+
+
+
+<figure class='code'><figcaption><span>C Quick Sort</span><a href='http://en.wikibooks.org/wiki/Transwiki:Quicksort#C'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">t</span><span class="o">=*</span><span class="n">a</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">*</span><span class="n">a</span><span class="o">=*</span><span class="n">b</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">*</span><span class="n">b</span><span class="o">=</span><span class="n">t</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">sort</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">beg</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="n">end</span> <span class="o">&gt;</span> <span class="n">beg</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">piv</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">beg</span><span class="p">],</span> <span class="n">l</span> <span class="o">=</span> <span class="n">beg</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">end</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">piv</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">l</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">else</span>
+</span><span class='line'>        <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="o">--</span><span class="n">r</span><span class="p">]);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="c1">// swapping elements within the array </span>
+</span><span class='line'>    <span class="c1">// to avoid the memory allocation of more arrays.</span>
+</span><span class='line'>    <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="o">--</span><span class="n">l</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">beg</span><span class="p">]);</span>
+</span><span class='line'>    <span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">beg</span><span class="p">,</span> <span class="n">l</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>JS Quick Sort</span><a href='http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#JavaScript'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">sort</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">less</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">function</span> <span class="nx">swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">t</span><span class="o">=</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+</span><span class='line'>    <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">=</span><span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+</span><span class='line'>    <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span><span class="o">=</span><span class="nx">t</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">function</span> <span class="nx">quicksort</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">left</span> <span class="o">&lt;</span> <span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[(</span><span class="nx">left</span> <span class="o">+</span> <span class="nx">right</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">left_new</span> <span class="o">=</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">right_new</span> <span class="o">=</span> <span class="nx">right</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">do</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">while</span> <span class="p">(</span><span class="nx">less</span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">left_new</span><span class="p">],</span> <span class="nx">pivot</span><span class="p">)</span>
+</span><span class='line'>          <span class="nx">left_new</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">while</span> <span class="p">(</span><span class="nx">less</span><span class="p">(</span><span class="nx">pivot</span><span class="p">,</span> <span class="nx">array</span><span class="p">[</span><span class="nx">right_new</span><span class="p">])</span>
+</span><span class='line'>          <span class="nx">right_new</span><span class="o">--</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="nx">left_new</span>  <span class="o">&lt;=</span> <span class="nx">right_new</span><span class="p">)</span>
+</span><span class='line'>          <span class="nx">swap</span><span class="p">(</span><span class="nx">left_new</span><span class="o">++</span><span class="p">,</span> <span class="nx">right_new</span><span class="o">--</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">left_new</span>  <span class="o">&lt;=</span> <span class="nx">right_new</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">quicksort</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right_new</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">quicksort</span><span class="p">(</span><span class="nx">left_new</span><span class="p">,</span> <span class="nx">right</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">quicksort</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">array</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>JS (Functional) Quick Sort</span><a href='http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#JavaScript'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">quick_sort</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="k">this</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)];</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span> <span class="o">&lt;</span>  <span class="nx">pivot</span> <span class="p">}).</span><span class="nx">quick_sort</span><span class="p">().</span><span class="nx">concat</span><span class="p">(</span>
+</span><span class='line'>           <span class="k">this</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span> <span class="o">==</span> <span class="nx">pivot</span> <span class="p">})).</span><span class="nx">concat</span><span class="p">(</span>
+</span><span class='line'>           <span class="k">this</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span> <span class="o">&gt;</span>  <span class="nx">pivot</span> <span class="p">}).</span><span class="nx">quick_sort</span><span class="p">());</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Ruby Quick Sort</span><a href='http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#Ruby'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Array</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">quick_sort</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nb">self</span> <span class="k">if</span> <span class="n">length</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="n">pivot</span> <span class="o">=</span> <span class="n">sample</span>
+</span><span class='line'>    <span class="n">group</span> <span class="o">=</span> <span class="n">group_by</span><span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span> <span class="o">&lt;=&gt;</span> <span class="n">pivot</span> <span class="p">}</span>
+</span><span class='line'>    <span class="n">group</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>    <span class="n">group</span><span class="o">[-</span><span class="mi">1</span><span class="o">].</span><span class="n">quick_sort</span> <span class="o">+</span> <span class="n">group</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="n">group</span><span class="o">[</span><span class="mi">1</span><span class="o">].</span><span class="n">quick_sort</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Ruby (Functional) Quick Sort</span><a href='http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#Ruby'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Array</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">quick_sort</span>
+</span><span class='line'>    <span class="n">h</span><span class="p">,</span> <span class="o">*</span><span class="n">t</span> <span class="o">=</span> <span class="nb">self</span>
+</span><span class='line'>    <span class="n">h</span> <span class="p">?</span> <span class="n">t</span><span class="o">.</span><span class="n">partition</span> <span class="p">{</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="n">h</span> <span class="p">}</span><span class="o">.</span><span class="n">inject</span> <span class="p">{</span> <span class="o">|</span><span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="o">|</span> <span class="n">l</span><span class="o">.</span><span class="n">quick_sort</span> <span class="o">+</span> <span class="o">[</span><span class="n">h</span><span class="o">]</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">quick_sort</span> <span class="p">}</span> <span class="p">:</span> <span class="o">[]</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-25T00:24:40+01:00" pubdate data-updated="true">Jun 25<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/algorithms/'>algorithms</a>
+
+</div>
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/merge-sort/">
+		
+			Merge Sort</a>
+	</h2>
+	<div class="entry-content">
+		<p>You start with an unordered sequence.
+You create N empty queues.
+You loop over every item to be sorted.
+On each loop iteration, you look at the last element in the key.
+You move that item into the end of the queue which corresponds to that element.
+When you are finished looping you concatenate all the queues together into another sequence.
+You then reapply the procedure described but look at the second last element in the key.
+You keep doing this until you have looped over every key.
+When you complete this process the resulting sequence will be sorted as described above.</p>
+
+<p>Let n<sub>i</sub> be the number of items in the sequence to be sorted. N is number of integers that each key element can take. Let n<sub>k</sub> be the number of keys in each item.</p>
+
+
+<p>The total time to sort the sequence is thus O(n<sub>k</sub>(n<sub>i</sub> + N)).</p>
+
+
+
+
+<figure class='code'><figcaption><span>JS Merge Sort</span><a href='http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">mergesort</span><span class="p">(</span><span class="nx">list</span><span class="p">){</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">list</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">left</span>  <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">mid</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">right</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">mid</span><span class="p">,</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">mergesort</span><span class="p">(</span><span class="nx">left</span><span class="p">),</span> <span class="nx">mergesort</span><span class="p">(</span><span class="nx">right</span><span class="p">))</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">){</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="p">[];</span>
+</span><span class='line'>  <span class="k">while</span> <span class="p">(</span><span class="nx">left</span> <span class="o">&amp;&amp;</span> <span class="nx">left</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">right</span> <span class="o">&amp;&amp;</span> <span class="nx">right</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">right</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'>    <span class="nx">sorted</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">b</span><span class="o">?</span> <span class="nx">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">:</span> <span class="nx">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span><span class='line'>    <span class="c1">// remove the element which was added to the sorted array</span>
+</span><span class='line'>    <span class="nx">b</span><span class="o">?</span> <span class="nx">left</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">:</span> <span class="nx">right</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">sorted</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Ruby Merge Sort</span><a href='http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">mergesort</span><span class="p">(</span><span class="n">list</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">list</span> <span class="k">if</span> <span class="n">list</span><span class="o">.</span><span class="n">size</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+</span><span class='line'>  <span class="n">mid</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="n">size</span> <span class="o">/</span> <span class="mi">2</span>
+</span><span class='line'>  <span class="n">left</span>  <span class="o">=</span> <span class="n">list</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">mid</span><span class="o">]</span>
+</span><span class='line'>  <span class="n">right</span> <span class="o">=</span> <span class="n">list</span><span class="o">[</span><span class="n">mid</span><span class="p">,</span> <span class="n">list</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="n">mid</span><span class="o">]</span>
+</span><span class='line'>  <span class="n">merge</span><span class="p">(</span><span class="n">mergesort</span><span class="p">(</span><span class="n">left</span><span class="p">),</span> <span class="n">mergesort</span><span class="p">(</span><span class="n">right</span><span class="p">))</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">sorted</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>  <span class="k">until</span> <span class="n">left</span><span class="o">.</span><span class="n">empty?</span> <span class="ow">or</span> <span class="n">right</span><span class="o">.</span><span class="n">empty?</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">left</span><span class="o">.</span><span class="n">first</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="o">.</span><span class="n">first</span>
+</span><span class='line'>      <span class="n">sorted</span> <span class="o">&lt;&lt;</span> <span class="n">left</span><span class="o">.</span><span class="n">shift</span>
+</span><span class='line'>    <span class="k">else</span>
+</span><span class='line'>      <span class="n">sorted</span> <span class="o">&lt;&lt;</span> <span class="n">right</span><span class="o">.</span><span class="n">shift</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="n">sorted</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">left</span><span class="p">)</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-23T00:37:19+01:00" pubdate data-updated="true">Jun 23<sup>rd</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/algorithms/'>algorithms</a>
 
 </div>
 
