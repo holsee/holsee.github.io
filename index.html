@@ -9,7 +9,7 @@
 
 <meta name="author" content="holsee"> 
 
-<meta name="description" content="Found this gem in a tweet from @david_whitney, and as he says the title is trolly but none the less is an excellent talk on automated testing. &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Completed the Rails Testing for zombies courses on CodeSchool tonight. I liked it, I always found starting a new rails app always triggered my &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -146,6 +146,175 @@ $(function(){
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/devlog-rails-testsing-for-zombies/">
+		
+			Devlog: Rails Testsing for Zombies</a>
+	</h2>
+	<div class="entry-content">
+		<p>Completed the <a href="https://www.codeschool.com/courses/rails-testing-for-zombies">Rails Testing <em>for zombies</em></a> courses on <a href="http://mbsy.co/8TZ9N">CodeSchool</a> tonight.</p>
+
+<p>I liked it, I always found starting a new rails app always triggered my testing OCD and it was nice to get an insight into the strategies one can take to test a rails app without overdoing it.</p>
+
+<p><img src="/images/badges/rtfz_badge.png"></p>
+
+<p>The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier.</p>
+
+<p>During the Unit Testing section you are introduced to <a href="https://github.com/thoughtbot/shoulda">Shoulda</a> gem which is described as an alternative syntax that is easy on the fingers and the eyes.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">UserTest</span> <span class="o">&lt;</span> <span class="no">Test</span><span class="o">::</span><span class="no">Unit</span><span class="o">::</span><span class="no">TestCase</span>
+</span><span class='line'>  <span class="n">should</span> <span class="n">have_many</span><span class="p">(</span><span class="ss">:posts</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">should_not</span> <span class="n">allow_value</span><span class="p">(</span><span class="s2">&quot;blah&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">for</span><span class="p">(</span><span class="ss">:email</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As the course starts to dig into integration testing you are also introduced to <a href="https://github.com/jnicklas/capybara">Capybara</a> which provides a interaction based DSL for defining your integration tests that supports <a href="http://www.rubydoc.info/github/jnicklas/capybara#Drivers">multiple drivers</a> and that acts like a headless browser of sorts giving you more control over the interactions with your site / api, following redirects more naturally as an example.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">describe</span> <span class="s2">&quot;the signin process&quot;</span><span class="p">,</span> <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="ss">:feature</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">before</span> <span class="ss">:each</span> <span class="k">do</span>
+</span><span class='line'>    <span class="no">User</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="ss">:email</span> <span class="o">=&gt;</span> <span class="s1">&#39;user@example.com&#39;</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">it</span> <span class="s2">&quot;signs me in&quot;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">visit</span> <span class="s1">&#39;/sessions/new&#39;</span>
+</span><span class='line'>    <span class="n">within</span><span class="p">(</span><span class="s2">&quot;#session&quot;</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>      <span class="n">fill_in</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="ss">:with</span> <span class="o">=&gt;</span> <span class="s1">&#39;user@example.com&#39;</span>
+</span><span class='line'>      <span class="n">fill_in</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span> <span class="ss">:with</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="n">click_button</span> <span class="s1">&#39;Sign in&#39;</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">have_content</span> <span class="s1">&#39;Success&#39;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Lastly you are introduced to <a href="https://github.com/thoughtbot/factory_girl">FactoryGirl</a>, which is an alternative to using the built in test fixtures provided by rails out of the box.</p>
+
+<p>There are numerous advantages to using a factories and specifically FactoryGirl instead of the built in rails fixture for your test data. You are provided with granular control over how the test data built and initialized not to mention the ability to create test data dynamically rather than maintaining a complex hand crafted static data set defined in yaml with magic ids providing the only basis for associations.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># This will guess the User class</span>
+</span><span class='line'><span class="no">FactoryGirl</span><span class="o">.</span><span class="n">define</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">factory</span> <span class="ss">:user</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">first_name</span> <span class="s2">&quot;John&quot;</span>
+</span><span class='line'>    <span class="n">last_name</span>  <span class="s2">&quot;Doe&quot;</span>
+</span><span class='line'>    <span class="n">age</span> <span class="mi">27</span>
+</span><span class='line'>    <span class="n">admin</span> <span class="kp">false</span>
+</span><span class='line'>    <span class="n">association</span> <span class="ss">:roles</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1"># This will use the User class</span>
+</span><span class='line'>    <span class="n">factory</span> <span class="ss">:admin</span> <span class="k">do</span>
+</span><span class='line'>      <span class="n">first_name</span> <span class="s2">&quot;Admin&quot;</span>
+</span><span class='line'>      <span class="n">last_name</span>  <span class="s2">&quot;User&quot;</span>
+</span><span class='line'>      <span class="n">admin</span>      <span class="kp">true</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Using the <code>Factory</code> method directly will create an instance of an admin and insert it into the DB.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">test</span> <span class="s1">&#39;something to do with an admin&#39;</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">user</span> <span class="o">=</span> <span class="no">Factory</span><span class="p">(</span><span class="ss">:admin</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">assert</span> <span class="n">user</span><span class="o">.</span><span class="n">admin</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Beyond this basic example you are able to create new instances without inserting them into the database using the <code>build</code> method on the Factory as well as defining associations between entities as simple as adding <code>association :roles</code>.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">test</span> <span class="s1">&#39;something to do with an admin&#39;</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">user</span> <span class="o">=</span> <span class="no">Factory</span><span class="p">(</span><span class="ss">:admin</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">assert</span> <span class="n">user</span><span class="o">.</span><span class="n">admin</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Insights into a good test strategy that I took away was to unit test the model and have a full suite of integration tests for everything else, which regards to the rails portion of your application anyway, keep your controllers and views logic free.</p>
+
+<p>This is the approach that I had taken with a node.js app I have been writing, although I have been hand crafting the test data code I think I will look for something like FactoryGirl maybe <a href="https://www.npmjs.org/package/factory-girl">this javcascript port</a>.</p>
+
+<p>So thats another course completed, and was well worth the time, not a bad way to spend some of your Sunday afternoon. I think I might do the <a href="https://www.codeschool.com/courses/try-r">Try R</a> course next or some <a href="https://www.codeschool.com/courses/warming-up-with-ember-js">Ember.js</a> which I can put to use in the near future as I am design a website for my wife to kick start a new business idea we have.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-24T00:21:45+00:00" pubdate data-updated="true">Nov 24<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/codeschool/'>codeschool</a>, <a class='category' href='/blog/categories/devlog/'>devlog</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
+
+</div>
+
+
+	
+</div></article>
 
 
     <article class="post">
@@ -848,68 +1017,6 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
 <div class="tags">
 
 	<a class='category' href='/blog/categories/devlog/'>devlog</a>
-
-</div>
-
-
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/responding-in-a-timely-manner/">
-		
-			Responding in a Timely Manner</a>
-	</h2>
-	<div class="entry-content">
-		<p>Earlier this year I was fortunate enough to attend <a href="http://reactconf.com">ReactConf</a> in London, this was one of the sessions. In an earlier post I spoke of how you should should check out <a href="http://mechanical-sympathy.blogspot.co.uk">Martin Thompson</a>&rsquo;s videos as they are the proverbial a gold mine of knowledge on building fast and scalable systems.</p>
-
-<p>In this talk Martin defines different levels of &ldquo;Real Time&rdquo;, touching on the importance of being responsive and practical tools and advice to achieve that in the real world.</p>
-
-<p>The talk is broken into the following sections:</p>
-
-<ol>
-<li>How to Test and Measure</li>
-<li>A little bit of Theory</li>
-<li>A little bit of Practice</li>
-<li>Common Pitfalls</li>
-<li>Useful Algorithms and Techniques</li>
-</ol>
-
-
-<div class='embed-video-container'><iframe src='http://www.youtube.com/embed/4dfk3ucthN8' frameborder='0' allowfullscreen></iframe></div>
-
-
-<p>You can find the full conference playlist on youtube <a href="http://www.youtube.com/watch?v=ZLBH4l7dCFA&amp;list=PLSD48HvrE7-Z1stQ1vIIBumB0wK0s8llY">here</a>&hellip;</p>
-
-<p>Enjoy!</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-23T20:11:00+01:00" pubdate data-updated="true">Sep 23<sup>rd</sup>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/performance/'>performance</a>, <a class='category' href='/blog/categories/react-2014/'>react-2014</a>
 
 </div>
 

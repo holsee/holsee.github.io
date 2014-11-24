@@ -4,7 +4,7 @@
   <title><![CDATA[Category: devlog | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/devlog/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-10-29T02:07:31+00:00</updated>
+  <updated>2014-11-24T01:08:49+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,108 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Devlog: Rails Testsing for Zombies]]></title>
+    <link href="http://holsee.github.io/devlog-rails-testsing-for-zombies/"/>
+    <updated>2014-11-24T00:21:45+00:00</updated>
+    <id>http://holsee.github.io/devlog-rails-testsing-for-zombies</id>
+    <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/rails-testing-for-zombies">Rails Testing <em>for zombies</em></a> courses on <a href="http://mbsy.co/8TZ9N">CodeSchool</a> tonight.</p>
+
+<p>I liked it, I always found starting a new rails app always triggered my testing OCD and it was nice to get an insight into the strategies one can take to test a rails app without overdoing it.</p>
+
+<p><img src="/images/badges/rtfz_badge.png"></p>
+
+<p>The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier.</p>
+
+<p>During the Unit Testing section you are introduced to <a href="https://github.com/thoughtbot/shoulda">Shoulda</a> gem which is described as an alternative syntax that is easy on the fingers and the eyes.</p>
+
+<p><code>ruby
+class UserTest &lt; Test::Unit::TestCase
+  should have_many(:posts)
+  should_not allow_value("blah").for(:email)
+end
+</code></p>
+
+<p>As the course starts to dig into integration testing you are also introduced to <a href="https://github.com/jnicklas/capybara">Capybara</a> which provides a interaction based DSL for defining your integration tests that supports <a href="http://www.rubydoc.info/github/jnicklas/capybara#Drivers">multiple drivers</a> and that acts like a headless browser of sorts giving you more control over the interactions with your site / api, following redirects more naturally as an example.</p>
+
+<p>``` ruby
+ describe &ldquo;the signin process&rdquo;, :type => :feature do
+  before :each do</p>
+
+<pre><code>User.make(:email =&gt; 'user@example.com', :password =&gt; 'password')
+</code></pre>
+
+<p>  end</p>
+
+<p>  it &ldquo;signs me in&rdquo; do</p>
+
+<pre><code>visit '/sessions/new'
+within("#session") do
+  fill_in 'Email', :with =&gt; 'user@example.com'
+  fill_in 'Password', :with =&gt; 'password'
+end
+click_button 'Sign in'
+expect(page).to have_content 'Success'
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>Lastly you are introduced to <a href="https://github.com/thoughtbot/factory_girl">FactoryGirl</a>, which is an alternative to using the built in test fixtures provided by rails out of the box.</p>
+
+<p>There are numerous advantages to using a factories and specifically FactoryGirl instead of the built in rails fixture for your test data. You are provided with granular control over how the test data built and initialized not to mention the ability to create test data dynamically rather than maintaining a complex hand crafted static data set defined in yaml with magic ids providing the only basis for associations.</p>
+
+<p>``` ruby</p>
+
+<h1>This will guess the User class</h1>
+
+<p>FactoryGirl.define do
+  factory :user do</p>
+
+<pre><code>first_name "John"
+last_name  "Doe"
+age 27
+admin false
+association :roles
+
+# This will use the User class
+factory :admin do
+  first_name "Admin"
+  last_name  "User"
+  admin      true
+end
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>Using the <code>Factory</code> method directly will create an instance of an admin and insert it into the DB.</p>
+
+<p><code>ruby
+test 'something to do with an admin' do
+  user = Factory(:admin)
+  assert user.admin
+end
+</code>
+Beyond this basic example you are able to create new instances without inserting them into the database using the <code>build</code> method on the Factory as well as defining associations between entities as simple as adding <code>association :roles</code>.</p>
+
+<p><code>ruby
+test 'something to do with an admin' do
+  user = Factory(:admin)
+  assert user.admin
+end
+</code></p>
+
+<p>Insights into a good test strategy that I took away was to unit test the model and have a full suite of integration tests for everything else, which regards to the rails portion of your application anyway, keep your controllers and views logic free.</p>
+
+<p>This is the approach that I had taken with a node.js app I have been writing, although I have been hand crafting the test data code I think I will look for something like FactoryGirl maybe <a href="https://www.npmjs.org/package/factory-girl">this javcascript port</a>.</p>
+
+<p>So thats another course completed, and was well worth the time, not a bad way to spend some of your Sunday afternoon. I think I might do the <a href="https://www.codeschool.com/courses/try-r">Try R</a> course next or some <a href="https://www.codeschool.com/courses/warming-up-with-ember-js">Ember.js</a> which I can put to use in the near future as I am design a website for my wife to kick start a new business idea we have.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Devlog: Ruby Bits 1 &amp; 2]]></title>
@@ -228,27 +330,6 @@ eat food for food in foods when food isnt &lsquo;chocolate&rsquo;
 <h3>Whats next?</h3>
 
 <p>I really need to prioritize thats for sure. This is quite a lot I have going on.  It blew my mind when I put it all into Trello&hellip; just too much interesting stuff and not enough hours in the day.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Devlog: Functional Programming Principles in Scala]]></title>
-    <link href="http://holsee.github.io/devlog-functional-programming-principles-in-scala/"/>
-    <updated>2014-07-16T10:45:00+01:00</updated>
-    <id>http://holsee.github.io/devlog-functional-programming-principles-in-scala</id>
-    <content type="html"><![CDATA[<p><img src="/images/certs/coursera_progfun.png"></p>
-
-<p><a href="https://www.coursera.org/course/reactive">Coursera &ndash; Principles of Reactive Programming</a></p>
-
-<h3>About the Course</h3>
-
-<p>This course introduces the cornerstones of functional programming using the Scala programming language. Functional programming has become more and more popular in recent years because it promotes code that’s safe, concise, and elegant. Furthermore, functional programming makes it easier to write parallel code for today’s and tomorrow’s multiprocessors by replacing mutable variables and loops with powerful ways to define and compose functions.</p>
-
-<p>Scala is a language that fuses functional and object-oriented programming in a practical package. It interoperates seamlessly with Java and its tools. Scala is now used in a rapidly increasing number of open source projects and companies. It provides the core infrastructure for sites such as Twitter, LinkedIn, Foursquare, Tumblr, and Klout.</p>
-
-<p>In this course you will discover the elements of the functional programming style and learn how to apply them usefully in your daily programming tasks. You will also develop a solid foundation for reasoning about functional programs, by touching upon proofs of invariants and the tracing of execution symbolically.</p>
-
-<p>The course is hands on; most units introduce short programs that serve as illustrations of important concepts and invite you to play with them, modifying and improving them. The course is complemented by a series of assignments, most of which are also programming projects.</p>
 ]]></content>
   </entry>
   
