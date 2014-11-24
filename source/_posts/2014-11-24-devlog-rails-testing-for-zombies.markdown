@@ -12,7 +12,7 @@ I liked it, I always found starting a new rails app always triggered my testing 
 
 {% img /images/badges/rtfz_badge.png %}
 
-The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier.
+The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier such as Shoulda](https://github.com/thoughtbot/shoulda), [Capybara](https://github.com/jnicklas/capybara) and FactoryGirl](https://github.com/thoughtbot/factory_girl).  I will touch on each of there briefly to give you a taste of what they are all about...
 
 During the Unit Testing section you are introduced to [Shoulda](https://github.com/thoughtbot/shoulda) gem which is described as an alternative syntax that is easy on the fingers and the eyes.
 
@@ -24,6 +24,8 @@ end
 ```
 
 As the course starts to dig into integration testing you are also introduced to [Capybara](https://github.com/jnicklas/capybara) which provides a interaction based DSL for defining your integration tests that supports [multiple drivers](http://www.rubydoc.info/github/jnicklas/capybara#Drivers) and that acts like a headless browser of sorts giving you more control over the interactions with your site / api, following redirects more naturally as an example.
+
+<!-- more -->
 
 ``` ruby
  describe "the signin process", :type => :feature do

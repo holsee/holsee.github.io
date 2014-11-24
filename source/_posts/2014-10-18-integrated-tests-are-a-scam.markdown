@@ -18,6 +18,8 @@ Found this gem in a tweet from [@david_whitney](https://twitter.com/david_whitne
 
 - Integration tests may highlight failures, and the name of the test may go a long way to saying what failed, but pin pointing the actual location and reason for the failure is often lost in the generalization of the test itself.
 
+<!-- more -->
+
 ### The Systemic Growth of Integration Tests
 
 "...[they're] like taking aspirin that make your headache worse..."

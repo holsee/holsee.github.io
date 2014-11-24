@@ -31,6 +31,8 @@ client.lpush('recent_meetings', meeting, function(err, reply) {
 })
 ```
 
+<!-- more -->
+
 and for good measure, 
 [using my new CoffeeScript skills](devlog-a-sip-of-coffeescript), the same thing:
 ```coffeescript

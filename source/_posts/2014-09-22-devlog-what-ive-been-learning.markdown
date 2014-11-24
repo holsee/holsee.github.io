@@ -23,6 +23,8 @@ I am working on an 'anonymous' location broadcast server to use these technologi
 
 I've been working away on a personal project (which will be launched at outloud.io some time in the future) using node.js, express.js, postgreSQL, passport.js, mocha, chai, chai-as-promised, Q, db-migrate, node-env...  
 
+<!-- more -->
+
 I have had this idea for a while, and I got pretty excited about building it.  At the time I was looking for a good excuse to get stuck into a substantial project which was built on node.js.  Even though I have used JS for years I have learned a great deal about the node way, building stuff tis the best way to learn it is no secret.
 
 ### Ruby and Rails
