@@ -153,7 +153,7 @@ $(function(){
 
 <p><img src="/images/badges/rtfz_badge.png"></p>
 
-<p>The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier such as Shoulda](<a href="https://github.com/thoughtbot/shoulda">https://github.com/thoughtbot/shoulda</a>), <a href="https://github.com/jnicklas/capybara">Capybara</a> and FactoryGirl](<a href="https://github.com/thoughtbot/factory_girl">https://github.com/thoughtbot/factory_girl</a>).  I will touch on each of there briefly to give you a taste of what they are all about&hellip;</p>
+<p>The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier such as <a href="https://github.com/thoughtbot/shoulda">Shoulda</a>, <a href="https://github.com/jnicklas/capybara">Capybara</a> and <a href="https://github.com/thoughtbot/factory_girl">FactoryGirl</a>.  I will touch on each of there briefly to give you a taste of what they are all about&hellip;</p>
 
 <p>During the Unit Testing section you are introduced to <a href="https://github.com/thoughtbot/shoulda">Shoulda</a> gem which is described as an alternative syntax that is easy on the fingers and the eyes.</p>
 
@@ -168,12 +168,7 @@ $(function(){
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>As the course starts to dig into integration testing you are also introduced to <a href="https://github.com/jnicklas/capybara">Capybara</a> which provides a interaction based DSL for defining your integration tests that supports <a href="http://www.rubydoc.info/github/jnicklas/capybara#Drivers">multiple drivers</a> and that acts like a headless browser of sorts giving you more control over the interactions with your site / api, following redirects more naturally as an example.</p>
-
-<!-- more -->
-
-
-
+<p>As the course starts to dig into integration testing you are also introduced to <a href="https://github.com/jnicklas/capybara">Capybara</a> which provides a interaction based DSL for defining your integration tests that supports <a href="http://www.rubydoc.info/github/jnicklas/capybara#Drivers">multiple drivers</a>. Capybara tests when executing act like a headless browser of sorts giving you more control over the interactions with your site or api, following redirects more naturally for example which is something not handles by vanilla rails integration tests so well.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -210,6 +205,9 @@ $(function(){
 
 <p>Lastly you are introduced to <a href="https://github.com/thoughtbot/factory_girl">FactoryGirl</a>, which is an alternative to using the built in test fixtures provided by rails out of the box.</p>
 
+<!-- more -->
+
+
 <p>There are numerous advantages to using a factories and specifically FactoryGirl instead of the built in rails fixture for your test data. You are provided with granular control over how the test data built and initialized not to mention the ability to create test data dynamically rather than maintaining a complex hand crafted static data set defined in yaml with magic ids providing the only basis for associations.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -229,6 +227,10 @@ $(function(){
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># This will guess the User class</span>
 </span><span class='line'><span class="no">FactoryGirl</span><span class="o">.</span><span class="n">define</span> <span class="k">do</span>
 </span><span class='line'>  <span class="n">factory</span> <span class="ss">:user</span> <span class="k">do</span>
@@ -245,32 +247,27 @@ $(function(){
 </span><span class='line'>      <span class="n">admin</span>      <span class="kp">true</span>
 </span><span class='line'>    <span class="k">end</span>
 </span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">factory</span> <span class="ss">:foo</span> <span class="k">do</span>
+</span><span class='line'>    <span class="c1"># some fields</span>
+</span><span class='line'>  <span class="k">end</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
 <p>Using the <code>Factory</code> method directly will create an instance of an admin and insert it into the DB.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">test</span> <span class="s1">&#39;something to do with an admin&#39;</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">user</span> <span class="o">=</span> <span class="no">Factory</span><span class="p">(</span><span class="ss">:admin</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">assert</span> <span class="n">user</span><span class="o">.</span><span class="n">admin</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Beyond this basic example you are able to create new instances without inserting them into the database using the <code>build</code> method on the Factory as well as defining associations between entities as simple as adding <code>association :roles</code>.</p>
+<p>Beyond this basic example you are able to create new instances without inserting them into the database using the <code>build</code> method on the Factory as well as defining associations between entities as simple as adding <code>association :foo</code>.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
+<span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">test</span> <span class="s1">&#39;something to do with an admin&#39;</span> <span class="k">do</span>
 </span><span class='line'>  <span class="n">user</span> <span class="o">=</span> <span class="no">Factory</span><span class="p">(</span><span class="ss">:admin</span><span class="p">)</span>
 </span><span class='line'>  <span class="n">assert</span> <span class="n">user</span><span class="o">.</span><span class="n">admin</span>
+</span><span class='line'>  <span class="n">association</span> <span class="ss">:foo</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 

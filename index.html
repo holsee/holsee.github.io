@@ -162,7 +162,7 @@ $(function(){
 
 <p><img src="/images/badges/rtfz_badge.png"></p>
 
-<p>The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier such as Shoulda](<a href="https://github.com/thoughtbot/shoulda">https://github.com/thoughtbot/shoulda</a>), <a href="https://github.com/jnicklas/capybara">Capybara</a> and FactoryGirl](<a href="https://github.com/thoughtbot/factory_girl">https://github.com/thoughtbot/factory_girl</a>).  I will touch on each of there briefly to give you a taste of what they are all about&hellip;</p>
+<p>The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier such as <a href="https://github.com/thoughtbot/shoulda">Shoulda</a>, <a href="https://github.com/jnicklas/capybara">Capybara</a> and <a href="https://github.com/thoughtbot/factory_girl">FactoryGirl</a>.  I will touch on each of there briefly to give you a taste of what they are all about&hellip;</p>
 
 <p>During the Unit Testing section you are introduced to <a href="https://github.com/thoughtbot/shoulda">Shoulda</a> gem which is described as an alternative syntax that is easy on the fingers and the eyes.</p>
 
@@ -177,7 +177,42 @@ $(function(){
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>As the course starts to dig into integration testing you are also introduced to <a href="https://github.com/jnicklas/capybara">Capybara</a> which provides a interaction based DSL for defining your integration tests that supports <a href="http://www.rubydoc.info/github/jnicklas/capybara#Drivers">multiple drivers</a> and that acts like a headless browser of sorts giving you more control over the interactions with your site / api, following redirects more naturally as an example.</p>
+<p>As the course starts to dig into integration testing you are also introduced to <a href="https://github.com/jnicklas/capybara">Capybara</a> which provides a interaction based DSL for defining your integration tests that supports <a href="http://www.rubydoc.info/github/jnicklas/capybara#Drivers">multiple drivers</a>. Capybara tests when executing act like a headless browser of sorts giving you more control over the interactions with your site or api, following redirects more naturally for example which is something not handles by vanilla rails integration tests so well.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">describe</span> <span class="s2">&quot;the signin process&quot;</span><span class="p">,</span> <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="ss">:feature</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">before</span> <span class="ss">:each</span> <span class="k">do</span>
+</span><span class='line'>    <span class="no">User</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="ss">:email</span> <span class="o">=&gt;</span> <span class="s1">&#39;user@example.com&#39;</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">it</span> <span class="s2">&quot;signs me in&quot;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">visit</span> <span class="s1">&#39;/sessions/new&#39;</span>
+</span><span class='line'>    <span class="n">within</span><span class="p">(</span><span class="s2">&quot;#session&quot;</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>      <span class="n">fill_in</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="ss">:with</span> <span class="o">=&gt;</span> <span class="s1">&#39;user@example.com&#39;</span>
+</span><span class='line'>      <span class="n">fill_in</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span> <span class="ss">:with</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="n">click_button</span> <span class="s1">&#39;Sign in&#39;</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">have_content</span> <span class="s1">&#39;Success&#39;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Lastly you are introduced to <a href="https://github.com/thoughtbot/factory_girl">FactoryGirl</a>, which is an alternative to using the built in test fixtures provided by rails out of the box.</p>
 
 
 		

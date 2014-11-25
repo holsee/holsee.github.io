@@ -4,7 +4,7 @@
   <title><![CDATA[Category: devlog | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/devlog/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-11-24T01:25:11+00:00</updated>
+  <updated>2014-11-25T19:56:15+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -24,7 +24,7 @@
 
 <p><img src="/images/badges/rtfz_badge.png"></p>
 
-<p>The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier such as Shoulda](<a href="https://github.com/thoughtbot/shoulda">https://github.com/thoughtbot/shoulda</a>), <a href="https://github.com/jnicklas/capybara">Capybara</a> and FactoryGirl](<a href="https://github.com/thoughtbot/factory_girl">https://github.com/thoughtbot/factory_girl</a>).  I will touch on each of there briefly to give you a taste of what they are all about&hellip;</p>
+<p>The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier such as <a href="https://github.com/thoughtbot/shoulda">Shoulda</a>, <a href="https://github.com/jnicklas/capybara">Capybara</a> and <a href="https://github.com/thoughtbot/factory_girl">FactoryGirl</a>.  I will touch on each of there briefly to give you a taste of what they are all about&hellip;</p>
 
 <p>During the Unit Testing section you are introduced to <a href="https://github.com/thoughtbot/shoulda">Shoulda</a> gem which is described as an alternative syntax that is easy on the fingers and the eyes.</p>
 
@@ -35,10 +35,7 @@ class UserTest &lt; Test::Unit::TestCase
 end
 </code></p>
 
-<p>As the course starts to dig into integration testing you are also introduced to <a href="https://github.com/jnicklas/capybara">Capybara</a> which provides a interaction based DSL for defining your integration tests that supports <a href="http://www.rubydoc.info/github/jnicklas/capybara#Drivers">multiple drivers</a> and that acts like a headless browser of sorts giving you more control over the interactions with your site / api, following redirects more naturally as an example.</p>
-
-<!-- more -->
-
+<p>As the course starts to dig into integration testing you are also introduced to <a href="https://github.com/jnicklas/capybara">Capybara</a> which provides a interaction based DSL for defining your integration tests that supports <a href="http://www.rubydoc.info/github/jnicklas/capybara#Drivers">multiple drivers</a>. Capybara tests when executing act like a headless browser of sorts giving you more control over the interactions with your site or api, following redirects more naturally for example which is something not handles by vanilla rails integration tests so well.</p>
 
 <p>``` ruby
  describe &ldquo;the signin process&rdquo;, :type => :feature do
@@ -62,9 +59,11 @@ expect(page).to have_content 'Success'
 
 <p>  end
 end
-```</p>
+```
+Lastly you are introduced to <a href="https://github.com/thoughtbot/factory_girl">FactoryGirl</a>, which is an alternative to using the built in test fixtures provided by rails out of the box.</p>
 
-<p>Lastly you are introduced to <a href="https://github.com/thoughtbot/factory_girl">FactoryGirl</a>, which is an alternative to using the built in test fixtures provided by rails out of the box.</p>
+<!-- more -->
+
 
 <p>There are numerous advantages to using a factories and specifically FactoryGirl instead of the built in rails fixture for your test data. You are provided with granular control over how the test data built and initialized not to mention the ability to create test data dynamically rather than maintaining a complex hand crafted static data set defined in yaml with magic ids providing the only basis for associations.</p>
 
@@ -89,24 +88,26 @@ factory :admin do
 end
 </code></pre>
 
+<p>  end</p>
+
+<p>  factory :foo do</p>
+
+<pre><code># some fields
+</code></pre>
+
 <p>  end
 end
 ```</p>
 
 <p>Using the <code>Factory</code> method directly will create an instance of an admin and insert it into the DB.</p>
 
-<p><code>ruby
-test 'something to do with an admin' do
-  user = Factory(:admin)
-  assert user.admin
-end
-</code>
-Beyond this basic example you are able to create new instances without inserting them into the database using the <code>build</code> method on the Factory as well as defining associations between entities as simple as adding <code>association :roles</code>.</p>
+<p>Beyond this basic example you are able to create new instances without inserting them into the database using the <code>build</code> method on the Factory as well as defining associations between entities as simple as adding <code>association :foo</code>.</p>
 
 <p><code>ruby
 test 'something to do with an admin' do
   user = Factory(:admin)
   assert user.admin
+  association :foo
 end
 </code></p>
 
