@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: kata | holsee]]></title>
+  <link href="http://holsee.github.io/blog/categories/kata/atom.xml" rel="self"/>
+  <link href="http://holsee.github.io/"/>
+  <updated>2014-11-25T20:03:07+00:00</updated>
+  <id>http://holsee.github.io/</id>
+  <author>
+    <name><![CDATA[holsee]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Roman Numerals Elixir Kata]]></title>
+    <link href="http://holsee.github.io/roman-numerals-elixir-kata/"/>
+    <updated>2014-11-25T19:57:46+00:00</updated>
+    <id>http://holsee.github.io/roman-numerals-elixir-kata</id>
+    <content type="html"><![CDATA[<p>A fun little test driven kata which will introduce you to the basics of elixir.</p>
+
+<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/L_9pUkVSjcE' frameborder='0' allowfullscreen></iframe></div></p>
+
+<p>A rule I try to follow for this is to try and keep my solution less than 20 lines of code.</p>
+]]></content>
+  </entry>
+  
+</feed>

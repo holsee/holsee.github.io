@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-11-25T19:56:15+00:00</updated>
+  <updated>2014-11-25T20:03:07+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Roman Numerals Elixir Kata]]></title>
+    <link href="http://holsee.github.io/roman-numerals-elixir-kata/"/>
+    <updated>2014-11-25T19:57:46+00:00</updated>
+    <id>http://holsee.github.io/roman-numerals-elixir-kata</id>
+    <content type="html"><![CDATA[<p>A fun little test driven kata which will introduce you to the basics of elixir.</p>
+
+<div class='embed-video-container'><iframe src='http://www.youtube.com/embed/L_9pUkVSjcE' frameborder='0' allowfullscreen></iframe></div>
+
+
+<p>A rule I try to follow for this is to try and keep my solution less than 20 lines of code.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Devlog: Rails Testing]]></title>
@@ -1010,119 +1024,6 @@ This method uses the introspective sort (introsort) algorithm as follows:</p>
 </span><span class='line'>    <span class="n">h</span><span class="p">,</span> <span class="o">*</span><span class="n">t</span> <span class="o">=</span> <span class="nb">self</span>
 </span><span class='line'>    <span class="n">h</span> <span class="p">?</span> <span class="n">t</span><span class="o">.</span><span class="n">partition</span> <span class="p">{</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="n">h</span> <span class="p">}</span><span class="o">.</span><span class="n">inject</span> <span class="p">{</span> <span class="o">|</span><span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="o">|</span> <span class="n">l</span><span class="o">.</span><span class="n">quick_sort</span> <span class="o">+</span> <span class="o">[</span><span class="n">h</span><span class="o">]</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">quick_sort</span> <span class="p">}</span> <span class="p">:</span> <span class="o">[]</span>
 </span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Merge Sort]]></title>
-    <link href="http://holsee.github.io/merge-sort/"/>
-    <updated>2014-06-23T00:37:19+01:00</updated>
-    <id>http://holsee.github.io/merge-sort</id>
-    <content type="html"><![CDATA[<p>You start with an unordered sequence.
-You create N empty queues.
-You loop over every item to be sorted.
-On each loop iteration, you look at the last element in the key.
-You move that item into the end of the queue which corresponds to that element.
-When you are finished looping you concatenate all the queues together into another sequence.
-You then reapply the procedure described but look at the second last element in the key.
-You keep doing this until you have looped over every key.
-When you complete this process the resulting sequence will be sorted as described above.</p>
-
-<p>Let n<sub>i</sub> be the number of items in the sequence to be sorted. N is number of integers that each key element can take. Let n<sub>k</sub> be the number of keys in each item.</p>
-
-
-<p>The total time to sort the sequence is thus O(n<sub>k</sub>(n<sub>i</sub> + N)).</p>
-
-
-
-
-<figure class='code'><figcaption><span>JS Merge Sort</span><a href='http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">mergesort</span><span class="p">(</span><span class="nx">list</span><span class="p">){</span>
-</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">return</span> <span class="nx">list</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span>
-</span><span class='line'>    <span class="nx">left</span>  <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">mid</span><span class="p">),</span>
-</span><span class='line'>    <span class="nx">right</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">mid</span><span class="p">,</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">mergesort</span><span class="p">(</span><span class="nx">left</span><span class="p">),</span> <span class="nx">mergesort</span><span class="p">(</span><span class="nx">right</span><span class="p">))</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">function</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">){</span>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">sorted</span> <span class="o">=</span> <span class="p">[];</span>
-</span><span class='line'>  <span class="k">while</span> <span class="p">(</span><span class="nx">left</span> <span class="o">&amp;&amp;</span> <span class="nx">left</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">right</span> <span class="o">&amp;&amp;</span> <span class="nx">right</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">right</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-</span><span class='line'>    <span class="nx">sorted</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">b</span><span class="o">?</span> <span class="nx">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">:</span> <span class="nx">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-</span><span class='line'>    <span class="c1">// remove the element which was added to the sorted array</span>
-</span><span class='line'>    <span class="nx">b</span><span class="o">?</span> <span class="nx">left</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">:</span> <span class="nx">right</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">sorted</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>Ruby Merge Sort</span><a href='http://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Merge_sort'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">mergesort</span><span class="p">(</span><span class="n">list</span><span class="p">)</span>
-</span><span class='line'>  <span class="k">return</span> <span class="n">list</span> <span class="k">if</span> <span class="n">list</span><span class="o">.</span><span class="n">size</span> <span class="o">&lt;=</span> <span class="mi">1</span>
-</span><span class='line'>  <span class="n">mid</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="n">size</span> <span class="o">/</span> <span class="mi">2</span>
-</span><span class='line'>  <span class="n">left</span>  <span class="o">=</span> <span class="n">list</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">mid</span><span class="o">]</span>
-</span><span class='line'>  <span class="n">right</span> <span class="o">=</span> <span class="n">list</span><span class="o">[</span><span class="n">mid</span><span class="p">,</span> <span class="n">list</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="n">mid</span><span class="o">]</span>
-</span><span class='line'>  <span class="n">merge</span><span class="p">(</span><span class="n">mergesort</span><span class="p">(</span><span class="n">left</span><span class="p">),</span> <span class="n">mergesort</span><span class="p">(</span><span class="n">right</span><span class="p">))</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">sorted</span> <span class="o">=</span> <span class="o">[]</span>
-</span><span class='line'>  <span class="k">until</span> <span class="n">left</span><span class="o">.</span><span class="n">empty?</span> <span class="ow">or</span> <span class="n">right</span><span class="o">.</span><span class="n">empty?</span>
-</span><span class='line'>    <span class="k">if</span> <span class="n">left</span><span class="o">.</span><span class="n">first</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="o">.</span><span class="n">first</span>
-</span><span class='line'>      <span class="n">sorted</span> <span class="o">&lt;&lt;</span> <span class="n">left</span><span class="o">.</span><span class="n">shift</span>
-</span><span class='line'>    <span class="k">else</span>
-</span><span class='line'>      <span class="n">sorted</span> <span class="o">&lt;&lt;</span> <span class="n">right</span><span class="o">.</span><span class="n">shift</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>  <span class="n">sorted</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">left</span><span class="p">)</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
