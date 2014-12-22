@@ -12,7 +12,7 @@ I liked it, I always found starting a new rails app always triggered my testing 
 
 {% img /images/badges/rtfz_badge.png %}
 
-The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier such as Shoulda](https://github.com/thoughtbot/shoulda), [Capybara](https://github.com/jnicklas/capybara) and FactoryGirl](https://github.com/thoughtbot/factory_girl).  I will touch on each of there briefly to give you a taste of what they are all about...
+The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier such as [Shoulda](https://github.com/thoughtbot/shoulda), [Capybara](https://github.com/jnicklas/capybara) and [FactoryGirl](https://github.com/thoughtbot/factory_girl).  I will touch on each of there briefly to give you a taste of what they are all about...
 
 During the Unit Testing section you are introduced to [Shoulda](https://github.com/thoughtbot/shoulda) gem which is described as an alternative syntax that is easy on the fingers and the eyes.
 
@@ -23,9 +23,8 @@ class UserTest < Test::Unit::TestCase
 end
 ```
 
-As the course starts to dig into integration testing you are also introduced to [Capybara](https://github.com/jnicklas/capybara) which provides a interaction based DSL for defining your integration tests that supports [multiple drivers](http://www.rubydoc.info/github/jnicklas/capybara#Drivers) and that acts like a headless browser of sorts giving you more control over the interactions with your site / api, following redirects more naturally as an example.
+As the course starts to dig into integration testing you are also introduced to [Capybara](https://github.com/jnicklas/capybara) which provides a interaction based DSL for defining your integration tests that supports [multiple drivers](http://www.rubydoc.info/github/jnicklas/capybara#Drivers). Capybara tests when executing act like a headless browser of sorts giving you more control over the interactions with your site or api, following redirects more naturally for example which is something not handles by vanilla rails integration tests so well.
 
-<!-- more -->
 
 ``` ruby
  describe "the signin process", :type => :feature do
@@ -44,8 +43,9 @@ As the course starts to dig into integration testing you are also introduced to 
   end
 end
 ```
-
 Lastly you are introduced to [FactoryGirl](https://github.com/thoughtbot/factory_girl), which is an alternative to using the built in test fixtures provided by rails out of the box.  
+
+<!-- more -->
 
 There are numerous advantages to using a factories and specifically FactoryGirl instead of the built in rails fixture for your test data. You are provided with granular control over how the test data built and initialized not to mention the ability to create test data dynamically rather than maintaining a complex hand crafted static data set defined in yaml with magic ids providing the only basis for associations.
 
@@ -66,23 +66,22 @@ FactoryGirl.define do
       admin      true
     end
   end
+
+  factory :foo do
+    # some fields
+  end
 end
 ```
 
 Using the `Factory` method directly will create an instance of an admin and insert it into the DB. 
 
-``` ruby
-test 'something to do with an admin' do
-  user = Factory(:admin)
-  assert user.admin
-end
-```
-Beyond this basic example you are able to create new instances without inserting them into the database using the `build` method on the Factory as well as defining associations between entities as simple as adding `association :roles`.
+Beyond this basic example you are able to create new instances without inserting them into the database using the `build` method on the Factory as well as defining associations between entities as simple as adding `association :foo`.
 
 ``` ruby
 test 'something to do with an admin' do
   user = Factory(:admin)
   assert user.admin
+  association :foo
 end
 ```
 
