@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-11-25T20:37:16+00:00</updated>
+  <updated>2014-12-22T13:48:46+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,18 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[To Be Message Driven]]></title>
+    <link href="http://holsee.github.io/to-be-message-driven/"/>
+    <updated>2014-12-22T13:38:20+00:00</updated>
+    <id>http://holsee.github.io/to-be-message-driven</id>
+    <content type="html"><![CDATA[<p><a href="https://twitter.com/toddlmontgomery">@ToddMontgomery</a>&rsquo;s session on message passing and distributed systems at <a href="http://reactconf.com">ReactConf</a>.</p>
+
+<div class='embed-video-container'><iframe src='http://www.youtube.com/embed/DL_-ENSpcAg' frameborder='0' allowfullscreen></iframe></div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[.NET Open Sourced]]></title>
@@ -706,27 +718,6 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
 <li><a href="https://class.coursera.org/algo2-2012-001/lecture/preview">Algorithms: Design and Analysis, Part 2</a></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Devlog: Functional Programming Principles in Scala]]></title>
-    <link href="http://holsee.github.io/devlog-functional-programming-principles-in-scala/"/>
-    <updated>2014-07-16T10:45:00+01:00</updated>
-    <id>http://holsee.github.io/devlog-functional-programming-principles-in-scala</id>
-    <content type="html"><![CDATA[<p><img src="http://holsee.github.io/images/certs/coursera_progfun.png"></p>
-
-<p><a href="https://www.coursera.org/course/reactive">Coursera &ndash; Principles of Reactive Programming</a></p>
-
-<h3>About the Course</h3>
-
-<p>This course introduces the cornerstones of functional programming using the Scala programming language. Functional programming has become more and more popular in recent years because it promotes code that’s safe, concise, and elegant. Furthermore, functional programming makes it easier to write parallel code for today’s and tomorrow’s multiprocessors by replacing mutable variables and loops with powerful ways to define and compose functions.</p>
-
-<p>Scala is a language that fuses functional and object-oriented programming in a practical package. It interoperates seamlessly with Java and its tools. Scala is now used in a rapidly increasing number of open source projects and companies. It provides the core infrastructure for sites such as Twitter, LinkedIn, Foursquare, Tumblr, and Klout.</p>
-
-<p>In this course you will discover the elements of the functional programming style and learn how to apply them usefully in your daily programming tasks. You will also develop a solid foundation for reasoning about functional programs, by touching upon proofs of invariants and the tracing of execution symbolically.</p>
-
-<p>The course is hands on; most units introduce short programs that serve as illustrations of important concepts and invite you to play with them, modifying and improving them. The course is complemented by a series of assignments, most of which are also programming projects.</p>
 ]]></content>
   </entry>
   
