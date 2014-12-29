@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-12-29T17:54:35+00:00</updated>
+  <updated>2014-12-29T18:25:08+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -26,7 +26,7 @@
 
 <p>&ldquo;The Elixir Programming Language wraps functional programming with immutable state and an actor-based approach to concurrency in a tidy modern syntax.  And it runs on the industrial-strength, high-performance, distributed Erlang VM (BEAM).&rdquo;</p>
 
-<p>It has very powerful meta-programming capabilities through compile time expansion of macros and the dynamic power of the language.  A good example of the developer productivity that can be gained is their use in the <a href="http://www.phoenixframework.org/v0.7.2/docs/routing">routing system in the phoenix web framework</a>.</p>
+<p>It has very powerful meta-programming capabilities through compile time expansion of macros and the dynamic power of the language.  A good example of the developer productivity that can be gained is their use in the <a href="http://www.phoenixframework.org/v0.7.2/docs/routing">routing system in the phoenix web framework</a>. When learning about Elixir macros I found the &lsquo;<a href="http://www.theerlangelist.com/2014/06/understanding-elixir-macros-part-1.html">Understanding Elixir Macros Series</a>&rsquo; by <a href="https://twitter.com/sasajuric">Saša Jurić</a> to be very useful.</p>
 
 <h3>What is BEAM?</h3>
 
