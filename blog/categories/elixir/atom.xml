@@ -4,7 +4,7 @@
   <title><![CDATA[Category: elixir | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/elixir/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-12-29T15:12:56+00:00</updated>
+  <updated>2014-12-29T15:21:17+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -40,7 +40,7 @@
 
 <p>OTP is set of Erlang libraries and design principles providing middle-ware to develop these systems. It includes its own distributed database, applications to interface towards other languages, debugging and release handling tools.</p>
 
-<p>The OTP libraries (and practices to an extent) that are battle hardened and hide much of the boilerplate code required to perform common patterns such as creating a server to store state, recover from failures through supervision trees and so much more.</p>
+<p>The OTP libraries (and the associated best practices to an extent) are mature, battle hardened and hide much of the boilerplate code required to perform common patterns such as creating a server to store state, recover from failures through supervision trees and so much more.</p>
 
 <p>I look forward to writing about this with examples in future as I learn more about OTP myself.</p>
 
