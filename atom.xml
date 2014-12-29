@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-12-29T15:10:19+00:00</updated>
+  <updated>2014-12-29T15:12:02+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -18,7 +18,7 @@
     <link href="http://holsee.github.io/elixir-beam-otp/"/>
     <updated>2014-12-29T14:25:42+00:00</updated>
     <id>http://holsee.github.io/elixir-beam-otp</id>
-    <content type="html"><![CDATA[<p><em>As I plan to write and speak about Elixir on my blog and hopefully at some meet-ups soon, I though I would write a quite definitions post which I can point to&hellip;</em></p>
+    <content type="html"><![CDATA[<p><em>As I plan to write and speak about Elixir on my blog and hopefully at some meet-ups soon, I though I would write a short post with handy descriptions of some of the key aspects that I can reference in one place&hellip;</em></p>
 
 <h3>What is Elixir?</h3>
 
