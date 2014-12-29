@@ -9,7 +9,7 @@
 
 <meta name="author" content="holsee"> 
 
-<meta name="description" content=" @ToddMontgomery&rsquo;s session on message passing and distributed systems at ReactConf. Dec 22nd, 2014 "> <meta name="keywords" content="">
+<meta name="description" content="As I plan to write and speak about Elixir on my blog and hopefully at some meet-ups soon, I though I would write a quite definitions post which I &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -146,6 +146,92 @@ $(function(){
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/elixir-beam-otp/">
+		
+			Elixir, BEAM and OTP</a>
+	</h2>
+	<div class="entry-content">
+		<p><em>As I plan to write and speak about Elixir on my blog and hopefully at some meet-ups soon, I though I would write a quite definitions post which I can point to&hellip;</em></p>
+
+<h3>What is Elixir?</h3>
+
+<p>Think Dave Thomas describes it best&hellip;</p>
+
+<p>&ldquo;The Elixir Programming Language wraps functional programming with immutable state and an actor-based approach to concurrency in a tidy modern syntax.  And it runs on the industrial-strength, high-performance, distributed Erlang VM (BEAM).&rdquo;</p>
+
+<p>It has very powerful meta-programming capabilities through compile time expansion of macros and the dynamic power of the language.  A good example of the developer productivity that can be gained is their use in the <a href="http://www.phoenixframework.org/v0.7.2/docs/routing">routing system in the phoenix web framework</a>.</p>
+
+<h3>What is BEAM?</h3>
+
+<p>BEAM is the name of the virtual machine where all Erlang code is executed. Every compiled Erlang file has the suffix .beam. The virtual machine is sometimes referred to as the emulator.</p>
+
+<p>There is also an implementation of Erlang which runs on the JVM, called Erlang, but I guess the less said about that the better.</p>
+
+<p>When you compile Elixir code it is compile into the .beam format, which allows it to be executed on the BEAM VM.</p>
+
+<h3>What is OTP?</h3>
+
+<p>OTP is set of Erlang libraries and design principles providing middle-ware to develop these systems. It includes its own distributed database, applications to interface towards other languages, debugging and release handling tools.</p>
+
+<p>The OTP libraries (and practices to an extent) that are battle hardened and hide much of the boilerplate code required to perform common patterns such as creating a server to store state, recover from failures through supervision trees and so much more.</p>
+
+<p>I look forward to writing about this with examples in future as I learn more about OTP myself.</p>
+
+<p><em>Where is OTP used?</em></p>
+
+<p><a href="https://github.com/mojombo/egitd">egitsd</a> &ndash; egitd is an Erlang git-daemon implementation that provides a more flexible,
+scalable, and loggable way to serve public git repositories.  It is used by github.com.</p>
+
+<p><a href="http://www.rabbitmq.com">RabbitMQ</a> &ndash; An open source message broker (sometimes called message-oriented middleware) that implements the Advanced Message Queuing Protocol (AMQP).</p>
+
+<p><a href="https://github.com/erlang/otp/wiki/Projects-using-erlang-otp">More Projects using OTP&hellip;</a></p>
+
+<h3>Sources:</h3>
+
+<ul>
+<li><a href="http://www.erlang.org/doc/">Erlang Website</a></li>
+<li><a href="https://github.com/erlang/otp/wiki">Erlang OTP Source on Github</a></li>
+<li><a href="http://elixir-lang.org">Elixir Website</a></li>
+<li><a href="https://pragprog.com/book/elixir/programming-elixir">Programming Elixir Book</a> by <a href="https://twitter.com/pragdave">Dave Thomas</a></li>
+<li><a href="http://elixirsips.com">Elixir Sips Screencasts</a> by <a href="https://plus.google.com/+JoshAdams">Josh Adams</a></li>
+</ul>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-29T14:25:42+00:00" pubdate data-updated="true">Dec 29<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/elixir/'>elixir</a>
+
+</div>
+
+
+	
+</div></article>
 
 
     <article class="post">
@@ -1814,62 +1900,10 @@ When you complete this process the resulting sequence will be sorted as describe
 	
 </div></article>
 
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/devlog-principles-of-reactive-programming/">
-		
-			Devlog: Principles of Reactive Programming</a>
-	</h2>
-	<div class="entry-content">
-		<p><img src="/images/certs/coursera_prp.png"></p>
-
-<p><a href="https://www.coursera.org/course/progfun">Coursera &ndash; Functional Programming Principles in Scala</a></p>
-
-<h3>About the Course</h3>
-
-<p>This is a follow-on for the Coursera class “Principles of Functional Programming in Scala”, which so far had more than 100’000 inscriptions over two iterations of the course, with some of the highest completion rates of any massive open online course worldwide.</p>
-
-<p>The aim of the second course is to teach the principles of reactive programming. Reactive programming is an emerging discipline which combines concurrency and event-based and asynchronous systems. It is essential for writing any kind of web-service or distributed system and is also at the core of many high-performance concurrent systems. Reactive programming can be seen as a natural extension of higher-order functional programming to concurrent systems that deal with distributed state by coordinating and orchestrating asynchronous data streams exchanged by actors.</p>
-
-<p>In this course you will discover key elements for writing reactive programs in a composable way. You will find out how to apply these building blocks in the construction of event-driven systems that are scalable and resilient.</p>
-
-<p>The course is hands on; most units introduce short programs that serve as illustrations of important concepts and invite you to play with them, modifying and improving them. The course is complemented by a series of assignments, which are also programming projects.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-21T09:45:00+00:00" pubdate data-updated="true">Jan 21<sup>st</sup>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/devlog/'>devlog</a>, <a class='category' href='/blog/categories/mooc/'>mooc</a>
-
-</div>
-
-
-	
-</div></article>
-
 <nav id="pagenavi">
     
+    
+        <a href="2" class="next">Next</a>
     
     <div class="center"><a href="/archives">Blog Archives</a></div>
 </nav></div>

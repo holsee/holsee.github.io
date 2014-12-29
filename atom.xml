@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-12-22T13:48:46+00:00</updated>
+  <updated>2014-12-29T15:09:39+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Elixir, BEAM and OTP]]></title>
+    <link href="http://holsee.github.io/elixir-beam-otp/"/>
+    <updated>2014-12-29T14:25:42+00:00</updated>
+    <id>http://holsee.github.io/elixir-beam-otp</id>
+    <content type="html"><![CDATA[<p><em>As I plan to write and speak about Elixir on my blog and hopefully at some meet-ups soon, I though I would write a quite definitions post which I can point to&hellip;</em></p>
+
+<h3>What is Elixir?</h3>
+
+<p>Think Dave Thomas describes it best&hellip;</p>
+
+<p>&ldquo;The Elixir Programming Language wraps functional programming with immutable state and an actor-based approach to concurrency in a tidy modern syntax.  And it runs on the industrial-strength, high-performance, distributed Erlang VM (BEAM).&rdquo;</p>
+
+<p>It has very powerful meta-programming capabilities through compile time expansion of macros and the dynamic power of the language.  A good example of the developer productivity that can be gained is their use in the <a href="http://www.phoenixframework.org/v0.7.2/docs/routing">routing system in the phoenix web framework</a>.</p>
+
+<h3>What is BEAM?</h3>
+
+<p>BEAM is the name of the virtual machine where all Erlang code is executed. Every compiled Erlang file has the suffix .beam. The virtual machine is sometimes referred to as the emulator.</p>
+
+<p>There is also an implementation of Erlang which runs on the JVM, called Erlang, but I guess the less said about that the better.</p>
+
+<p>When you compile Elixir code it is compile into the .beam format, which allows it to be executed on the BEAM VM.</p>
+
+<h3>What is OTP?</h3>
+
+<p>OTP is set of Erlang libraries and design principles providing middle-ware to develop these systems. It includes its own distributed database, applications to interface towards other languages, debugging and release handling tools.</p>
+
+<p>The OTP libraries (and practices to an extent) that are battle hardened and hide much of the boilerplate code required to perform common patterns such as creating a server to store state, recover from failures through supervision trees and so much more.</p>
+
+<p>I look forward to writing about this with examples in future as I learn more about OTP myself.</p>
+
+<p><em>Where is OTP used?</em></p>
+
+<p><a href="https://github.com/mojombo/egitd">egitsd</a> &ndash; egitd is an Erlang git-daemon implementation that provides a more flexible,
+scalable, and loggable way to serve public git repositories.  It is used by github.com.</p>
+
+<p><a href="http://www.rabbitmq.com">RabbitMQ</a> &ndash; An open source message broker (sometimes called message-oriented middleware) that implements the Advanced Message Queuing Protocol (AMQP).</p>
+
+<p><a href="https://github.com/erlang/otp/wiki/Projects-using-erlang-otp">More Projects using OTP&hellip;</a></p>
+
+<h3>Sources:</h3>
+
+<ul>
+<li><a href="http://www.erlang.org/doc/">Erlang Website</a></li>
+<li><a href="https://github.com/erlang/otp/wiki">Erlang OTP Source on Github</a></li>
+<li><a href="http://elixir-lang.org">Elixir Website</a></li>
+<li><a href="https://pragprog.com/book/elixir/programming-elixir">Programming Elixir Book</a> by <a href="https://twitter.com/pragdave">Dave Thomas</a></li>
+<li><a href="http://elixirsips.com">Elixir Sips Screencasts</a> by <a href="https://plus.google.com/+JoshAdams">Josh Adams</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[To Be Message Driven]]></title>
@@ -701,21 +754,6 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
 <li><a href="http://www.imore.com/debug-39-nitin-ganatra-episode-i-system-7-carbon">Nitin Ganatra episode I: System 7 to Carbon</a></li>
 <li><a href="http://www.imore.com/debug-40-nitin-ganatra-episode-ii-os-x-ios">Nitin Ganatra episode II: OS X to iOS</a></li>
 <li><a href="http://www.imore.com/debug-41-nitin-ganatra-episode-iii-iphone-ipad%E2%80%93%E2%80%93">Nitin Ganatra episode III: iPhone to iPad</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Algorithms: Design and Analysis Videos]]></title>
-    <link href="http://holsee.github.io/algorithms-design-and-analysis-videos/"/>
-    <updated>2014-07-18T18:30:22+01:00</updated>
-    <id>http://holsee.github.io/algorithms-design-and-analysis-videos</id>
-    <content type="html"><![CDATA[<p>List of resources related to Algorithm Design and Analysis:</p>
-
-<ul>
-<li><a href="https://class.coursera.org/algo-004/lecture/preview">Algorithms: Design and Analysis, Part 1</a></li>
-<li><a href="https://class.coursera.org/algo2-2012-001/lecture/preview">Algorithms: Design and Analysis, Part 2</a></li>
 </ul>
 
 ]]></content>
