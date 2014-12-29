@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-12-29T17:52:43+00:00</updated>
+  <updated>2014-12-29T17:54:35+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -34,7 +34,7 @@
 
 <p>There is also an implementation of Erlang which runs on the JVM, called <a href="https://github.com/krestenkrab/erjang/wiki">Erjang</a>, but I guess the less said about that the better as BEAM is really the awesome part if you ask me.</p>
 
-<p>When you compile Elixir code it is compile into the .beam format, which allows it to be executed on the BEAM VM.</p>
+<p>When you compile Elixir code it is converted to .beam format, which allows it to be executed on the BEAM VM.</p>
 
 <h3>What is OTP?</h3>
 
