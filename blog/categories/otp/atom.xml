@@ -4,7 +4,7 @@
   <title><![CDATA[Category: otp | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/otp/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-08T21:01:48+00:00</updated>
+  <updated>2015-03-08T21:21:17+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Thinking Like and Erlanger]]></title>
-    <link href="http://holsee.github.io/p/thinking-like-and-erlanger/"/>
+    <link href="http://holsee.github.io/p/thinking-like-an-erlanger/"/>
     <updated>2015-03-08T20:51:47+00:00</updated>
-    <id>http://holsee.github.io/p/thinking-like-and-erlanger</id>
+    <id>http://holsee.github.io/p/thinking-like-an-erlanger</id>
     <content type="html"><![CDATA[<p>I found this video last night by <a href="LeHoff">Torben Hoffman</a>, I recommend folks interested in Erlang or Elixir give it a watch and take it to heart.  Torben does a good job of displaying how an &ldquo;Erlanger&rdquo; should think, in comparison to other programmers.</p>
 
 <p><div class="embed-video-container"><iframe src="http://player.vimeo.com/video/118258580 "></iframe></div></p>
