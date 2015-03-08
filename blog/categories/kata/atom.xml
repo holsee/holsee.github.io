@@ -4,7 +4,7 @@
   <title><![CDATA[Category: kata | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/kata/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-08T12:30:38+00:00</updated>
+  <updated>2015-03-08T12:33:47+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -20,7 +20,7 @@
     <id>http://holsee.github.io/p/roman-numerals-elixir-kata</id>
     <content type="html"><![CDATA[<p>A fun little test driven kata which will introduce you to the basics of elixir.</p>
 
-<p>{% youtube L_9pUkVSjcE %}</p>
+<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/L_9pUkVSjcE' frameborder='0' allowfullscreen></iframe></div></p>
 
 <p>A rule I try to follow for this is to try and keep my solution less than 20 lines of code.</p>
 ]]></content>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: wants | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/wants/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-08T12:30:38+00:00</updated>
+  <updated>2015-03-08T12:33:47+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -20,7 +20,7 @@
     <id>http://holsee.github.io/p/ridge-stand</id>
     <content type="html"><![CDATA[<p>Came across this on kickstarter <a href="https://www.kickstarter.com/projects/1205042237/the-ridge-stand-a-new-edge-in-smart-design">(here)</a>. I want one of these&hellip; so slick!  Shipping end of 2014 and taking pre-orders now.</p>
 
-<p>{% img /images/wants/ridge.jpg %}</p>
+<p><img src="/images/wants/ridge.jpg"></p>
 
 <p><a href="http://www.theridgestand.com">The Ridge Stand by NewBee Design</a></p>
 ]]></content>

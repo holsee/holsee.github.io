@@ -4,7 +4,7 @@
   <title><![CDATA[Category: testing | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/testing/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-08T12:30:38+00:00</updated>
+  <updated>2015-03-08T12:33:47+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -20,7 +20,7 @@
     <id>http://holsee.github.io/p/integrated-tests-are-a-scam</id>
     <content type="html"><![CDATA[<p>Found this gem in a tweet from <a href="https://twitter.com/david_whitney">@david_whitney</a>, and as he says the title is trolly but none the less is an excellent talk on automated testing.</p>
 
-<p>{% vimeo 80533536 %}</p>
+<p><div class="embed-video-container"><iframe src="http://player.vimeo.com/video/80533536 "></iframe></div></p>
 
 <h3>Integrations Tests Lead to Bad Design</h3>
 

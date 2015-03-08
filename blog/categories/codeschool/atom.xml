@@ -4,7 +4,7 @@
   <title><![CDATA[Category: codeschool | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/codeschool/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-08T12:30:38+00:00</updated>
+  <updated>2015-03-08T12:33:47+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -22,7 +22,7 @@
 
 <p>I liked it, I always found starting a new rails app always triggered my testing OCD and it was nice to get an insight into the strategies one can take to test a rails app without overdoing it.</p>
 
-<p>{% img /images/badges/rtfz_badge.png %}</p>
+<p><img src="/images/badges/rtfz_badge.png"></p>
 
 <p>The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier such as <a href="https://github.com/thoughtbot/shoulda">Shoulda</a>, <a href="https://github.com/jnicklas/capybara">Capybara</a> and <a href="https://github.com/thoughtbot/factory_girl">FactoryGirl</a>.  I will touch on each of there briefly to give you a taste of what they are all about&hellip;</p>
 
@@ -128,13 +128,13 @@ end
 
 <p>I really enjoyed this course, I took away a lot of useful idioms which I will put to good use (when I get the chance).</p>
 
-<p>{% img center /images/badges/ruby-bits_badge.png 538 178 %}</p>
+<p><img class="center" src="/images/badges/ruby-bits_badge.png" width="538" height="178"></p>
 
 <p>The meta-programming a DSL creation in <a href="https://www.codeschool.com/courses/ruby-bits-part-2">RUBY BITS part 2</a> were great&hellip; adding methods to classes dynamically is pretty bad-ass for drying up code.</p>
 
 <p><em>I always wanted default method implementation on interfaces in C#, dunno why I brought this up other than in Ruby that would never ever be an issue with the features you have at your disposal&hellip; very few languages lead to as much developer happiness.</em></p>
 
-<p>{% img center /images/badges/ruby-bits-2_badge.png 538 178 %}</p>
+<p><img class="center" src="/images/badges/ruby-bits-2_badge.png" width="538" height="178"></p>
 
 <p>Just one of those languages I would love to write everyday if I could.
 Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombies">Rails Testing <em>for zombies</em></a> course next&hellip;</p>
@@ -150,7 +150,7 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
     <id>http://holsee.github.io/p/devlog-real-time-web-with-node-dot-js</id>
     <content type="html"><![CDATA[<p>Completed the <a href="">Real Time Web with Node.js course on CodeSchool</a></p>
 
-<p>{% img /images/badges/rtnode_badge.png %}</p>
+<p><img src="/images/badges/rtnode_badge.png"></p>
 
 <p>Another impeccable course, produced to the usual  high standards which I have come to expect with each and every CodeSchool module. Go give these guys money and do a few courses, worth every penny.</p>
 
@@ -195,7 +195,7 @@ client = redis.createClient()</p>
 
 <p>P.S. This gif of Eric Allam &amp; Gregg Pollack cracks me up no end&hellip;</p>
 
-<p>{% img center <a href="http://courseware.codeschool.com/images/blog/node-mind-blown.gif">http://courseware.codeschool.com/images/blog/node-mind-blown.gif</a> 800 800 %}</p>
+<p><img class="center <a" src="href="http://courseware.codeschool.com/images/blog/node-mind-blown.gif">http://courseware.codeschool.com/images/blog/node-mind-blown.gif</a>" width="800" height="800"></p>
 ]]></content>
   </entry>
   
@@ -206,7 +206,7 @@ client = redis.createClient()</p>
     <id>http://holsee.github.io/p/devlog-a-sip-of-coffeescript</id>
     <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/coffeescript">CoffeeScript course on CodeSchool</a>.</p>
 
-<p>{% img center /images/badges/coffeescript_badge.png %}</p>
+<p><img class="center" src="/images/badges/coffeescript_badge.png"></p>
 
 <p>I love these list comprehensions&hellip; I don&rsquo;t think I will be writing straight JS for a while.</p>
 
