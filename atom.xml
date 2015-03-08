@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-08T20:49:45+00:00</updated>
+  <updated>2015-03-08T21:01:48+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Thinking Like and Erlanger]]></title>
+    <link href="http://holsee.github.io/p/thinking-like-and-erlanger/"/>
+    <updated>2015-03-08T20:51:47+00:00</updated>
+    <id>http://holsee.github.io/p/thinking-like-and-erlanger</id>
+    <content type="html"><![CDATA[<p>I found this video last night by <a href="LeHoff">Torben Hoffman</a>, I recommend folks interested in Erlang or Elixir give it a watch and take it to heart.  Torben does a good job of displaying how an &ldquo;Erlanger&rdquo; should think, in comparison to other programmers.</p>
+
+<div class="embed-video-container"><iframe src="http://player.vimeo.com/video/118258580 "></iframe></div>
+
+
+<p>Torben recommends 2 books which have been added to my reading list:</p>
+
+<p><a href="http://www.amazon.co.uk/Communicating-Sequential-Processes-International-Computing/dp/0131532715">Communicating Sequential Processes</a> by C.A.R. Hoare.</p>
+
+<p><a href="http://www.amazon.co.uk/Principles-Protocol-Design-Robin-Sharp/dp/3540775404">Principles of Protocol Design</a> by Robin Sharp.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Elixir, BEAM and OTP]]></title>
@@ -739,22 +757,6 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
     <updated>2014-08-28T23:32:08+01:00</updated>
     <id>http://holsee.github.io/p/elixir-conf-2014-keynote-think-different-by-dave-thomas</id>
     <content type="html"><![CDATA[<div class='embed-video-container'><iframe src='http://www.youtube.com/embed/5hDVftaPQwY' frameborder='0' allowfullscreen></iframe></div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Debug Podcast: The Ganatra Trilogy]]></title>
-    <link href="http://holsee.github.io/p/debug-podcast-the-ganatra-trilogy/"/>
-    <updated>2014-08-28T21:17:23+01:00</updated>
-    <id>http://holsee.github.io/p/debug-podcast-the-ganatra-trilogy</id>
-    <content type="html"><![CDATA[<p>A wonderful series of <a href="http://www.imore.com/debug">Debug Podcasts</a> where the guest <a href="https://twitter.com/nitinganatra">@NitinGanatra</a>, former iOS Apps Director at Apple, speaks about the evolution of the products over the years from a technical insiders perspective. Very enjoyable and eye openning 6 hours of Apple geek goodness&hellip;</p>
-
-<ul>
-<li><a href="http://www.imore.com/debug-39-nitin-ganatra-episode-i-system-7-carbon">Nitin Ganatra episode I: System 7 to Carbon</a></li>
-<li><a href="http://www.imore.com/debug-40-nitin-ganatra-episode-ii-os-x-ios">Nitin Ganatra episode II: OS X to iOS</a></li>
-<li><a href="http://www.imore.com/debug-41-nitin-ganatra-episode-iii-iphone-ipad%E2%80%93%E2%80%93">Nitin Ganatra episode III: iPhone to iPad</a></li>
-</ul>
 
 ]]></content>
   </entry>
