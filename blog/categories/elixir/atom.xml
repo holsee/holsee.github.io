@@ -4,7 +4,7 @@
   <title><![CDATA[Category: elixir | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/elixir/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-08T12:33:47+00:00</updated>
+  <updated>2015-03-08T20:49:45+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -24,17 +24,17 @@
 
 <p>Think Dave Thomas describes it best&hellip;</p>
 
-<p>&ldquo;The Elixir Programming Language wraps functional programming with immutable state and an actor-based approach to concurrency in a tidy modern syntax.  And it runs on the industrial-strength, high-performance, distributed Erlang VM (BEAM).&rdquo;</p>
+<p>&ldquo;The Elixir Programming Language wraps functional programming with immutable state and an actor-based approach to concurrency in a tidy modern syntax.  And it runs on the industrial-strength, high-performance, distributed Erlang VM.&rdquo;</p>
 
 <p>It has very powerful meta-programming capabilities through compile time expansion of macros and the dynamic power of the language.  A good example of the developer productivity that can be gained is their use in the <a href="http://www.phoenixframework.org/v0.7.2/docs/routing">routing system in the phoenix web framework</a>. When learning about Elixir macros I found the &lsquo;<a href="http://www.theerlangelist.com/2014/06/understanding-elixir-macros-part-1.html">Understanding Elixir Macros Series</a>&rsquo; by <a href="https://twitter.com/sasajuric">Saša Jurić</a> to be very useful.</p>
 
-<h3>What is BEAM?</h3>
+<h3>What is the Erlang VM &amp; BEAM?</h3>
 
-<p>BEAM is the name of the virtual machine where all Erlang code is executed. Every compiled Erlang file has the suffix .beam. The virtual machine is sometimes referred to as the emulator.</p>
+<p>The &ldquo;Erlang VM&rdquo; is the name of the virtual machine where all Erlang code is executed. Every compiled Erlang file has the suffix .beam.</p>
 
-<p>There is also an implementation of Erlang which runs on the JVM, called <a href="https://github.com/krestenkrab/erjang/wiki">Erjang</a>, but I guess the less said about that the better as BEAM is really the awesome part if you ask me.</p>
+<p>There is also an implementation of Erlang which runs on the JVM, called <a href="https://github.com/krestenkrab/erjang/wiki">Erjang</a>, but I guess the less said about that the better as the Erlang VM is really the awesome part if you ask me.</p>
 
-<p>When you compile Elixir code it is converted to .beam format, which allows it to be executed on the BEAM VM.</p>
+<p>When you compile Elixir code it is converted to .beam format, which allows it to be executed on the Erlang VM.</p>
 
 <h3>What is OTP?</h3>
 
