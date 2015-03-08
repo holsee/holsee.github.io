@@ -12,17 +12,17 @@ _As I plan to write and speak about Elixir on my blog and hopefully at some meet
 
 Think Dave Thomas describes it best...
 
-"The Elixir Programming Language wraps functional programming with immutable state and an actor-based approach to concurrency in a tidy modern syntax.  And it runs on the industrial-strength, high-performance, distributed Erlang VM (BEAM)."
+"The Elixir Programming Language wraps functional programming with immutable state and an actor-based approach to concurrency in a tidy modern syntax.  And it runs on the industrial-strength, high-performance, distributed Erlang VM."
 
 It has very powerful meta-programming capabilities through compile time expansion of macros and the dynamic power of the language.  A good example of the developer productivity that can be gained is their use in the [routing system in the phoenix web framework](http://www.phoenixframework.org/v0.7.2/docs/routing). When learning about Elixir macros I found the '[Understanding Elixir Macros Series](http://www.theerlangelist.com/2014/06/understanding-elixir-macros-part-1.html)' by [Saša Jurić](https://twitter.com/sasajuric) to be very useful.
 
-### What is BEAM?
+### What is the Erlang VM & BEAM?
 
-BEAM is the name of the virtual machine where all Erlang code is executed. Every compiled Erlang file has the suffix .beam. The virtual machine is sometimes referred to as the emulator.
+The "Erlang VM" is the name of the virtual machine where all Erlang code is executed. Every compiled Erlang file has the suffix .beam. 
 
-There is also an implementation of Erlang which runs on the JVM, called [Erjang](https://github.com/krestenkrab/erjang/wiki), but I guess the less said about that the better as BEAM is really the awesome part if you ask me.
+There is also an implementation of Erlang which runs on the JVM, called [Erjang](https://github.com/krestenkrab/erjang/wiki), but I guess the less said about that the better as the Erlang VM is really the awesome part if you ask me.
 
-When you compile Elixir code it is converted to .beam format, which allows it to be executed on the BEAM VM.
+When you compile Elixir code it is converted to .beam format, which allows it to be executed on the Erlang VM.
 
 ### What is OTP?
 
