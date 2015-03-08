@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithms | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/algorithms/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-12-29T18:25:08+00:00</updated>
+  <updated>2015-03-08T12:30:38+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Algorithms: Design and Analysis Videos]]></title>
-    <link href="http://holsee.github.io/algorithms-design-and-analysis-videos/"/>
+    <link href="http://holsee.github.io/p/algorithms-design-and-analysis-videos/"/>
     <updated>2014-07-18T18:30:22+01:00</updated>
-    <id>http://holsee.github.io/algorithms-design-and-analysis-videos</id>
+    <id>http://holsee.github.io/p/algorithms-design-and-analysis-videos</id>
     <content type="html"><![CDATA[<p>List of resources related to Algorithm Design and Analysis:</p>
 
 <ul>
@@ -30,9 +30,9 @@
   
   <entry>
     <title type="html"><![CDATA[Introsort]]></title>
-    <link href="http://holsee.github.io/introsort/"/>
+    <link href="http://holsee.github.io/p/introsort/"/>
     <updated>2014-06-25T01:10:44+01:00</updated>
-    <id>http://holsee.github.io/introsort</id>
+    <id>http://holsee.github.io/p/introsort</id>
     <content type="html"><![CDATA[<p><em>Some notes on IntroSort&hellip;</em></p>
 
 <blockquote><p>Introsort or introspective sort is a hybrid sorting algorithm that provides both fast average performance and (asymptotically) optimal worst-case performance. It begins with quicksort and switches to heapsort when the recursion depth exceeds a level based on (the logarithm of) the number of elements being sorted. This combines the good parts of both algorithms, with practical performance comparable to quicksort on typical data sets and worst-case O(n log n) runtime due to the heap sort. Since both algorithms it uses are comparison sorts, it too is a comparison sort.</p>
@@ -123,9 +123,9 @@ IntroSort(left, length + left - 1, 2 * IntrospectiveSortUtilities.FloorLog2(keys
   
   <entry>
     <title type="html"><![CDATA[Quick Sort]]></title>
-    <link href="http://holsee.github.io/quick-sort/"/>
+    <link href="http://holsee.github.io/p/quick-sort/"/>
     <updated>2014-06-25T00:24:40+01:00</updated>
-    <id>http://holsee.github.io/quick-sort</id>
+    <id>http://holsee.github.io/p/quick-sort</id>
     <content type="html"><![CDATA[<p>Quicksort, also known as <i>partition-exchange sort</i>, uses these steps.</p>
 
 
@@ -255,9 +255,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[Merge Sort]]></title>
-    <link href="http://holsee.github.io/merge-sort/"/>
+    <link href="http://holsee.github.io/p/merge-sort/"/>
     <updated>2014-06-23T00:37:19+01:00</updated>
-    <id>http://holsee.github.io/merge-sort</id>
+    <id>http://holsee.github.io/p/merge-sort</id>
     <content type="html"><![CDATA[<p>You start with an unordered sequence.
 You create N empty queues.
 You loop over every item to be sorted.

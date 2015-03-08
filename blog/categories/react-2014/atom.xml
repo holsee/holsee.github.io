@@ -4,7 +4,7 @@
   <title><![CDATA[Category: react-2014 | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/react-2014/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-12-29T18:25:08+00:00</updated>
+  <updated>2015-03-08T12:30:38+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Responding in a Timely Manner]]></title>
-    <link href="http://holsee.github.io/responding-in-a-timely-manner/"/>
+    <link href="http://holsee.github.io/p/responding-in-a-timely-manner/"/>
     <updated>2014-09-23T20:11:00+01:00</updated>
-    <id>http://holsee.github.io/responding-in-a-timely-manner</id>
+    <id>http://holsee.github.io/p/responding-in-a-timely-manner</id>
     <content type="html"><![CDATA[<p>Earlier this year I was fortunate enough to attend <a href="http://reactconf.com">ReactConf</a> in London, this was one of the sessions. In an earlier post I spoke of how you should should check out <a href="http://mechanical-sympathy.blogspot.co.uk">Martin Thompson</a>&rsquo;s videos as they are the proverbial a gold mine of knowledge on building fast and scalable systems.</p>
 
 <p>In this talk Martin defines different levels of &ldquo;Real Time&rdquo;, touching on the importance of being responsive and practical tools and advice to achieve that in the real world.</p>
@@ -33,7 +33,7 @@
 </ol>
 
 
-<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/4dfk3ucthN8' frameborder='0' allowfullscreen></iframe></div></p>
+<p>{% youtube 4dfk3ucthN8 %}</p>
 
 <p>You can find the full conference playlist on youtube <a href="http://www.youtube.com/watch?v=ZLBH4l7dCFA&amp;list=PLSD48HvrE7-Z1stQ1vIIBumB0wK0s8llY">here</a>&hellip;</p>
 

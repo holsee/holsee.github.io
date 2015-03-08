@@ -1,0 +1,308 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>Devlog: Real Time Web with Node.js  | holsee</title>
+
+<meta name="author" content="holsee"> 
+
+<meta name="description" content="Completed the Real Time Web with Node.js course on CodeSchool Another impeccable course, produced to the usual high standards which I have come to &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="holsee" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">holsee</span></a></h1>
+<h4><span class="head-cursor">λ code and stuff<span class="blink_me">_</span></h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="https://careers.stackoverflow.com/stevenholdsworth">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="https://careers.stackoverflow.com/stevenholdsworth">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="https://www.google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:holsee.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+<script type="text/javascript">
+$(function(){ 
+   $('#head-cursor')
+   	.css({ color:'' })
+   	.addClass('blink');
+});
+</script>
+
+<style ="text/css">
+.head-cursor {
+	color:#10a0e3;
+}
+
+.blink_me {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+</style>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Devlog: Real Time Web With Node.js</h2>
+	<div class="entry-content"><p>Completed the <a href="">Real Time Web with Node.js course on CodeSchool</a></p>
+
+<p><img src="/images/badges/rtnode_badge.png"></p>
+
+<p>Another impeccable course, produced to the usual  high standards which I have come to expect with each and every CodeSchool module. Go give these guys money and do a few courses, worth every penny.</p>
+
+<p>I have completed a couple of node.js projects to date and am currently working on a biggin&#8217;, so I didn&rsquo;t find this course very challenging, but I did find it fun, another great jingle and lots of great content.</p>
+
+<p>The examples go a long way to show how much you can do with so little code, walking students through using <a href="http://socket.io">socket.io</a> and <a href="http://redis.io">redis</a> to build a chat client and a Q&amp;A system.</p>
+
+<p>Something I learned was how to use redis effectively, the course got me started and provided useful tips such as limiting size of a list to 10 items for example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">redis</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;redis&quot;</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">client</span> <span class="o">=</span> <span class="nx">redis</span><span class="p">.</span><span class="nx">createClient</span><span class="p">();</span>
+</span><span class='line'><span class="c1">//... on last meeting submitted ...</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">meeting</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">lastMeeting</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Use LPUSH &amp; LTRIM in tandem</span>
+</span><span class='line'><span class="nx">client</span><span class="p">.</span><span class="nx">lpush</span><span class="p">(</span><span class="s1">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">reply</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">client</span><span class="p">.</span><span class="nx">ltrim</span><span class="p">(</span><span class="s1">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="c1">// 10 Items Max</span>
+</span><span class='line'><span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!-- more -->
+
+
+<p>and for good measure,
+<a href="devlog-a-sip-of-coffeescript">using my new CoffeeScript skills</a>, the same thing:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nv">redis = </span><span class="nx">require</span><span class="p">(</span><span class="s">&quot;redis&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="nv">client = </span><span class="nx">redis</span><span class="p">.</span><span class="nx">createClient</span><span class="p">()</span>
+</span><span class='line'><span class="c1">#... on last meeting submitted ...</span>
+</span><span class='line'><span class="nv">meeting = </span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span> <span class="nx">lastMeeting</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">client</span><span class="p">.</span><span class="nx">lpush</span> <span class="s">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="nx">meeting</span><span class="p">,</span> <span class="nf">(err, reply) -&gt;</span>
+</span><span class='line'>  <span class="nx">client</span><span class="p">.</span><span class="nx">ltrim</span><span class="p">(</span><span class="s">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="c1"># 10 Items Max</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>P.S. This gif of Eric Allam &amp; Gregg Pollack cracks me up no end&hellip;</p>
+
+<p><img class="center" src="http://courseware.codeschool.com/images/blog/node-mind-blown.gif" width="800" height="800"></p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-07T22:00:58+01:00" pubdate data-updated="true">Oct 7<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/codeschool/'>codeschool</a>, <a class='category' href='/blog/categories/devlog/'>devlog</a>, <a class='category' href='/blog/categories/nodejs/'>nodejs</a>
+
+</div>
+
+
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2015
+
+    holsee
+
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'holsee';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://holsee.github.io/p/devlog-real-time-web-with-node-dot-js/';
+        var disqus_url = 'http://holsee.github.io/p/devlog-real-time-web-with-node-dot-js/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-55106937-1']);
+		_gaq.push(['_setDomainName','github.io']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>

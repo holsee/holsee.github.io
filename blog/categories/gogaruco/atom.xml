@@ -4,7 +4,7 @@
   <title><![CDATA[Category: gogaruco | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/gogaruco/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-12-29T18:25:08+00:00</updated>
+  <updated>2015-03-08T12:30:38+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,14 +15,14 @@
   
   <entry>
     <title type="html"><![CDATA[Refactoring Ruby with Monads]]></title>
-    <link href="http://holsee.github.io/refactoring-ruby-with-monads/"/>
+    <link href="http://holsee.github.io/p/refactoring-ruby-with-monads/"/>
     <updated>2014-10-06T22:33:30+01:00</updated>
-    <id>http://holsee.github.io/refactoring-ruby-with-monads</id>
+    <id>http://holsee.github.io/p/refactoring-ruby-with-monads</id>
     <content type="html"><![CDATA[<p>A plain &amp; simple, practical and <em>short</em> introduction to monads and how they can be put to add some elegance to your code!</p>
 
 <p>Do yourself a favour and take 30 mins to add some very slick refactoring tricks into your toolbelt.</p>
 
-<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/uTR__8RvgvM' frameborder='0' allowfullscreen></iframe></div></p>
+<p>{% youtube uTR__8RvgvM %}</p>
 ]]></content>
   </entry>
   

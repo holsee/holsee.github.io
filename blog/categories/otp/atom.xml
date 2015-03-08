@@ -4,7 +4,7 @@
   <title><![CDATA[Category: otp | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/otp/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-12-29T18:25:08+00:00</updated>
+  <updated>2015-03-08T12:30:38+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Elixir, BEAM and OTP]]></title>
-    <link href="http://holsee.github.io/elixir-beam-otp/"/>
+    <link href="http://holsee.github.io/p/elixir-beam-otp/"/>
     <updated>2014-12-29T14:25:42+00:00</updated>
-    <id>http://holsee.github.io/elixir-beam-otp</id>
+    <id>http://holsee.github.io/p/elixir-beam-otp</id>
     <content type="html"><![CDATA[<p><em>As I plan to write and speak about Elixir on my blog and hopefully at some meet-ups soon, I though I would write a short post with handy descriptions of some of the key aspects that I can reference in one place&hellip;</em></p>
 
 <h3>What is Elixir?</h3>

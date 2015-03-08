@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2014-12-29T18:25:08+00:00</updated>
+  <updated>2015-03-08T12:30:38+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,14 +15,14 @@
   
   <entry>
     <title type="html"><![CDATA[Devlog: Rails Testing]]></title>
-    <link href="http://holsee.github.io/devlog-rails-testing-for-zombies/"/>
+    <link href="http://holsee.github.io/p/devlog-rails-testing-for-zombies/"/>
     <updated>2014-11-24T00:21:45+00:00</updated>
-    <id>http://holsee.github.io/devlog-rails-testing-for-zombies</id>
+    <id>http://holsee.github.io/p/devlog-rails-testing-for-zombies</id>
     <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/rails-testing-for-zombies">Rails Testing <em>for zombies</em></a> courses on <a href="http://mbsy.co/8TZ9N">CodeSchool</a> tonight.</p>
 
 <p>I liked it, I always found starting a new rails app always triggered my testing OCD and it was nice to get an insight into the strategies one can take to test a rails app without overdoing it.</p>
 
-<p><img src="/images/badges/rtfz_badge.png"></p>
+<p>{% img /images/badges/rtfz_badge.png %}</p>
 
 <p>The course covers how to unit test and integration test your rails app with fixtures using TestUnit, so you are given a good idea of the tools at your disposal out of the box. As a well as that you are introduced to other popular testing gems which make your life easier such as <a href="https://github.com/thoughtbot/shoulda">Shoulda</a>, <a href="https://github.com/jnicklas/capybara">Capybara</a> and <a href="https://github.com/thoughtbot/factory_girl">FactoryGirl</a>.  I will touch on each of there briefly to give you a taste of what they are all about&hellip;</p>
 
@@ -121,20 +121,20 @@ end
   
   <entry>
     <title type="html"><![CDATA[Devlog: Ruby Bits 1 &amp; 2]]></title>
-    <link href="http://holsee.github.io/devlog-ruby-bits-1-and-2/"/>
+    <link href="http://holsee.github.io/p/devlog-ruby-bits-1-and-2/"/>
     <updated>2014-10-18T22:22:10+01:00</updated>
-    <id>http://holsee.github.io/devlog-ruby-bits-1-and-2</id>
+    <id>http://holsee.github.io/p/devlog-ruby-bits-1-and-2</id>
     <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/ruby-bits">RUBY BITS</a> courses on <a href="http://mbsy.co/8TZ9N">CodeSchool</a>. Again&hellip; I was impressed with the content, as a casual rubyist I got plenty out of doing this.</p>
 
 <p>I really enjoyed this course, I took away a lot of useful idioms which I will put to good use (when I get the chance).</p>
 
-<p><img class="center" src="/images/badges/ruby-bits_badge.png" width="538" height="178"></p>
+<p>{% img center /images/badges/ruby-bits_badge.png 538 178 %}</p>
 
 <p>The meta-programming a DSL creation in <a href="https://www.codeschool.com/courses/ruby-bits-part-2">RUBY BITS part 2</a> were great&hellip; adding methods to classes dynamically is pretty bad-ass for drying up code.</p>
 
 <p><em>I always wanted default method implementation on interfaces in C#, dunno why I brought this up other than in Ruby that would never ever be an issue with the features you have at your disposal&hellip; very few languages lead to as much developer happiness.</em></p>
 
-<p><img class="center" src="/images/badges/ruby-bits-2_badge.png" width="538" height="178"></p>
+<p>{% img center /images/badges/ruby-bits-2_badge.png 538 178 %}</p>
 
 <p>Just one of those languages I would love to write everyday if I could.
 Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombies">Rails Testing <em>for zombies</em></a> course next&hellip;</p>
@@ -145,14 +145,14 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
   
   <entry>
     <title type="html"><![CDATA[Refactoring Ruby with Monads]]></title>
-    <link href="http://holsee.github.io/refactoring-ruby-with-monads/"/>
+    <link href="http://holsee.github.io/p/refactoring-ruby-with-monads/"/>
     <updated>2014-10-06T22:33:30+01:00</updated>
-    <id>http://holsee.github.io/refactoring-ruby-with-monads</id>
+    <id>http://holsee.github.io/p/refactoring-ruby-with-monads</id>
     <content type="html"><![CDATA[<p>A plain &amp; simple, practical and <em>short</em> introduction to monads and how they can be put to add some elegance to your code!</p>
 
 <p>Do yourself a favour and take 30 mins to add some very slick refactoring tricks into your toolbelt.</p>
 
-<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/uTR__8RvgvM' frameborder='0' allowfullscreen></iframe></div></p>
+<p>{% youtube uTR__8RvgvM %}</p>
 ]]></content>
   </entry>
   
