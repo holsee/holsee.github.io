@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-09T00:41:53+00:00</updated>
+  <updated>2015-03-09T00:43:09+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -14,11 +14,20 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Thinking Like An Erlanger]]></title>
+    <title type="html"><![CDATA[Thinking Like an Erlanger]]></title>
     <link href="http://holsee.github.io/p/thinking-like-an-erlanger/"/>
-    <updated>2015-03-08T00:00:00+00:00</updated>
+    <updated>2015-03-08T20:51:47+00:00</updated>
     <id>http://holsee.github.io/p/thinking-like-an-erlanger</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p>I found this video last night by <a href="LeHoff">Torben Hoffman</a>, I recommend folks interested in Erlang or Elixir give it a watch and take it to heart.  Torben does a good job of displaying how an &ldquo;Erlanger&rdquo; should think, in comparison to other programmers.</p>
+
+<div class="embed-video-container"><iframe src="http://player.vimeo.com/video/118258580 "></iframe></div>
+
+
+<p>Torben recommends 2 books which have been added to my reading list:</p>
+
+<p><a href="http://www.usingcsp.com/cspbook.pdf">Communicating Sequential Processes</a> by C.A.R. Hoare. (Free digital Version)</p>
+
+<p><a href="http://www.amazon.co.uk/Principles-Protocol-Design-Robin-Sharp/dp/3540775404">Principles of Protocol Design</a> by Robin Sharp.</p>
 ]]></content>
   </entry>
   
