@@ -1,0 +1,368 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>Introsort  | holsee</title>
+
+<meta name="author" content="holsee"> 
+
+<meta name="description" content="Some notes on IntroSort&hellip; Introsort or introspective sort is a hybrid sorting algorithm that provides both fast average performance and ( &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="holsee" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">holsee</span></a></h1>
+<h4><span class="head-cursor">λ code and stuff<span class="blink_me">_</span></h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="https://careers.stackoverflow.com/stevenholdsworth">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="https://careers.stackoverflow.com/stevenholdsworth">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="https://www.google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:holsee.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+<script type="text/javascript">
+$(function(){ 
+   $('#head-cursor')
+   	.css({ color:'' })
+   	.addClass('blink');
+});
+</script>
+
+<style ="text/css">
+.head-cursor {
+	color:#10a0e3;
+}
+
+.blink_me {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+</style>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Introsort</h2>
+	<div class="entry-content"><p><em>Some notes on IntroSort&hellip;</em></p>
+
+<blockquote><p>Introsort or introspective sort is a hybrid sorting algorithm that provides both fast average performance and (asymptotically) optimal worst-case performance. It begins with quicksort and switches to heapsort when the recursion depth exceeds a level based on (the logarithm of) the number of elements being sorted. This combines the good parts of both algorithms, with practical performance comparable to quicksort on typical data sets and worst-case O(n log n) runtime due to the heap sort. Since both algorithms it uses are comparison sorts, it too is a comparison sort.</p>
+
+<p>Introsort was invented by David Musser in Musser (1997), in which he also introduced introselect, a hybrid selection algorithm based on quickselect (a variant of quicksort), which falls back to median of medians and thus provides worst-case linear complexity, which is optimal. Both algorithms were introduced with the purpose of providing generic algorithms for the C++ Standard Library which had both fast average performance and optimal worst-case performance, thus allowing the performance requirements to be tightened.</p></blockquote>
+
+<p><a href="http://en.wikipedia.org/wiki/Introsort">Source: Wikipedia</a> | <a href="http://www.cs.rpi.edu/~musser/gp/algorithms.html">David Musser Paper &lsquo;Musser (1997)&rsquo;</a></p>
+
+<h3>.NET 4.5 introduces Introsort in place of Quicksort</h3>
+
+<p>In the Microsoft .NET Framework 4.5, an Introsort implementation is used instead of simple QuickSort.</p>
+
+<p>If the sort is not successfully completed, the results are undefined.
+This method uses the introspective sort (introsort) algorithm as follows:</p>
+
+<ul>
+    <li>
+        If the partition size is fewer than 16 elements, it uses an <a href="http://en.wikipedia.org/wiki/Insertion_sort">insertion sort</a> algorithm.
+    </li>
+    <li>
+        If the number of partitions exceeds 2 * Log<sub>N</sub>, where N is the range of the input array, it uses a <a href="http://en.wikipedia.org/wiki/Heapsort">Heapsort</a> algorithm.
+    </li>
+<figure class='code'><figcaption><span>.NET 4.5 IntroSort Implementation</span><a href='http://referencesource.microsoft.com/#mscorlib/system/array.cs#2a2126edd9ca7eb4#references'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">IntroSort</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">length</span> <span class="p">+</span> <span class="n">left</span> <span class="p">-</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span> <span class="p">*</span> <span class="n">IntrospectiveSortUtilities</span><span class="p">.</span><span class="n">FloorLog2</span><span class="p">(</span><span class="n">keys</span><span class="p">.</span><span class="n">Length</span><span class="p">));</span>
+</span></code></pre></td></tr></table></div></figure>
+    <li>
+        Otherwise, it uses a <a href="http://en.wikipedia.org/wiki/Quicksort">Quicksort</a> algorithm.
+    </li>
+</ul>
+
+
+<p>This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.</p>
+
+<p>For arrays that are sorted by using the Heapsort and Quicksort algorithms, in the worst case, this method is an O(<sub>n</sub> log <sub>n</sub>) operation, where <sub>n</sub> is the Length of array.</p>
+
+<p>You can view the full source for .NET 4.5 sorting implementation here: <a href="http://referencesource.microsoft.com/#mscorlib/system/array.cs#60647f6f99d677f1#references">.NET 4.5.1 QuickSort</a></p>
+
+<figure class='code'><figcaption><span>.NET 4.5 IntroSort Implementation</span><a href='http://referencesource.microsoft.com/#mscorlib/system/array.cs#2a2126edd9ca7eb4#references'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">private</span> <span class="k">void</span> <span class="nf">IntroSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">lo</span><span class="p">,</span> <span class="kt">int</span> <span class="n">hi</span><span class="p">,</span> <span class="kt">int</span> <span class="n">depthLimit</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">while</span> <span class="p">(</span><span class="n">hi</span> <span class="p">&gt;</span> <span class="n">lo</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="kt">int</span> <span class="n">partitionSize</span> <span class="p">=</span> <span class="n">hi</span> <span class="p">-</span> <span class="n">lo</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">partitionSize</span> <span class="p">&lt;=</span> <span class="n">IntrospectiveSortUtilities</span><span class="p">.</span><span class="n">IntrosortSizeThreshold</span> <span class="cm">/* 32 */</span><span class="p">)</span>
+</span><span class='line'>        <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="n">partitionSize</span> <span class="p">==</span> <span class="m">1</span><span class="p">)</span>
+</span><span class='line'>            <span class="p">{</span>
+</span><span class='line'>                <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="n">partitionSize</span> <span class="p">==</span> <span class="m">2</span><span class="p">)</span>
+</span><span class='line'>            <span class="p">{</span>
+</span><span class='line'>                <span class="n">SwapIfGreaterWithItems</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>                <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="n">partitionSize</span> <span class="p">==</span> <span class="m">3</span><span class="p">)</span>
+</span><span class='line'>            <span class="p">{</span>
+</span><span class='line'>                <span class="n">SwapIfGreaterWithItems</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">-</span><span class="m">1</span><span class="p">);</span>
+</span><span class='line'>                <span class="n">SwapIfGreaterWithItems</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>                <span class="n">SwapIfGreaterWithItems</span><span class="p">(</span><span class="n">hi</span><span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>                <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="n">InsertionSort</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>            <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">depthLimit</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span><span class='line'>        <span class="p">{</span>
+</span><span class='line'>            <span class="n">Heapsort</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>            <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="n">depthLimit</span><span class="p">--;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="kt">int</span> <span class="n">p</span> <span class="p">=</span> <span class="n">PickPivotAndPartition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">IntroSort</span><span class="p">(</span><span class="n">p</span> <span class="p">+</span> <span class="m">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">depthLimit</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">hi</span> <span class="p">=</span> <span class="n">p</span> <span class="p">-</span> <span class="m">1</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can view the latest (MIT licensed) Mono implemention on Github: <a href="https://github.com/mono/mono/blob/master/mcs/class/Mono.C5/C5/Sorting.cs">Mono.C5 Sorting.cs</a></p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-25T01:10:44+01:00" pubdate data-updated="true">Jun 25<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/algorithms/'>algorithms</a>
+
+</div>
+
+
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2015
+
+    holsee
+
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'holsee';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://holsee.github.io/introsort/';
+        var disqus_url = 'http://holsee.github.io/introsort/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-55106937-1']);
+		_gaq.push(['_setDomainName','github.io']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: kata | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/kata/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-09T00:43:09+00:00</updated>
+  <updated>2015-03-11T12:04:23+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Roman Numerals Elixir Kata]]></title>
-    <link href="http://holsee.github.io/p/roman-numerals-elixir-kata/"/>
+    <link href="http://holsee.github.io/roman-numerals-elixir-kata/"/>
     <updated>2014-11-25T19:57:46+00:00</updated>
-    <id>http://holsee.github.io/p/roman-numerals-elixir-kata</id>
+    <id>http://holsee.github.io/roman-numerals-elixir-kata</id>
     <content type="html"><![CDATA[<p>A fun little test driven kata which will introduce you to the basics of elixir.</p>
 
 <p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/L_9pUkVSjcE' frameborder='0' allowfullscreen></iframe></div></p>

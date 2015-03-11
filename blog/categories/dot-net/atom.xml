@@ -4,7 +4,7 @@
   <title><![CDATA[Category: .net | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/dot-net/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-09T00:43:09+00:00</updated>
+  <updated>2015-03-11T12:04:23+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[.NET Open Sourced]]></title>
-    <link href="http://holsee.github.io/p/dot-net-open-sourced/"/>
+    <link href="http://holsee.github.io/dot-net-open-sourced/"/>
     <updated>2014-11-25T20:14:16+00:00</updated>
-    <id>http://holsee.github.io/p/dot-net-open-sourced</id>
+    <id>http://holsee.github.io/dot-net-open-sourced</id>
     <content type="html"><![CDATA[<p>Pretty cool that <a href="http://blogs.msdn.com/b/dotnet/archive/2014/11/12/net-core-is-open-source.aspx">.NET got open sourced</a>, even more cool is that it is MIT license with the <a href="https://github.com/Microsoft/dotnet">Source Code on Github</a>.</p>
 
 <p>Also pretty funky that they are offering a fully featured version of Visual Studio for free and shipping supported Linux and OS X runtimes.  Mono has give us this for a long time, but it is a nice that the gaps in Mono are going to be filled.</p>

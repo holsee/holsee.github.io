@@ -4,7 +4,7 @@
   <title><![CDATA[Category: http | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/http/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-09T00:43:09+00:00</updated>
+  <updated>2015-03-11T12:04:23+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[HTTP Status Code Decision Diagram]]></title>
-    <link href="http://holsee.github.io/p/http-status-code-decision-diagram/"/>
+    <link href="http://holsee.github.io/http-status-code-decision-diagram/"/>
     <updated>2014-10-18T22:57:56+01:00</updated>
-    <id>http://holsee.github.io/p/http-status-code-decision-diagram</id>
+    <id>http://holsee.github.io/http-status-code-decision-diagram</id>
     <content type="html"><![CDATA[<p>The best HTTP Status Code decision diagram I have seen to date.
 Source: <a href="https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.png">https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.png</a></p>
 

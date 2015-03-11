@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-09T00:43:09+00:00</updated>
+  <updated>2015-03-11T12:04:23+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Thinking Like an Erlanger]]></title>
-    <link href="http://holsee.github.io/p/thinking-like-an-erlanger/"/>
+    <link href="http://holsee.github.io/thinking-like-an-erlanger/"/>
     <updated>2015-03-08T20:51:47+00:00</updated>
-    <id>http://holsee.github.io/p/thinking-like-an-erlanger</id>
+    <id>http://holsee.github.io/thinking-like-an-erlanger</id>
     <content type="html"><![CDATA[<p>I found this video last night by <a href="LeHoff">Torben Hoffman</a>, I recommend folks interested in Erlang or Elixir give it a watch and take it to heart.  Torben does a good job of displaying how an &ldquo;Erlanger&rdquo; should think, in comparison to other programmers.</p>
 
 <div class="embed-video-container"><iframe src="http://player.vimeo.com/video/118258580 "></iframe></div>
@@ -33,9 +33,9 @@
   
   <entry>
     <title type="html"><![CDATA[Elixir, BEAM and OTP]]></title>
-    <link href="http://holsee.github.io/p/elixir-beam-otp/"/>
+    <link href="http://holsee.github.io/elixir-beam-otp/"/>
     <updated>2014-12-29T14:25:42+00:00</updated>
-    <id>http://holsee.github.io/p/elixir-beam-otp</id>
+    <id>http://holsee.github.io/elixir-beam-otp</id>
     <content type="html"><![CDATA[<p><em>As I plan to write and speak about Elixir on my blog and hopefully at some meet-ups soon, I though I would write a short post with handy descriptions of some of the key aspects that I can reference in one place&hellip;</em></p>
 
 <h3>What is Elixir?</h3>
@@ -86,9 +86,9 @@ scalable, and loggable way to serve public git repositories.  It is used by gith
   
   <entry>
     <title type="html"><![CDATA[To Be Message Driven]]></title>
-    <link href="http://holsee.github.io/p/to-be-message-driven/"/>
+    <link href="http://holsee.github.io/to-be-message-driven/"/>
     <updated>2014-12-22T13:38:20+00:00</updated>
-    <id>http://holsee.github.io/p/to-be-message-driven</id>
+    <id>http://holsee.github.io/to-be-message-driven</id>
     <content type="html"><![CDATA[<p><a href="https://twitter.com/toddlmontgomery">@ToddMontgomery</a>&rsquo;s session on message passing and distributed systems at <a href="http://reactconf.com">ReactConf</a>.</p>
 
 <div class='embed-video-container'><iframe src='http://www.youtube.com/embed/DL_-ENSpcAg' frameborder='0' allowfullscreen></iframe></div>
@@ -98,9 +98,9 @@ scalable, and loggable way to serve public git repositories.  It is used by gith
   
   <entry>
     <title type="html"><![CDATA[.NET Open Sourced]]></title>
-    <link href="http://holsee.github.io/p/dot-net-open-sourced/"/>
+    <link href="http://holsee.github.io/dot-net-open-sourced/"/>
     <updated>2014-11-25T20:14:16+00:00</updated>
-    <id>http://holsee.github.io/p/dot-net-open-sourced</id>
+    <id>http://holsee.github.io/dot-net-open-sourced</id>
     <content type="html"><![CDATA[<p>Pretty cool that <a href="http://blogs.msdn.com/b/dotnet/archive/2014/11/12/net-core-is-open-source.aspx">.NET got open sourced</a>, even more cool is that it is MIT license with the <a href="https://github.com/Microsoft/dotnet">Source Code on Github</a>.</p>
 
 <p>Also pretty funky that they are offering a fully featured version of Visual Studio for free and shipping supported Linux and OS X runtimes.  Mono has give us this for a long time, but it is a nice that the gaps in Mono are going to be filled.</p>
@@ -115,9 +115,9 @@ scalable, and loggable way to serve public git repositories.  It is used by gith
   
   <entry>
     <title type="html"><![CDATA[William Gibson on 'Zero History' Interview]]></title>
-    <link href="http://holsee.github.io/p/william-gibson-on-zero-history-interview/"/>
+    <link href="http://holsee.github.io/william-gibson-on-zero-history-interview/"/>
     <updated>2014-11-25T20:06:36+00:00</updated>
-    <id>http://holsee.github.io/p/william-gibson-on-zero-history-interview</id>
+    <id>http://holsee.github.io/william-gibson-on-zero-history-interview</id>
     <content type="html"><![CDATA[<p>I listened to this on Sunday morning over a few nice coffees. Super interview&hellip; well worth the listen.</p>
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175814224&amp;color=6df2ff&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
@@ -127,9 +127,9 @@ scalable, and loggable way to serve public git repositories.  It is used by gith
   
   <entry>
     <title type="html"><![CDATA[Roman Numerals Elixir Kata]]></title>
-    <link href="http://holsee.github.io/p/roman-numerals-elixir-kata/"/>
+    <link href="http://holsee.github.io/roman-numerals-elixir-kata/"/>
     <updated>2014-11-25T19:57:46+00:00</updated>
-    <id>http://holsee.github.io/p/roman-numerals-elixir-kata</id>
+    <id>http://holsee.github.io/roman-numerals-elixir-kata</id>
     <content type="html"><![CDATA[<p>A fun little test driven kata which will introduce you to the basics of elixir.</p>
 
 <div class='embed-video-container'><iframe src='http://www.youtube.com/embed/L_9pUkVSjcE' frameborder='0' allowfullscreen></iframe></div>
@@ -141,9 +141,9 @@ scalable, and loggable way to serve public git repositories.  It is used by gith
   
   <entry>
     <title type="html"><![CDATA[Devlog: Rails Testing]]></title>
-    <link href="http://holsee.github.io/p/devlog-rails-testing-for-zombies/"/>
+    <link href="http://holsee.github.io/devlog-rails-testing-for-zombies/"/>
     <updated>2014-11-24T00:21:45+00:00</updated>
-    <id>http://holsee.github.io/p/devlog-rails-testing-for-zombies</id>
+    <id>http://holsee.github.io/devlog-rails-testing-for-zombies</id>
     <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/rails-testing-for-zombies">Rails Testing <em>for zombies</em></a> courses on <a href="http://mbsy.co/8TZ9N">CodeSchool</a> tonight.</p>
 
 <p>I liked it, I always found starting a new rails app always triggered my testing OCD and it was nice to get an insight into the strategies one can take to test a rails app without overdoing it.</p>
@@ -279,9 +279,9 @@ scalable, and loggable way to serve public git repositories.  It is used by gith
   
   <entry>
     <title type="html"><![CDATA[Integrated Tests Are A Scam]]></title>
-    <link href="http://holsee.github.io/p/integrated-tests-are-a-scam/"/>
+    <link href="http://holsee.github.io/integrated-tests-are-a-scam/"/>
     <updated>2014-10-18T23:04:51+01:00</updated>
-    <id>http://holsee.github.io/p/integrated-tests-are-a-scam</id>
+    <id>http://holsee.github.io/integrated-tests-are-a-scam</id>
     <content type="html"><![CDATA[<p>Found this gem in a tweet from <a href="https://twitter.com/david_whitney">@david_whitney</a>, and as he says the title is trolly but none the less is an excellent talk on automated testing.</p>
 
 <div class="embed-video-container"><iframe src="http://player.vimeo.com/video/80533536 "></iframe></div>
@@ -408,9 +408,9 @@ scalable, and loggable way to serve public git repositories.  It is used by gith
   
   <entry>
     <title type="html"><![CDATA[HTTP Status Code Decision Diagram]]></title>
-    <link href="http://holsee.github.io/p/http-status-code-decision-diagram/"/>
+    <link href="http://holsee.github.io/http-status-code-decision-diagram/"/>
     <updated>2014-10-18T22:57:56+01:00</updated>
-    <id>http://holsee.github.io/p/http-status-code-decision-diagram</id>
+    <id>http://holsee.github.io/http-status-code-decision-diagram</id>
     <content type="html"><![CDATA[<p>The best HTTP Status Code decision diagram I have seen to date.
 Source: <a href="https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.png">https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.png</a></p>
 
@@ -420,9 +420,9 @@ Source: <a href="https://raw.githubusercontent.com/for-GET/http-decision-diagram
   
   <entry>
     <title type="html"><![CDATA[Devlog: Ruby Bits 1 &amp; 2]]></title>
-    <link href="http://holsee.github.io/p/devlog-ruby-bits-1-and-2/"/>
+    <link href="http://holsee.github.io/devlog-ruby-bits-1-and-2/"/>
     <updated>2014-10-18T22:22:10+01:00</updated>
-    <id>http://holsee.github.io/p/devlog-ruby-bits-1-and-2</id>
+    <id>http://holsee.github.io/devlog-ruby-bits-1-and-2</id>
     <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/ruby-bits">RUBY BITS</a> courses on <a href="http://mbsy.co/8TZ9N">CodeSchool</a>. Again&hellip; I was impressed with the content, as a casual rubyist I got plenty out of doing this.</p>
 
 <p>I really enjoyed this course, I took away a lot of useful idioms which I will put to good use (when I get the chance).</p>
@@ -444,9 +444,9 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
   
   <entry>
     <title type="html"><![CDATA[Tunes: Mesterházy - Körzeti Varázslóhivatal (2002)]]></title>
-    <link href="http://holsee.github.io/p/tunes-mesterhazy-korzeti-varazslohivatal-2002/"/>
+    <link href="http://holsee.github.io/tunes-mesterhazy-korzeti-varazslohivatal-2002/"/>
     <updated>2014-10-09T20:36:35+01:00</updated>
-    <id>http://holsee.github.io/p/tunes-mesterhazy-korzeti-varazslohivatal-2002</id>
+    <id>http://holsee.github.io/tunes-mesterhazy-korzeti-varazslohivatal-2002</id>
     <content type="html"><![CDATA[<iframe width="100%" height="60" src="//www.mixcloud.com/widget/iframe/?feed=http%3A%2F%2Fwww.mixcloud.com%2Fmesterhazy%2Fmesterh%25C3%25A1zy-k%25C3%25B6rzeti-var%25C3%25A1zsl%25C3%25B3hivatal-2002%2F&amp;mini=1&amp;embed_uuid=5557789f-2af5-4be6-a5c8-69a92088366a&amp;replace=0&amp;light=1&amp;hide_artwork=1&amp;embed_type=widget_standard&amp;hide_tracklist=1" frameborder="0"></iframe>
 
 ]]></content>
@@ -454,9 +454,9 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
   
   <entry>
     <title type="html"><![CDATA[Tunes: Minimal Mondays | 04 | Hooked On]]></title>
-    <link href="http://holsee.github.io/p/tunes-minimal-mondays-%7C-04-%7C-hooked-on/"/>
+    <link href="http://holsee.github.io/tunes-minimal-mondays-%7C-04-%7C-hooked-on/"/>
     <updated>2014-10-09T10:49:47+01:00</updated>
-    <id>http://holsee.github.io/p/tunes-minimal-mondays-|-04-|-hooked-on</id>
+    <id>http://holsee.github.io/tunes-minimal-mondays-|-04-|-hooked-on</id>
     <content type="html"><![CDATA[<p>My IDM binge continues&hellip;.</p>
 
 <iframe width="100%" height="60" src="//www.mixcloud.com/widget/iframe/?feed=http%3A%2F%2Fwww.mixcloud.com%2FMinimalMondays%2Fminimal-mondays-04-hooked-on%2F&amp;mini=1&amp;embed_uuid=0a231047-3880-4264-a801-908226f94943&amp;replace=0&amp;light=1&amp;embed_type=widget_standard&amp;hide_tracklist=1" frameborder="0"></iframe>
@@ -466,9 +466,9 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
   
   <entry>
     <title type="html"><![CDATA[Devlog: Real Time Web with Node.js]]></title>
-    <link href="http://holsee.github.io/p/devlog-real-time-web-with-node-dot-js/"/>
+    <link href="http://holsee.github.io/devlog-real-time-web-with-node-dot-js/"/>
     <updated>2014-10-07T22:00:58+01:00</updated>
-    <id>http://holsee.github.io/p/devlog-real-time-web-with-node-dot-js</id>
+    <id>http://holsee.github.io/devlog-real-time-web-with-node-dot-js</id>
     <content type="html"><![CDATA[<p>Completed the <a href="">Real Time Web with Node.js course on CodeSchool</a></p>
 
 <p><img src="http://holsee.github.io/images/badges/rtnode_badge.png"></p>
@@ -535,9 +535,9 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
   
   <entry>
     <title type="html"><![CDATA[Devlog: A Sip of CoffeeScript]]></title>
-    <link href="http://holsee.github.io/p/devlog-a-sip-of-coffeescript/"/>
+    <link href="http://holsee.github.io/devlog-a-sip-of-coffeescript/"/>
     <updated>2014-10-06T23:21:12+01:00</updated>
-    <id>http://holsee.github.io/p/devlog-a-sip-of-coffeescript</id>
+    <id>http://holsee.github.io/devlog-a-sip-of-coffeescript</id>
     <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/coffeescript">CoffeeScript course on CodeSchool</a>.</p>
 
 <p><img class="center" src="http://holsee.github.io/images/badges/coffeescript_badge.png"></p>
@@ -573,9 +573,9 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
   
   <entry>
     <title type="html"><![CDATA[Refactoring Ruby with Monads]]></title>
-    <link href="http://holsee.github.io/p/refactoring-ruby-with-monads/"/>
+    <link href="http://holsee.github.io/refactoring-ruby-with-monads/"/>
     <updated>2014-10-06T22:33:30+01:00</updated>
-    <id>http://holsee.github.io/p/refactoring-ruby-with-monads</id>
+    <id>http://holsee.github.io/refactoring-ruby-with-monads</id>
     <content type="html"><![CDATA[<p>A plain &amp; simple, practical and <em>short</em> introduction to monads and how they can be put to add some elegance to your code!</p>
 
 <p>Do yourself a favour and take 30 mins to add some very slick refactoring tricks into your toolbelt.</p>
@@ -587,9 +587,9 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
   
   <entry>
     <title type="html"><![CDATA[Devlog: What I've Been Learning]]></title>
-    <link href="http://holsee.github.io/p/devlog-what-ive-been-learning/"/>
+    <link href="http://holsee.github.io/devlog-what-ive-been-learning/"/>
     <updated>2014-09-24T00:00:00+01:00</updated>
-    <id>http://holsee.github.io/p/devlog-what-ive-been-learning</id>
+    <id>http://holsee.github.io/devlog-what-ive-been-learning</id>
     <content type="html"><![CDATA[<p>These last few months I have been learning more than usual and in this post I talk a little about some of the things that have caught my interest.  All of this is outside of work as my day job is working on a Trading platform written in C#.</p>
 
 <p>Another goal of this post is to kick start my blogging again which I have completely got out of the way of doing over the last 2 or so years.</p>
@@ -701,9 +701,9 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
   
   <entry>
     <title type="html"><![CDATA[Responding in a Timely Manner]]></title>
-    <link href="http://holsee.github.io/p/responding-in-a-timely-manner/"/>
+    <link href="http://holsee.github.io/responding-in-a-timely-manner/"/>
     <updated>2014-09-23T20:11:00+01:00</updated>
-    <id>http://holsee.github.io/p/responding-in-a-timely-manner</id>
+    <id>http://holsee.github.io/responding-in-a-timely-manner</id>
     <content type="html"><![CDATA[<p>Earlier this year I was fortunate enough to attend <a href="http://reactconf.com">ReactConf</a> in London, this was one of the sessions. In an earlier post I spoke of how you should should check out <a href="http://mechanical-sympathy.blogspot.co.uk">Martin Thompson</a>&rsquo;s videos as they are the proverbial a gold mine of knowledge on building fast and scalable systems.</p>
 
 <p>In this talk Martin defines different levels of &ldquo;Real Time&rdquo;, touching on the importance of being responsive and practical tools and advice to achieve that in the real world.</p>
@@ -730,9 +730,9 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
   
   <entry>
     <title type="html"><![CDATA[The Ridge Stand]]></title>
-    <link href="http://holsee.github.io/p/ridge-stand/"/>
+    <link href="http://holsee.github.io/ridge-stand/"/>
     <updated>2014-09-23T14:16:33+01:00</updated>
-    <id>http://holsee.github.io/p/ridge-stand</id>
+    <id>http://holsee.github.io/ridge-stand</id>
     <content type="html"><![CDATA[<p>Came across this on kickstarter <a href="https://www.kickstarter.com/projects/1205042237/the-ridge-stand-a-new-edge-in-smart-design">(here)</a>. I want one of these&hellip; so slick!  Shipping end of 2014 and taking pre-orders now.</p>
 
 <p><img src="http://holsee.github.io/images/wants/ridge.jpg"></p>
@@ -743,9 +743,9 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
   
   <entry>
     <title type="html"><![CDATA[Rise of The Phoenix - Elixir Web Framework by Chris McCord]]></title>
-    <link href="http://holsee.github.io/p/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord/"/>
+    <link href="http://holsee.github.io/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord/"/>
     <updated>2014-08-28T23:46:51+01:00</updated>
-    <id>http://holsee.github.io/p/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord</id>
+    <id>http://holsee.github.io/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord</id>
     <content type="html"><![CDATA[<div class='embed-video-container'><iframe src='http://www.youtube.com/embed/3jMbzGv_6tA' frameborder='0' allowfullscreen></iframe></div>
 
 ]]></content>
@@ -753,9 +753,9 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
   
   <entry>
     <title type="html"><![CDATA[Elixir Conf 2014 - Keynote: Think Different by Dave Thomas]]></title>
-    <link href="http://holsee.github.io/p/elixir-conf-2014-keynote-think-different-by-dave-thomas/"/>
+    <link href="http://holsee.github.io/elixir-conf-2014-keynote-think-different-by-dave-thomas/"/>
     <updated>2014-08-28T23:32:08+01:00</updated>
-    <id>http://holsee.github.io/p/elixir-conf-2014-keynote-think-different-by-dave-thomas</id>
+    <id>http://holsee.github.io/elixir-conf-2014-keynote-think-different-by-dave-thomas</id>
     <content type="html"><![CDATA[<div class='embed-video-container'><iframe src='http://www.youtube.com/embed/5hDVftaPQwY' frameborder='0' allowfullscreen></iframe></div>
 
 ]]></content>

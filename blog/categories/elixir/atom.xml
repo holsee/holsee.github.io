@@ -4,7 +4,7 @@
   <title><![CDATA[Category: elixir | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/elixir/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-09T00:43:09+00:00</updated>
+  <updated>2015-03-11T12:04:23+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Elixir, BEAM and OTP]]></title>
-    <link href="http://holsee.github.io/p/elixir-beam-otp/"/>
+    <link href="http://holsee.github.io/elixir-beam-otp/"/>
     <updated>2014-12-29T14:25:42+00:00</updated>
-    <id>http://holsee.github.io/p/elixir-beam-otp</id>
+    <id>http://holsee.github.io/elixir-beam-otp</id>
     <content type="html"><![CDATA[<p><em>As I plan to write and speak about Elixir on my blog and hopefully at some meet-ups soon, I though I would write a short post with handy descriptions of some of the key aspects that I can reference in one place&hellip;</em></p>
 
 <h3>What is Elixir?</h3>
@@ -68,9 +68,9 @@ scalable, and loggable way to serve public git repositories.  It is used by gith
   
   <entry>
     <title type="html"><![CDATA[Roman Numerals Elixir Kata]]></title>
-    <link href="http://holsee.github.io/p/roman-numerals-elixir-kata/"/>
+    <link href="http://holsee.github.io/roman-numerals-elixir-kata/"/>
     <updated>2014-11-25T19:57:46+00:00</updated>
-    <id>http://holsee.github.io/p/roman-numerals-elixir-kata</id>
+    <id>http://holsee.github.io/roman-numerals-elixir-kata</id>
     <content type="html"><![CDATA[<p>A fun little test driven kata which will introduce you to the basics of elixir.</p>
 
 <p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/L_9pUkVSjcE' frameborder='0' allowfullscreen></iframe></div></p>
@@ -81,18 +81,18 @@ scalable, and loggable way to serve public git repositories.  It is used by gith
   
   <entry>
     <title type="html"><![CDATA[Rise of The Phoenix - Elixir Web Framework by Chris McCord]]></title>
-    <link href="http://holsee.github.io/p/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord/"/>
+    <link href="http://holsee.github.io/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord/"/>
     <updated>2014-08-28T23:46:51+01:00</updated>
-    <id>http://holsee.github.io/p/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord</id>
+    <id>http://holsee.github.io/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord</id>
     <content type="html"><![CDATA[<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/3jMbzGv_6tA' frameborder='0' allowfullscreen></iframe></div></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Elixir Conf 2014 - Keynote: Think Different by Dave Thomas]]></title>
-    <link href="http://holsee.github.io/p/elixir-conf-2014-keynote-think-different-by-dave-thomas/"/>
+    <link href="http://holsee.github.io/elixir-conf-2014-keynote-think-different-by-dave-thomas/"/>
     <updated>2014-08-28T23:32:08+01:00</updated>
-    <id>http://holsee.github.io/p/elixir-conf-2014-keynote-think-different-by-dave-thomas</id>
+    <id>http://holsee.github.io/elixir-conf-2014-keynote-think-different-by-dave-thomas</id>
     <content type="html"><![CDATA[<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/5hDVftaPQwY' frameborder='0' allowfullscreen></iframe></div></p>
 ]]></content>
   </entry>

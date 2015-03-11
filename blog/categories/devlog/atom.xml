@@ -4,7 +4,7 @@
   <title><![CDATA[Category: devlog | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/devlog/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-09T00:43:09+00:00</updated>
+  <updated>2015-03-11T12:04:23+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Devlog: Rails Testing]]></title>
-    <link href="http://holsee.github.io/p/devlog-rails-testing-for-zombies/"/>
+    <link href="http://holsee.github.io/devlog-rails-testing-for-zombies/"/>
     <updated>2014-11-24T00:21:45+00:00</updated>
-    <id>http://holsee.github.io/p/devlog-rails-testing-for-zombies</id>
+    <id>http://holsee.github.io/devlog-rails-testing-for-zombies</id>
     <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/rails-testing-for-zombies">Rails Testing <em>for zombies</em></a> courses on <a href="http://mbsy.co/8TZ9N">CodeSchool</a> tonight.</p>
 
 <p>I liked it, I always found starting a new rails app always triggered my testing OCD and it was nice to get an insight into the strategies one can take to test a rails app without overdoing it.</p>
@@ -121,9 +121,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[Devlog: Ruby Bits 1 &amp; 2]]></title>
-    <link href="http://holsee.github.io/p/devlog-ruby-bits-1-and-2/"/>
+    <link href="http://holsee.github.io/devlog-ruby-bits-1-and-2/"/>
     <updated>2014-10-18T22:22:10+01:00</updated>
-    <id>http://holsee.github.io/p/devlog-ruby-bits-1-and-2</id>
+    <id>http://holsee.github.io/devlog-ruby-bits-1-and-2</id>
     <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/ruby-bits">RUBY BITS</a> courses on <a href="http://mbsy.co/8TZ9N">CodeSchool</a>. Again&hellip; I was impressed with the content, as a casual rubyist I got plenty out of doing this.</p>
 
 <p>I really enjoyed this course, I took away a lot of useful idioms which I will put to good use (when I get the chance).</p>
@@ -145,9 +145,9 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
   
   <entry>
     <title type="html"><![CDATA[Devlog: Real Time Web with Node.js]]></title>
-    <link href="http://holsee.github.io/p/devlog-real-time-web-with-node-dot-js/"/>
+    <link href="http://holsee.github.io/devlog-real-time-web-with-node-dot-js/"/>
     <updated>2014-10-07T22:00:58+01:00</updated>
-    <id>http://holsee.github.io/p/devlog-real-time-web-with-node-dot-js</id>
+    <id>http://holsee.github.io/devlog-real-time-web-with-node-dot-js</id>
     <content type="html"><![CDATA[<p>Completed the <a href="">Real Time Web with Node.js course on CodeSchool</a></p>
 
 <p><img src="/images/badges/rtnode_badge.png"></p>
@@ -201,9 +201,9 @@ client = redis.createClient()</p>
   
   <entry>
     <title type="html"><![CDATA[Devlog: A Sip of CoffeeScript]]></title>
-    <link href="http://holsee.github.io/p/devlog-a-sip-of-coffeescript/"/>
+    <link href="http://holsee.github.io/devlog-a-sip-of-coffeescript/"/>
     <updated>2014-10-06T23:21:12+01:00</updated>
-    <id>http://holsee.github.io/p/devlog-a-sip-of-coffeescript</id>
+    <id>http://holsee.github.io/devlog-a-sip-of-coffeescript</id>
     <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/coffeescript">CoffeeScript course on CodeSchool</a>.</p>
 
 <p><img class="center" src="/images/badges/coffeescript_badge.png"></p>
@@ -231,9 +231,9 @@ eat food for food in foods when food isnt &lsquo;chocolate&rsquo;
   
   <entry>
     <title type="html"><![CDATA[Devlog: What I've Been Learning]]></title>
-    <link href="http://holsee.github.io/p/devlog-what-ive-been-learning/"/>
+    <link href="http://holsee.github.io/devlog-what-ive-been-learning/"/>
     <updated>2014-09-24T00:00:00+01:00</updated>
-    <id>http://holsee.github.io/p/devlog-what-ive-been-learning</id>
+    <id>http://holsee.github.io/devlog-what-ive-been-learning</id>
     <content type="html"><![CDATA[<p>These last few months I have been learning more than usual and in this post I talk a little about some of the things that have caught my interest.  All of this is outside of work as my day job is working on a Trading platform written in C#.</p>
 
 <p>Another goal of this post is to kick start my blogging again which I have completely got out of the way of doing over the last 2 or so years.</p>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coffeescript | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/coffeescript/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-09T00:43:09+00:00</updated>
+  <updated>2015-03-11T12:04:23+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Devlog: A Sip of CoffeeScript]]></title>
-    <link href="http://holsee.github.io/p/devlog-a-sip-of-coffeescript/"/>
+    <link href="http://holsee.github.io/devlog-a-sip-of-coffeescript/"/>
     <updated>2014-10-06T23:21:12+01:00</updated>
-    <id>http://holsee.github.io/p/devlog-a-sip-of-coffeescript</id>
+    <id>http://holsee.github.io/devlog-a-sip-of-coffeescript</id>
     <content type="html"><![CDATA[<p>Completed the <a href="https://www.codeschool.com/courses/coffeescript">CoffeeScript course on CodeSchool</a>.</p>
 
 <p><img class="center" src="/images/badges/coffeescript_badge.png"></p>

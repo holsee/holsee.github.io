@@ -4,7 +4,7 @@
   <title><![CDATA[Category: nodejs | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/nodejs/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-09T00:43:09+00:00</updated>
+  <updated>2015-03-11T12:04:23+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Devlog: Real Time Web with Node.js]]></title>
-    <link href="http://holsee.github.io/p/devlog-real-time-web-with-node-dot-js/"/>
+    <link href="http://holsee.github.io/devlog-real-time-web-with-node-dot-js/"/>
     <updated>2014-10-07T22:00:58+01:00</updated>
-    <id>http://holsee.github.io/p/devlog-real-time-web-with-node-dot-js</id>
+    <id>http://holsee.github.io/devlog-real-time-web-with-node-dot-js</id>
     <content type="html"><![CDATA[<p>Completed the <a href="">Real Time Web with Node.js course on CodeSchool</a></p>
 
 <p><img src="/images/badges/rtnode_badge.png"></p>
