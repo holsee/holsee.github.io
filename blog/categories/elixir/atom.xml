@@ -4,7 +4,7 @@
   <title><![CDATA[Category: elixir | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/elixir/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-12T14:37:29+00:00</updated>
+  <updated>2015-03-13T12:10:37+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A taste of elixir at Functional Kats Belfast]]></title>
+    <link href="http://holsee.github.io/a-taste-of-elixir/"/>
+    <updated>2015-03-13T12:02:36+00:00</updated>
+    <id>http://holsee.github.io/a-taste-of-elixir</id>
+    <content type="html"><![CDATA[<p>I recently gave a presentation to <a href="http://www.meetup.com/Functional-Kats-Belfast/">Functional Kats (Belfast)</a> on the elixir language.  It was a lot of fun!</p>
+
+<p>The format of the event I totally love, it started with a couple of talks followed by a Kata hack where we all had a go at implementing the Luhn Credit Card algo in the functional programming language of our choice.  At the end we all took turns to present our solutions.</p>
+
+<p>The goal of my talk was to arm the folks with enough of the basics to implement the Kata in elixir.</p>
+
+<p><img src="/images/me_at_func_kats.jpeg"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Elixir, BEAM and OTP]]></title>
