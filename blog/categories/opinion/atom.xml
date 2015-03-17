@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: opinion | holsee]]></title>
+  <link href="http://holsee.github.io/blog/categories/opinion/atom.xml" rel="self"/>
+  <link href="http://holsee.github.io/"/>
+  <updated>2015-03-17T09:30:06+00:00</updated>
+  <id>http://holsee.github.io/</id>
+  <author>
+    <name><![CDATA[holsee]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Don't circum to dumb]]></title>
+    <link href="http://holsee.github.io/dont-circum-to-dumb/"/>
+    <updated>2015-03-17T08:21:05+00:00</updated>
+    <id>http://holsee.github.io/dont-circum-to-dumb</id>
+    <content type="html"><![CDATA[<p>I think brushing up on Computer Science fundamentals from time to time is a valuable endeavour, which every developer should do.</p>
+
+<p>Even if it is as little as taking one of the many <a href="/mit-introduction-to-algorithms/">undergrad level modules online</a>.  Many of which are not to be sniffed at.</p>
+
+<p>Surround your pullquote like this {" text to be quoted "}</p>
+
+<p>My Sister is a doctor, and soon she will be revalidated: &ldquo;<em>Revalidation is the process by which doctors holding registration with a licence to practise will have to demonstrate to the GMC that they are up-to-date and fit to practise and complying with the relevant professional standards.</em>&rdquo;</p>
+
+<p>I can&rsquo;t speak for what her day to day is like, but as a practicing doctor I doubt you exercise you entire base of knowledge on a regular enough basis to avoid refreshing yourself with the fundamentals from time to time.</p>
+
+<p>Now imagine beyond doing our daily duties, developers were required to go through such a &ldquo;revalidation&rdquo; process in order to be allowed to hold the title of software engineer (or whatever).</p>
+
+<p>An interesting thought&hellip; baring in mind we all probably know at least one <a href="http://techcrunch.com/2015/03/08/on-secretly-terrible-engineers/">Secretly Terrible Engineer</a>.</p>
+
+<p>Ours is a industry fueled by both passion and science, and the passion is what has pushed us forward.  The same can be said for medicine.</p>
+
+<p>Bad engineers probably were not always that way, maybe they were both sharp and passionate as a they come when they started, but the lack of inspiration in their 9 to 5 has caused them to become blunt and disenchanted over time.</p>
+
+<p>It is often said software development is so broad and someone cannot possibly know everything, true, but I don&rsquo;t think medicine is a small field and there is no excuse for a Doctor to not be continually up-to-date with the fundamentals of their field as well as their respective specialization.</p>
+
+<p>I for one don&rsquo;t like the idea of being made to &ldquo;Revalidate&rdquo;, but I do think we owe it to ourselves to try and stay fresh and up-to-date with the foundations of our industry.</p>
+]]></content>
+  </entry>
+  
+</feed>

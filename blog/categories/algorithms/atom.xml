@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithms | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/algorithms/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-13T12:10:37+00:00</updated>
+  <updated>2015-03-17T09:30:06+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[MIT: Introduction to Algorithms]]></title>
+    <link href="http://holsee.github.io/mit-introduction-to-algorithms/"/>
+    <updated>2015-03-17T08:09:53+00:00</updated>
+    <id>http://holsee.github.io/mit-introduction-to-algorithms</id>
+    <content type="html"><![CDATA[<p>I recently got into a conversation about the computer science classic <em>sorting</em>, in particular we chatted about applications of Radix Sort.</p>
+
+<p>Surround your pullquote like this {" text to be quoted "}</p>
+
+<p>The spark rekindled my desire for refreshing my knowledge of the basics so I may build on this to explore the latest and greatest research in this area.</p>
+
+<p>I personally like the MIT course <a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/">Introduction to Algorithms</a> as it covers so many of the fundamentals very well.</p>
+
+<p>Watching &ldquo;Counting Sort, Radix Sort, Lower Bounds for Sorting&rdquo; at the minute:</p>
+
+<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/Nz1KZXbghj8' frameborder='0' allowfullscreen></iframe></div></p>
+
+<p>A good start for now.</p>
+
+<p>Also worth checking out: <a href="http://cs.stackexchange.com/questions/12223/practical-applications-of-radix-sort">&ldquo;Practical Applications of Radix Sort&rdquo;</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Algorithms: Design and Analysis Videos]]></title>

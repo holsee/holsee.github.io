@@ -9,7 +9,7 @@
 
 <meta name="author" content="holsee"> 
 
-<meta name="description" content="A plain &amp; simple, practical and short introduction to monads and how they can be put to add some elegance to your code! Do yourself a favour and &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Completed the Real Time Web with Node.js course on CodeSchool Another impeccable course, produced to the usual high standards which I have come to &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -146,6 +146,153 @@ $(function(){
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/devlog-real-time-web-with-node-dot-js/">
+		
+			Devlog: Real Time Web With Node.js</a>
+	</h2>
+	<div class="entry-content">
+		<p>Completed the <a href="">Real Time Web with Node.js course on CodeSchool</a></p>
+
+<p><img src="/images/badges/rtnode_badge.png"></p>
+
+<p>Another impeccable course, produced to the usual  high standards which I have come to expect with each and every CodeSchool module. Go give these guys money and do a few courses, worth every penny.</p>
+
+<p>I have completed a couple of node.js projects to date and am currently working on a biggin&#8217;, so I didn&rsquo;t find this course very challenging, but I did find it fun, another great jingle and lots of great content.</p>
+
+<p>The examples go a long way to show how much you can do with so little code, walking students through using <a href="http://socket.io">socket.io</a> and <a href="http://redis.io">redis</a> to build a chat client and a Q&amp;A system.</p>
+
+<p>Something I learned was how to use redis effectively, the course got me started and provided useful tips such as limiting size of a list to 10 items for example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">redis</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;redis&quot;</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">client</span> <span class="o">=</span> <span class="nx">redis</span><span class="p">.</span><span class="nx">createClient</span><span class="p">();</span>
+</span><span class='line'><span class="c1">//... on last meeting submitted ...</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">meeting</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">lastMeeting</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Use LPUSH &amp; LTRIM in tandem</span>
+</span><span class='line'><span class="nx">client</span><span class="p">.</span><span class="nx">lpush</span><span class="p">(</span><span class="s1">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">reply</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">client</span><span class="p">.</span><span class="nx">ltrim</span><span class="p">(</span><span class="s1">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="c1">// 10 Items Max</span>
+</span><span class='line'><span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+
+		
+		<a href="/devlog-real-time-web-with-node-dot-js/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-07T22:00:58+01:00" pubdate data-updated="true">Oct 7<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/codeschool/'>codeschool</a>, <a class='category' href='/blog/categories/devlog/'>devlog</a>, <a class='category' href='/blog/categories/nodejs/'>nodejs</a>
+
+</div>
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/devlog-a-sip-of-coffeescript/">
+		
+			Devlog: A Sip of CoffeeScript</a>
+	</h2>
+	<div class="entry-content">
+		<p>Completed the <a href="https://www.codeschool.com/courses/coffeescript">CoffeeScript course on CodeSchool</a>.</p>
+
+<p><img class="center" src="/images/badges/coffeescript_badge.png"></p>
+
+<p>I love these list comprehensions&hellip; I don&rsquo;t think I will be writing straight JS for a while.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="c1"># Eat lunch.</span>
+</span><span class='line'><span class="nx">eat</span> <span class="nx">food</span> <span class="k">for</span> <span class="nx">food</span> <span class="k">in</span> <span class="p">[</span><span class="s">&#39;toast&#39;</span><span class="p">,</span> <span class="s">&#39;cheese&#39;</span><span class="p">,</span> <span class="s">&#39;wine&#39;</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Fine five course dining.</span>
+</span><span class='line'><span class="nv">courses = </span><span class="p">[</span><span class="s">&#39;greens&#39;</span><span class="p">,</span> <span class="s">&#39;caviar&#39;</span><span class="p">,</span> <span class="s">&#39;truffles&#39;</span><span class="p">,</span> <span class="s">&#39;roast&#39;</span><span class="p">,</span> <span class="s">&#39;cake&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="nx">menu</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">dish</span> <span class="k">for</span> <span class="nx">dish</span><span class="p">,</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">courses</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Health conscious meal.</span>
+</span><span class='line'><span class="nv">foods = </span><span class="p">[</span><span class="s">&#39;broccoli&#39;</span><span class="p">,</span> <span class="s">&#39;spinach&#39;</span><span class="p">,</span> <span class="s">&#39;chocolate&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="nx">eat</span> <span class="nx">food</span> <span class="k">for</span> <span class="nx">food</span> <span class="k">in</span> <span class="nx">foods</span> <span class="k">when</span> <span class="nx">food</span> <span class="o">isnt</span> <span class="s">&#39;chocolate&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-06T23:21:12+01:00" pubdate data-updated="true">Oct 6<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/codeschool/'>codeschool</a>, <a class='category' href='/blog/categories/coffeescript/'>coffeescript</a>, <a class='category' href='/blog/categories/devlog/'>devlog</a>
+
+</div>
+
+
+	
+</div></article>
 
 
     <article class="post">
@@ -306,95 +453,6 @@ $(function(){
 <div class="tags">
 
 	<a class='category' href='/blog/categories/performance/'>performance</a>, <a class='category' href='/blog/categories/react-2014/'>react-2014</a>
-
-</div>
-
-
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/ridge-stand/">
-		
-			The Ridge Stand</a>
-	</h2>
-	<div class="entry-content">
-		<p>Came across this on kickstarter <a href="https://www.kickstarter.com/projects/1205042237/the-ridge-stand-a-new-edge-in-smart-design">(here)</a>. I want one of these&hellip; so slick!  Shipping end of 2014 and taking pre-orders now.</p>
-
-<p><img src="/images/wants/ridge.jpg"></p>
-
-<p><a href="http://www.theridgestand.com">The Ridge Stand by NewBee Design</a></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-23T14:16:33+01:00" pubdate data-updated="true">Sep 23<sup>rd</sup>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/wants/'>wants</a>
-
-</div>
-
-
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord/">
-		
-			Rise of the Phoenix - Elixir Web Framework by Chris McCord</a>
-	</h2>
-	<div class="entry-content">
-		<div class='embed-video-container'><iframe src='http://www.youtube.com/embed/3jMbzGv_6tA' frameborder='0' allowfullscreen></iframe></div>
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-08-28T23:46:51+01:00" pubdate data-updated="true">Aug 28<sup>th</sup>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/elixir/'>elixir</a>, <a class='category' href='/blog/categories/elixir-conf/'>elixir-conf</a>
 
 </div>
 

@@ -9,7 +9,7 @@
 
 <meta name="author" content="holsee"> 
 
-<meta name="description" content="Completed the RUBY BITS courses on CodeSchool. Again&hellip; I was impressed with the content, as a casual rubyist I got plenty out of doing this. I &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Found this gem in a tweet from @david_whitney, and as he says the title is trolly but none the less is an excellent talk on automated testing. &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -151,6 +151,111 @@ $(function(){
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/integrated-tests-are-a-scam/">
+		
+			Integrated Tests Are a Scam</a>
+	</h2>
+	<div class="entry-content">
+		<p>Found this gem in a tweet from <a href="https://twitter.com/david_whitney">@david_whitney</a>, and as he says the title is trolly but none the less is an excellent talk on automated testing.</p>
+
+<div class="embed-video-container"><iframe src="http://player.vimeo.com/video/80533536 "></iframe></div>
+
+
+<h3>Integrations Tests Lead to Bad Design</h3>
+
+<ul>
+<li>An interesting point is made (and I am paraphrasing) that the more integration tests we have the less design feedback we get, leading to sloppy design as we don&rsquo;t feel the same feedback &amp; design pressure&hellip;</li>
+</ul>
+
+
+<h3>What Failed and Where?</h3>
+
+<ul>
+<li>Integration tests may highlight failures, and the name of the test may go a long way to saying what failed, but pin pointing the actual location and reason for the failure is often lost in the generalization of the test itself.</li>
+</ul>
+
+
+
+		
+		<a href="/integrated-tests-are-a-scam/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-18T23:04:51+01:00" pubdate data-updated="true">Oct 18<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/testing/'>testing</a>
+
+</div>
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/http-status-code-decision-diagram/">
+		
+			HTTP Status Code Decision Diagram</a>
+	</h2>
+	<div class="entry-content">
+		<p>The best HTTP Status Code decision diagram I have seen to date.
+Source: <a href="https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.png">https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.png</a></p>
+
+<p><a href="https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.png"><img class="center" src="https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.png"></a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-18T22:57:56+01:00" pubdate data-updated="true">Oct 18<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/http/'>http</a>
+
+</div>
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/devlog-ruby-bits-1-and-2/">
 		
 			Devlog: Ruby Bits 1 &amp; 2</a>
@@ -285,153 +390,6 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
 <div class="tags">
 
 	<a class='category' href='/blog/categories/idm/'>idm</a>, <a class='category' href='/blog/categories/tunes/'>tunes</a>
-
-</div>
-
-
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/devlog-real-time-web-with-node-dot-js/">
-		
-			Devlog: Real Time Web With Node.js</a>
-	</h2>
-	<div class="entry-content">
-		<p>Completed the <a href="">Real Time Web with Node.js course on CodeSchool</a></p>
-
-<p><img src="/images/badges/rtnode_badge.png"></p>
-
-<p>Another impeccable course, produced to the usual  high standards which I have come to expect with each and every CodeSchool module. Go give these guys money and do a few courses, worth every penny.</p>
-
-<p>I have completed a couple of node.js projects to date and am currently working on a biggin&#8217;, so I didn&rsquo;t find this course very challenging, but I did find it fun, another great jingle and lots of great content.</p>
-
-<p>The examples go a long way to show how much you can do with so little code, walking students through using <a href="http://socket.io">socket.io</a> and <a href="http://redis.io">redis</a> to build a chat client and a Q&amp;A system.</p>
-
-<p>Something I learned was how to use redis effectively, the course got me started and provided useful tips such as limiting size of a list to 10 items for example:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">redis</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;redis&quot;</span><span class="p">),</span>
-</span><span class='line'>    <span class="nx">client</span> <span class="o">=</span> <span class="nx">redis</span><span class="p">.</span><span class="nx">createClient</span><span class="p">();</span>
-</span><span class='line'><span class="c1">//... on last meeting submitted ...</span>
-</span><span class='line'><span class="kd">var</span> <span class="nx">meeting</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">lastMeeting</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// Use LPUSH &amp; LTRIM in tandem</span>
-</span><span class='line'><span class="nx">client</span><span class="p">.</span><span class="nx">lpush</span><span class="p">(</span><span class="s1">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="nx">meeting</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">reply</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">client</span><span class="p">.</span><span class="nx">ltrim</span><span class="p">(</span><span class="s1">&#39;recent_meetings&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="c1">// 10 Items Max</span>
-</span><span class='line'><span class="p">})</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-
-		
-		<a href="/devlog-real-time-web-with-node-dot-js/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-07T22:00:58+01:00" pubdate data-updated="true">Oct 7<sup>th</sup>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/codeschool/'>codeschool</a>, <a class='category' href='/blog/categories/devlog/'>devlog</a>, <a class='category' href='/blog/categories/nodejs/'>nodejs</a>
-
-</div>
-
-
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/devlog-a-sip-of-coffeescript/">
-		
-			Devlog: A Sip of CoffeeScript</a>
-	</h2>
-	<div class="entry-content">
-		<p>Completed the <a href="https://www.codeschool.com/courses/coffeescript">CoffeeScript course on CodeSchool</a>.</p>
-
-<p><img class="center" src="/images/badges/coffeescript_badge.png"></p>
-
-<p>I love these list comprehensions&hellip; I don&rsquo;t think I will be writing straight JS for a while.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="c1"># Eat lunch.</span>
-</span><span class='line'><span class="nx">eat</span> <span class="nx">food</span> <span class="k">for</span> <span class="nx">food</span> <span class="k">in</span> <span class="p">[</span><span class="s">&#39;toast&#39;</span><span class="p">,</span> <span class="s">&#39;cheese&#39;</span><span class="p">,</span> <span class="s">&#39;wine&#39;</span><span class="p">]</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1"># Fine five course dining.</span>
-</span><span class='line'><span class="nv">courses = </span><span class="p">[</span><span class="s">&#39;greens&#39;</span><span class="p">,</span> <span class="s">&#39;caviar&#39;</span><span class="p">,</span> <span class="s">&#39;truffles&#39;</span><span class="p">,</span> <span class="s">&#39;roast&#39;</span><span class="p">,</span> <span class="s">&#39;cake&#39;</span><span class="p">]</span>
-</span><span class='line'><span class="nx">menu</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">dish</span> <span class="k">for</span> <span class="nx">dish</span><span class="p">,</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">courses</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1"># Health conscious meal.</span>
-</span><span class='line'><span class="nv">foods = </span><span class="p">[</span><span class="s">&#39;broccoli&#39;</span><span class="p">,</span> <span class="s">&#39;spinach&#39;</span><span class="p">,</span> <span class="s">&#39;chocolate&#39;</span><span class="p">]</span>
-</span><span class='line'><span class="nx">eat</span> <span class="nx">food</span> <span class="k">for</span> <span class="nx">food</span> <span class="k">in</span> <span class="nx">foods</span> <span class="k">when</span> <span class="nx">food</span> <span class="o">isnt</span> <span class="s">&#39;chocolate&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-06T23:21:12+01:00" pubdate data-updated="true">Oct 6<sup>th</sup>, 2014</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/codeschool/'>codeschool</a>, <a class='category' href='/blog/categories/coffeescript/'>coffeescript</a>, <a class='category' href='/blog/categories/devlog/'>devlog</a>
 
 </div>
 

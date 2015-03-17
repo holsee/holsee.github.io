@@ -9,7 +9,7 @@
 
 <meta name="author" content="holsee"> 
 
-<meta name="description" content="Quicksort, also known as partition-exchange sort, uses these steps. Choose any element of the array to be the pivot. Divide all other elements ( &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Coursera &ndash; Principles of Reactive Programming About the Course This course introduces the cornerstones of functional programming using the &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -146,6 +146,222 @@ $(function(){
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/devlog-functional-programming-principles-in-scala/">
+		
+			Devlog: Functional Programming Principles in Scala</a>
+	</h2>
+	<div class="entry-content">
+		<p><img src="/images/certs/coursera_progfun.png"></p>
+
+<p><a href="https://www.coursera.org/course/reactive">Coursera &ndash; Principles of Reactive Programming</a></p>
+
+<h3>About the Course</h3>
+
+<p>This course introduces the cornerstones of functional programming using the Scala programming language. Functional programming has become more and more popular in recent years because it promotes code that’s safe, concise, and elegant. Furthermore, functional programming makes it easier to write parallel code for today’s and tomorrow’s multiprocessors by replacing mutable variables and loops with powerful ways to define and compose functions.</p>
+
+<p>Scala is a language that fuses functional and object-oriented programming in a practical package. It interoperates seamlessly with Java and its tools. Scala is now used in a rapidly increasing number of open source projects and companies. It provides the core infrastructure for sites such as Twitter, LinkedIn, Foursquare, Tumblr, and Klout.</p>
+
+<p>In this course you will discover the elements of the functional programming style and learn how to apply them usefully in your daily programming tasks. You will also develop a solid foundation for reasoning about functional programs, by touching upon proofs of invariants and the tracing of execution symbolically.</p>
+
+<p>The course is hands on; most units introduce short programs that serve as illustrations of important concepts and invite you to play with them, modifying and improving them. The course is complemented by a series of assignments, most of which are also programming projects.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-16T10:45:00+01:00" pubdate data-updated="true">Jul 16<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/devlog/'>devlog</a>, <a class='category' href='/blog/categories/mooc/'>mooc</a>
+
+</div>
+
+
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/introsort/">
+		
+			Introsort</a>
+	</h2>
+	<div class="entry-content">
+		<p><em>Some notes on IntroSort&hellip;</em></p>
+
+<blockquote><p>Introsort or introspective sort is a hybrid sorting algorithm that provides both fast average performance and (asymptotically) optimal worst-case performance. It begins with quicksort and switches to heapsort when the recursion depth exceeds a level based on (the logarithm of) the number of elements being sorted. This combines the good parts of both algorithms, with practical performance comparable to quicksort on typical data sets and worst-case O(n log n) runtime due to the heap sort. Since both algorithms it uses are comparison sorts, it too is a comparison sort.</p>
+
+<p>Introsort was invented by David Musser in Musser (1997), in which he also introduced introselect, a hybrid selection algorithm based on quickselect (a variant of quicksort), which falls back to median of medians and thus provides worst-case linear complexity, which is optimal. Both algorithms were introduced with the purpose of providing generic algorithms for the C++ Standard Library which had both fast average performance and optimal worst-case performance, thus allowing the performance requirements to be tightened.</p></blockquote>
+
+<p><a href="http://en.wikipedia.org/wiki/Introsort">Source: Wikipedia</a> | <a href="http://www.cs.rpi.edu/~musser/gp/algorithms.html">David Musser Paper &lsquo;Musser (1997)&rsquo;</a></p>
+
+<h3>.NET 4.5 introduces Introsort in place of Quicksort</h3>
+
+<p>In the Microsoft .NET Framework 4.5, an Introsort implementation is used instead of simple QuickSort.</p>
+
+<p>If the sort is not successfully completed, the results are undefined.
+This method uses the introspective sort (introsort) algorithm as follows:</p>
+
+<ul>
+    <li>
+        If the partition size is fewer than 16 elements, it uses an <a href="http://en.wikipedia.org/wiki/Insertion_sort">insertion sort</a> algorithm.
+    </li>
+    <li>
+        If the number of partitions exceeds 2 * Log<sub>N</sub>, where N is the range of the input array, it uses a <a href="http://en.wikipedia.org/wiki/Heapsort">Heapsort</a> algorithm.
+    </li>
+<figure class='code'><figcaption><span>.NET 4.5 IntroSort Implementation</span><a href='http://referencesource.microsoft.com/#mscorlib/system/array.cs#2a2126edd9ca7eb4#references'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">IntroSort</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">length</span> <span class="p">+</span> <span class="n">left</span> <span class="p">-</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span> <span class="p">*</span> <span class="n">IntrospectiveSortUtilities</span><span class="p">.</span><span class="n">FloorLog2</span><span class="p">(</span><span class="n">keys</span><span class="p">.</span><span class="n">Length</span><span class="p">));</span>
+</span></code></pre></td></tr></table></div></figure>
+    <li>
+        Otherwise, it uses a <a href="http://en.wikipedia.org/wiki/Quicksort">Quicksort</a> algorithm.
+    </li>
+</ul>
+
+
+<p>This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.</p>
+
+<p>For arrays that are sorted by using the Heapsort and Quicksort algorithms, in the worst case, this method is an O(<sub>n</sub> log <sub>n</sub>) operation, where <sub>n</sub> is the Length of array.</p>
+
+<p>You can view the full source for .NET 4.5 sorting implementation here: <a href="http://referencesource.microsoft.com/#mscorlib/system/array.cs#60647f6f99d677f1#references">.NET 4.5.1 QuickSort</a></p>
+
+<figure class='code'><figcaption><span>.NET 4.5 IntroSort Implementation</span><a href='http://referencesource.microsoft.com/#mscorlib/system/array.cs#2a2126edd9ca7eb4#references'>Source</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">private</span> <span class="k">void</span> <span class="nf">IntroSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">lo</span><span class="p">,</span> <span class="kt">int</span> <span class="n">hi</span><span class="p">,</span> <span class="kt">int</span> <span class="n">depthLimit</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">while</span> <span class="p">(</span><span class="n">hi</span> <span class="p">&gt;</span> <span class="n">lo</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="kt">int</span> <span class="n">partitionSize</span> <span class="p">=</span> <span class="n">hi</span> <span class="p">-</span> <span class="n">lo</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">partitionSize</span> <span class="p">&lt;=</span> <span class="n">IntrospectiveSortUtilities</span><span class="p">.</span><span class="n">IntrosortSizeThreshold</span> <span class="cm">/* 32 */</span><span class="p">)</span>
+</span><span class='line'>        <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="n">partitionSize</span> <span class="p">==</span> <span class="m">1</span><span class="p">)</span>
+</span><span class='line'>            <span class="p">{</span>
+</span><span class='line'>                <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="n">partitionSize</span> <span class="p">==</span> <span class="m">2</span><span class="p">)</span>
+</span><span class='line'>            <span class="p">{</span>
+</span><span class='line'>                <span class="n">SwapIfGreaterWithItems</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>                <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="n">partitionSize</span> <span class="p">==</span> <span class="m">3</span><span class="p">)</span>
+</span><span class='line'>            <span class="p">{</span>
+</span><span class='line'>                <span class="n">SwapIfGreaterWithItems</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">-</span><span class="m">1</span><span class="p">);</span>
+</span><span class='line'>                <span class="n">SwapIfGreaterWithItems</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>                <span class="n">SwapIfGreaterWithItems</span><span class="p">(</span><span class="n">hi</span><span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>                <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="n">InsertionSort</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>            <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">depthLimit</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span><span class='line'>        <span class="p">{</span>
+</span><span class='line'>            <span class="n">Heapsort</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>            <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="n">depthLimit</span><span class="p">--;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="kt">int</span> <span class="n">p</span> <span class="p">=</span> <span class="n">PickPivotAndPartition</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">IntroSort</span><span class="p">(</span><span class="n">p</span> <span class="p">+</span> <span class="m">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">depthLimit</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">hi</span> <span class="p">=</span> <span class="n">p</span> <span class="p">-</span> <span class="m">1</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can view the latest (MIT licensed) Mono implemention on Github: <a href="https://github.com/mono/mono/blob/master/mcs/class/Mono.C5/C5/Sorting.cs">Mono.C5 Sorting.cs</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-25T01:10:44+01:00" pubdate data-updated="true">Jun 25<sup>th</sup>, 2014</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/algorithms/'>algorithms</a>
+
+</div>
+
+
+	
+</div></article>
 
 
     <article class="post">

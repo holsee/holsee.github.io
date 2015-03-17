@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-13T12:10:37+00:00</updated>
+  <updated>2015-03-17T09:30:06+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,63 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Don't circum to dumb]]></title>
+    <link href="http://holsee.github.io/dont-circum-to-dumb/"/>
+    <updated>2015-03-17T08:21:05+00:00</updated>
+    <id>http://holsee.github.io/dont-circum-to-dumb</id>
+    <content type="html"><![CDATA[<p>I think brushing up on Computer Science fundamentals from time to time is a valuable endeavour, which every developer should do.</p>
+
+<p>Even if it is as little as taking one of the many <a href="http://holsee.github.io/mit-introduction-to-algorithms/">undergrad level modules online</a>.  Many of which are not to be sniffed at.</p>
+
+<p><span class='pullquote-right' data-pullquote='I think we owe it to ourselves to get better or at the very least not get dumber, as most jobs in our industry will make you dumber over time.'>
+In our industry we are not chartered, and nor do I think we should be as I don&rsquo;t like the idea of a professional body lording over us.  I think we owe it to ourselves to get better or at the very least not get dumber, as most jobs in our industry will make you dumber over time.
+</span></p>
+
+<p>My Sister is a doctor, and soon she will be revalidated: &ldquo;<em>Revalidation is the process by which doctors holding registration with a licence to practise will have to demonstrate to the GMC that they are up-to-date and fit to practise and complying with the relevant professional standards.</em>&rdquo;</p>
+
+<p>I can&rsquo;t speak for what her day to day is like, but as a practicing doctor I doubt you exercise you entire base of knowledge on a regular enough basis to avoid refreshing yourself with the fundamentals from time to time.</p>
+
+<p>Now imagine beyond doing our daily duties, developers were required to go through such a &ldquo;revalidation&rdquo; process in order to be allowed to hold the title of software engineer (or whatever).</p>
+
+<p>An interesting thought&hellip; baring in mind we all probably know at least one <a href="http://techcrunch.com/2015/03/08/on-secretly-terrible-engineers/">Secretly Terrible Engineer</a>.</p>
+
+<p>Ours is a industry fueled by both passion and science, and the passion is what has pushed us forward.  The same can be said for medicine.</p>
+
+<p>Bad engineers probably were not always that way, maybe they were both sharp and passionate as a they come when they started, but the lack of inspiration in their 9 to 5 has caused them to become blunt and disenchanted over time.</p>
+
+<p>It is often said software development is so broad and someone cannot possibly know everything, true, but I don&rsquo;t think medicine is a small field and there is no excuse for a Doctor to not be continually up-to-date with the fundamentals of their field as well as their respective specialization.</p>
+
+<p>I for one don&rsquo;t like the idea of being made to &ldquo;Revalidate&rdquo;, but I do think we owe it to ourselves to try and stay fresh and up-to-date with the foundations of our industry.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MIT: Introduction to Algorithms]]></title>
+    <link href="http://holsee.github.io/mit-introduction-to-algorithms/"/>
+    <updated>2015-03-17T08:09:53+00:00</updated>
+    <id>http://holsee.github.io/mit-introduction-to-algorithms</id>
+    <content type="html"><![CDATA[<p>I recently got into a conversation about the computer science classic <em>sorting</em>, in particular we chatted about applications of Radix Sort.</p>
+
+<p><span class='pullquote-right' data-pullquote='&#8220;Radix sorts are often, in practice, the fastest and most useful sorts on parallel machines.&#8221;'>
+This is not something I had really needed to look into in any detail, but sparked my interest due to this statement &ldquo;Radix sorts are often, in practice, the fastest and most useful sorts on parallel machines.&rdquo;
+</span></p>
+
+<p>The spark rekindled my desire for refreshing my knowledge of the basics so I may build on this to explore the latest and greatest research in this area.</p>
+
+<p>I personally like the MIT course <a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/">Introduction to Algorithms</a> as it covers so many of the fundamentals very well.</p>
+
+<p>Watching &ldquo;Counting Sort, Radix Sort, Lower Bounds for Sorting&rdquo; at the minute:</p>
+
+<div class='embed-video-container'><iframe src='http://www.youtube.com/embed/Nz1KZXbghj8' frameborder='0' allowfullscreen></iframe></div>
+
+
+<p>A good start for now.</p>
+
+<p>Also worth checking out: <a href="http://cs.stackexchange.com/questions/12223/practical-applications-of-radix-sort">&ldquo;Practical Applications of Radix Sort&rdquo;</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[A taste of elixir at Functional Kats Belfast]]></title>
@@ -740,29 +797,6 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
 <p>You can find the full conference playlist on youtube <a href="http://www.youtube.com/watch?v=ZLBH4l7dCFA&amp;list=PLSD48HvrE7-Z1stQ1vIIBumB0wK0s8llY">here</a>&hellip;</p>
 
 <p>Enjoy!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Ridge Stand]]></title>
-    <link href="http://holsee.github.io/ridge-stand/"/>
-    <updated>2014-09-23T14:16:33+01:00</updated>
-    <id>http://holsee.github.io/ridge-stand</id>
-    <content type="html"><![CDATA[<p>Came across this on kickstarter <a href="https://www.kickstarter.com/projects/1205042237/the-ridge-stand-a-new-edge-in-smart-design">(here)</a>. I want one of these&hellip; so slick!  Shipping end of 2014 and taking pre-orders now.</p>
-
-<p><img src="http://holsee.github.io/images/wants/ridge.jpg"></p>
-
-<p><a href="http://www.theridgestand.com">The Ridge Stand by NewBee Design</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Rise of The Phoenix - Elixir Web Framework by Chris McCord]]></title>
-    <link href="http://holsee.github.io/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord/"/>
-    <updated>2014-08-28T23:46:51+01:00</updated>
-    <id>http://holsee.github.io/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord</id>
-    <content type="html"><![CDATA[<div class='embed-video-container'><iframe src='http://www.youtube.com/embed/3jMbzGv_6tA' frameborder='0' allowfullscreen></iframe></div>
-
 ]]></content>
   </entry>
   
