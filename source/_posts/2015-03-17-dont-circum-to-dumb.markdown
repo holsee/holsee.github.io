@@ -11,12 +11,12 @@ I think brushing up on Computer Science fundamentals from time to time is a valu
 Even if it is as little as taking one of the many [undergrad level modules online](/mit-introduction-to-algorithms/).  Many of which are not to be sniffed at.
 
 {% pullquote %}
-In our industry we are not chartered, and nor do I think we should be as I don't like the idea of a professional body lording over us.  {"I think we owe it to ourselves to get better or at the very least not get dumber, as most jobs in our industry will make you dumber over time."}
+In our industry we are not chartered, and nor do I think we should be as I don't like the idea of a professional body lording over us.  {"I think we owe it to ourselves to get better or at the very least not get dumber, as many jobs in our industry will make you dumber over time."}
 {% endpullquote %}
 
 My Sister is a doctor, and soon she will be revalidated: "_Revalidation is the process by which doctors holding registration with a licence to practise will have to demonstrate to the GMC that they are up-to-date and fit to practise and complying with the relevant professional standards._"
 
-I can't speak for what her day to day is like, but as a practicing doctor I doubt you exercise you entire base of knowledge on a regular enough basis to avoid refreshing yourself with the fundamentals from time to time.
+I can't speak for what her day to day is like, but as a practicing doctor I doubt you exercise your entire base of knowledge on a regular enough basis to avoid refreshing yourself with the fundamentals from time to time.
 
 Now imagine beyond doing our daily duties, developers were required to go through such a "revalidation" process in order to be allowed to hold the title of software engineer (or whatever).
 
