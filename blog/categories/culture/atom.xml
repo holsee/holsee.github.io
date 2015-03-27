@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: culture | holsee]]></title>
+  <link href="http://holsee.github.io/blog/categories/culture/atom.xml" rel="self"/>
+  <link href="http://holsee.github.io/"/>
+  <updated>2015-03-27T19:09:28+00:00</updated>
+  <id>http://holsee.github.io/</id>
+  <author>
+    <name><![CDATA[holsee]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Spotify Culture Envy]]></title>
+    <link href="http://holsee.github.io/spotify-culture-envy/"/>
+    <updated>2015-03-27T19:05:48+00:00</updated>
+    <id>http://holsee.github.io/spotify-culture-envy</id>
+    <content type="html"><![CDATA[<p>Love these videos, love Spotify&rsquo;s culture, looks like a great place to work.</p>
+
+<p><div class="embed-video-container"><iframe src="http://player.vimeo.com/video/85490944 "></iframe></div></p>
+
+<p>Far bigger company than I thought they would be&hellip; tis cool how they approach the architecture to cope with that effectively.</p>
+
+<p><div class="embed-video-container"><iframe src="http://player.vimeo.com/video/94950270 "></iframe></div></p>
+
+<p>Well worth the watch.</p>
+]]></content>
+  </entry>
+  
+</feed>
