@@ -4,7 +4,7 @@
   <title><![CDATA[Category: elixir | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/elixir/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-27T19:09:28+00:00</updated>
+  <updated>2015-04-02T11:05:27+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[What Elixir is about @ Erlang Factory SF 2015]]></title>
+    <link href="http://holsee.github.io/what-elixir-is-about-at-erlang-factory-sf-2015/"/>
+    <updated>2015-04-02T10:57:45+01:00</updated>
+    <id>http://holsee.github.io/what-elixir-is-about-at-erlang-factory-sf-2015</id>
+    <content type="html"><![CDATA[<p>Much more than an introduction to the elixir language, the philosophy and design choices are examined in this talk by <a href="https://twitter.com/josevalim">José Valim</a>.</p>
+
+<p>Even for the seasoned elixir wrangler this is a very interesting watch, as José discusses the kind of citizen elixir wants to be in the Erlang ecosystem.</p>
+
+<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/Lqo9-pQuRKE' frameborder='0' allowfullscreen></iframe></div></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[A taste of elixir at Functional Kats Belfast]]></title>
@@ -100,15 +113,6 @@ scalable, and loggable way to serve public git repositories.  It is used by gith
     <updated>2014-08-28T23:46:51+01:00</updated>
     <id>http://holsee.github.io/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord</id>
     <content type="html"><![CDATA[<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/3jMbzGv_6tA' frameborder='0' allowfullscreen></iframe></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Elixir Conf 2014 - Keynote: Think Different by Dave Thomas]]></title>
-    <link href="http://holsee.github.io/elixir-conf-2014-keynote-think-different-by-dave-thomas/"/>
-    <updated>2014-08-28T23:32:08+01:00</updated>
-    <id>http://holsee.github.io/elixir-conf-2014-keynote-think-different-by-dave-thomas</id>
-    <content type="html"><![CDATA[<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/5hDVftaPQwY' frameborder='0' allowfullscreen></iframe></div></p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-03-27T19:09:28+00:00</updated>
+  <updated>2015-04-02T11:05:27+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[What Elixir is about @ Erlang Factory SF 2015]]></title>
+    <link href="http://holsee.github.io/what-elixir-is-about-at-erlang-factory-sf-2015/"/>
+    <updated>2015-04-02T10:57:45+01:00</updated>
+    <id>http://holsee.github.io/what-elixir-is-about-at-erlang-factory-sf-2015</id>
+    <content type="html"><![CDATA[<p>Much more than an introduction to the elixir language, the philosophy and design choices are examined in this talk by <a href="https://twitter.com/josevalim">José Valim</a>.</p>
+
+<p>Even for the seasoned elixir wrangler this is a very interesting watch, as José discusses the kind of citizen elixir wants to be in the Erlang ecosystem.</p>
+
+<div class='embed-video-container'><iframe src='http://www.youtube.com/embed/Lqo9-pQuRKE' frameborder='0' allowfullscreen></iframe></div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Spotify Culture Envy]]></title>
@@ -673,120 +687,6 @@ Moving onto <a href="https://www.codeschool.com/courses/rails-testing-for-zombie
 
 <div class='embed-video-container'><iframe src='http://www.youtube.com/embed/uTR__8RvgvM' frameborder='0' allowfullscreen></iframe></div>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Devlog: What I've Been Learning]]></title>
-    <link href="http://holsee.github.io/devlog-what-ive-been-learning/"/>
-    <updated>2014-09-24T00:00:00+01:00</updated>
-    <id>http://holsee.github.io/devlog-what-ive-been-learning</id>
-    <content type="html"><![CDATA[<p>These last few months I have been learning more than usual and in this post I talk a little about some of the things that have caught my interest.  All of this is outside of work as my day job is working on a Trading platform written in C#.</p>
-
-<p>Another goal of this post is to kick start my blogging again which I have completely got out of the way of doing over the last 2 or so years.</p>
-
-<h3>Erlang &amp; Elixir</h3>
-
-<p>Partially inspired by my functional programming binge and a chat I had with <a href="http://joearms.github.io">Joe Armstrong</a> at <a href="http://reactconf.com">ReactConf</a>; I have been getting stuck into Erlang, <a href="http://elixir-lang.org">Elixir</a> and the <a href="https://github.com/phoenixframework/phoenix">Phoenix web framework</a>.</p>
-
-<p>I feel these will play a big part in my future.  The BEAM VM is fascinating and the powerful distributed programming model via the OTP libraries is something different and interesting.  I look forward to digging into these topics on my blog in the coming months as I become more familiar with them.</p>
-
-<p>I am working on an &lsquo;anonymous&rsquo; location broadcast server to use these technologies in anger and I have found this has helped me achieve those A-HA moments that are so important when it comes to learning something and making it stick.</p>
-
-<h3>Node.js</h3>
-
-<p>I&rsquo;ve been working away on a personal project (which will be launched at outloud.io some time in the future) using node.js, express.js, postgreSQL, passport.js, mocha, chai, chai-as-promised, Q, db-migrate, node-env&hellip;</p>
-
-<!-- more -->
-
-
-<p>I have had this idea for a while, and I got pretty excited about building it.  At the time I was looking for a good excuse to get stuck into a substantial project which was built on node.js.  Even though I have used JS for years I have learned a great deal about the node way, building stuff tis the best way to learn it is no secret.</p>
-
-<h3>Ruby and Rails</h3>
-
-<p>I completed a MOOC course on Coursera on <a href="https://www.coursera.org/course/webapplications">Web Application Architectures</a> which used Ruby &amp; Rails recently.  Was very much entry level stuff, got through it in about 2 days and I think anybody with significant web dev experiences would find the same thing.  I guess it showed me that I knew more than I thought about Ruby and Rails and needed to focus on more advanced and newer topics.</p>
-
-<p>I have been slowly but surely learning Ruby for the past 4 years and I find it lots of fun.  I used to subscribe and watch the <a href="http://www.rubytapas.com">Ruby Tapas</a> episodes which are brilliant, but because I wasn&rsquo;t using it in my day job for anything more than Chef scripts I never really got to go deep.</p>
-
-<p><a href="http://www.codewars.com/about">Codewars.com</a> stole quite a few of my evenings, a great way to learn or get better using a language by solving a katas (with tests) then seeing how others solved the same problems in a potentially more idiomatic way.  Each solution is rated by the community on &lsquo;how smart&rsquo; and &lsquo;best practice&rsquo; which is a nice touch.</p>
-
-<p>I plan to dig into the latest version of Rails for Zombies on Code School and keep going to the <a href="http://belfastruby.com">Belfast Ruby</a> meet-ups.</p>
-
-<h3>Objective-C</h3>
-
-<p>I worked as a &ldquo;mobile developer&rdquo; and have built a few apps over the last number of years in various technologies such as Obj-C, Java (Android), C# Xamarin (targeting both iOS and Android) and some PoCs using Phonegap.</p>
-
-<p>But I never felt I got to use Objective-C to the extent I wanted to, as the performance, the sexy runtime dispatch and the CocoaTouch libs intrigued.  A friend of mine who now works at Apple once told me the Cocoa libraries were examples of some of the nicest Object Oriented programming he had ever seen.  This has always made me want to know more.</p>
-
-<p>My employer sent me on an Objective-C course few months back which was nice of them since I don&rsquo;t even use it in my current day job.</p>
-
-<p>As I said, apple dev has always interested me so I have read a couple of books and completed numerous little projects.</p>
-
-<p>Right now I am working through the iOS Code School path and building and iOS client for the location broadcast server I spoke about in the Elixir section above.</p>
-
-<p>I wouldn&rsquo;t mind working on iOS again&hellip; which leads me into&hellip;</p>
-
-<h3>Swift 1.0</h3>
-
-<p>XCode 6.0.1 has been dropped and now I have Swift to play with :D. I didn&rsquo;t have my own Apple dev license so I had to wait.  I did pretty much read the iBook cover to cover in the interim.</p>
-
-<p>If I am to ever transition into this area, I would like to do so where I can hit the ground running so I might start to port the Objective-C location client to swift (or maybe just parts of it to get used to the interop).</p>
-
-<h3>Data Structure &amp; Algorithms</h3>
-
-<p>I always try to keep a balance of new technologies/language and CS theory.   Right now I do have a desire to spend more time reading up on Data Structures and Algorithms and their application to big problems.  This is the stuff that you learn and is timeless, and there is plenty of it to get stuck into!</p>
-
-<p>I was fortunate enough to do the <a href="http://instil.co/courses/writing-concurrent-code-with-lock-free-algorithms/">&lsquo;Writing Concurrent Code with Lock-Free Algorithms&rsquo; course</a> by <a href="http://mechanical-sympathy.blogspot.co.uk">Martin Thompson</a> and I got to hear him speak a couple of weeks ago at the End of Summer Bash event&hellip; if you haven&rsquo;t watched one of his talks please take the time to do so <a href="http://www.infoq.com/author/Martin-Thompson">(now)</a>.</p>
-
-<p>The big take away for me is the fastest, most elegant and performant solutions, come from  using the most appropriate, hand crafted, intelligently selected data structures and algorithms to solve the problem over picking up general purpose tools.</p>
-
-<p>There is so much more in this area that I want to talk about but not in this post&hellip; but definitely add <a href="http://mechanical-sympathy.blogspot.co.uk">Mechanical Sympathy</a> to your blog reader.</p>
-
-<h3>Functional &amp; Reactive Programming</h3>
-
-<p>I completed the <a href="https://www.coursera.org/course/progfun">Functional Programming Principles in Scala</a>, a MOOC on Coursera.  Before that I completed the <a href="https://www.coursera.org/course/reactive">Reactive Programming</a> course.  These were very good, humbling, challenging and rewarding.</p>
-
-<p>I have been using RX in .NET for years which helped a lot but I still found the Reactive course very worth while.  Both these courses use Scala and I enjoyed getting to learn it a bit better.  I liked how the reactive programming course built up concepts in layers, starting with getting the students to build a priority queue and finishing with reactive system using the <a href="http://akka.io">Akka</a> actor model.</p>
-
-<h3>Some Books: Remote, Rework &amp; Lean Start-up</h3>
-
-<p>In the last 6 months I have read these books each twice (well I used audible so they were read to me twice). Wonderful books which resonated with me on so many levels.  They are informative and practical guides which are also quite inspiring.</p>
-
-<p>I think I really got inspired to start developing outloud.io through my desire to just start something of my own from reading <a href="http://theleanstartup.com">The Lean Startup</a>.</p>
-
-<h3>Teaching</h3>
-
-<p>As a senior engineer I teach as part of my job, but recently I have been helping my buddy who is learning to program.</p>
-
-<p>This is a different challenge altogether, starting from the basics and helping to set the mindset and guide the conceptual thinking required.</p>
-
-<p>He has a degree and a load of music related qualifications and we discussed what would be the best way to start a career in software development.</p>
-
-<p>I have a degree in Computer Science, and I found it very useful, but not necessarily necessary&hellip; well depending on the desired job and in a sense that all that theory is accessible elsewhere.</p>
-
-<p>He could go back a do a Masters degree in CS, but is the cost worth it? Maybe&hellip; but to get the most out of the year (or 2) having some programming experience would be required before hand and thats where I am helping out.</p>
-
-<p>So, I got to thinking about what are good resources for becoming a programmer and basically ended up recommending the same resources that I use:</p>
-
-<ul>
-<li>Coursera &amp; MOOCs</li>
-<li>Code School</li>
-<li>Books</li>
-<li>Podcasts</li>
-</ul>
-
-
-<p>He has also found some other reasons handy, so I will be sure to link them and his new blog when he gets round to setting it up!</p>
-
-<h3>Meteor and DDP</h3>
-
-<p>I must say <a href="https://www.meteor.com">meteor.js</a> and <a href="https://www.meteor.com/blog/2012/03/21/introducing-ddp">Distributed Data Protocol</a> look very interesting indeed.</p>
-
-<p>Have watched a few <a href="https://www.meteor.com/screencast">screencasts</a>, something that is well and truly on the radar now.</p>
-
-<h3>Whats next?</h3>
-
-<p>I really need to prioritize thats for sure. This is quite a lot I have going on.  It blew my mind when I put it all into Trello&hellip; just too much interesting stuff and not enough hours in the day.</p>
 ]]></content>
   </entry>
   
