@@ -4,7 +4,7 @@
   <title><![CDATA[holsee]]></title>
   <link href="http://holsee.github.io/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-04-28T17:00:45+01:00</updated>
+  <updated>2015-04-28T17:05:35+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -87,6 +87,14 @@
 <p><em>6</em> In terminal iex session loading in project with <code>iex -S mix</code></p>
 
 <p><em>7</em> In iex session start Erlubi tracer with <code>:erlubi_tracer.run</code>.  If you get an error ensure you started ubigraph_server as described in step 1. At this point you should see the vanilla elixir system visualized in 3D like so:</p>
+
+<ul>
+<li>Green Cubes = Erlang Ports</li>
+<li>Red Spheres = Erlang Processes</li>
+<li>Blue Sphere = Named Erlang Processes</li>
+<li>Grey Line   = Process Links</li>
+</ul>
+
 
 <p><img class="center" src="http://holsee.github.io/images/exconfeu/erlubi_vanilla.png"></p>
 

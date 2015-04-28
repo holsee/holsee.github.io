@@ -226,6 +226,14 @@ $(function(){
 
 <p><em>7</em> In iex session start Erlubi tracer with <code>:erlubi_tracer.run</code>.  If you get an error ensure you started ubigraph_server as described in step 1. At this point you should see the vanilla elixir system visualized in 3D like so:</p>
 
+<ul>
+<li>Green Cubes = Erlang Ports</li>
+<li>Red Spheres = Erlang Processes</li>
+<li>Blue Sphere = Named Erlang Processes</li>
+<li>Grey Line   = Process Links</li>
+</ul>
+
+
 <p><img class="center" src="/images/exconfeu/erlubi_vanilla.png"></p>
 
 <p><em>8</em> run <code>ExLightning.start 5000</code> which will create 5000 unlinked processes (unbound red spheres)</p>
