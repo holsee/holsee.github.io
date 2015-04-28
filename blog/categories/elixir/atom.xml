@@ -4,7 +4,7 @@
   <title><![CDATA[Category: elixir | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/elixir/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2015-04-02T11:05:27+01:00</updated>
+  <updated>2015-04-28T17:00:45+01:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -12,6 +12,83 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ElixirConfEU - Elixir Processes in 3D]]></title>
+    <link href="http://holsee.github.io/elixirconfeu-elixir-procs-in-3d/"/>
+    <updated>2015-04-28T16:06:04+01:00</updated>
+    <id>http://holsee.github.io/elixirconfeu-elixir-procs-in-3d</id>
+    <content type="html"><![CDATA[<p>I gave a lightning talk at <a href="http://ElixirConf.eu">ElixirConfEU</a> on Visualizing Elixir Processes in 3D.</p>
+
+<p><img class="center" src="/images/exconfeu/elixirconf_lightning_talk.jpg"></p>
+
+<p>A few nights before travelling to Krakow I had watched a video by <a href="https://github.com/krestenkrab/">Kresten Krab Thorup</a> on his project <a href="https://github.com/krestenkrab/erlubi">Erlubi</a> which transmits basic details of the Erlang VM to a <a href="http://ubietylab.net">Ubigrpah Server</a>.</p>
+
+<p>I started to use this to inspect Erlang projects, and play about with OTP Supervisor trees and how they looked in 3D.</p>
+
+<p>I decided to go about using this from elixir.  It doesn&rsquo;t take much to use from elixir; if you want to visualize your own project simply cherry pick the steps 1, 3, 6 and 7 below.</p>
+
+<p><em>1</em> Download the Ubigraph server from <a href="http://ubietylab.net">ubietylab.net</a>. Unpack it and just run the command line tool bin/ubigraph_server. A black window will appear.</p>
+
+<p><em>2</em> Create a new elixir project <code>mix new lightning_ex</code> and cd into directory.</p>
+
+<p><em>3</em> Add Erlubi as a dependency to the mix.exs file:</p>
+
+<p><code>elixir
+defp deps do
+  [{:erlubi, github: "krestenkrab/erlubi"}]
+end
+</code></p>
+
+<p><em>4</em> Add some code to ex_lightning.ex to generate linked and unlinking procs</p>
+
+<p>``` elixir
+defmodule ExLightning do
+  def start_linked(n) do</p>
+
+<pre><code>for _ &lt;- 1..n do
+  Task.start_link(fn -&gt; 
+    :timer.sleep(1000)
+  end)
+end 
+</code></pre>
+
+<p>  end</p>
+
+<p>  def start(n) do</p>
+
+<pre><code>for _ &lt;- 1..n do
+  Task.start(fn -&gt; 
+    :timer.sleep(1000)
+  end)
+end 
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p><em>5</em> In terminal fetch dependencies and compile with <code>mix do deps.get, compile</code></p>
+
+<p><em>6</em> In terminal iex session loading in project with <code>iex -S mix</code></p>
+
+<p><em>7</em> In iex session start Erlubi tracer with <code>:erlubi_tracer.run</code>.  If you get an error ensure you started ubigraph_server as described in step 1. At this point you should see the vanilla elixir system visualized in 3D like so:</p>
+
+<p><img class="center" src="/images/exconfeu/erlubi_vanilla.png"></p>
+
+<p><em>8</em> run <code>ExLightning.start 5000</code> which will create 5000 unlinked processes (unbound red spheres)</p>
+
+<p><img class="center" src="/images/exconfeu/erlubi_unlinked.png"></p>
+
+<p><em>9</em> run <code>ExLightning.start_linked 5000</code> which will create 5000 linked processes, which will be linked to the creating process.</p>
+
+<p><img class="center" src="/images/exconfeu/erlubi_linked.png"></p>
+
+<p>Full source code can be found here: <a href="https://github.com/holsee/lightning_ex">https://github.com/holsee/lightning_ex</a></p>
+
+<p>Have fun :D</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[What Elixir is about @ Erlang Factory SF 2015]]></title>
@@ -104,15 +181,6 @@ scalable, and loggable way to serve public git repositories.  It is used by gith
 <p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/L_9pUkVSjcE' frameborder='0' allowfullscreen></iframe></div></p>
 
 <p>A rule I try to follow for this is to try and keep my solution less than 20 lines of code.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Rise of The Phoenix - Elixir Web Framework by Chris McCord]]></title>
-    <link href="http://holsee.github.io/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord/"/>
-    <updated>2014-08-28T23:46:51+01:00</updated>
-    <id>http://holsee.github.io/elixir-conf-2014-rise-of-the-phoenix-building-an-elixir-web-framework-by-chris-mccord</id>
-    <content type="html"><![CDATA[<p><div class='embed-video-container'><iframe src='http://www.youtube.com/embed/3jMbzGv_6tA' frameborder='0' allowfullscreen></iframe></div></p>
 ]]></content>
   </entry>
   
