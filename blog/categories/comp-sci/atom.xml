@@ -4,7 +4,7 @@
   <title><![CDATA[Category: comp-sci | holsee]]></title>
   <link href="http://holsee.github.io/blog/categories/comp-sci/atom.xml" rel="self"/>
   <link href="http://holsee.github.io/"/>
-  <updated>2017-01-04T21:44:30+00:00</updated>
+  <updated>2017-01-04T21:49:30+00:00</updated>
   <id>http://holsee.github.io/</id>
   <author>
     <name><![CDATA[holsee]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Don't succumb to dumb]]></title>
-    <link href="http://holsee.github.io/dont-circum-to-dumb/"/>
+    <link href="http://holsee.github.io/dont-succumb-to-dumb/"/>
     <updated>2015-03-17T08:21:05+00:00</updated>
-    <id>http://holsee.github.io/dont-circum-to-dumb</id>
+    <id>http://holsee.github.io/dont-succumb-to-dumb</id>
     <content type="html"><![CDATA[<p>I think brushing up on Computer Science fundamentals from time to time is a valuable endeavour, which every developer should do.</p>
 
 <p>Even if it is as little as taking one of the many <a href="/mit-introduction-to-algorithms/">undergrad level modules online</a>.  Many of which are not to be sniffed at.</p>
