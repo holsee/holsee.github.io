@@ -5,8 +5,7 @@ tags:
   - http
 ---
 
-The best HTTP Status Code decision diagram I have seen to date.
-Source: https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.png
+The best HTTP Status Code decision diagram I have seen to date, from the
+[for-GET/http-decision-diagram](https://github.com/for-GET/http-decision-diagram) project.
 
-[<img class="center" src="https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.png" alt="">](https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.png)
-
+[![HTTP decision diagram: a flowchart from request through to every response status code](https://raw.githubusercontent.com/for-GET/http-decision-diagram/master/httpdd.fsm.png)](https://github.com/for-GET/http-decision-diagram)

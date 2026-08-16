@@ -32,7 +32,7 @@ client.lpush('recent_meetings', meeting, function(err, reply) {
 })
 ```
 
-<!-- more -->
+
 
 and for good measure, 
 [using my new CoffeeScript skills](devlog-a-sip-of-coffeescript), the same thing:
@@ -47,6 +47,5 @@ client.lpush 'recent_meetings', meeting, (err, reply) ->
 
 ```
 
-P.S. This gif of Eric Allam & Gregg Pollack cracks me up no end...
-
-<img class="center" src="http://courseware.codeschool.com/images/blog/node-mind-blown.gif" width="800" height="800" alt="">
+P.S. There was a gif of Eric Allam and Gregg Pollack here that cracked me up no
+end. Code School has since shut down and taken it with them.

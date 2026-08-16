@@ -1,0 +1,39 @@
+<% import Cherry.Theme.Helpers %><% alias Cherry.Portfolio.Timeline %><%= if @portfolio.profile do %><header class="profile">
+<h1><%= h(@portfolio.profile.name) %></h1>
+<%= if @portfolio.profile.headline do %><p class="profile-headline"><%= h(@portfolio.profile.headline) %></p>
+<% end %><p class="profile-meta"><%= if @portfolio.profile.location do %><span><%= h(@portfolio.profile.location) %></span><% end %><%= for link <- @portfolio.profile.links do %><a href="<%= link.url %>"><%= h(link.label) %></a><% end %></p>
+</header>
+<% else %><h1>Portfolio</h1>
+<% end %><div class="timeline">
+<%= for {year, items} <- Timeline.groups(@portfolio) do %><section class="timeline-year">
+<h2 class="year-mark"><%= year %></h2>
+<%= for item <- items do %><article class="timeline-entry">
+<%= case item.kind do %><% :position -> %><p class="entry-kind">Position</p>
+<h3><%= h(item.entry.title) %> · <%= h(item.entry.org) %></h3>
+<p class="entry-meta"><%= format_range(item.entry.started, item.entry.ended) %><%= if item.entry.location do %> · <%= h(item.entry.location) %><% end %></p>
+<% :project -> %><p class="entry-kind">Project</p>
+<h3><%= h(item.entry.title) %></h3>
+<p class="entry-meta"><%= format_range(item.entry.started, item.entry.ended) %><%= if item.entry.status != "active" do %> · <%= h(item.entry.status) %><% end %><%= for link <- item.entry.links do %> · <a href="<%= link.url %>"><%= h(link.label) %></a><% end %></p>
+<% :talk -> %><p class="entry-kind">Talk</p>
+<h3><%= h(item.entry.title) %></h3>
+<p class="entry-meta"><%= h(item.entry.event) %> · <%= format_month(item.entry.date) %><%= if item.entry.video do %> · <a href="<%= item.entry.video %>">Video</a><% end %><%= if item.entry.slides do %> · <a href="<%= item.entry.slides %>">Slides</a><% end %></p>
+<% :education -> %><p class="entry-kind">Education</p>
+<h3><%= h(item.entry.title) %> · <%= h(item.entry.institution) %></h3>
+<p class="entry-meta"><%= format_range(item.entry.started, item.entry.ended) %></p>
+<% end %><%= if item.entry.highlights != [] do %><ul class="entry-highlights">
+<%= for highlight <- item.entry.highlights do %><li><%= h(highlight) %></li>
+<% end %></ul>
+<% end %><%= if item.entry.tags != [] do %><p class="entry-tags"><%= for tag <- item.entry.tags do %><a href="<%= href(@site, "story/" <> tag_slug(tag) <> "/") %>"><%= h(tag) %></a><% end %></p>
+<% end %></article>
+<% end %></section>
+<% end %></div>
+<%= if @portfolio.oss != [] do %><section class="oss">
+<h2>Open source</h2>
+<ul class="oss-list">
+<%= for oss <- @portfolio.oss do %><li>
+<a href="<%= oss.repo %>"><%= h(oss.title) %></a> <span class="oss-role"><%= h(oss.role) %></span>
+<%= if oss.tags != [] do %><span class="entry-tags"><%= for tag <- oss.tags do %><a href="<%= href(@site, "story/" <> tag_slug(tag) <> "/") %>"><%= h(tag) %></a><% end %></span>
+<% end %></li>
+<% end %></ul>
+</section>
+<% end %>

@@ -46,7 +46,7 @@ end
 ```
 Lastly you are introduced to [FactoryGirl](https://github.com/thoughtbot/factory_girl), which is an alternative to using the built in test fixtures provided by rails out of the box.  
 
-<!-- more -->
+
 
 There are numerous advantages to using a factories and specifically FactoryGirl instead of the built in rails fixture for your test data. You are provided with granular control over how the test data built and initialized not to mention the ability to create test data dynamically rather than maintaining a complex hand crafted static data set defined in yaml with magic ids providing the only basis for associations.
 

@@ -4,42 +4,12 @@ description: "Spotify's engineering culture videos, and a healthy dose of cultur
 tags:
   - culture
 ---
-<p>Love these videos, love Spotify&rsquo;s culture, looks like a great place to work.</p>
+Love these videos, love Spotify's culture, looks like a great place to work.
 
-<div class="embed-video-container"><iframe src="http://player.vimeo.com/video/85490944 "></iframe></div>
+<div class="video-embed"><iframe src="https://player.vimeo.com/video/85490944" title="Spotify Engineering Culture, part 1" loading="lazy" allowfullscreen></iframe></div>
 
+Far bigger company than I thought they would be... tis cool how they approach the architecture to cope with that effectively.
 
-<p>Far bigger company than I thought they would be&hellip; tis cool how they approach the architecture to cope with that effectively.</p>
+<div class="video-embed"><iframe src="https://player.vimeo.com/video/94950270" title="Spotify Engineering Culture, part 2" loading="lazy" allowfullscreen></iframe></div>
 
-<div class="embed-video-container"><iframe src="http://player.vimeo.com/video/94950270 "></iframe></div>
-
-
-<p>Well worth the watch.</p>
-</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-03-27T19:05:48+00:00" pubdate data-updated="true">Mar 27<sup>th</sup>, 2015</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/culture/'>culture</a>
-
-</div>
-
-
-	
-
+Well worth the watch.

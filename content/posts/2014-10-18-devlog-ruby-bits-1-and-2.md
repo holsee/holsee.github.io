@@ -1,5 +1,5 @@
 ---
-title: "Devlog: Ruby Bits 1 &amp; 2"
+title: "Devlog: Ruby Bits 1 & 2"
 description: "Devlog notes from Code School's Ruby Bits 1 and 2."
 tags:
   - codeschool

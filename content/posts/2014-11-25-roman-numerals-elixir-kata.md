@@ -8,6 +8,8 @@ tags:
 
 A fun little test driven kata which will introduce you to the basics of elixir.
 
-<div class="video-embed"><iframe src="https://www.youtube.com/embed/L_9pUkVSjcE" title="YouTube video" loading="lazy" allowfullscreen></iframe></div>
-
 A rule I try to follow for this is to try and keep my solution less than 20 lines of code.
+
+> [!NOTE]
+> The screencast that used to be embedded here is set to private on YouTube, so
+> it has been removed from the page rather than left as a dead player.
