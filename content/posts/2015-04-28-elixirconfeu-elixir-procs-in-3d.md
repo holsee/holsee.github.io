@@ -8,6 +8,8 @@ I gave a lightning talk at [ElixirConfEU](http://ElixirConf.eu) on Visualizing E
 
 ![Giving the lightning talk at ElixirConfEU](/images/exconfeu/elixirconf_lightning_talk.jpg)
 
+::video{youtube="UdJL3MNsyMc" title="Steven Holdsworth, Elixir Processes in 3D, ElixirConf.EU 2015"}
+
 A few nights before travelling to Krakow I had watched a video by [Kresten Krab Thorup](https://github.com/krestenkrab/) on his project [Erlubi](https://github.com/krestenkrab/erlubi) which transmits basic details of the Erlang VM to a [Ubigraph Server](http://ubietylab.net).
 
 I started to use this to inspect Erlang projects, and play about with OTP Supervisor trees and how they looked in 3D.

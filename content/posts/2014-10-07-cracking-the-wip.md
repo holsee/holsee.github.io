@@ -1,7 +1,8 @@
 ---
 title: "Cracking the WIP"
-tags: []
-draft: true
+description: "A short story about a sprint where a WIP limit of five stopped me pulling a sixth user story, and every good thing that happened because of it."
+tags:
+  - leadership
 ---
 
 I am not trying to write an essay here, just sharing a short story about why imposing WIP limits can be a very powerful tool for software teams.

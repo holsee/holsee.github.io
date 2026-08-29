@@ -1,0 +1,10 @@
+name: Steven Holdsworth
+headline: "Principal engineer. I build platforms on the BEAM: AI systems, data platforms, and the services around them. Nineteen years in."
+location: Northern Ireland (Remote UK/EU)
+avatar: images/cv-photo.jpg
+links:
+  - {label: GitHub, url: "https://github.com/holsee"}
+  - {label: hex.pm, url: "https://hex.pm/users/holsee"}
+updated: 2026-08-24
+cv:
+  visibility: public

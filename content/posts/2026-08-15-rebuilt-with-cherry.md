@@ -1,7 +1,7 @@
 ---
 title: "Rebuilt with Cherry"
 description: "This site now builds with Cherry, an Elixir static site generator, after a decade on Octopress."
-tags: [meta, elixir, cherry]
+tags: [personal, elixir, oss, static-site]
 ---
 
 After a decade frozen on Octopress, this site is now built with

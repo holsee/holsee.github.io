@@ -7,7 +7,7 @@ tags:
 
 Found this gem in a tweet from [@david_whitney](https://twitter.com/david_whitney), and as he says the title is trolly but none the less is an excellent talk on automated testing. 
 
-<div class="video-embed"><iframe src="https://www.youtube.com/embed/VDfX44fZoMc" title="J.B. Rainsberger: Integrated Tests Are A Scam" loading="lazy" allowfullscreen></iframe></div>
+::video{youtube="VDfX44fZoMc" title="J.B. Rainsberger, Integrated Tests Are a Scam"}
 
 ### Integrations Tests Lead to Bad Design
 

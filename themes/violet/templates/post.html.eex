@@ -1,7 +1,0 @@
-<% import Cherry.Theme.Helpers %><article>
-<h1><%= h(@doc.meta.title) %></h1>
-<p class="post-meta">
-<time datetime="<%= Date.to_iso8601(@doc.meta.date) %>"><%= format_date(@doc.meta.date) %></time><%= for tag <- @doc.meta.tags do %> · <a href="<%= href(@site, "blog/tags/" <> tag_slug(tag) <> "/") %>"><%= h(tag) %></a><% end %>
-</p>
-<%= @doc.html %>
-</article>

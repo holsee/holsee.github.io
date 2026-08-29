@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v7
 
       # Toolchain setup, caching, build, and cherry.check in one step.
-      - uses: holsee/cherry/action@v0.1.0-rc.3
+      - uses: holsee/cherry/action@v0.6.1
 
       - run: touch _site/.nojekyll
 

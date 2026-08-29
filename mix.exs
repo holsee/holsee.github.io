@@ -17,7 +17,7 @@ defmodule HolseeSite.MixProject do
 
   defp deps do
     [
-      {:cherry, "~> 0.1.0-rc.3"}
+      {:cherry, "~> 0.6.1"}
     ]
   end
 end

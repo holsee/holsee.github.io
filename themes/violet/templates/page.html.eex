@@ -1,3 +1,0 @@
-<article>
-<%= @doc.html %>
-</article>

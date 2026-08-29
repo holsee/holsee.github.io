@@ -1,27 +1,71 @@
 ---
 title: About
-description: "Who holsee is: background, work, and what this site is for."
+description: "Who holsee is: the career arc, community, open source, and what this site is."
 ---
 # About
 
-I graduated in 2009 from Queen's University where I studied for an honours degree in Computer Science.
+I'm Steven Holdsworth, @holsee online, an increasingly grey-bearded
+engineer and software architect in Northern Ireland, working remotely primarily across the UK and EU. I graduated from
+Queen's University Belfast in 2009 with an honours degree in Computer
+Science, having taken employment through university shipping code, so I started
+the full-time game with a couple of years of professional engineering
+under my belt.
 
-I worked through Uni writing code, mainly in Java and .NET. I graduated with 3 years experience which helped me hit the ground running as a full time engineer.
+**My arc.** A placement year at a secure electronic documents and records
+management company that was acquired mid-placement; a summer on a magnetic-tape system in a Baltic server room at a bank,
+where I found a UNIX book and scripted away everything other than
+loading the tapes; a 3D interface for a multi-room media centre; then
+self-employed at twenty-two, building high-performance systems and tools
+for black-box and algorithmic trading for a private trading fund, mostly
+remote. A year consulting inside a bank's architecture division, then two
+years on US-healthcare services and mobile platforms, and two more on a
+commodities exchange's trading platform and its market-analysis systems.
+In 2015 I joined a cyber-security firm to write Erlang for a living, on a
+packet-and-log processing platform for cyber-attack incident detection,
+and then designing and implementing its serverless successor. Since
+late 2017 I've been a Dad and working in ed-tech, where I've originated and architected the
+AI platform and multiple data platforms, including traditional ML and AI
+intelligence systems, built the exam-systems services and a coaching
+marketplace, and been part of a small crack unit solving the hardest problems and
+providing strategic advice for the best part of a decade. My [timeline](/cv/timeline/) has almost every
+position, project, talk and library that I can disclose (/remember), dated; the
+[CV](/cv/) is the short form.
 
-I currently work on a trading platform offered by a big commodities exchange. I also get to work on R&D projects from time to time, nice work if you can get it. I've done some fairly interesting engineering with CEP Engines and fancy algorithms for Market Analysis.
+**Community.** Working remote as much as I have, I really enjoy community
+engagement and helping to grow the Belfast meet-up scene as much as time
+affords; Belfast, NI, is full of brilliant engineers. I organise the
+Belfast Elixir and Belfast Functional Programming meet-ups. Years ago I helped run the Northern Ireland
+Microsoft Technology User Group and, with a friend, put on Super Happy
+Dev Castle, a 24-hour hackathon for local technologists who wanted
+something that wasn't tied to one vendor. I've given talks at ElixirConf
+EU on 3D visualisation of processes, at Functional Kats Conf in Dublin on
+building neural networks and the maths behind crafting your first neuron,
+and at too many Belfast meet-ups to list, and in 2019 my project won
+[Spawnfest](https://spawnfest.org/), the BEAM community's 48-hour
+hackathon, with a realtime database of my design.
 
-I previously developed medical systems using a polyglot of technologies. Mainly C# .NET but also Ruby with a sprinkle of Python for good measure. Whilst in this company, for just over a year I worked exclusively on mobile development, where I designed and developed a mobile app for iOS and Android. I also did some work on some ancient Windows Mobile devices.
+**Open source.** chroxy, spirit_fingers, Cherry (the static site
+generator this site runs on), cherrypicker, agent frameworks, data
+ontology systems: the list goes on, so check out my
+[GitHub](https://github.com/holsee) to see what I'm up to and what I've
+been able to share to date. I've also contributed to open_api_spex,
+gen_magic, ex_aws_bedrock, ex_aws_s3 and pow, to name a few libraries you
+might have used in the Elixir space, and my packages are on
+[hex.pm](https://hex.pm/users/holsee).
 
-Earlier in my career I worked quite a bit on high performance financial systems for a small private trading firm. It was a lot of fun, got to flex some architectural muscle on a few greenfield projects. I worked remotely for the majority of the time and learned how to do it effectively.
+**Education, beyond the degree.** A week-long Advanced Erlang and OTP
+course with Robert Virding at Erlang Solutions; a course on
+high-performance lock-free data structures for high-throughput
+concurrency taught by Martin Thompson; and Coursera certifications in
+reactive programming and functional programming in Scala from the École
+Polytechnique Fédérale de Lausanne (EPFL), taught by Martin Odersky (with
+Erik Meijer and Roland Kuhn on the reactive course), from the years when
+everything I built was reactive. To name but a few which have been
+formative, and allowed me to meet and talk shop with some of my
+programming heroes.
 
-For a few years I helped run the Northern Ireland Microsoft Technology User Group, which was the first local user group I came across. A little sick with the lack of open multi-technology events, with a friend I put together a 24 hour hack-a-thon event called Super Happy Dev Castle. This brought together a lot of great local technologists who hacked into the wee hours. This was a good while ago now, but I look back on it fondly as I got to meet lots of interesting folks who I wouldn't have otherwise.
-
-I pretty much goto any tech meet-ups I can these days. I like talking about software almost as much as I like building it.
-
-Developing software is not just my 9 to 5 job but is something I'm passionate about. I care a great deal about it, maybe too much... I dunno... maybe...
-
-I love working on open source, but am limited in what I am able to do these days due to contractual mumbo jumbo. A side project or two is fairly standard for me, half the time I build things to give me an excuse to play & become familiar with some new tech.
-
-Early in my software career, after graduating, I decided to contract and did a number of development gigs and later some consultancy on specific technologies I'd became particularly knowledgable about. This was great, I got exposure to various domains and technologies, and at times was lucky enough to work with some brilliant folks who taught me so much.
-
-I enjoy the creativity that software development entails and working with teams to create something beautiful. I simply love what I do (hope you do too).
+If you want the detail, my [timeline](/cv/timeline/) lays out the
+positions, projects, talks and libraries in date order, and the
+[CV](/cv/) is the short version built from the same files. The
+[Now](/now/) page has what's on the bench this month, and the
+[blog](/blog/) has the write-ups.

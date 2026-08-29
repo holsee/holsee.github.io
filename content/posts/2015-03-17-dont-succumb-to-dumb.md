@@ -1,5 +1,5 @@
 ---
-title: "Don't circum to dumb"
+title: "Don't succumb to dumb"
 description: "Why brushing up on computer science fundamentals is worth every developer's time."
 tags:
   - comp-sci

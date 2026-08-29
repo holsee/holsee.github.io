@@ -1,0 +1,39 @@
+/* CV: photo beside the header, tilted 4 degrees clockwise.
+   Done in CSS because the flipdot theme inherits the cv template from the
+   framework default, and cherry check 0.6.1 crashes on an overlay of an
+   inherited template (Drift.status File.read! on the theme path). */
+.cv-careers .cv-header {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, var(--measure)) 260px;
+  column-gap: 3rem;
+  align-items: start;
+}
+.cv-careers .cv-header > * { grid-column: 1; }
+.cv-careers .cv-header::after {
+  content: "";
+  grid-column: 2;
+  grid-row: 1 / span 4;
+  justify-self: end;
+  width: 220px;
+  /* natural height at this width is 240px; 5px cropped off the bottom */
+  height: 235px;
+  margin: 0.5rem 1.25rem 0 0;
+  background: url("/images/cv-photo.jpg") top center / 100% auto no-repeat;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transform: rotate(4deg);
+}
+@media (max-width: 720px) {
+  .cv-careers .cv-header { grid-template-columns: 1fr; }
+  .cv-careers .cv-header::after {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    width: 160px;
+    height: 170px;
+    margin: 0.75rem 0 1.5rem 0.75rem;
+  }
+}
+@media print {
+  .cv-careers .cv-header::after { transform: none; box-shadow: none; }
+}

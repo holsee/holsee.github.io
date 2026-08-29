@@ -8,7 +8,7 @@ tags:
 
 I found this video last night by [Torben Hoffman](LeHoff), I recommend folks interested in Erlang or Elixir give it a watch and take it to heart.  Torben does a good job of displaying how an "Erlanger" should think, in comparison to other programmers.
 
-<div class="video-embed"><iframe src="https://player.vimeo.com/video/118258580" title="Vimeo video" loading="lazy" allowfullscreen></iframe></div>
+<div class="video-embed"><iframe src="https://player.vimeo.com/video/118258580" title="Torben Hoffmann, Thinking like an Erlanger" loading="lazy" allowfullscreen></iframe></div>
 
 Torben recommends 2 books which have been added to my reading list:
 

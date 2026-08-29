@@ -1,22 +1,22 @@
 ---
 title: "Merge Sort"
-description: "Notes on merge sort: the queue-based mental model, the steps, and the complexity."
+description: "Notes on merge sort: split until trivial, merge back with two queues, and why that lands on n log n."
 tags:
   - algorithms
 ---
 
-You start with an unordered sequence. 
-You create N empty queues. 
-You loop over every item to be sorted. 
-On each loop iteration, you look at the last element in the key. 
-You move that item into the end of the queue which corresponds to that element. 
-When you are finished looping you concatenate all the queues together into another sequence. 
-You then reapply the procedure described but look at the second last element in the key. 
-You keep doing this until you have looped over every key. 
-When you complete this process the resulting sequence will be sorted as described above.
+*Some notes on merge sort...*
 
-<p>Let n<sub>i</sub> be the number of items in the sequence to be sorted. N is number of integers that each key element can take. Let n<sub>k</sub> be the number of keys in each item.</p>
-<p>The total time to sort the sequence is thus O(n<sub>k</sub>(n<sub>i</sub> + N)).</p>
+You start with an unordered sequence.
+If it has one item (or none) it is already sorted, so hand it back.
+Otherwise split it down the middle and merge sort each half.
+Now you have two sorted halves, and merging them is the easy part: treat each half as a queue, compare the two items at the front, and move the smaller one into the result.
+Keep doing that until one queue runs dry, then tack whatever is left of the other one onto the end.
+Because you only ever take the smaller front item, the result is sorted, and because you take from the left queue on a tie, the sort is stable.
+
+Let n be the number of items. Splitting in half over and over gives you log<sub>2</sub> n levels of recursion, and each level does one merge pass over all n items in total.
+
+The total time to sort the sequence is thus O(n log n), for any input, which is the thing merge sort has over quicksort.
 
 ```javascript
 function mergesort(list){
