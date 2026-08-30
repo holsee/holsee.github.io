@@ -20,20 +20,16 @@ In the Microsoft .NET Framework 4.5, an Introsort implementation is used instead
 
 If the sort is not successfully completed, the results are undefined.
 This method uses the introspective sort (introsort) algorithm as follows:
-<ul>
-	<li>
-		If the partition size is fewer than 16 elements, it uses an <a href="http://en.wikipedia.org/wiki/Insertion_sort">insertion sort</a> algorithm.
-	</li>
-	<li>
-		If the number of partitions exceeds 2 * Log<sub>N</sub>, where N is the range of the input array, it uses a <a href="http://en.wikipedia.org/wiki/Heapsort">Heapsort</a> algorithm.
-	</li>
+
+- If the partition size is fewer than 16 elements, it uses an [insertion sort](http://en.wikipedia.org/wiki/Insertion_sort) algorithm.
+- If the number of partitions exceeds 2 * Log<sub>N</sub>, where N is the range of the input array, it uses a [Heapsort](http://en.wikipedia.org/wiki/Heapsort) algorithm.
+- Otherwise, it uses a [Quicksort](http://en.wikipedia.org/wiki/Quicksort) algorithm.
+
+That recursion depth limit is handed in when the sort kicks off:
+
 ```csharp
 IntroSort(left, length + left - 1, 2 * IntrospectiveSortUtilities.FloorLog2(keys.Length));
 ```
-	<li>
-		Otherwise, it uses a <a href="http://en.wikipedia.org/wiki/Quicksort">Quicksort</a> algorithm.
-	</li>
-</ul>
 
 This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved. In contrast, a stable sort preserves the order of elements that are equal.
 
