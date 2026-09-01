@@ -28,9 +28,11 @@ comes to getting the most from smaller models.
 
 I believe successful systems come from good, low-friction methods of
 collaboration between contributors, including in commercial settings. The role
-of engineering is changing rapidly, and I'm a firm believer in the skills good
-engineers bring to a world where the mechanical execution of code authorship
-can be accelerated through agentic tooling.
+of engineering is changing rapidly. I'm a firm believer in the value talented
+engineers bring now more than ever in the form of experience, problem solving,
+creativity, taste, inspiration, rigour and elegance in a world where the
+execution of code authorship can be mechanical through agentic intelligence and
+process.
 
 This site covers a good chunk of my experience and the projects I'm able to
 share publicly. There is more about me on the [about page](/about/).
