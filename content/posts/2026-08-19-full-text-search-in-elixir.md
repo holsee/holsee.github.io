@@ -1,5 +1,5 @@
 ---
-title: "Search without Node"
+title: "Full Text search in Elixir"
 description: "Cherry's built-in search engine is an inverted index in pure Elixir and a 2KB client. Term weighting, plural folding, and a tokenizer that lives in two languages."
 tags: [personal, elixir, oss, static-site, algorithms]
 ---
