@@ -2,7 +2,6 @@
 title: "Why Cherry exists"
 description: "I used to run my blog on Octopress. Cherry is what I wanted it to become, an old-school static site generator ready for the agentic era."
 tags: [personal, elixir, oss, static-site, design-docs]
-draft: true
 ---
 
 Cherry is the static site generator I wrote in August 2026, in Elixir, and it builds the site you're reading. Its first stable release went out this week, and I've written up why it exists over on its own blog. Here's the short version and the link.

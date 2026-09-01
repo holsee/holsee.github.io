@@ -2,7 +2,6 @@
 title: "LLMs and SEO"
 description: "Two kinds of readers hit your site now, crawlers and agents. How Cherry serves both from one build, and why doing it in the framework beats doing it in the theme."
 tags: [personal, elixir, oss, static-site, agents]
-draft: true
 ---
 
 A static site used to have one non-human audience: search crawlers. Now it has two. Agents read sites to answer questions, summarise and quote, and they are terrible at reading the HTML your visitors enjoy. Cherry treats both audiences as build outputs, generated from the same content pass as the human pages, so nothing can drift. I've written up the implementation on the Cherry blog; this is the shape of it.

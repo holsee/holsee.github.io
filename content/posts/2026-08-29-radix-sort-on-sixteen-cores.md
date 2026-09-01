@@ -2,7 +2,6 @@
 title: "Radix sort on sixteen cores, in .NET and Elixir"
 description: "When radix sort is the right call and who uses it, why a radix pass parallelises and a comparison sort doesn't, the sixteen-thread version in .NET plus the write-combining tricks from the literature, the sixteen-process version in Elixir on :atomics, and Nx for the record."
 tags: [personal, algorithms, dotnet, elixir, bake-off]
-draft: true
 ---
 
 ## the short version

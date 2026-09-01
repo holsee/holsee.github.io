@@ -2,7 +2,6 @@
 title: "chatterbex: a Python TTS model behind an Erlang Port"
 description: "Zero-shot voice cloning from Elixir over a plain Port to a Python subprocess: why not a NIF, why not HTTP, and the line-mode trap that meant the first commit could never have worked."
 tags: [personal, elixir, oss]
-draft: true
 ---
 
 I wrapped a text-to-speech model in Elixir today. It's Christmas, the house is quiet, and Resemble AI's Chatterbox does zero-shot voice cloning that I wanted to call from the BEAM, and no wrapper existed. So: [chatterbex](https://github.com/holsee/chatterbex), eight commits, all dated the 25th of December. It's a small thing and a nice illustration of the least glamorous way to bind Elixir to a Python model, and of how the first commit shipped a bug that made it impossible for it to have worked at all.

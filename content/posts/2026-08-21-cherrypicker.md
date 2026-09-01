@@ -2,7 +2,6 @@
 title: "cherrypicker: names for your ports"
 description: "Why we built a pure-Elixir alternative to portless in a day, how the register model works, and what cherry serve --name will do with it in the next release."
 tags: [personal, elixir, oss, static-site, security]
-draft: true
 ---
 
 `localhost:4000` means nothing. `localhost:5173` means nothing. Six dev servers into an afternoon, the one you bookmarked yesterday is someone else now. Vercel's portless named this problem properly: dev servers should live at stable named URLs like `http://docs.localhost`, and the port lottery should be the proxy's problem. I wanted that for Cherry. I didn't want it enough to install it.

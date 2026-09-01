@@ -2,7 +2,6 @@
 title: "Control planes in agent SDLCs"
 description: "Three days ago my agentic-SDLC spec had a control plane: a CAS store, leases, signed-commit authority, a reconciler. Today it has GitHub issues. It's the best deletion I've made this year, and the reasoning travels to any team putting agents in the delivery loop."
 tags: [personal, agents, asdlc, design-docs]
-draft: true
 ---
 
 Three days ago the spec had a control plane. A store with compare-and-swap transactions. Leases on claimable artefacts. Authority as signed commits. A level-triggered reconciler. It was thorough, it resolved twenty defects a logical audit had found in the first draft, and it was wrong. Today the control plane is gone and GitHub issues do the job. This is the write-up of the deletion.

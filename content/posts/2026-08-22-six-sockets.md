@@ -2,7 +2,6 @@
 title: "Six sockets: a live-reload leak in two acts"
 description: "A click stalled for 55 seconds while the server answered in 3 milliseconds. Debugging the browser's six-connection limit, abandoned SSE streams, and two fixes in Elixir."
 tags: [personal, elixir, otp, oss, realtime]
-draft: true
 ---
 
 Late one night I clicked a link on a `cherry serve` site and the browser just sat there. Fifty-five seconds. Then the page appeared instantly, as if nothing had happened. The same waterfall that recorded the freeze showed the server answering in under three milliseconds. Working out how both could be true turned into two bug fixes across two projects and a small tour of how BEAM processes and TCP sockets actually talk to each other. The full devlog is on the Cherry blog; here is the shape of it.

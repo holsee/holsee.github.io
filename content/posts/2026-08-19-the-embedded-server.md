@@ -2,7 +2,6 @@
 title: "The embedded server"
 description: "How cherry serve works inside. Bandit, a Registry as the whole pubsub, server-sent events, and a file watcher that refuses to lie."
 tags: [personal, elixir, otp, oss, static-site]
-draft: true
 ---
 
 Cherry's output is aggressively static: plain files, no runtime, deploy anywhere. But `cherry serve`, the dev loop, is the one place it runs long-lived processes, and it's a nice little tour of why the BEAM is such a pleasant place to build tools. The full walk through the code is on the Cherry blog; here's what's in it.

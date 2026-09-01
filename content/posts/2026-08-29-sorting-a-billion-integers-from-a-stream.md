@@ -2,7 +2,6 @@
 title: "Sorting a billion integers from a stream"
 description: "A follow-up to the sixteen-core post at the scale where it matters: a billion keys arriving over the network, what a radix sort can do while they arrive, what it must leave until the last byte, and what an analytics node actually does with this every hour."
 tags: [personal, algorithms, dotnet, elixir, distributed-systems]
-draft: true
 ---
 
 ## the short version

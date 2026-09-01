@@ -2,7 +2,6 @@
 title: "Teaching a C code-graph engine Elixir"
 description: "Adding Elixir resolution to a pure-C code-intelligence engine, then pointing it at a 1,240-file Phoenix app: 174 call edges to things that can't be called, 47 routes the graph couldn't see, and the discipline of saying which numbers you measured."
 tags: [personal, elixir, mcp, agents, oss, semantic-data]
-draft: true
 ---
 
 A code-intelligence engine is only as useful as its resolution. Tree-sitter will hand you the syntax of any language for free; what an agent needs is to know that *this* call in *this* file refers to *that* function in *that* module, with *that* arity. Four days this week went into giving DeusData's [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) that for Elixir, and then proving it against a real application.

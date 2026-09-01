@@ -2,7 +2,6 @@
 title: "spirit_fingers at seven: a Rust SimHash NIF"
 description: "A small Rust SimHash NIF for Elixir, seven years old this week: why it's Rust, how it benchmarks against the pure-Elixir libraries, vendoring its one dependency, and what keeping a NIF alive across Rustler versions actually involves."
 tags: [personal, elixir, rust, simhash, oss]
-draft: true
 ---
 
 I cut spirit_fingers v0.5.1 an hour ago, which, with the first release back in May 2018, makes this a seven-year-old library. That's longer than I've kept almost anything alive, so it feels like a good moment to write down what a small library that does one job well actually looks like from the inside. The one job: SimHash operations for Elixir, with the hashing done in Rust.

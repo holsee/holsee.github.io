@@ -2,7 +2,6 @@
 title: "What building 0.2.0 taught us"
 description: "Styling as a ladder, light and dark as one value, components that survive theme swaps, and the HEEx spike with its real numbers."
 tags: [personal, elixir, oss, static-site, bake-off]
-draft: true
 ---
 
 Cherry 0.2.0 was the templates and styling release, the two places where static site generators traditionally make you choose between someone else's taste and a fork. I've written up what building it taught me on the Cherry blog. Four lessons, in short.

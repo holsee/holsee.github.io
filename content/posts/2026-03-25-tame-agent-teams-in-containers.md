@@ -2,7 +2,6 @@
 title: "tame: one container per coding agent"
 description: "Four Claude Code sessions on one laptop and no idea what any of them was doing. So: a container per agent, a tmux window each, status as files rather than a protocol, the network decided from outside, and the token fetched from the Keychain so nothing is baked into an image."
 tags: [personal, agents, asdlc, docker, security]
-draft: true
 ---
 
 Last weekend I had four coding-agent sessions running on one laptop, each holding its own context, and I couldn't have told you what any of them was doing without clicking into it. That's not a workflow, that's a browser with too many tabs. So I wrote a harness. It's Go, it's called `tame` (Terminal Agent Management Environment), and it's already at v0.1.2.

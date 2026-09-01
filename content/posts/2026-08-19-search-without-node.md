@@ -2,7 +2,6 @@
 title: "Search without Node"
 description: "Cherry's built-in search engine is an inverted index in pure Elixir and a 2KB client. Term weighting, plural folding, and a tokenizer that lives in two languages."
 tags: [personal, elixir, oss, static-site, algorithms]
-draft: true
 ---
 
 Set `search: "cherry"` in a Cherry config and the site gets full-text search: a search box, ranked results, a keyboard shortcut. No Node, no npm, no wasm blob, no third-party service. I wrote up how it works on the Cherry blog; this is the summary, because the computer science involved is old, small and genuinely pleasing.
