@@ -106,6 +106,28 @@ The folder is more than somewhere to keep the markdown. Three subdirectory names
 
 `allowed-tools` is the frontmatter line most likely to be skimmed past, and it is the one deciding what a skill can actually do. Conjure offers the model four tools and nothing else — `view`, `bash_tool`, `create_file`, `str_replace` — and this field is where a skill declares which of them it needs. `Read` on its own is a skill that can look and change nothing; `Bash(python3:*) Read` is the echo skill above, permitted to shell out but only to `python3`. On file-based skills it rides along on the struct as a declaration for the host to honour. On the native backend it is generative: `allowed_tools: [:execute, :read]` is what Conjure builds the tool schemas from, so a skill that never declares a write is one the model is never handed a way to write with.
 
+Nothing says a script has to be Python. `scripts/` holds whatever the environment can execute — a shell script, a Ruby file, a Node file, a compiled binary — because the model reaches it through `bash_tool`, and `bash_tool` is just a shell. Python is convention, not requirement. `compatibility`, the line sitting next to `allowed-tools`, is where a skill declares what it needs to be present for any of it to work:
+
+````markdown
+---
+name: changelog
+description: |
+  Summarise the commits between two git tags. Use when asked for release notes.
+compatibility: bash, git
+allowed-tools: Bash(git:*) Bash(scripts/*) Read
+---
+
+# Changelog
+
+To collect the commits for a release, run:
+
+```bash
+scripts/commits.sh v1.2.0 v1.3.0
+```
+````
+
+Which makes the real constraint the environment rather than the spec, and the backend is what fixes the environment. On `local` it is whatever happens to be installed on your host, which is one more reason that backend suits skills you wrote yourself. On `docker` it is whatever `mix conjure.docker.build` baked into the image, so that Dockerfile is the honest answer to *what can my skills be written in* — add a runtime to it and every Docker-backed skill can use that runtime. On Anthropic's hosted skills the environment is theirs and you do not get a vote. Native skills sidestep the question entirely, because there is no script to interpret.
+
 Conjure enforces that split in the struct itself. `Conjure.load/1` walks a directory and parses frontmatter, but leaves `body: nil` and `body_loaded: false`:
 
 ```elixir
@@ -205,6 +227,8 @@ The callback takes the message list and returns `{:ok, response_map}` or `{:erro
 `Conjure.tool_definitions/0` returns those same four tools as Claude-compatible schemas, and they are identical across every backend. Only where the bytes actually execute changes.
 
 ## Four places a skill can run
+
+There is a split here the list obscures, so it is worth naming first. In three of the four, Elixir is the *host* and the skill is somebody else's program: your app loads the folder, builds the prompt, runs the loop, and shells out to a Python file. In the fourth there is no file and no shell, and the skill *is* Elixir, running in the same VM as the rest of your application. The first three differ only in where that shell runs. The fourth changes what a skill is made of.
 
 ### local
 
