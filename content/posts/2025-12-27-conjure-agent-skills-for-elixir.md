@@ -41,6 +41,71 @@ python3 scripts/echo.py "Your message here"
 
 That layout *is* the token economy. A model sees the frontmatter for every skill it has, reads the body of the one it picks, and only loads the resources that skill actually needs. Metadata, then body, then resources — progressive disclosure.
 
+The folder is more than somewhere to keep the markdown. Three subdirectory names are conventional, and Conjure sorts whatever it finds into them.
+
+<!-- fig:skill-layout -->
+<figure class="diagram">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 502" role="img" aria-label="A skills directory on disk beside the three levels of progressive disclosure: frontmatter metadata for every skill in the system prompt, the body of the one skill the model picks, and a single resource file only when the body names it; below, the allowed-tools line gating which of the four tools view, bash_tool, create_file and str_replace a skill declares it needs" style="width:100%;height:auto;max-width:760px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;color:var(--color-fg,currentColor)">
+<defs><marker id="cj-skill-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<text x="10" y="24" font-size="13" fill="currentColor" font-weight="bold">a skills directory on disk</text>
+<text xml:space="preserve" x="14" y="52" font-size="12" fill="currentColor">priv/skills/</text>
+<text xml:space="preserve" x="14" y="73" font-size="12" fill="currentColor">├── <tspan font-weight="bold">echo/</tspan></text>
+<text xml:space="preserve" x="14" y="94" font-size="12" fill="currentColor">│   ├── <tspan fill="var(--color-accent, #b2570a)" font-weight="bold">SKILL.md</tspan></text>
+<text xml:space="preserve" x="14" y="115" font-size="12" fill="currentColor">│   ├── <tspan fill="#2e86ab" font-weight="bold">scripts/</tspan></text>
+<text xml:space="preserve" x="14" y="136" font-size="12" fill="currentColor" opacity="0.7">│   │   └── echo.py</text>
+<text xml:space="preserve" x="14" y="157" font-size="12" fill="currentColor">│   ├── <tspan fill="#2e86ab" font-weight="bold">references/</tspan></text>
+<text xml:space="preserve" x="14" y="178" font-size="12" fill="currentColor" opacity="0.7">│   │   └── output-format.md</text>
+<text xml:space="preserve" x="14" y="199" font-size="12" fill="currentColor">│   └── <tspan fill="#2e86ab" font-weight="bold">assets/</tspan></text>
+<text xml:space="preserve" x="14" y="220" font-size="12" fill="currentColor" opacity="0.7">│       └── template.xlsx</text>
+<text xml:space="preserve" x="14" y="241" font-size="12" fill="currentColor">├── <tspan font-weight="bold">log-analyser/</tspan></text>
+<text xml:space="preserve" x="14" y="262" font-size="12" fill="currentColor">│   └── <tspan fill="var(--color-accent, #b2570a)" font-weight="bold">SKILL.md</tspan></text>
+<text xml:space="preserve" x="14" y="283" font-size="12" fill="currentColor">└── <tspan font-weight="bold">report-builder/</tspan></text>
+<text xml:space="preserve" x="14" y="304" font-size="12" fill="currentColor">    └── <tspan fill="var(--color-accent, #b2570a)" font-weight="bold">SKILL.md</tspan></text>
+<text x="14" y="338" font-size="11" fill="currentColor" opacity="0.75">Those three subdirectory names are recognised;</text>
+<text x="14" y="354" font-size="11" fill="currentColor" opacity="0.75">anything else is collected under other:.</text>
+<text x="318" y="24" font-size="13" fill="currentColor" font-weight="bold">what reaches the model, and when</text>
+<rect x="318" y="40" width="432" height="112" fill="var(--color-surface, #e7e3d7)" fill-opacity="0.5" stroke="currentColor" stroke-width="1.5"/>
+<text x="332" y="62" font-size="12" fill="currentColor" font-weight="bold">1 · metadata — every skill, always</text>
+<text x="332" y="80" font-size="11" fill="currentColor" opacity="0.75">the frontmatter of every SKILL.md, in the system prompt from turn one</text>
+<text x="338" y="102" font-size="11" fill="currentColor">name: echo</text>
+<text x="338" y="120" font-size="11" fill="currentColor">description: A simple echo skill for testing…</text>
+<rect x="330" y="126" width="408" height="20" fill="var(--color-accent, #b2570a)" fill-opacity="0.18"/>
+<text x="338" y="140" font-size="11" fill="currentColor" font-weight="bold">allowed-tools: Bash(python3:*) Read</text>
+<line x1="340" y1="152" x2="340" y2="176" stroke="currentColor" stroke-width="1.5" marker-end="url(#cj-skill-ah)"/>
+<text x="352" y="169" font-size="11" fill="currentColor" opacity="0.8">the model picks one and calls view on its location</text>
+<rect x="318" y="176" width="432" height="86" fill="var(--color-surface, #e7e3d7)" fill-opacity="0.5" stroke="currentColor" stroke-width="1.5"/>
+<text x="332" y="198" font-size="12" fill="currentColor" font-weight="bold">2 · body — the one skill it picked</text>
+<text x="332" y="218" font-size="11" fill="currentColor" opacity="0.75">the markdown under the frontmatter: one set of instructions,</text>
+<text x="332" y="234" font-size="11" fill="currentColor" opacity="0.75">not a hundred sets of instructions</text>
+<text x="338" y="254" font-size="11" fill="currentColor">run: python3 scripts/echo.py …</text>
+<line x1="340" y1="262" x2="340" y2="286" stroke="currentColor" stroke-width="1.5" marker-end="url(#cj-skill-ah)"/>
+<text x="352" y="279" font-size="11" fill="currentColor" opacity="0.8">the body names a path</text>
+<rect x="318" y="286" width="432" height="92" fill="var(--color-surface, #e7e3d7)" fill-opacity="0.5" stroke="currentColor" stroke-width="1.5"/>
+<text x="332" y="308" font-size="12" fill="currentColor" font-weight="bold">3 · resources — one file, on demand</text>
+<text x="332" y="328" font-size="11" fill="currentColor" opacity="0.75">scripts/ to run, references/ to read, assets/ to work from;</text>
+<text x="332" y="344" font-size="11" fill="currentColor" opacity="0.75">fetched by path, one at a time, never at load</text>
+<text x="338" y="366" font-size="11" fill="#2e86ab" font-weight="bold">view echo/references/output-format.md</text>
+<rect x="10" y="402" width="740" height="86" fill="var(--color-accent, #b2570a)" fill-opacity="0.1" stroke="currentColor" stroke-width="1.5"/>
+<text x="26" y="426" font-size="12" fill="currentColor" font-weight="bold">allowed-tools: which of the four tools a skill declares it needs</text>
+<text x="26" y="444" font-size="11" fill="currentColor" opacity="0.8">Bash(python3:*) Read on the echo skill is: read files, and shell out — but only to python3.</text>
+<rect x="26" y="456" width="84" height="24" fill="var(--color-accent, #b2570a)" fill-opacity="0.45" stroke="currentColor" stroke-width="1"/>
+<text x="68" y="472" text-anchor="middle" font-size="11" fill="currentColor">view</text>
+<rect x="118" y="456" width="104" height="24" fill="var(--color-accent, #b2570a)" fill-opacity="0.45" stroke="currentColor" stroke-width="1"/>
+<text x="170" y="472" text-anchor="middle" font-size="11" fill="currentColor">bash_tool</text>
+<rect x="230" y="456" width="112" height="24" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+<text x="286" y="472" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.5">create_file</text>
+<rect x="350" y="456" width="112" height="24" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+<text x="406" y="472" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.5">str_replace</text>
+<text x="478" y="464" font-size="11" fill="currentColor" opacity="0.75">solid: declared by that line.</text>
+<text x="478" y="479" font-size="11" fill="currentColor" opacity="0.75">faded: never asked for.</text>
+</svg>
+<figcaption>Metadata for every skill, a body for the one the model picks, a resource only when the body names it. The two lines carrying the most weight are the two easiest to skim past: <code>allowed-tools</code>, which bounds what a skill may do at all, and the resource subdirectories, which are the difference between a skill that costs a paragraph and a skill that costs a manual.</figcaption>
+</figure>
+
+`scripts/` is for things the body tells the model to run — the `python3 scripts/echo.py` above. `references/` is for documentation it reads rather than runs: a schema, a house style guide, an API's error table. `assets/` is for material a skill works from — a spreadsheet template, a logo, a fixture. Nothing in any of them is loaded at startup. The body names a path, the model calls `view` on it, and one file arrives. That is the third level of disclosure, and it is why a skill can carry a two-hundred-page reference without ever costing you two hundred pages of context.
+
+`allowed-tools` is the frontmatter line most likely to be skimmed past, and it is the one deciding what a skill can actually do. Conjure offers the model four tools and nothing else — `view`, `bash_tool`, `create_file`, `str_replace` — and this field is where a skill declares which of them it needs. `Read` on its own is a skill that can look and change nothing; `Bash(python3:*) Read` is the echo skill above, permitted to shell out but only to `python3`. On file-based skills it rides along on the struct as a declaration for the host to honour. On the native backend it is generative: `allowed_tools: [:execute, :read]` is what Conjure builds the tool schemas from, so a skill that never declares a write is one the model is never handed a way to write with.
+
 Conjure enforces that split in the struct itself. `Conjure.load/1` walks a directory and parses frontmatter, but leaves `body: nil` and `body_loaded: false`:
 
 ```elixir
@@ -137,7 +202,7 @@ end
 
 The callback takes the message list and returns `{:ok, response_map}` or `{:error, reason}` — that is the entire contract. It keeps a skills library from dragging an opinion about HTTP into every app that wants one, and it means you can hand it a stub in tests without a network at all. (The repo's `examples/.scripts/` directory does exactly that: a `MockClaudeAPI` module that returns a canned `tool_use` block, so the examples run end to end with no API key.)
 
-`Conjure.tool_definitions/0` returns the four Claude-compatible tool schemas the model is offered: `view`, `bash_tool`, `create_file` and `str_replace`. These are identical across every backend. Only where the bytes actually execute changes.
+`Conjure.tool_definitions/0` returns those same four tools as Claude-compatible schemas, and they are identical across every backend. Only where the bytes actually execute changes.
 
 ## Four places a skill can run
 
@@ -355,12 +420,6 @@ def chat(%__MODULE__{} = session, msg, cb), do: chat_local(session, msg, cb)
 The abstraction is real and the behaviour is implemented; the dispatch just has not been cleaned up to go through it uniformly. And the local executor genuinely has no sandboxing, which is documented in an ADR rather than hidden, but is worth saying twice.
 
 The repo carries twenty-two ADRs covering the decisions behind all of the above, and six tutorials that go further than this post does — a log analyser on local skills, document generation on the hosted API, native skills, all four backends in one agent, and a Fly.io deployment with Tigris storage.
-
-## Postscript: it used to be called skillex
-
-I built this over Christmas week as `skillex`, thirty-one commits, and then renamed it. I did the rename the crude way: squashed the whole history into one initial commit rather than carrying it over. Diff the last `skillex` tree against the first `conjure` commit and they are byte-identical apart from a global find-and-replace of the name across the READMEs, the tutorials, two ADRs, a Docker heredoc sentinel and one environment variable.
-
-Except the licence. `skillex` was MIT; `conjure` is Apache-2.0. That is the one substantive change buried in the rename, and it is worth stating out loud rather than leaving for someone to find in a diff. Apache-2.0 carries an explicit patent grant that MIT does not, which matters more for a library about executing model-generated code than for most. If you were depending on `skillex` under MIT, that term changed under you — and a squashed history is a poor way to communicate a licence change. I would carry the real history over next time.
 
 - Repo: [github.com/holsee/conjure](https://github.com/holsee/conjure)
 - Docs: [hexdocs.pm/conjure](https://hexdocs.pm/conjure)
