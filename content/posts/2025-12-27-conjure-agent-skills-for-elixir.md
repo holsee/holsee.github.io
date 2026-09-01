@@ -4,7 +4,7 @@ description: "A practical guide to Conjure, an Elixir implementation of Anthropi
 tags: [personal, elixir, agents, llm]
 ---
 
-[Conjure](https://github.com/holsee/conjure) is an Elixir library for Anthropic's Agent Skills. It loads skills off disk, generates the system prompt that lets a model discover them, and runs the tool-use loop — with the same `chat/3` call whether the skill executes as shell commands on your host, inside a Docker container, on Anthropic's hosted Skills API, or as a plain Elixir module in your own BEAM.
+[Conjure](https://github.com/holsee/conjure) is an Elixir library for Anthropic's Agent Skills - following their spec closely providing alternative execution backends. It loads skills off disk, generates the system prompt that lets a model discover them, and runs the tool-use loop — with the same `chat/3` call whether the skill executes as shell commands on your host, inside a Docker container, on Anthropic's hosted Skills API, or as a plain Elixir module in your own BEAM.
 
 It is on Hex as an alpha, under Apache-2.0. This post is the guide I wanted while writing it.
 
