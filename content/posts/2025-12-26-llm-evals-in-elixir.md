@@ -1,8 +1,7 @@
 ---
 title: "deep_eval_ex: LLM-as-judge metrics for Elixir"
-description: "A port of DeepEval's metrics: how a relevancy score becomes three LLM calls and some arithmetic, and why the whole test suite mocks the judge."
+description: "A port of DeepEval's metrics to the BEAM: how a relevancy score becomes three LLM calls and some arithmetic, how a few hundred cases judge concurrently, and why the whole test suite mocks the judge."
 tags: [personal, elixir, evals, llm]
-draft: true
 ---
 
 I've been writing more agent code lately, and I wanted to evaluate it the way I evaluate everything else: inside `mix test`, with a number, and a reason when the number moves. Python has [DeepEval](https://github.com/confident-ai/deepeval) from Confident AI, whose LLM-as-judge metrics are well designed and Apache-licensed, so I spent a couple of evenings porting them across: [deep_eval_ex](https://github.com/holsee/deep_eval_ex). The prompts are the valuable part and they aren't mine, so the attribution is spelled out in the README, the NOTICE and a header on every ported file. This post is about the one idea that makes "evaluate an LLM" tractable: you use an LLM to do it, carefully.
@@ -48,6 +47,16 @@ use DeepEvalEx.ExUnit
 assert_passes(test_case, DeepEvalEx.Metrics.Faithfulness, threshold: 0.8)
 ```
 
+## Evals are embarrassingly parallel
+
+Every metric ends in a network call to a judge, so an eval suite is a pile of independent, IO-bound work — precisely the shape the BEAM is good at. `evaluate_batch/3` takes the fan-out as an argument:
+
+```elixir
+results = DeepEvalEx.evaluate_batch(test_cases, [Metrics.ExactMatch], concurrency: 20)
+```
+
+Twenty judge calls in flight instead of twenty in a row, each parked on a scheduler rather than holding a thread, and the wall clock set by the concurrency limit rather than the number of cases. That matters more than it sounds: AnswerRelevancy is three sequential calls per case, so a few hundred cases is a four-figure pile of round trips, and doing them one after another is the difference between a coffee and an afternoon. Because the assertions are ExUnit tests, `async: true` gets the same treatment across the suite.
+
 ## The judge is a stub in the tests
 
 Here's the bit I'd defend hardest, because it's the thing that makes an eval library testable at all. Every metric ends in an LLM call, and you cannot put a real API call in a test suite: it's slow, it costs money, and it isn't deterministic, which is precisely the property a test needs. So there's a `Mock` adapter backed by an ETS table that matches on the prompt text and returns a canned structured response:
@@ -63,7 +72,7 @@ assert {:ok, result} = AnswerRelevancy.measure(test_case, adapter: :mock)
 
 The tests never assert on a model's judgement; they assert on the arithmetic and the plumbing given a known judgement. That's the right seam. The framework's job is to turn a decomposition into a score reproducibly; whether the model decomposes well is the model's problem, tested against real prompts, not something a CI run should depend on. The whole point of computing the score from verdicts rather than asking for it directly is that this seam exists to test against.
 
-It's on hex at 0.1.0, seven metrics, and it does what I needed: it lets me put a number on agent output inside `mix test`, and read why when the number moves.
+It's on hex at 0.1.0, seven metrics, and it does what I needed: it lets me put a number on agent output inside `mix test`, hundreds of cases at a time, and read why when the number moves.
 
 ## Where to look
 

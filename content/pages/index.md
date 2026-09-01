@@ -39,9 +39,11 @@ share publicly. There is more about me on the [about page](/about/).
 
 - [conjure: Agent Skills for Elixir](/conjure-agent-skills-for-elixir/): Anthropic's Agent Skills spec in Elixir, with one Session API over four execution backends.
 - [flywheel: high-performance data channels](/flywheel-high-performance-data-channels/): a bounded, back-pressuring channel on `:atomics`, and why an unbounded mailbox fails late and all at once.
-- [Control planes in agent SDLCs](/the-substrate-dies-the-discipline-survives/): I deleted the CAS store, the leases and the reconciler, and shipped GitHub issues instead.
+- [Control planes in agent SDLCs](/the-substrate-dies-the-discipline-survives/): I deleted the CAS store, the leases and the reconciler, and shipped on a GitHub substrate instead.
 - [Radix sort on sixteen cores](/radix-sort-on-sixteen-cores/): why a radix pass parallelises and a comparison sort doesn't, in sixteen .NET threads and sixteen BEAM processes.
-- [Growing a test language](/growing-a-test-language/): Guy Steele's talk in words of one syllable, and the design trick I borrowed for a test framework.
+- [Growing a test language](/growing-a-test-language/): Guy Steele's talk in words of one syllable, and the language design theory I borrowed for a test framework grammar.
+- [deep_eval_ex: LLM-as-judge metrics](/llm-evals-in-elixir/): my port of Confident AI's DeepEval to the BEAM — seven LLM-as-judge metrics running as native, concurrent evals inside `mix test`.
+- [exile: a database that grows its own schema](/winning-spawnfest-2019/): the URL is the schema and collections exist because you wrote to them — 48 hours on ETS and Channels, and it won Spawnfest.
 
 <div class="section-head"><h2>The long view</h2></div>
 

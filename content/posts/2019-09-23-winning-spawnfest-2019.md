@@ -2,7 +2,6 @@
 title: "exile: a realtime database that grows its own schema"
 description: "A realtime NoSQL store where the URL is the schema, collections spring into existence when you write to them, and a browser gets live updates for the price of one subscribe call. Built in 48 hours on ETS, processes and Phoenix Channels, and it won."
 tags: [community, elixir, otp, ets, phoenix, liveview, realtime]
-draft: true
 ---
 
 We won Spawnfest this weekend. Trading as The Bodgemasters, we built exile over Saturday and Sunday, and it took the top spot. The idea was one I'd been wanting to try for a while: a database you talk to like a REST API, where the paths *are* the schema, where a collection exists because somebody wrote to it, and where any browser can subscribe to a path and be told the moment it changes. An API and a database with zero backend code. It's Monday, the adrenaline's gone, and I want to write down how it works while I still remember, because the bet underneath it is the reason it could be built in a weekend at all.
