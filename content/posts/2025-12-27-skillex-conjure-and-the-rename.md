@@ -2,7 +2,6 @@
 title: "conjure: Agent Skills for Elixir"
 description: "A practical guide to Conjure, an Elixir implementation of Anthropic's Agent Skills: loading skills, the progressive-disclosure prompt, and one Session API over four execution backends — local shell, Docker, Anthropic's hosted Skills API, and native Elixir modules."
 tags: [personal, elixir, agents, llm]
-draft: true
 ---
 
 [Conjure](https://github.com/holsee/conjure) is an Elixir library for Anthropic's Agent Skills. It loads skills off disk, generates the system prompt that lets a model discover them, and runs the tool-use loop — with the same `chat/3` call whether the skill executes as shell commands on your host, inside a Docker container, on Anthropic's hosted Skills API, or as a plain Elixir module in your own BEAM.
