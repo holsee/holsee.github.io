@@ -2,7 +2,6 @@
 title: "Chroxy: raw DevTools connections from a headless Chrome pool"
 description: "Open-sourcing the Elixir proxy I wrote to hand out thousands of raw DevTools connections from a headless Chrome pool. A transparent TCP proxy, one process per connection, and a race I got wrong the first time."
 tags: [personal, elixir, otp, headless-chrome, oss]
-draft: true
 ---
 
 I've just pushed [Chroxy](https://github.com/holsee/chroxy) up under an MIT licence. It's an Elixir service that sits in front of a pool of headless Chrome processes and hands out Chrome DevTools connections on demand, and it was, honestly, born out of necessity: I needed to orchestrate a large number of concurrent browser scenarios with low-level control, and the tools to hand were the wrong shape.
