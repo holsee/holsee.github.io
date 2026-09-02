@@ -32,9 +32,7 @@ of engineering is changing rapidly. In a world where the execution of code
 authorship can be accelerated through agentic intelligence and process to a
 point where it is mechanical: I'm a firm believer in the importance of talented
 engineers and the value they bring to the table with their experience, problem
-solving, creativity, taste, inspiration, rigour, design thinking and elegance to
-produce solutions with strong foundations that will support sustainable
-agentically accelerated engineering.
+solving, creativity, taste, inspiration, rigour, design/critical thinking and knack for elegance to produce the pillars that hold up systems which in turn hold up organisations.
 
 This site covers a good chunk of my experience and the projects that I'm able
 to share in the open. There is more about me on the [about page](/about/).
