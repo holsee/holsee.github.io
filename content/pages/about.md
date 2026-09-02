@@ -12,7 +12,7 @@ the full-time game with a couple of years of professional engineering
 under my belt.
 
 **My arc.** A placement year at a secure electronic documents and records
-management company that was acquired mid-placement; a summer on a magnetic-tape system in a Baltic server room at a bank,
+management company that was acquired mid-placement; a summer on a magnetic-tape system in a baltic server room at a bank,
 where I found a UNIX book and scripted away everything other than
 loading the tapes; a 3D interface for a multi-room media centre; then
 self-employed at twenty-two, building high-performance systems and tools
@@ -24,7 +24,7 @@ In 2015 I joined a cyber-security firm to write Erlang for a living, on a
 packet-and-log processing platform for cyber-attack incident detection,
 and then designing and implementing its serverless successor. Since
 late 2017 I've been a Dad and working in ed-tech, where I've originated and architected the
-AI platform and multiple data platforms, including traditional ML and AI
+AI platform and multiple data platforms, including traditional predictive analytics and AI
 intelligence systems, built the exam-systems services and a coaching
 marketplace, and been part of a small crack unit solving the hardest problems and
 providing strategic advice for the best part of a decade. My [timeline](/cv/timeline/) has almost every
@@ -42,7 +42,7 @@ EU on 3D visualisation of processes, at Functional Kats Conf in Dublin on
 building neural networks and the maths behind crafting your first neuron,
 and at too many Belfast meet-ups to list, and in 2019 my project won
 [Spawnfest](https://spawnfest.org/), the BEAM community's 48-hour
-hackathon, with a realtime database of my design.
+hackathon, with a schemaless realtime database of my design.
 
 **Open source.** chroxy, spirit_fingers, Cherry (the static site
 generator this site runs on), cherrypicker, agent frameworks, data
