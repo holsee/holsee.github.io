@@ -50,7 +50,6 @@ to share in the open. There is more about me on the [about page](/about/).
 <div class="section-head"><h2>The long view</h2></div>
 
 - [Timeline](/cv/timeline/): every position, project, talk and library since 2007, dated, from the same files as the [CV](/cv/).
-- [Now](/now/): what is on the bench this month.
 
 <div class="section-head"><h2>Elsewhere</h2></div>
 

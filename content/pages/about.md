@@ -66,6 +66,5 @@ programming heroes.
 
 If you want the detail, my [timeline](/cv/timeline/) lays out the
 positions, projects, talks and libraries in date order, and the
-[CV](/cv/) is the short version built from the same files. The
-[Now](/now/) page has what's on the bench this month, and the
+[CV](/cv/) is the short version built from the same files, and the
 [blog](/blog/) has the write-ups.
