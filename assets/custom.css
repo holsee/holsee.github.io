@@ -37,3 +37,77 @@
 @media print {
   .cv-careers .cv-header::after { transform: none; box-shadow: none; }
 }
+
+/* Social links as marks. Same reason as the photo above: the cv template is
+   inherited from the framework default, so the profile links come from
+   portfolio.yaml and the labels are turned into icons here, matched on href.
+   The label stays in the DOM for assistive tech, and print puts it back.
+
+   GitHub, X and LinkedIn are simple-icons glyphs, inlined. hex.pm has no
+   simple-icons entry, so its mark is the real one from hexpm/hexpm
+   (priv/static/images/hex-full.svg) kept as a file — six paths is too much
+   to inline. All four are flattened to currentColor by the mask so the row
+   reads as one set; the hex mark loses its six brand colours in the process. */
+.cv-contact a[href*="github.com"],
+.cv-contact a[href*="hex.pm"],
+.cv-contact a[href*="x.com"],
+.cv-contact a[href*="linkedin.com"],
+.profile-meta a[href*="github.com"],
+.profile-meta a[href*="hex.pm"],
+.profile-meta a[href*="x.com"],
+.profile-meta a[href*="linkedin.com"] {
+  align-self: center;
+  width: 1rem;
+  height: 1rem;
+  overflow: hidden;
+  text-indent: 2rem;
+  white-space: nowrap;
+  line-height: 1;
+  background-color: currentColor;
+  -webkit-mask: var(--social-icon) center / contain no-repeat;
+  mask: var(--social-icon) center / contain no-repeat;
+}
+
+.cv-contact a[href*="github.com"],
+.profile-meta a[href*="github.com"] { --social-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%3E%3Cpath%20d%3D%27M12%20.297c-6.63%200-12%205.373-12%2012%200%205.303%203.438%209.8%208.205%2011.385.6.113.82-.258.82-.577%200-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422%2018.07%203.633%2017.7%203.633%2017.7c-1.087-.744.084-.729.084-.729%201.205.084%201.838%201.236%201.838%201.236%201.07%201.835%202.809%201.305%203.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93%200-1.31.465-2.38%201.235-3.22-.135-.303-.54-1.523.105-3.176%200%200%201.005-.322%203.3%201.23.96-.267%201.98-.399%203-.405%201.02.006%202.04.138%203%20.405%202.28-1.552%203.285-1.23%203.285-1.23.645%201.653.24%202.873.12%203.176.765.84%201.23%201.91%201.23%203.22%200%204.61-2.805%205.625-5.475%205.92.42.36.81%201.096.81%202.22%200%201.606-.015%202.896-.015%203.286%200%20.315.21.69.825.57C20.565%2022.092%2024%2017.592%2024%2012.297c0-6.627-5.373-12-12-12%27%2F%3E%3C%2Fsvg%3E"); }
+
+.cv-contact a[href*="x.com"],
+.profile-meta a[href*="x.com"] { --social-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%3E%3Cpath%20d%3D%27M18.901%201.153h3.68l-8.04%209.19L24%2022.846h-7.406l-5.8-7.584-6.638%207.584H.474l8.6-9.83L0%201.154h7.594l5.243%206.932ZM17.61%2020.644h2.039L6.486%203.24H4.298Z%27%2F%3E%3C%2Fsvg%3E"); }
+
+.cv-contact a[href*="linkedin.com"],
+.profile-meta a[href*="linkedin.com"] { --social-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%3E%3Cpath%20d%3D%27M20.447%2020.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853%200-2.136%201.445-2.136%202.939v5.667H9.351V9h3.414v1.561h.046c.477-.9%201.637-1.85%203.37-1.85%203.601%200%204.267%202.37%204.267%205.455v6.286zM5.337%207.433a2.062%202.062%200%2001-2.063-2.065%202.064%202.064%200%20112.063%202.065zm1.782%2013.019H3.555V9h3.564v11.452zM22.225%200H1.771C.792%200%200%20.774%200%201.729v20.542C0%2023.227.792%2024%201.771%2024h20.451C23.2%2024%2024%2023.227%2024%2022.271V1.729C24%20.774%2023.2%200%2022.222%200h.003z%27%2F%3E%3C%2Fsvg%3E"); }
+
+/* 136x120 rather than square, so widen the box to keep the optical height. */
+.cv-contact a[href*="hex.pm"],
+.profile-meta a[href*="hex.pm"] {
+  --social-icon: url("/images/hex-logo.svg");
+  width: 1.13rem;
+}
+
+/* Sit the marks closer together than the row's word gap. */
+.cv-contact a[href*="hex.pm"]:not(:first-of-type),
+.cv-contact a[href*="x.com"]:not(:first-of-type),
+.cv-contact a[href*="linkedin.com"]:not(:first-of-type),
+.profile-meta a[href*="hex.pm"]:not(:first-of-type),
+.profile-meta a[href*="x.com"]:not(:first-of-type),
+.profile-meta a[href*="linkedin.com"]:not(:first-of-type) { margin-left: -0.55rem; }
+
+@media print {
+  .cv-contact a[href*="github.com"],
+  .cv-contact a[href*="hex.pm"],
+  .cv-contact a[href*="x.com"],
+  .cv-contact a[href*="linkedin.com"],
+  .profile-meta a[href*="github.com"],
+  .profile-meta a[href*="hex.pm"],
+  .profile-meta a[href*="x.com"],
+  .profile-meta a[href*="linkedin.com"] {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    text-indent: 0;
+    margin-left: 0;
+    background: none;
+    -webkit-mask: none;
+    mask: none;
+  }
+}

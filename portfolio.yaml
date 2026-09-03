@@ -5,6 +5,8 @@ avatar: images/cv-photo.jpg
 links:
   - {label: GitHub, url: "https://github.com/holsee"}
   - {label: hex.pm, url: "https://hex.pm/users/holsee"}
+  - {label: X, url: "https://x.com/holsee"}
+  - {label: LinkedIn, url: "https://www.linkedin.com/in/stevenholdsworth"}
 updated: 2026-08-24
 cv:
   visibility: public
