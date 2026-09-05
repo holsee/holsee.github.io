@@ -1,6 +1,6 @@
 ---
 title: "flywheel: high-performance data channels without NIFs"
-description: "A bounded, back-pressuring channel over :atomics for the BEAM. Why an unbounded mailbox fails late and all at once, how a ring buffer with a claim cursor fixes it, and a worked futures-feed example where a ring's capacity turns out to be denominated in microseconds. Pre-release, and measured on one host."
+description: "A bounded, back-pressuring channel over :atomics for the BEAM. What an unbounded mailbox costs you, how a ring buffer with a claim cursor avoids it, and a worked futures-feed example where capacity turns out to be measured in microseconds. Pre-release, and measured on one host."
 tags: [personal, elixir, erlang, otp, realtime, distributed-systems]
 ---
 
@@ -8,9 +8,9 @@ Recently I was toying with some code related to one of my recurring interests, d
 
 > Also note, I am making some assumptions based on what I _know_ and rolling on gut in many areas - many micro-optimisations to be found and the fun is in the details.  Also, I need to set up a proper test bench, which means the numbers in this post are more relative than maxed out. But compared to the existing alternatives, this ring buffer goes brrr.
 
-The short version: it moves 64-bit integers between BEAM processes through a fixed-size ring buffer built on `:atomics`. Payloads live off-heap in a shared array, so there is no copying and no per-message allocation, and no process's garbage collector ever sees them. The mailbox is still there, but it carries one wake signal per batch rather than one message per item. And because the buffer is bounded, a producer that outruns its consumer gets back-pressure, the one thing `send/2` cannot give you.
+The short version: it moves 64-bit integers between BEAM processes through a fixed-size ring buffer built on `:atomics`. Payloads live off-heap in a shared array, so nothing is copied, nothing is allocated per message, and no process's garbage collector ever sees them. The mailbox is still involved, but it only carries a wake signal once per batch. And the buffer is bounded, so a producer that outruns its consumer gets back-pressure - which `send/2` will never give you.
 
-It is deliberately not a general queue. Signed int64 payloads only: packed structs, timestamps, ids, enum tags. No arbitrary terms, no node boundaries, no selective receive.
+It is not a general purpose queue, by design. Signed int64 payloads only: packed structs, timestamps, ids, enum tags. No arbitrary terms, no node boundaries, no selective receive.
 
 ## using it
 
@@ -22,7 +22,7 @@ ring = Flywheel.new(1024)
 {:ok, 42} = Flywheel.pop(ring)
 ```
 
-The process that calls `new/2` becomes the consumer, the one woken when a producer publishes, unless `:consumer` says otherwise. The term itself is safe to send to other processes: they all end up pointing at the same shared array, which is what makes the transport free of copying.
+Whichever process calls `new/2` becomes the consumer and gets woken when a producer publishes, unless you name a different one with `:consumer`. You can send the ring term itself wherever you like; every copy points at the same shared array, which is what keeps the transport free of copying.
 
 In anything real the consumer is a supervised process, and `Flywheel.Channel` is that process:
 
@@ -34,11 +34,11 @@ ring = Flywheel.Channel.ring(ch)
 Flywheel.push_wait(ring, 42)
 ```
 
-Producers hold the ring and write into shared memory directly. They never send the channel a message and never appear in its mailbox, which is the whole point: it carries one wake per batch rather than one message per item.
+Producers hold the ring and write into shared memory directly. They never send the channel a message, so they never show up in its mailbox at all.
 
 ### the two pushes are the policy
 
-There are two ways to offer an item, and choosing between them is the only real design decision the library asks of you.
+There are two ways to offer an item, and picking between them is most of the design work.
 
 ```elixir
 # refuses when full, never blocks
@@ -54,22 +54,24 @@ case Flywheel.push_wait(ring, packed, 100) do
 end
 ```
 
-`{:error, :full}` and `{:error, :timeout}` are the return values `send/2` has no way to produce, and that is the entire difference between the two transports. A refused `push/2` has not advanced the cursor, so no sequence is burnt and the consumer never has to wait one out.
+`{:error, :full}` and `{:error, :timeout}` are the two return values `send/2` cannot produce. A refused `push/2` never advanced the cursor, so no sequence is burnt and the consumer never has to wait one out.
 
 ### draining without allocating
 
-`pop_batch/2` is the convenient drain, and it allocates: one cons cell per item plus the reverse inside it, all on the consumer's heap, which puts back exactly the collection pressure the ring exists to remove. For a hot loop, fold straight into an accumulator instead:
+`pop_batch/2` is the convenient drain, and it allocates: a cons cell per item plus the reverse inside it, all on the consumer's heap. That puts back the collection pressure the ring was there to remove. In a hot loop, fold straight into an accumulator instead:
 
 ```elixir
 {acc, consumed, skipped} =
   Flywheel.fold(ring, 4096, acc, fn item, acc -> apply_update(acc, item) end)
 ```
 
-A channel takes the same thing as a handler, `{:fold, fun, acc0}`, and carries the accumulator across drain passes. The repo's own A/B at 1,000 producers moved the fold drain from 3,147 to 4,596 Kmsg/s, a 46% gain, with minor GCs collapsing from 8,347 to between 50 and 74, while the list drain did not move at all. The fold runs on the channel process, so it has to be quick and it has to be total: a slow one stalls the drain and back-pressures every producer through the bounded capacity, and one that raises crashes the channel that owns the ring.
+A channel takes the same thing as a handler, `{:fold, fun, acc0}`, and carries the accumulator across drain passes. In the repo's A/B at 1,000 producers the fold drain went from 3,147 to 4,596 Kmsg/s, a 46% gain, and minor GCs fell from 8,347 to somewhere between 50 and 74. The list drain did not move at all.
 
-## the failure mode you already know
+The catch is that the fold runs on the channel process. It has to be quick, because a slow one stalls the drain and back-pressures every producer through the bounded capacity. It also has to be total: raise in there and you take down the channel that owns the ring.
 
-Erlang mailboxes are unbounded. A consumer that falls behind does not fail; it accumulates. The failure arrives later, all at once, from the OOM killer, with the latency already ruined long before anyone noticed.
+## the unbounded mailbox
+
+Erlang mailboxes are unbounded. A consumer that falls behind does not fail, it accumulates, and the actual failure turns up much later as the OOM killer. The latency was ruined long before anyone noticed.
 
 Under a flood of 100 producers pushing 500k items unthrottled, that shape looks like this. Median of nine interleaved rounds, i5-13600K, OTP 29, in a container with pinned cores. Relative findings, not portable numbers:
 
@@ -82,9 +84,9 @@ Under a flood of 100 producers pushing 500k items unthrottled, that shape looks 
 | peak items outstanding | 472,170 | **2,694** | 175× |
 | minor GCs | 5,128 | **22** | 233× |
 
-Those are not six results, they are one. The mailbox reaches its throughput by letting most of the run pile into a queue with no upper bound, and that backlog *is* the 49.6 ms median and *is* the 52.6 MB. The ring holds about 2,700 items because it is not allowed to hold more, and that is precisely why its median is sub-millisecond.
+That is really one result reported six ways. The mailbox gets its throughput by letting most of the run pile up in a queue with no ceiling, and that backlog is where the 49.6 ms median and the 52.6 MB both come from. The ring sits at about 2,700 items because it is not allowed to hold more, which is why its median is sub-millisecond.
 
-Push the fan-in to 1,000 producers into the same consumer and nothing about the story changes: 5,899 Kmsg/s against 3,803, again winning all nine rounds, medians of 673 µs against 51.2 ms, 5.7 MB against 53.4 MB. Boundedness is not a low-fan-in trick.
+Push the fan-in to 1,000 producers into the same consumer and nothing about the story changes: 5,899 Kmsg/s against 3,803, again winning all nine rounds, medians of 673 µs against 51.2 ms, 5.7 MB against 53.4 MB. So this is not something that only works at low fan-in.
 
 ## the ring
 
@@ -148,7 +150,7 @@ A ring is `capacity` slots and two monotonically increasing cursors. The consume
 <figcaption>Sixteen slots, two cursors, and the entire policy question. The right-hand ring is the interesting one, because there is no state after it: a bounded buffer that fills has exactly three options (lose data, grow without bound, or push back), and the whole library is an argument for the third.</figcaption>
 </figure>
 
-The waiting is the part worth dwelling on. `push_wait/3` yields the scheduler; it never spins. A producer that burns its time slice waiting would be starving the very consumer it is waiting for, which is the failure this design exists to avoid. That single constraint is why this is a re-derivation of the LMAX Disruptor's ideas rather than a port of it: the Disruptor's wait strategies assume the waiting thread owns a core, and on the BEAM it emphatically does not.
+`push_wait/3` yields the scheduler; it never spins. A producer burning its time slice on a spin loop would be starving the consumer it is waiting for. That constraint is why flywheel is a re-derivation of the Disruptor's ideas and not a port of it: the Disruptor's wait strategies assume the waiting thread owns a core, and on the BEAM it does not.
 
 ## the claim protocol
 
@@ -211,17 +213,21 @@ With one producer, the cursor advance *is* the publish: write the payload, bump 
 <figcaption>Under multiple producers the cursor alone cannot tell the consumer a slot is ready, because P3 may finish writing 43 before P2 finishes writing 42. A second array of availability stamps carries that information, and the consumer only ever advances over a contiguous published prefix.</figcaption>
 </figure>
 
-The claim is a compare-exchange rather than a fetch-and-add, and that is a deliberate trade of some cost for a property. Fetch-and-add is cheaper but cannot signal its own failure: a producer that claims a sequence and then finds the ring full has already advanced the cursor and cannot mark the slot, because the slot still holds a live item from the previous lap. The consumer could then only recover by waiting out a deadline, one sequence at a time, which under sustained overload becomes the steady state rather than a rare fault. A CAS claim cannot reach that state.
+The claim is a compare-exchange, not the cheaper fetch-and-add, and that costs something. Fetch-and-add has no way to fail: the cursor moves whether or not there was room. A producer that grabs a sequence and then finds the ring full has already burnt it, and it cannot mark the slot as abandoned either, because the slot still holds a live item from the previous lap.
 
-The one hazard the stamps exist to cover is a producer that dies between claiming and writing. That is real, and the cost is bounded rather than eliminated: after `skip_after_us` (50 ms by default) the consumer steps over the sequence and counts a drop.
+That leaves the consumer one way out, which is to wait the deadline and skip, one sequence at a time. Under sustained overload that stops being a rare fault and becomes how the thing runs. A CAS claim never gets there.
 
-Everything else about the layout is cache mechanics. Four separate atomics arrays rather than one, because every atomics operation bounds-checks against the array header, so a hot cell at a low index dirties a line that every concurrent operation must re-fetch; `header_slack` keeps the hot cells clear of it, and that turned out to matter more than padding between them. The `pushed` and `popped` counts are derived from the cursors rather than counted, because a counter increment per item is roughly 50% overhead on a two-operation push to record something the cursors already know.
+The stamps exist for one hazard: a producer that dies between claiming its sequence and writing the payload. That is a real risk and it is not eliminated, only bounded. After `skip_after_us` (50 ms by default) the consumer steps over the sequence and counts a drop.
+
+The rest of the layout is cache mechanics. There are four separate atomics arrays instead of one, because every atomics operation bounds-checks against the array header. Put a hot cell at a low index and it dirties the same line as that header, which every concurrent operation then has to re-fetch. `header_slack` pushes the hot cells clear of it, and that made more difference than padding the cells apart from each other.
+
+`pushed` and `popped` are derived from the cursors instead of being counted. A counter increment per item is roughly 50% overhead on a two-operation push, to record something the cursors already know.
 
 ## sharding: when one cursor is the problem
 
-Every producer in a single ring compare-exchanges the same word. That word lives in one cache line, and a line can only be written by one core at a time, so past a handful of producers they spend their time passing it between them. The contention table above shows it: a single ring peaks at four senders and falls away from there.
+Every producer in a single ring compare-exchanges the same word. That word lives in one cache line, and a line can only be written by one core at a time, so past a handful of producers they spend their time passing it between them. You can see it in the sweep further down: a single ring peaks at four senders and falls away from there.
 
-`Flywheel.Shards` removes the sharing by giving each producer its own ring. It is the single writer principle, applied to the cursor.
+`Flywheel.Shards` gets rid of the sharing by giving each producer its own ring - the single writer principle, applied to the cursor.
 
 <!-- fig:shards -->
 <figure class="diagram">
@@ -281,7 +287,7 @@ Every producer in a single ring compare-exchanges the same word. That word lives
 <figcaption>A single ring puts every producer on one compare-exchange against one word, and that word cannot be written by two cores at once. Sharding gives each producer its own ring and its own cursor, so the cores stop fighting over a cache line. Every shard is still an mpsc ring, which is what makes a hash collision merely unbalanced: two producers on one shard contend with each other rather than with everybody, and a shard with a single producer never contends at all.</figcaption>
 </figure>
 
-The assignment is a hash of the producer's pid, cached in the process dictionary, because `erlang:phash2/2` costs more than the push it is routing. The API is the one you already have:
+Assignment is a hash of the producer's pid, cached in the process dictionary, because `erlang:phash2/2` costs more than the push it is routing. The API is the same one:
 
 ```elixir
 shards = Flywheel.Shards.new(4, 4096)
@@ -295,7 +301,7 @@ shards = Flywheel.Shards.new(4, 4096)
 
 ### what the consumer pays for it
 
-Producers stop contending, and the bill lands on the other end. One consumer now has to visit N rings instead of one.
+Producers stop contending and the bill lands at the other end: one consumer now has to visit N rings instead of one.
 
 <!-- fig:shard-drain -->
 <figure class="diagram">
@@ -363,9 +369,9 @@ Five hundred thousand messages, one consumer, 65,536 slots total in every config
 | 250 | 10,055 | **16,983** | 16,086 | 16,028 |
 | 1000 | 9,028 | 10,715 | **12,502** | 11,861 |
 
-Four shards beat or match a single ring at every sender count measured, by 1.2 to 1.8×. The interesting band is eight to 250 senders, where the single ring has already collapsed to around 11,000 and four shards hold near 19,000. At one thousand producers both fall away and the margin narrows to 1.2×.
+Four shards beat or match a single ring at every sender count I measured, by 1.2 to 1.8×. Between eight and 250 senders the single ring has already collapsed to around 11,000 while four shards hold near 19,000. At a thousand producers both fall away and the margin narrows to 1.2×.
 
-Sixty-four shards are the cautionary column. At four and eight senders they run at roughly half the four-shard number, because the consumer is spending its round walking rings that have nothing in them. More shards only help once producers genuinely outnumber them. Four is the default I would reach for.
+Sixty-four shards is where it goes wrong. At four and eight senders it runs at roughly half the four-shard number, because the consumer spends its round walking rings with nothing in them. More shards only pay off once producers genuinely outnumber them. I would default to four.
 
 ### what you give up
 
@@ -373,9 +379,9 @@ Sixty-four shards are the cautionary column. At four and eight senders they run 
 
 **Fungible capacity.** Capacity is `shards × capacity_each`, but a producer can only draw on its own shard's share. One hot producer gets back-pressure while the other shards sit empty, where a single ring would have pooled the space.
 
-## where it sits against what you would reach for instead
+## against what you would reach for instead
 
-The contention story is one operation in ERTS. With the default `message_queue_data: :on_heap`, every `send/2` attempts a trylock on one word of the receiver's process struct, and it collapses as senders climb:
+The contention story on the mailbox side comes down to one operation in ERTS. With the default `message_queue_data: :on_heap`, every `send/2` tries a trylock on one word of the receiver's process struct, and that collapses as senders climb:
 
 | senders | `on_heap` | `off_heap` | flywheel |
 |--------:|----------:|-----------:|---------:|
@@ -385,9 +391,11 @@ The contention story is one operation in ERTS. With the default `message_queue_d
 | 100 | 494 | 12,737 | 9,266 |
 | 1000 | 281 | 13,204 | 8,074 |
 
-Kmsg/s. Note the third column at one sender: flywheel is roughly half the mailbox's speed there, and that is the honest shape of the thing. This is not a faster queue, it is a bounded one, and at low fan-in you are paying for a property you are not using.
+Kmsg/s. Look at the third column at one sender: flywheel runs at roughly half the mailbox's speed. That is the honest shape of it. Flywheel is bounded first and quick second, and at low fan-in you are paying for a property you are not using.
 
-The part I want to be loud about is the `off_heap` flag. It fixes the cliff, and in that isolated, drain-bound probe one process flag beats flywheel by about 1.4 to 1.9× from eight senders up. If raw drain-bound throughput is all you need, `Process.flag(:message_queue_data, :off_heap)` is one line and you can stop reading. What the flag does not give you is a bound, which is why the end-to-end flood table at the top of this post looks different from this one: there, the ring is 1.55 to 1.57× ahead *while* holding a thirtieth of the memory, because bounded occupancy is itself a throughput mechanism once a system saturates.
+I want to be loud about the `off_heap` flag here. It fixes the cliff outright, and in this isolated, drain-bound probe one process flag beats flywheel by about 1.4 to 1.9× from eight senders up. If raw drain-bound throughput is all you need, `Process.flag(:message_queue_data, :off_heap)` is one line and you can stop reading.
+
+What it does not give you is a bound. That is why the end-to-end flood table at the top of this post comes out the other way round, with the ring 1.55 to 1.57× ahead while holding a thirtieth of the memory. Once a system saturates, keeping occupancy low is itself a throughput mechanism.
 
 Against the rest of the usual toolbox under the same 100-producer flood. This is explicitly not like-for-like; it measures each tool's overload posture:
 
@@ -401,17 +409,17 @@ Against the rest of the usual toolbox under the same 100-producer flood. This is
 | mailbox (default) | 224 | 56.7 MB | 1.67 s | the cliff, above |
 | ETS `ordered_set` | 61 | 33.2 MB | 3.75 s | readers poll |
 
-The drop-on-full row is the one I would not want quoted without its fourth column. Under a 50× overload it delivered 19% of what was offered. That is the policy working exactly as specified, and it is also why it is not the default.
+Do not quote the drop-on-full row without its fourth column. Under a 50× overload it delivered 19% of what was offered. That is the policy doing exactly what it says on the tin, and it is also why it is not the default.
 
 ## the worked example: a CME-style feed
 
-Synthetic floods cannot tell you what boundedness is *worth*, because a synthetic payload costs nothing by arriving late. Market data does. A price from 40 ms ago is not a price, it is history, and a strategy acting on it is betting money on a number already known to be wrong.
+Synthetic floods cannot tell you what boundedness is worth, because a synthetic payload costs nothing by turning up late. Market data does. A price from 40 ms ago is history, and a strategy acting on it is putting money on a number already known to be wrong.
 
 So the worked example is a futures feed handler: four decoders publishing CME-shaped book updates into one book builder, across five instruments: E-mini S&P 500, E-mini Nasdaq-100, WTI Crude, COMEX Gold, and the 10-year T-note with its 1/64 tick.
 
 ### the payload
 
-Each update packs into a single integer. Not 63 bits, which is what `:atomics` would let you use, but **59**:
+Each update packs into a single integer. `:atomics` would give me 63 bits to play with; this uses **59**:
 
 <!-- fig:pack -->
 <figure class="diagram">
@@ -459,9 +467,9 @@ def pack(inst, ticks, size, level, side, action, seq)
 end
 ```
 
-Two details in there that I like more than the bit-fiddling. Prices are tick indices rather than decimals, which is what makes 21 bits enough for every listed contract and what makes the arithmetic exact: the decoder asserts `rem(micros, tick) == 0`, so a price that is not a whole number of ticks is a decode bug rather than something to round away. And nothing is clamped: every field is guarded, so a contract the venue relists outside 21 bits of ticks raises a `FunctionClauseError` in the decoder rather than silently becoming a different price inside the book.
+Two things in there matter more than the bit-fiddling. Prices are tick indices, not decimals, which is what gets every listed contract inside 21 bits and what keeps the arithmetic exact - the decoder asserts `rem(micros, tick) == 0`, so a price that is not a whole number of ticks is a decode bug and gets treated as one.
 
-The five `seq_lo` bits are the cheapest thing in the layout and do the most interesting job.
+Nothing is clamped, either. Every field is guarded, so if the venue relists a contract outside 21 bits of ticks the decoder raises a `FunctionClauseError` instead of quietly writing a different price into the book.
 
 ### capacity is denominated in time
 
@@ -475,7 +483,7 @@ The consumer folds updates straight into an `:atomics` book, mutated in place, i
 | flywheel 8192 | 7,314 | 72.1 | 8,192 | 591 µs | 591 µs |
 | flywheel 1024 | 1,535 | 90.7 | 1,024 | 93 µs | 93 µs |
 
-The column that earns the library is the last one, and it comes out of a single multiplication.
+That last column is capacity multiplied by the per-item drain cost, and nothing else.
 
 <!-- fig:capacity -->
 <figure class="diagram">
@@ -514,17 +522,17 @@ The column that earns the library is the last one, and it comes out of a single 
 <figcaption>The rings are schematic, not to scale. The point is the arithmetic under each: a ring's capacity, multiplied by what one update costs to apply, is a hard upper bound on how stale the top of book can be when a strategy reads it at the worst moment of a burst. The mailbox's 7,469 µs is simply what it happened to reach in these nine rounds. It is not a limit of any kind.</figcaption>
 </figure>
 
-Look at the `drain ns` column in the table above: it stays between 69 and 91 ns across an eightfold capacity sweep. That flatness is the control. It says the metric is measuring the cost of *applying* an update rather than the cost of waiting around for one, which is what makes the arms comparable at all. The drift to ~90 ns at the bottom of the sweep is per-batch fixed cost amortised over smaller batches, not a slower drain.
+The `drain ns` column is the control here: it stays between 69 and 91 ns across an eightfold capacity sweep. Flat means the metric is measuring what it costs to apply an update, not what it costs to sit around waiting for one, which is what makes the rows comparable. The drift to ~90 ns at the bottom is per-batch fixed cost spread over smaller batches; the drain itself is not slower.
 
-And notice that at 32,768 and below, peak outstanding equals capacity *exactly*. The ring did not approach its ceiling, it sat on it, which is the clearest demonstration of what the bound column means.
+At 32,768 and below, peak outstanding equals capacity exactly. The ring sat on its ceiling for the whole run, which is what the bound column is describing.
 
-Two caveats about that sweep, because it is easy to read the wrong lesson off it. The throughput knee at 8,192 is real but it is an artefact of the probe: this thing offers about 14M updates/s, far beyond any real channel. At a sustainable feed rate the small ring never fills at all, and its 93 µs bound is free. And the 32,768-slot row beating the mailbox on throughput, 14,429 against 13,597, is well inside run-to-run spread. I would call that a tie and take the 2.3 ms ceiling as the entire prize.
+Two caveats, because it is easy to read the wrong lesson off that sweep. The throughput knee at 8,192 is real but it is an artefact of the probe, which offers about 14M updates/s, far beyond anything a real channel does. At a sustainable feed rate the small ring never fills and its 93 µs bound is free. And the 32,768-slot row beating the mailbox on throughput, 14,429 against 13,597, is well inside run-to-run spread. I would call that a tie and take the 2.3 ms ceiling as the prize.
 
 ### two policies, one library
 
 The example is also why one library ships both push functions.
 
-The **feed** side takes `push/2` and never blocks. The exchange will not slow down for you, and a late quote is worthless anyway. What makes the refusal safe is those five `seq_lo` bits: offer sequences 0..79 into a 64-slot ring and you get 64 accepted, 16 refused, and a consumer whose sequence check reports a gap of exactly 16. That is a *counted, recoverable* gap you take to the venue's recovery channel, rather than silently growing staleness.
+The **feed** side takes `push/2` and never blocks. The exchange is not going to slow down for you, and a late quote is worthless anyway. The five `seq_lo` bits are what make refusing safe: offer sequences 0..79 into a 64-slot ring and you get 64 accepted, 16 refused, and a consumer whose sequence check reports a gap of exactly 16. That is a counted gap you can take to the venue's recovery channel instead of quietly growing stale. Cheapest field in the layout, most useful work.
 
 The **order and fill** side takes `push_wait/3`. Losing a fill is not an option, and neither is a risk process minutes behind the exchange. On a full 8-slot ring:
 
@@ -533,11 +541,11 @@ push_wait(.., 100ms) -> {:error, :timeout} after 99125 us
 full? true, still 8 items, nothing lost
 ```
 
-That return value is the entire point. `send/2` has no way to say it, so the backlog goes somewhere you cannot see until the node dies. Here it is a value you can alert on, throttle on, or trip a circuit breaker with.
+That return value is the whole point. `send/2` has no way to say it, so the backlog builds up somewhere you cannot see until the node dies. Here it is a value you can alert on, throttle on, or trip a circuit breaker with.
 
 ## about these numbers
 
-Everything here was measured on one host: an i5-13600K on OTP 29, in a container with pinned cores, because the Windows host clamps the monotonic clock to about 102 µs and that is larger than several of the things being measured. It is not an environment that shows what the design can really do, and the absolute figures should not travel. The relative shape held across runs well enough that it seemed worth sharing early.
+Everything here was measured on one host: an i5-13600K on OTP 29, in a container with pinned cores, because the Windows host clamps the monotonic clock to about 102 µs and that is bigger than several of the things I am trying to measure. It is not a setup that shows what the design can really do, and the absolute figures should not travel. The relative shape held across runs well enough that it seemed worth posting early.
 
 ## status
 
