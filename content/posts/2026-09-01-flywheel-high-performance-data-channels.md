@@ -84,7 +84,7 @@ Under a flood of 100 producers pushing 500k items unthrottled, that shape looks 
 | peak items outstanding | 472,170 | **2,694** | 175× |
 | minor GCs | 5,128 | **22** | 233× |
 
-That is really one result reported six ways. The mailbox gets its throughput by letting most of the run pile up in a queue with no ceiling, and that backlog is where the 49.6 ms median and the 52.6 MB both come from. The ring sits at about 2,700 items because it is not allowed to hold more, which is why its median is sub-millisecond.
+All six rows are the same finding. The mailbox gets its throughput by letting most of the run pile up in a queue with no ceiling, and that backlog is where the 49.6 ms median and the 52.6 MB both come from. The ring sits at about 2,700 items because it is not allowed to hold more, which is why its median is sub-millisecond.
 
 Push the fan-in to 1,000 producers into the same consumer and nothing about the story changes: 5,899 Kmsg/s against 3,803, again winning all nine rounds, medians of 673 µs against 51.2 ms, 5.7 MB against 53.4 MB. So this is not something that only works at low fan-in.
 
@@ -147,7 +147,7 @@ A ring is `capacity` slots and two monotonically increasing cursors. The consume
 <text x="560" y="366" text-anchor="middle" font-size="11" fill="currentColor">push/2 → {:error, :full}</text>
 <text x="560" y="381" text-anchor="middle" font-size="11" fill="currentColor">push_wait/3 → yields, never spins</text>
 </svg>
-<figcaption>Sixteen slots, two cursors, and the entire policy question. The right-hand ring is the interesting one, because there is no state after it: a bounded buffer that fills has exactly three options (lose data, grow without bound, or push back), and the whole library is an argument for the third.</figcaption>
+<figcaption>Sixteen slots and two cursors. The right-hand ring is full, which is where the policy question lands: a bounded buffer with nowhere to put the next item can drop it, grow, or push back. Flywheel pushes back.</figcaption>
 </figure>
 
 `push_wait/3` yields the scheduler; it never spins. A producer burning its time slice on a spin loop would be starving the consumer it is waiting for. That constraint is why flywheel is a re-derivation of the Disruptor's ideas and not a port of it: the Disruptor's wait strategies assume the waiting thread owns a core, and on the BEAM it does not.
@@ -284,7 +284,7 @@ Every producer in a single ring compare-exchanges the same word. That word lives
 <line x1="16" y1="244" x2="744" y2="244" stroke="currentColor" stroke-width="1" opacity="0.2"/>
 <text x="380" y="266" text-anchor="middle" font-size="11.5" fill="currentColor">16 senders, equal total memory: <tspan font-weight="bold">11,851</tspan> Kmsg/s on one ring against <tspan font-weight="bold">18,808</tspan> on four shards.</text>
 </svg>
-<figcaption>A single ring puts every producer on one compare-exchange against one word, and that word cannot be written by two cores at once. Sharding gives each producer its own ring and its own cursor, so the cores stop fighting over a cache line. Every shard is still an mpsc ring, which is what makes a hash collision merely unbalanced: two producers on one shard contend with each other rather than with everybody, and a shard with a single producer never contends at all.</figcaption>
+<figcaption>A single ring puts every producer on one compare-exchange against one word, and two cores cannot write that word at once. Sharding gives each producer its own ring and its own cursor, so the cores stop fighting over a cache line. Every shard is still an mpsc ring, so a hash collision only costs you balance: two producers landing on the same shard contend with each other and nobody else, and a shard with one producer never contends at all.</figcaption>
 </figure>
 
 Assignment is a hash of the producer's pid, cached in the process dictionary, because `erlang:phash2/2` costs more than the push it is routing. The API is the same one:
@@ -351,7 +351,7 @@ Producers stop contending and the bill lands at the other end: one consumer now 
 <text x="380" y="252" text-anchor="middle" font-size="11" fill="currentColor">Arm every shard, wake on a publish from any of them, then walk them all again.</text>
 <text x="380" y="270" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.85">Arming is O(N), so at 64 shards and 4 producers the walk over empty rings costs more than the contention it saves.</text>
 </svg>
-<figcaption>The rotating start is what stops a busy shard starving the others: the walk does not begin at shard 0 every pass. The trade is visible in the middle of the diagram. Every empty ring the consumer visits is work that a single ring would never have done, which is why shard count is not free to raise and why the sweep below turns against 64 shards exactly where producers are scarce.</figcaption>
+<figcaption>The walk does not begin at shard 0 every pass, which is what stops a busy shard starving the others. The cost is in the middle of the diagram: every empty ring the consumer visits is work a single ring would never have done. That is why raising the shard count is not free, and why the sweep below turns against 64 shards when producers are scarce.</figcaption>
 </figure>
 
 Five hundred thousand messages, one consumer, 65,536 slots total in every configuration so the comparison is at equal memory. Kmsg/s:
@@ -519,7 +519,7 @@ That last column is capacity multiplied by the per-item drain cost, and nothing 
 <text x="630" y="261" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.8">peaked at 101,617 items</text>
 <text x="630" y="278" text-anchor="middle" font-size="11" fill="currentColor" font-weight="bold">= 7,469 µs, no ceiling</text>
 </svg>
-<figcaption>The rings are schematic, not to scale. The point is the arithmetic under each: a ring's capacity, multiplied by what one update costs to apply, is a hard upper bound on how stale the top of book can be when a strategy reads it at the worst moment of a burst. The mailbox's 7,469 µs is simply what it happened to reach in these nine rounds. It is not a limit of any kind.</figcaption>
+<figcaption>The rings are schematic, not to scale; the arithmetic underneath them is the part that matters. Capacity multiplied by what one update costs to apply gives a hard upper bound on how stale the top of book can be when a strategy reads it at the worst moment of a burst. The mailbox's 7,469 µs is just what it happened to reach across these nine rounds, and nothing holds it there.</figcaption>
 </figure>
 
 The `drain ns` column is the control here: it stays between 69 and 91 ns across an eightfold capacity sweep. Flat means the metric is measuring what it costs to apply an update, not what it costs to sit around waiting for one, which is what makes the rows comparable. The drift to ~90 ns at the bottom is per-batch fixed cost spread over smaller batches; the drain itself is not slower.
